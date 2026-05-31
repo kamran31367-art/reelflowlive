@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reel Flow Live — Clip. Earn. Grow.</title>
+<meta name="description" content="Join Reel Flow Live — Pakistan's premier video clipping platform where creators earn by clipping, editing and publishing short-form content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080810;
+  --bg2: #0e0e1a;
+  --bg3: #13131f;
+  --border: rgba(127,119,221,0.15);
+  --border2: rgba(127,119,221,0.3);
+  --purple: #7F77DD;
+  --purple-light: #AFA9EC;
+  --purple-dark: #534AB7;
+  --accent: #D85A30;
+  --accent-light: #F0997B;
+  --text: #e8e6f0;
+  --text2: #9490b0;
+  --text3: #4a4760;
+  --green: #1D9E75;
+  --green-light: #5DCAA5;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(8,8,16,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 3px; color: #fff;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--purple-light); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  color: var(--text2); font-size: 13px; letter-spacing: 1px;
+  text-decoration: none; text-transform: uppercase; font-weight: 500;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--purple-dark); color: #fff !important;
+  padding: 9px 22px; border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important; letter-spacing: 1px !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--purple) !important; }
+.nav-login {
+  background: transparent; color: var(--text2) !important;
+  padding: 9px 22px; border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important; letter-spacing: 1px !important;
+  border: 1px solid var(--border2) !important;
+  transition: all .2s !important;
+  text-decoration: none;
+}
+.nav-login:hover { border-color: var(--purple-light) !important; color: var(--text) !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--text2); transition: .3s; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 120px 40px 80px;
+  position: relative; overflow: hidden;
+}
+.hero-grid-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(127,119,221,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127,119,221,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-glow {
+  position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse, rgba(83,74,183,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-accent-line {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple-dark), var(--accent), transparent);
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; }
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--purple-light);
+  letter-spacing: 4px; text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 32px; height: 1px;
+  background: var(--purple-light);
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 10vw, 120px);
+  line-height: 0.95; letter-spacing: 2px;
+  color: #fff; margin-bottom: 10px;
+}
+.hero-title .line2 { color: var(--purple-light); }
+.hero-title .line3 {
+  -webkit-text-stroke: 1px rgba(175,169,236,0.4);
+  color: transparent;
+}
+.hero-sub {
+  font-size: 17px; color: var(--text2); max-width: 520px;
+  margin: 24px 0 40px; line-height: 1.75; font-weight: 300;
+}
+.hero-sub strong { color: var(--text); font-weight: 500; }
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--purple-dark); color: #fff;
+  padding: 16px 32px; border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  text-decoration: none; font-weight: 500;
+  border: 1px solid var(--purple);
+  transition: all .25s;
+}
+.btn-primary:hover { background: var(--purple); transform: translateY(-2px); }
+.btn-primary .arr { transition: transform .25s; }
+.btn-primary:hover .arr { transform: translateX(4px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; color: var(--text2);
+  padding: 16px 32px; border-radius: 8px;
+  font-size: 14px; text-decoration: none; font-weight: 500;
+  border: 1px solid var(--border2);
+  transition: all .25s;
+}
+.btn-ghost:hover { border-color: var(--purple-light); color: var(--text); }
+.hero-stats {
+  display: flex; gap: 40px; margin-top: 64px;
+  padding-top: 40px; border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.stat-item {}
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; color: #fff; letter-spacing: 1px;
+}
+.stat-num span { color: var(--purple-light); }
+.stat-label { font-size: 12px; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+
+/* ── TICKER ── */
+.ticker-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0; overflow: hidden;
+  background: var(--bg2);
+}
+.ticker-track {
+  display: flex; gap: 0;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: var(--text3);
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 0 32px; white-space: nowrap;
+}
+.ticker-item .dot { color: var(--purple-light); margin-right: 32px; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── HOW IT WORKS ── */
+.section {
+  padding: 100px 40px;
+  max-width: 1100px; margin: 0 auto;
+}
+.section-full { padding: 100px 40px; background: var(--bg2); }
+.section-full .section-inner { max-width: 1100px; margin: 0 auto; }
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--purple-light);
+  letter-spacing: 3px; text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.tag::before { content: '//'; color: var(--text3); }
+.section-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 64px); line-height: 1;
+  color: #fff; letter-spacing: 1px; margin-bottom: 16px;
+}
+.section-heading span { color: var(--purple-light); }
+.section-desc { font-size: 16px; color: var(--text2); max-width: 480px; font-weight: 300; line-height: 1.8; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  margin-top: 60px;
+}
+.step-card {
+  background: var(--bg3); padding: 36px 28px;
+  position: relative; transition: background .2s;
+}
+.step-card:hover { background: #171724; }
+.step-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px; color: var(--border2);
+  line-height: 1; margin-bottom: 16px;
+  transition: color .2s;
+}
+.step-card:hover .step-num { color: var(--purple-dark); }
+.step-icon {
+  font-size: 28px; margin-bottom: 14px; display: block;
+}
+.step-title { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 8px; }
+.step-text { font-size: 14px; color: var(--text2); line-height: 1.7; font-weight: 300; }
+.step-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--purple-dark); transform: scaleX(0); transform-origin: left;
+  transition: transform .3s;
+}
+.step-card:hover::after { transform: scaleX(1); }
+
+/* ── EARNINGS ── */
+.earn-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 40px; align-items: center; margin-top: 60px;
+}
+.earn-visual {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 12px; padding: 32px; position: relative; overflow: hidden;
+}
+.earn-visual::before {
+  content: ''; position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(83,74,183,0.15) 0%, transparent 70%);
+}
+.earn-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--text3); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.earn-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px; color: var(--green-light); letter-spacing: 2px; line-height: 1;
+}
+.earn-amount small { font-size: 24px; color: var(--text3); }
+.earn-bar-wrap { margin-top: 24px; }
+.earn-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.earn-bar-name { font-size: 12px; color: var(--text2); width: 80px; flex-shrink: 0; }
+.earn-bar-track { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.earn-bar-fill { height: 100%; border-radius: 3px; background: var(--purple); animation: barGrow 1.5s ease-out both; }
+.earn-bar-fill.green { background: var(--green); }
+.earn-bar-fill.accent { background: var(--accent); }
+.earn-bar-val { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text3); width: 40px; text-align: right; }
+@keyframes barGrow { from { transform: scaleX(0); transform-origin: left; } to { transform: scaleX(1); } }
+.earn-features { display: flex; flex-direction: column; gap: 24px; }
+.earn-feat {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px; background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 10px; transition: border-color .2s;
+}
+.earn-feat:hover { border-color: var(--border2); }
+.earn-feat-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: rgba(83,74,183,0.15); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.earn-feat-title { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+.earn-feat-text { font-size: 13px; color: var(--text2); font-weight: 300; line-height: 1.6; }
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px; margin-top: 60px;
+}
+.skill-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 10px; padding: 24px 20px; text-align: center;
+  transition: all .2s;
+}
+.skill-card:hover { border-color: var(--purple); transform: translateY(-4px); }
+.skill-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+.skill-name { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+.skill-desc { font-size: 12px; color: var(--text3); line-height: 1.5; }
+
+/* ── CTA SECTION ── */
+.cta-section {
+  padding: 100px 40px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-glow {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(83,74,183,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner { max-width: 700px; margin: 0 auto; position: relative; }
+.cta-badge {
+  display: inline-block;
+  background: rgba(29,158,117,0.15); border: 1px solid rgba(29,158,117,0.3);
+  color: var(--green-light); font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 2px; padding: 6px 16px; border-radius: 20px;
+  margin-bottom: 24px; text-transform: uppercase;
+}
+.cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 8vw, 80px); line-height: 0.95;
+  color: #fff; letter-spacing: 2px; margin-bottom: 20px;
+}
+.cta-title span { color: var(--purple-light); }
+.cta-text { font-size: 16px; color: var(--text2); margin-bottom: 40px; font-weight: 300; line-height: 1.8; }
+.cta-requirements {
+  display: flex; justify-content: center; gap: 24px;
+  margin-bottom: 40px; flex-wrap: wrap;
+}
+.req-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text2);
+}
+.req-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: 3px; color: var(--text3);
+}
+.footer-logo span { color: var(--purple-dark); }
+.footer-copy { font-size: 12px; color: var(--text3); letter-spacing: 1px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 12px; color: var(--text3); text-decoration: none;
+  letter-spacing: 1px; text-transform: uppercase;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--purple-light); }
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 58px; left: 0; right: 0;
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    padding: 24px; gap: 20px;
+  }
+  .hero { padding: 100px 20px 60px; }
+  .hero-stats { gap: 24px; }
+  .section { padding: 60px 20px; }
+  .section-full { padding: 60px 20px; }
+  .earn-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+  footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">REEL FLOW <span>LIVE</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#earnings">Earnings</a>
+    <a href="#skills">Requirements</a>
+    <a href="#" id="nav-member-login" class="nav-login">Member Login →</a>
+    <a href="#" id="nav-admin-login" class="nav-login" style="border-color:rgba(216,90,48,0.4);color:var(--accent-light)">Admin →</a>
+    <a href="?page=apply" class="nav-cta">Apply Now →</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow fade-up">Creator Monetization Platform</div>
+    <h1 class="hero-title fade-up" style="transition-delay:.1s">
+      <div>CLIP.</div>
+      <div class="line2">EARN.</div>
+      <div class="line3">GROW.</div>
+    </h1>
+    <p class="hero-sub fade-up" style="transition-delay:.2s">
+      Join <strong>Reel Flow Live</strong> — submit clips, follow campaign guidelines, publish on social media, and earn real money doing what you love.
+    </p>
+    <div class="hero-btns fade-up" style="transition-delay:.3s">
+      <a href="?page=apply" class="btn-primary">
+        Apply Now <span class="arr">→</span>
+      </a>
+      <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="fade-up" style="transition-delay:.35s;margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <a href="#" id="hero-member-login"
+         style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--purple-light);text-decoration:none;letter-spacing:1px;padding:10px 20px;border:1px solid rgba(127,119,221,0.3);border-radius:6px;transition:all .2s;background:rgba(127,119,221,0.06)"
+         onmouseover="this.style.borderColor='var(--purple-light)';this.style.background='rgba(127,119,221,0.12)'"
+         onmouseout="this.style.borderColor='rgba(127,119,221,0.3)';this.style.background='rgba(127,119,221,0.06)'">
+        🔐 Member Dashboard →
+      </a>
+      <a href="#" id="hero-admin-login"
+         style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent-light);text-decoration:none;letter-spacing:1px;padding:10px 20px;border:1px solid rgba(216,90,48,0.3);border-radius:6px;transition:all .2s;background:rgba(216,90,48,0.06)"
+         onmouseover="this.style.borderColor='var(--accent-light)';this.style.background='rgba(216,90,48,0.12)'"
+         onmouseout="this.style.borderColor='rgba(216,90,48,0.3)';this.style.background='rgba(216,90,48,0.06)'">
+        ⚙️ Admin Panel →
+      </a>
+    </div>
+    <div class="hero-stats fade-up" style="transition-delay:.4s">
+      <div class="stat-item">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Remote Work</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24<span>/7</span></div>
+        <div class="stat-label">Campaign Access</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Platforms</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Earning Potential</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-accent-line"></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▸</span>YouTube Shorts</span>
+    <span class="ticker-item"><span class="dot">▸</span>Instagram Reels</span>
+    <span class="ticker-item"><span class="dot">▸</span>TikTok Clips</span>
+    <span class="ticker-item"><span class="dot">▸</span>Campaign-Based Earnings</span>
+    <span class="ticker-item"><span class="dot">▸</span>CapCut Editing</span>
+    <span class="ticker-item"><span class="dot">▸</span>Canva Graphics</span>
+    <span class="ticker-item"><span class="dot">▸</span>Remote Work</span>
+    <span class="ticker-item"><span class="dot">▸</span>Flexible Hours</span>
+    <span class="ticker-item"><span class="dot">▸</span>YouTube Shorts</span>
+    <span class="ticker-item"><span class="dot">▸</span>Instagram Reels</span>
+    <span class="ticker-item"><span class="dot">▸</span>TikTok Clips</span>
+    <span class="ticker-item"><span class="dot">▸</span>Campaign-Based Earnings</span>
+    <span class="ticker-item"><span class="dot">▸</span>CapCut Editing</span>
+    <span class="ticker-item"><span class="dot">▸</span>Canva Graphics</span>
+    <span class="ticker-item"><span class="dot">▸</span>Remote Work</span>
+    <span class="ticker-item"><span class="dot">▸</span>Flexible Hours</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="how-it-works" class="section-full">
+  <div class="section-inner">
+    <div class="tag fade-up">Process</div>
+    <h2 class="section-heading fade-up" style="transition-delay:.1s">HOW IT <span>WORKS</span></h2>
+    <p class="section-desc fade-up" style="transition-delay:.2s">Simple 5-step process from application to earning. No experience needed — just dedication and consistency.</p>
+    <div class="steps-grid fade-up" style="transition-delay:.3s">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <span class="step-icon">📋</span>
+        <div class="step-title">Apply</div>
+        <div class="step-text">Fill out our application form. Tell us about your skills, experience and availability.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <span class="step-icon">✅</span>
+        <div class="step-title">Get Approved</div>
+        <div class="step-text">Our team reviews your application. Approved creators receive a login link via email.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <span class="step-icon">🎯</span>
+        <div class="step-title">Pick Campaigns</div>
+        <div class="step-text">Browse active campaigns. Download raw video, read instructions and get started.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <span class="step-icon">✂️</span>
+        <div class="step-title">Clip & Edit</div>
+        <div class="step-text">Use CapCut or Canva to create short-form clips following campaign guidelines.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">05</div>
+        <span class="step-icon">💰</span>
+        <div class="step-title">Submit & Earn</div>
+        <div class="step-text">Upload your clips to YouTube, Instagram or TikTok. Submit proof and get paid.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EARNINGS -->
+<div id="earnings" class="section">
+  <div class="tag fade-up">Compensation</div>
+  <h2 class="section-heading fade-up" style="transition-delay:.1s">YOUR <span>EARNINGS</span></h2>
+  <p class="section-desc fade-up" style="transition-delay:.2s">Performance-based compensation. The more you clip and publish, the more you earn.</p>
+  <div class="earn-grid fade-up" style="transition-delay:.3s">
+    <div class="earn-visual">
+      <div class="earn-label">Monthly Potential</div>
+      <div class="earn-amount"><small>PKR </small>50,000<small>+</small></div>
+      <div class="earn-bar-wrap">
+        <div class="earn-bar-row">
+          <div class="earn-bar-name">Part-time</div>
+          <div class="earn-bar-track"><div class="earn-bar-fill" style="width:35%"></div></div>
+          <div class="earn-bar-val">35%</div>
+        </div>
+        <div class="earn-bar-row">
+          <div class="earn-bar-name">Dedicated</div>
+          <div class="earn-bar-track"><div class="earn-bar-fill green" style="width:65%"></div></div>
+          <div class="earn-bar-val">65%</div>
+        </div>
+        <div class="earn-bar-row">
+          <div class="earn-bar-name">Full-time</div>
+          <div class="earn-bar-track"><div class="earn-bar-fill accent" style="width:100%"></div></div>
+          <div class="earn-bar-val">100%</div>
+        </div>
+      </div>
+    </div>
+    <div class="earn-features">
+      <div class="earn-feat">
+        <div class="earn-feat-icon">🏆</div>
+        <div>
+          <div class="earn-feat-title">Campaign Bonuses</div>
+          <div class="earn-feat-text">High-performing clips earn additional bonuses on top of base pay.</div>
+        </div>
+      </div>
+      <div class="earn-feat">
+        <div class="earn-feat-icon">📈</div>
+        <div>
+          <div class="earn-feat-title">Performance-Based</div>
+          <div class="earn-feat-text">Views, engagement, and consistency all factor into your earnings.</div>
+        </div>
+      </div>
+      <div class="earn-feat">
+        <div class="earn-feat-icon">🔄</div>
+        <div>
+          <div class="earn-feat-title">Regular Payouts</div>
+          <div class="earn-feat-text">Transparent payout system tracked directly in your dashboard.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REQUIREMENTS -->
+<div id="skills" class="section-full">
+  <div class="section-inner">
+    <div class="tag fade-up">Requirements</div>
+    <h2 class="section-heading fade-up" style="transition-delay:.1s">WHAT YOU <span>NEED</span></h2>
+    <p class="section-desc fade-up" style="transition-delay:.2s">Basic skills are enough to start. We provide training, campaign guidelines and raw content.</p>
+    <div class="skills-grid fade-up" style="transition-delay:.3s">
+      <div class="skill-card">
+        <span class="skill-icon">📱</span>
+        <div class="skill-name">CapCut</div>
+        <div class="skill-desc">Basic video editing. Beginners welcome.</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🎨</span>
+        <div class="skill-name">Canva</div>
+        <div class="skill-desc">Thumbnails and graphics creation.</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">▶️</span>
+        <div class="skill-name">YouTube</div>
+        <div class="skill-desc">Upload and manage short-form content.</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">📸</span>
+        <div class="skill-name">Instagram</div>
+        <div class="skill-desc">Reels publishing and engagement.</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🎵</span>
+        <div class="skill-name">TikTok</div>
+        <div class="skill-desc">Short video publishing skills.</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🌐</span>
+        <div class="skill-name">English</div>
+        <div class="skill-desc">Basic reading and comprehension.</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">⏰</span>
+        <div class="skill-name">Consistency</div>
+        <div class="skill-desc">Minimum 1–2 hours daily commitment.</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">📶</span>
+        <div class="skill-name">Internet</div>
+        <div class="skill-desc">Stable connection for uploads.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="cta-badge fade-up">● Applications Open</div>
+    <h2 class="cta-title fade-up" style="transition-delay:.1s">
+      READY TO<br><span>START EARNING?</span>
+    </h2>
+    <p class="cta-text fade-up" style="transition-delay:.2s">
+      Join our selective creator network. Applications are reviewed manually — only serious creators need apply.
+    </p>
+    <div class="cta-requirements fade-up" style="transition-delay:.3s">
+      <div class="req-item"><div class="req-dot"></div>Free to apply</div>
+      <div class="req-item"><div class="req-dot"></div>Response within 48 hours</div>
+      <div class="req-item"><div class="req-dot"></div>Work from anywhere</div>
+      <div class="req-item"><div class="req-dot"></div>Flexible schedule</div>
+    </div>
+    <a href="?page=apply" class="btn-primary fade-up" style="transition-delay:.4s;font-size:14px;padding:18px 40px">
+      Submit Your Application →
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">REEL FLOW <span>LIVE</span></div>
+  <div class="footer-copy">© 2025 Reel Flow Live. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#earnings">Earnings</a>
+    <a href="?page=apply">Apply</a>
+  </div>
+</footer>
+
+<script>
+// ── Dashboard URL injection ───────────────────────────────────
+// Strips ?page=... from current URL to get bare exec base URL.
+// If GAS template already injected scriptUrl, use that (more reliable).
+(function() {
+  var base = window.location.href.split('?')[0];
+  // Check if GAS rendered the template variable (it will NOT contain '<?' if rendered)
+  var tplVal = '<?= scriptUrl ?>';
+  var scriptUrl = (tplVal.indexOf('<?') === -1) ? tplVal : base;
+  var memberUrl = scriptUrl;
+  var adminUrl  = scriptUrl + '?page=admin';
+
+  ['nav-member-login','hero-member-login'].forEach(function(id){
+    var el = document.getElementById(id); if(el) el.href = memberUrl;
+  });
+  ['nav-admin-login','hero-admin-login'].forEach(function(id){
+    var el = document.getElementById(id); if(el) el.href = adminUrl;
+  });
+})();
+
+function toggleNav() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      document.getElementById('nav-links').classList.remove('open');
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
