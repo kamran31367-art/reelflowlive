@@ -408,8 +408,8 @@ footer {
     <a href="#how-it-works">How It Works</a>
     <a href="#earnings">Earnings</a>
     <a href="#skills">Requirements</a>
-    <a href="#" id="nav-member-login" class="nav-login">Member Login →</a>
-    <a href="#" id="nav-admin-login" class="nav-login" style="border-color:rgba(216,90,48,0.4);color:var(--accent-light)">Admin →</a>
+    <a href="https://script.google.com/macros/s/AKfycbyP92PzoRQFMZ2wen_ciuNNoF6Hk_Cb1Hnrk9xs5St7TuzV4U8_pYQgY-kMRcgtDY3g/exec" id="nav-member-login" class="nav-login">Member Login →</a>
+    <a href="https://script.google.com/macros/s/AKfycbyP92PzoRQFMZ2wen_ciuNNoF6Hk_Cb1Hnrk9xs5St7TuzV4U8_pYQgY-kMRcgtDY3g/exec?page=admin" id="nav-admin-login" class="nav-login" style="border-color:rgba(216,90,48,0.4);color:var(--accent-light)">Admin →</a>
     <a href="?page=apply" class="nav-cta">Apply Now →</a>
   </div>
   <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
@@ -438,13 +438,13 @@ footer {
       <a href="#how-it-works" class="btn-ghost">See How It Works</a>
     </div>
     <div class="fade-up" style="transition-delay:.35s;margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-      <a href="#" id="hero-member-login"
+      <a href="https://script.google.com/macros/s/AKfycbyP92PzoRQFMZ2wen_ciuNNoF6Hk_Cb1Hnrk9xs5St7TuzV4U8_pYQgY-kMRcgtDY3g/exec" id="hero-member-login"
          style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--purple-light);text-decoration:none;letter-spacing:1px;padding:10px 20px;border:1px solid rgba(127,119,221,0.3);border-radius:6px;transition:all .2s;background:rgba(127,119,221,0.06)"
          onmouseover="this.style.borderColor='var(--purple-light)';this.style.background='rgba(127,119,221,0.12)'"
          onmouseout="this.style.borderColor='rgba(127,119,221,0.3)';this.style.background='rgba(127,119,221,0.06)'">
         🔐 Member Dashboard →
       </a>
-      <a href="#" id="hero-admin-login"
+      <a href="https://script.google.com/macros/s/AKfycbyP92PzoRQFMZ2wen_ciuNNoF6Hk_Cb1Hnrk9xs5St7TuzV4U8_pYQgY-kMRcgtDY3g/exec?page=admin" id="hero-admin-login"
          style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent-light);text-decoration:none;letter-spacing:1px;padding:10px 20px;border:1px solid rgba(216,90,48,0.3);border-radius:6px;transition:all .2s;background:rgba(216,90,48,0.06)"
          onmouseover="this.style.borderColor='var(--accent-light)';this.style.background='rgba(216,90,48,0.12)'"
          onmouseout="this.style.borderColor='rgba(216,90,48,0.3)';this.style.background='rgba(216,90,48,0.06)'">
@@ -675,25 +675,6 @@ footer {
 </footer>
 
 <script>
-// ── Dashboard URL injection ───────────────────────────────────
-// Strips ?page=... from current URL to get bare exec base URL.
-// If GAS template already injected scriptUrl, use that (more reliable).
-(function() {
-  var base = window.location.href.split('?')[0];
-  // Check if GAS rendered the template variable (it will NOT contain '<?' if rendered)
-  var tplVal = '<?= scriptUrl ?>';
-  var scriptUrl = (tplVal.indexOf('<?') === -1) ? tplVal : base;
-  var memberUrl = scriptUrl;
-  var adminUrl  = scriptUrl + '?page=admin';
-
-  ['nav-member-login','hero-member-login'].forEach(function(id){
-    var el = document.getElementById(id); if(el) el.href = memberUrl;
-  });
-  ['nav-admin-login','hero-admin-login'].forEach(function(id){
-    var el = document.getElementById(id); if(el) el.href = adminUrl;
-  });
-})();
-
 function toggleNav() {
   document.getElementById('nav-links').classList.toggle('open');
 }
