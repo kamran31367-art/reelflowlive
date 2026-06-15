@@ -895,7 +895,7 @@ function submitApplication() {
   btn.disabled = true;
   btn.textContent = 'Submitting…';
 
-  fetch('/api/apply', {
+  fetch('https://app.reelflow.live/api/apply', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: name, email: email, whatsapp: whatsapp, channelUrl: channel, note: note })
