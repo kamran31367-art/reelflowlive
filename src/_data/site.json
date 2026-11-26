@@ -1,0 +1,34 @@
+{
+  "url": "https://reelflow.live",
+  "brandName": "ReelFlow",
+  "brandSub": "Toolkit",
+  "tagline": "Free, browser-based tools for YouTubers and short-video creators. No upload, no signup.",
+  "description": "Free browser-based tools for YouTubers and short-video creators.",
+  "ogImage": "https://reelflow.live/assets/img/og-cover.png",
+  "badges": {
+    "home": "Free forever",
+    "tools": "6 free tools"
+  },
+  "headerLinks": [
+    { "label": "All tools", "href": "/#tools" },
+    { "label": "Why free", "href": "/#why" },
+    { "label": "FAQ", "href": "/#faq" }
+  ],
+  "footerLinks": [
+    { "label": "All tools", "href": "/#tools" },
+    { "label": "Why free", "href": "/#why" },
+    { "label": "FAQ", "href": "/#faq" },
+    { "label": "Sitemap", "href": "/sitemap.xml" }
+  ],
+  "socials": [],
+  "copyrightName": "ReelFlow Toolkit - reelflow.live",
+  "bottomNote": "All tools run locally in your browser.",
+  "lastUpdated": "2026-11-26",
+  "consent": {
+    "version": 1,
+    "text": "We use cookies and similar technologies to keep the site working and, with your permission, to show ads that keep the tools free.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacyUrl": "/privacy/"
+  }
+}

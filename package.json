@@ -1,0 +1,14 @@
+{
+  "name": "reelflowlive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ReelFlow Toolkit - static creator tools site for reelflow.live",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "check": "node tests/check-links.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  }
+}

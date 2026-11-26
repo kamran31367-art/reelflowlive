@@ -1,0 +1,69 @@
+---
+layout: layouts/base.njk
+contentKey: home
+ldType: home
+contentType: home
+permalink: /
+sitemap: true
+mainClass: ""
+---
+{% set c = home %}
+{% from "partials/icons.njk" import icon %}
+<section class="hero wrap">
+  <h1>{{ c.heroTitle }} <em>{{ c.heroEm }}</em></h1>
+  <p class="lead">{{ c.heroLead }}</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="{{ c.primaryCta.href }}">{{ c.primaryCta.label }}</a>
+    <a class="btn" href="{{ c.secondaryCta.href }}">{{ c.secondaryCta.label }}</a>
+  </div>
+  <div class="trust">
+    {% for item in c.trust %}
+    <span><i class="dot"></i>{{ item }}</span>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section wrap" id="tools">
+  <div class="section-head">
+    <h2>{{ c.toolsTitle }}</h2>
+    <p>{{ c.toolsNote }}</p>
+  </div>
+
+  <div class="tool-grid">
+    {% for tool in toolList %}
+    <a class="tool-card" href="{{ tool.url }}">
+      <span class="icon-tile {{ tool.tone }}" aria-hidden="true">{{ icon(tool.icon) }}</span>
+      <h3>{{ tool.name }}</h3>
+      <p>{{ tool.desc }}</p>
+      <span class="tags">{% for tag in tool.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</span>
+      <span class="card-link">Open tool &rarr;</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section wrap" id="why" style="padding-top:0">
+  <div class="feature-strip">
+    {% for feature in c.features %}
+    <div class="feature">
+      <b>{{ feature.title }}</b>
+      <span>{{ feature.text }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section wrap" id="faq" style="padding-top:0">
+  <div class="section-head">
+    <h2>{{ c.faqTitle }}</h2>
+    <p>{{ c.faqNote }}</p>
+  </div>
+  <div class="faq">
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>

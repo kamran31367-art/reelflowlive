@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Image Compressor and WebP Converter (Free, No Upload) | ReelFlow Toolkit",
+  "description": "Compress JPG, PNG and WebP images in your browser or convert them to WebP. Compare before and after sizes and download each file.",
+  "ogTitle": "Image Compressor and WebP Converter - Free and On-Device",
+  "ogDescription": "Shrink JPG and PNG files or convert them to WebP. Compare before and after sizes in your browser.",
+  "ldDescription": "Compress JPG and PNG images or convert them to WebP entirely in the browser, with a live before/after size comparison.",
+  "breadcrumb": "Image Compressor",
+  "kicker": "Image tool",
+  "h1": "Image Compressor",
+  "lede": "Shrink JPG and PNG files or convert them to WebP. Add up to 30 images and see the real before and after size for each one.",
+  "faq": [
+    {
+      "q": "How much smaller will my images be?",
+      "a": "It depends on the image. Photos often get 50-80% smaller when exported as WebP at quality 0.8. PNG screenshots compress less, and an already heavily compressed file can occasionally grow - the tool shows the real result for every file."
+    },
+    {
+      "q": "Can I compress many images at once?",
+      "a": "Yes, up to 30 images in one batch. They are processed one by one on your device, and you can save them individually or all at once."
+    },
+    {
+      "q": "Are my images uploaded to a server?",
+      "a": "No. Each image is decoded and re-encoded by your browser using Canvas. Nothing leaves your device."
+    }
+  ],
+  "related": [
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Fix the dimensions before compressing" },
+    { "slug": "youtube-thumbnail-downloader", "letter": "T", "tone": "rose", "note": "Grab a thumbnail in max size" },
+    { "slug": "srt-editor", "letter": "S", "tone": "amber", "note": "Convert and retime subtitles" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "provider": "monetag",
+  "enabled": false,
+  "requireConsent": true,
+  "scriptSrc": "",
+  "attrs": { "zone": "", "sdk": "" },
+  "excludePages": ["/privacy/", "/404.html"]
+}

@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+contentKey: character-counter
+ldType: tool
+contentType: tool
+permalink: /character-counter/
+sitemap: true
+mainClass: wrap
+pageScript: tools/counter.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Text</h2><span class="hint">title + caption</span></div>
+
+    <div class="field">
+      <label for="titleText">Title</label>
+      <input class="input" id="titleText" type="text" placeholder="Video title…" autocomplete="off">
+      <p class="field-hint">Checked against the YouTube title limit of 100 characters.</p>
+    </div>
+
+    <div class="field">
+      <label for="captionText">Caption / description</label>
+      <textarea class="textarea" id="captionText" style="min-height:170px" spellcheck="true" placeholder="Write your description, caption and hashtags…"></textarea>
+    </div>
+
+    <div class="split-actions" style="margin-bottom:16px">
+      <button class="btn btn-ghost btn-sm" id="clearBtn" type="button">Clear all</button>
+      <span class="spacer"></span>
+      <button class="btn btn-sm" id="copyTags" type="button" disabled>Copy hashtags</button>
+    </div>
+
+    <div class="pane-head"><h2>Hashtags</h2><span class="hint" id="tagCount" aria-live="polite">0 hashtags · 0 unique</span></div>
+    <div class="tag-cloud" id="tagCloud"></div>
+    <div class="empty-muted" id="tagEmpty" style="padding:14px">Hashtags you type appear here.</div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Platform limits</h2><span class="hint">live count</span></div>
+
+    <div id="meterGrid"></div>
+
+    <div class="note"><span class="pin">i</span><span>Counts use whole characters, so emoji count as one. X may shorten links to a fixed length; the count here is the raw text you typed.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

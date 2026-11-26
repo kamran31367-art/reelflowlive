@@ -1,0 +1,116 @@
+---
+layout: layouts/base.njk
+contentKey: srt-editor
+ldType: tool
+contentType: tool
+permalink: /srt-editor/
+sitemap: true
+mainClass: wrap
+pageScript: tools/srt.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Subtitles</h2><span class="hint" id="detected" hidden></span></div>
+
+    <div class="field">
+      <label for="inputText">Paste SRT or WebVTT</label>
+      <textarea class="textarea" id="inputText" spellcheck="false" placeholder="1&#10;00:00:01,000 --> 00:00:03,000&#10;First subtitle line&#10;&#10;2&#10;00:00:03,500 --> 00:00:06,000&#10;Second subtitle line"></textarea>
+    </div>
+
+    <div class="row">
+      <div class="field" style="flex:0 0 auto">
+        <span class="field-label">Open a file</span>
+        <label class="btn btn-sm" for="subFile" style="display:inline-flex">Load .srt / .vtt file</label>
+        <input class="visually-hidden" id="subFile" type="file" accept=".srt,.vtt,text/plain,text/vtt">
+      </div>
+      <div class="field">
+        <label for="offset">Shift timing</label>
+        <div class="row" style="flex-wrap:nowrap">
+          <input class="input" id="offset" type="number" step="0.1" value="0" aria-label="Timing shift amount">
+          <select class="select" id="offsetUnit" aria-label="Timing shift unit">
+            <option value="1000">seconds</option>
+            <option value="1">milliseconds</option>
+          </select>
+        </div>
+        <p class="field-hint">Positive adds time, negative removes it.</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="field-label">Export as</span>
+      <div class="seg" id="formatSeg">
+        <button type="button" data-format="srt" class="on" aria-pressed="true">SRT</button>
+        <button type="button" data-format="vtt" aria-pressed="false">VTT</button>
+        <button type="button" data-format="txt" aria-pressed="false">TXT</button>
+      </div>
+      <input type="hidden" id="outFormat" value="srt">
+    </div>
+
+    <div class="stats-line" id="stats" hidden>
+      <span>Cues <b id="statCues">0</b></span>
+      <span>Duration <b id="statDuration">0:00</b></span>
+      <span class="bad">Issues <b id="statIssues">0</b></span>
+    </div>
+
+    <ul class="issues" id="issues" hidden></ul>
+
+    <div class="split-actions">
+      <button class="btn btn-ghost btn-sm" id="clearBtn" type="button">Clear</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>SRT uses commas (00:00:01,000) and VTT uses dots (00:00:01.000). Export handles the difference for you.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Cues</h2><span class="hint" id="cueHint">No cues yet</span></div>
+
+    <div class="table-scroll">
+      <table class="subtitle-table" aria-label="Parsed subtitle cues">
+        <thead>
+          <tr><th>#</th><th>Start</th><th>End</th><th>Text</th></tr>
+        </thead>
+        <tbody id="cueBody"></tbody>
+      </table>
+      <div class="table-empty" id="cueEmpty">Cues appear here as soon as a timing line is found.</div>
+    </div>
+
+    <div class="pane-head" style="margin-top:16px"><h2>Export preview</h2></div>
+    <textarea class="textarea output-box" id="outputText" readonly aria-label="Converted subtitle output"></textarea>
+
+    <div class="split-actions" style="margin-top:10px">
+      <button class="btn btn-primary" id="downloadBtn" type="button" disabled>Download</button>
+      <button class="btn" id="copyBtn" type="button" disabled>Copy output</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Read-only preview. The timing shift is applied to the exported file but your pasted text is never modified.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

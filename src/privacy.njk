@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+contentKey: privacy
+ldType: none
+contentType: system
+noindex: true
+permalink: /privacy/
+sitemap: false
+mainClass: wrap
+---
+{% set c = system.privacy %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>Privacy policy</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p>Last updated {{ c.updated }}. This page explains what ReelFlow Toolkit stores and what it does not.</p>
+</section>
+
+<section class="legal">
+  <h2>Your files stay on your device</h2>
+  <p>Images, subtitles and other files you open in a tool are read and processed by your browser. They are never uploaded to a ReelFlow server. Tools that fetch a YouTube thumbnail request it directly from YouTube's public image servers.</p>
+
+  <h2>Cookies and local storage</h2>
+  <p>The site stores your cookie choice in your browser's local storage so the notice does not appear on every visit. No advertising or analytics scripts run until you accept them.</p>
+
+  <h2>Advertising</h2>
+  <p>If you accept the cookie notice, the site may load advertising scripts from a third-party ad network to keep the tools free. Those networks may set their own cookies under their own policies. If you decline, no advertising scripts are loaded.</p>
+
+  <h2>Contact</h2>
+  <p>For privacy questions about this site, contact the site owner through the YouTube channel linked from the footer once social links are added.</p>
+</section>

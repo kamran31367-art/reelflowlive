@@ -1,0 +1,88 @@
+---
+layout: layouts/base.njk
+contentKey: youtube-thumbnail-downloader
+ldType: tool
+contentType: tool
+permalink: /youtube-thumbnail-downloader/
+sitemap: true
+mainClass: wrap
+pageScript: tools/thumbnail.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Video link</h2><span class="hint">watch, shorts, youtu.be</span></div>
+
+    <form id="thumbForm" novalidate>
+      <div class="field">
+        <label for="videoUrl">YouTube URL or video ID</label>
+        <input class="input" id="videoUrl" type="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" autocomplete="off" spellcheck="false">
+        <p class="field-hint" id="thumbHint" hidden></p>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Image size</span>
+        <div class="sizes">
+          <button type="button" class="size-btn on" data-size="maxresdefault" aria-pressed="true">Max<small>1280×720</small></button>
+          <button type="button" class="size-btn" data-size="sddefault" aria-pressed="false">HD<small>640×480</small></button>
+          <button type="button" class="size-btn" data-size="hqdefault" aria-pressed="false">HQ<small>480×360</small></button>
+          <button type="button" class="size-btn" data-size="mqdefault" aria-pressed="false">MQ<small>320×180</small></button>
+        </div>
+        <p class="field-hint">Sizes that a video does not have appear faded.</p>
+      </div>
+
+      <div class="split-actions">
+        <button class="btn btn-primary" id="downloadThumb" type="button" disabled>Download thumbnail</button>
+        <button class="btn" id="copyThumbUrl" type="button" disabled>Copy image URL</button>
+        <a class="btn btn-ghost" id="openThumb" target="_blank" rel="noopener" hidden>Open image</a>
+      </div>
+    </form>
+
+    <div class="note"><span class="pin">i</span><span>Uses YouTube's public thumbnail URLs. Downloading a thumbnail does not grant you the rights to reuse it.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Preview</h2><span class="hint" id="thumbFileName">—</span></div>
+    <div class="thumb-stage">
+      <div class="thumb-frame">
+        <span id="thumbPlaceholder">Paste a link to preview the thumbnail</span>
+        <img id="thumbImg" alt="YouTube thumbnail preview" hidden>
+      </div>
+      <div class="meta-stack">
+        <div class="meta-row"><span>Video ID</span><b id="thumbId">—</b></div>
+        <div class="meta-row"><span>Dimensions</span><b id="thumbDims">—</b></div>
+        <div class="meta-row"><span>Format</span><b>JPG</b></div>
+        <div class="meta-row"><span>Status</span><b id="thumbStatus">Waiting for a link</b></div>
+      </div>
+    </div>
+    <div class="note"><span class="pin">i</span><span>If a video has no max-resolution image, the tool falls back to the next available size automatically.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

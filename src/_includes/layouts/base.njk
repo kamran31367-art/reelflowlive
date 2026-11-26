@@ -1,0 +1,50 @@
+{% if contentType == "home" %}{% set c = home %}
+{% elif contentType == "tool" %}{% set c = toolpages[contentKey] %}
+{% else %}{% set c = system[contentKey] %}{% endif %}
+{% set t = toolList | toolBySlug(contentKey) %}
+{% set badgeText = ldType == "home" and site.badges.home or site.badges.tools %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ c.metaTitle }}</title>
+<meta name="description" content="{{ c.description }}">
+{% if not noindex %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
+<meta name="theme-color" content="#f6f8fb">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+{% if not noindex %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReelFlow Toolkit">
+<meta property="og:title" content="{{ c.ogTitle }}">
+<meta property="og:description" content="{{ c.ogDescription }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.ogImage }}">
+<meta name="twitter:card" content="summary_large_image">
+{% else %}
+<meta name="robots" content="noindex">
+{% endif %}
+<link rel="stylesheet" href="/assets/css/site.css">
+{% if ldType == "home" %}
+<script type="application/ld+json">{{ toolList | homeLd(site) | jsonld | safe }}</script>
+{% elif ldType == "tool" %}
+<script type="application/ld+json">{{ c | toolLd(t, site, page.url) | jsonld | safe }}</script>
+{% endif %}
+</head>
+<body>
+{% include "partials/header.njk" %}
+
+<main{% if mainClass %} class="{{ mainClass }}"{% endif %}>
+{{ content | safe }}
+</main>
+
+{% include "partials/footer.njk" %}
+{% include "partials/consent.njk" %}
+
+<script src="/assets/js/utils.js"></script>
+<script src="/assets/js/app.js"></script>
+{% if pageScript %}<script src="/assets/js/{{ pageScript }}"></script>{% endif %}
+<script>window.CT_ADS = {{ ads | dump | safe }};</script>
+<script src="/assets/js/ads.js"></script>
+</body>
+</html>

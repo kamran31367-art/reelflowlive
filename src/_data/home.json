@@ -1,0 +1,44 @@
+{
+  "metaTitle": "ReelFlow Toolkit - Free Tools for YouTubers and Short-Video Creators",
+  "description": "Free browser-based tools for creators: YouTube thumbnail downloader, image resizer, image compressor, SRT subtitle editor, chapters generator and character counter. No upload, no signup.",
+  "ogTitle": "ReelFlow Toolkit - Free Tools for Creators",
+  "ogDescription": "Thumbnails, image sizes, compression, subtitles and chapters - six free tools that run entirely in your browser.",
+  "heroTitle": "Every small tool a creator needs,",
+  "heroEm": "right in the browser.",
+  "heroLead": "Thumbnails, image sizes, compression, subtitles and titles - all free, all local. Your files never leave your device.",
+  "primaryCta": { "label": "Browse the toolkit", "href": "#tools" },
+  "secondaryCta": { "label": "Try the thumbnail tool", "href": "/youtube-thumbnail-downloader/" },
+  "trust": ["No signup", "No upload", "No watermark", "Built for YouTube, Shorts, Reels, TikTok"],
+  "toolsTitle": "Six tools to start",
+  "toolsNote": "Each tool has its own page and loads in under a second.",
+  "features": [
+    {
+      "title": "Runs on your device",
+      "text": "Files are processed with Canvas and JavaScript in your browser. Nothing is uploaded to a server."
+    },
+    {
+      "title": "No account, no limits",
+      "text": "No signup, no daily quota and no watermark. Open a tool and use it."
+    },
+    {
+      "title": "Made for creators",
+      "text": "Presets and rules follow YouTube, Shorts, Reels, TikTok and Instagram requirements."
+    }
+  ],
+  "faqTitle": "Questions",
+  "faqNote": "Short answers before you start.",
+  "faq": [
+    {
+      "q": "Are the tools really free?",
+      "a": "Yes. Every tool runs in the browser, so there is no server cost to pass on. There is no account and no usage limit."
+    },
+    {
+      "q": "Do my files get uploaded anywhere?",
+      "a": "No. Images, videos and subtitle files stay on your device. The tools use the browser's own Canvas and file APIs."
+    },
+    {
+      "q": "Will more tools be added?",
+      "a": "Yes - the toolkit is built to grow. Video to GIF and video trimming are planned next, with each tool getting its own page under reelflow.live."
+    }
+  ]
+}

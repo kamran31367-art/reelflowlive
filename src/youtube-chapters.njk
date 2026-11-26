@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+contentKey: youtube-chapters
+ldType: tool
+contentType: tool
+permalink: /youtube-chapters/
+sitemap: true
+mainClass: wrap
+pageScript: tools/chapters.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Chapters</h2><span class="hint">start time + title</span></div>
+
+    <div id="chapterRows"></div>
+
+    <div class="split-actions" style="margin-bottom:14px">
+      <button class="btn btn-sm" id="addRow" type="button">+ Add chapter</button>
+      <button class="btn btn-sm btn-ghost" id="sortBtn" type="button">Sort by time</button>
+    </div>
+
+    <div class="field">
+      <label for="duration">Video length (optional)</label>
+      <input class="input" id="duration" type="text" inputmode="numeric" placeholder="e.g. 12:30" autocomplete="off">
+      <p class="field-hint">Adds the last-chapter and inside-length checks.</p>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>YouTube needs at least 3 chapters, the first at 0:00, and every chapter at least 10 seconds long. Press Enter in a title to add the next chapter.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>YouTube checks</h2><span class="hint">live</span></div>
+    <ul class="check-list" id="checkList"></ul>
+
+    <div class="pane-head"><h2>Description block</h2></div>
+    <textarea class="textarea output-box" id="output" readonly aria-label="Generated chapter list"></textarea>
+
+    <div class="split-actions" style="margin-top:10px">
+      <button class="btn btn-primary" id="copyBtn" type="button" disabled>Copy chapters</button>
+      <button class="btn" id="downloadBtn" type="button" disabled>Download .txt</button>
+      <button class="btn btn-ghost" id="resetBtn" type="button">Reset</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Paste the block at the end of your video description. Each timestamp must stay on its own line.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

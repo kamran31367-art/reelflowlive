@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Image Resizer for YouTube, Shorts, Reels and Instagram (Free) | ReelFlow Toolkit",
+  "description": "Resize photos to exact YouTube, Shorts, Reels, TikTok, Instagram and X sizes in your browser. Crop to fill or fit inside, then download JPG, PNG or WebP.",
+  "ogTitle": "Image Resizer - Exact Sizes for YouTube, Shorts, Reels and Instagram",
+  "ogDescription": "Resize a photo with creator presets or exact pixels. Everything runs on your device.",
+  "ldDescription": "Resize photos for YouTube, Shorts, Reels, Instagram and X with exact dimensions, entirely in the browser.",
+  "breadcrumb": "Image Resizer",
+  "kicker": "Image tool",
+  "h1": "Image Resizer",
+  "lede": "Resize a photo for YouTube, Shorts, Reels, Instagram or X. Pick a preset or type exact pixels - the image never leaves your browser.",
+  "faq": [
+    {
+      "q": "Which image sizes are included?",
+      "a": "YouTube thumbnail 1280x720, Shorts / Reels / TikTok 1080x1920, Instagram square 1080x1080, Instagram portrait 1080x1350 and X post 1200x675. You can also type any size up to 8000 pixels per side."
+    },
+    {
+      "q": "Does the resizer upload my photo?",
+      "a": "No. The image is decoded and redrawn on a canvas inside your browser. Nothing is sent to a server."
+    },
+    {
+      "q": "Which formats can I export?",
+      "a": "JPG, WebP and PNG. The quality slider applies to JPG and WebP; PNG ignores quality and usually produces a larger file."
+    }
+  ],
+  "related": [
+    { "slug": "image-compressor", "letter": "C", "tone": "mint", "note": "Shrink the resized image before upload" },
+    { "slug": "youtube-thumbnail-downloader", "letter": "T", "tone": "rose", "note": "Save the original thumbnail first" },
+    { "slug": "youtube-chapters", "letter": "Y", "tone": "amber", "note": "Add timestamps to your description" }
+  ]
+}

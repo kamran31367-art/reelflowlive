@@ -1,0 +1,40 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span class="brand-name">{{ site.brandName }} <span class="brand-sub">{{ site.brandSub }}</span></span>
+        </a>
+        <p>{{ site.tagline }}</p>
+        {% if site.socials.length %}
+        <div class="footer-socials">
+          {% for social in site.socials %}
+          <a href="{{ social.href }}" rel="noopener" target="_blank">{{ social.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <div class="footer-links">
+          {% for tool in toolList %}
+          <a href="{{ tool.url }}">{{ tool.footerName }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <div class="footer-links">
+          {% for link in site.footerLinks %}
+          <a href="{{ link.href }}">{{ link.label }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">{{ buildYear }}</span> {{ site.copyrightName }}</span>
+      <span>{{ site.bottomNote }}</span>
+    </div>
+  </div>
+</footer>

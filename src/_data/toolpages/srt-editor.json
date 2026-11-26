@@ -1,0 +1,34 @@
+{
+  "metaTitle": "SRT Subtitle Editor and Converter (SRT, VTT, TXT) | ReelFlow Toolkit",
+  "description": "Edit subtitles, shift timing and convert between SRT, WebVTT and plain text in your browser. No upload, no account - paste or open a file and download.",
+  "ogTitle": "SRT Subtitle Editor and Converter - SRT, VTT and TXT",
+  "ogDescription": "Paste or open subtitles, shift the timing and convert between SRT, VTT and plain text.",
+  "ldDescription": "Edit subtitles, shift timing and convert between SRT, WebVTT and plain text in the browser.",
+  "breadcrumb": "Subtitle Editor",
+  "kicker": "Subtitle tool",
+  "h1": "SRT Subtitle Editor",
+  "lede": "Paste or open subtitles, fix the timing and convert between SRT, WebVTT and plain text. Everything runs in your browser.",
+  "faq": [
+    {
+      "q": "Can I convert SRT to VTT and back?",
+      "a": "Yes. The editor detects SRT or WebVTT input and you choose SRT, VTT or TXT as the export format. VTT export adds the WEBVTT header and dot-separated milliseconds."
+    },
+    {
+      "q": "How does the timing shift work?",
+      "a": "Enter a positive number to delay every cue, or a negative number to move cues earlier, in seconds or milliseconds. Cues that would start before 0:00 are clamped and counted as an issue."
+    },
+    {
+      "q": "Are my subtitle files uploaded?",
+      "a": "No. The file is read by your browser and processed locally. Nothing is sent to a server."
+    },
+    {
+      "q": "Why are no cues detected?",
+      "a": "Cues need a timing line such as 00:00:01,000 --> 00:00:03,000. If the text has no timing lines, use the TXT export or clean the file first."
+    }
+  ],
+  "related": [
+    { "slug": "youtube-chapters", "letter": "Y", "tone": "amber", "note": "Turn key moments into chapters" },
+    { "slug": "character-counter", "letter": "C", "tone": "rose", "note": "Check caption limits before upload" },
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Prepare the thumbnail too" }
+  ]
+}

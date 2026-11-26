@@ -1,0 +1,67 @@
+{
+  "site": "ReelFlow Toolkit",
+  "domain": "reelflow.live",
+  "tools": [
+    {
+      "slug": "youtube-thumbnail-downloader",
+      "url": "/youtube-thumbnail-downloader/",
+      "name": "YouTube Thumbnail Downloader",
+      "footerName": "Thumbnail Downloader",
+      "desc": "Paste any YouTube link and save the thumbnail in every available size, up to 1280x720.",
+      "tags": ["YouTube", "Images", "No upload"],
+      "icon": "download",
+      "tone": "rose"
+    },
+    {
+      "slug": "image-resizer",
+      "url": "/image-resizer/",
+      "name": "Image Resizer",
+      "footerName": "Image Resizer",
+      "desc": "Resize photos for YouTube, Shorts, Reels, Instagram and X with the exact dimensions.",
+      "tags": ["Canvas", "Presets", "Batch"],
+      "icon": "resize",
+      "tone": ""
+    },
+    {
+      "slug": "image-compressor",
+      "url": "/image-compressor/",
+      "name": "Image Compressor",
+      "footerName": "Image Compressor",
+      "desc": "Shrink JPG and PNG files or convert them to WebP, right inside your browser.",
+      "tags": ["WebP", "Batch", "On-device"],
+      "icon": "compress",
+      "tone": "mint"
+    },
+    {
+      "slug": "srt-editor",
+      "url": "/srt-editor/",
+      "name": "SRT Subtitle Editor",
+      "footerName": "Subtitle Editor",
+      "relatedName": "SRT Subtitle Editor",
+      "desc": "Edit, shift timing and convert subtitles between SRT, VTT and plain text.",
+      "tags": ["SRT", "VTT", "Timing shift"],
+      "icon": "subtitles",
+      "tone": "amber"
+    },
+    {
+      "slug": "youtube-chapters",
+      "url": "/youtube-chapters/",
+      "name": "YouTube Chapters Generator",
+      "footerName": "Chapters Generator",
+      "desc": "Build a valid chapter list with timestamps and check every YouTube rule before you paste.",
+      "tags": ["Chapters", "Timestamps", "Rules check"],
+      "icon": "chapters",
+      "tone": ""
+    },
+    {
+      "slug": "character-counter",
+      "url": "/character-counter/",
+      "name": "Character Counter",
+      "footerName": "Character Counter",
+      "desc": "Count titles and captions against the limits of YouTube, TikTok, Instagram and X.",
+      "tags": ["Hashtags", "Limits", "Titles"],
+      "icon": "counter",
+      "tone": "rose"
+    }
+  ]
+}

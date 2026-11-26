@@ -1,0 +1,30 @@
+{
+  "metaTitle": "YouTube Thumbnail Downloader - Free HD Thumbnail Saver | ReelFlow Toolkit",
+  "description": "Download any YouTube thumbnail in HD or max resolution. Paste a video link, pick a size and save the image - free, no signup, no upload.",
+  "ogTitle": "YouTube Thumbnail Downloader - Free HD Thumbnail Saver",
+  "ogDescription": "Paste a YouTube link and save the thumbnail in every available size, up to 1280x720.",
+  "ldDescription": "Paste a YouTube link and download the thumbnail in every available size, up to 1280x720.",
+  "breadcrumb": "Thumbnail Downloader",
+  "kicker": "YouTube tool",
+  "h1": "YouTube Thumbnail Downloader",
+  "lede": "Paste a YouTube link and save its thumbnail. Pick the largest size the video has - up to 1280x720.",
+  "faq": [
+    {
+      "q": "Which links are supported?",
+      "a": "Standard watch links, youtu.be short links, Shorts, Live and embed URLs. A bare 11-character video ID also works."
+    },
+    {
+      "q": "Why is my image smaller than 1280x720?",
+      "a": "YouTube only stores a max-resolution thumbnail when the uploader set one. The tool always shows the largest available size for the video."
+    },
+    {
+      "q": "Can I download a thumbnail on my phone?",
+      "a": "Yes. The tool works in mobile browsers. If your browser blocks the download, use Copy image URL or Open image and save it from the new tab."
+    }
+  ],
+  "related": [
+    { "slug": "image-resizer", "letter": "R", "tone": "mint", "note": "Crop the thumbnail to exact sizes" },
+    { "slug": "image-compressor", "letter": "C", "tone": "amber", "note": "Get under a file size limit" },
+    { "slug": "character-counter", "letter": "T", "tone": "rose", "note": "Write the title while you are here" }
+  ]
+}

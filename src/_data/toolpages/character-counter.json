@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Character Counter for YouTube, TikTok, Instagram and X | ReelFlow Toolkit",
+  "description": "Count YouTube titles and descriptions, TikTok and Instagram captions, and X posts against their limits. Emoji-aware counts plus a unique hashtag list.",
+  "ogTitle": "Character Counter for Creators - YouTube, TikTok, Instagram and X",
+  "ogDescription": "Live title and caption limits with emoji-aware counting and a unique hashtag list.",
+  "ldDescription": "Count title and caption characters against YouTube, TikTok, Instagram and X limits, with a unique hashtag list.",
+  "breadcrumb": "Character Counter",
+  "kicker": "Writing tool",
+  "h1": "Character Counter",
+  "lede": "Write the title and caption once, then see the same text against the limits of YouTube, TikTok, Instagram and X - with a clean hashtag list.",
+  "faq": [
+    {
+      "q": "Which platform limits are checked?",
+      "a": "YouTube title 100, YouTube description 5000, TikTok caption 2200, Instagram caption 2200 and X post 280 characters. The title field feeds the YouTube title meter; the caption field feeds the rest."
+    },
+    {
+      "q": "How are emoji counted?",
+      "a": "Counts use whole characters (grapheme clusters), so a family emoji or a flag counts as one character instead of many code units."
+    },
+    {
+      "q": "Do hashtags count in the caption?",
+      "a": "Yes. Hashtags are part of the caption count. The tool also lists every unique hashtag so you can copy the set without duplicates."
+    }
+  ],
+  "related": [
+    { "slug": "youtube-chapters", "letter": "Y", "tone": "amber", "note": "Add a validated chapter block" },
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Make the matching thumbnail size" },
+    { "slug": "srt-editor", "letter": "S", "tone": "mint", "note": "Polish subtitles before publishing" }
+  ]
+}

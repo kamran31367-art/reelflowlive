@@ -1,0 +1,140 @@
+---
+layout: layouts/base.njk
+contentKey: image-resizer
+ldType: tool
+contentType: tool
+permalink: /image-resizer/
+sitemap: true
+mainClass: wrap
+pageScript: tools/resizer.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Image</h2><span class="hint">one file</span></div>
+
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose an image to resize">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L9 18"/></svg>
+      </div>
+      <b>Drop an image here or click to choose</b>
+      <span class="mini">JPG, PNG or WebP · up to 8000 px per side</span>
+    </div>
+    <input class="visually-hidden" id="fileInput" type="file" accept="image/*">
+
+    <div class="file-info" id="sourceStats" hidden>
+      <div class="meta-row"><span>Source</span><b id="srcName">—</b></div>
+      <div class="meta-row"><span>Dimensions</span><b id="srcDims">—</b></div>
+      <div class="meta-row"><span>File size</span><b id="srcWeight">—</b></div>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <label for="preset">Preset</label>
+      <select class="select" id="preset">
+        <option value="custom">Custom size</option>
+        <option value="1280x720" selected>YouTube thumbnail - 1280 × 720</option>
+        <option value="1080x1920">Shorts / Reels / TikTok - 1080 × 1920</option>
+        <option value="1080x1080">Instagram square - 1080 × 1080</option>
+        <option value="1080x1350">Instagram portrait - 1080 × 1350</option>
+        <option value="1200x675">X post - 1200 × 675</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="outWidth">Width (px)</label>
+        <input class="input" id="outWidth" type="number" min="16" max="8000" step="1" value="1280">
+      </div>
+      <div class="field">
+        <label for="outHeight">Height (px)</label>
+        <input class="input" id="outHeight" type="number" min="16" max="8000" step="1" value="720">
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="field-label">Fit</span>
+      <div class="seg" id="fitSeg">
+        <button type="button" data-fit="cover" class="on" aria-pressed="true">Crop to fill</button>
+        <button type="button" data-fit="contain" aria-pressed="false">Fit inside</button>
+        <button type="button" data-fit="stretch" aria-pressed="false">Stretch</button>
+      </div>
+      <input type="hidden" id="fitMode" value="cover">
+      <p class="field-hint">Crop to fill removes edges; Fit inside keeps the whole image and fills the background colour.</p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <span class="field-label">Format</span>
+        <div class="seg" id="formatSeg">
+          <button type="button" data-format="image/jpeg" class="on" aria-pressed="true">JPG</button>
+          <button type="button" data-format="image/webp" aria-pressed="false">WebP</button>
+          <button type="button" data-format="image/png" aria-pressed="false">PNG</button>
+        </div>
+        <input type="hidden" id="outFormat" value="image/jpeg">
+      </div>
+      <div class="field">
+        <label for="bgColor">Background</label>
+        <input type="color" id="bgColor" value="#ffffff">
+      </div>
+    </div>
+
+    <div class="field" id="qualityField">
+      <label for="quality">Quality</label>
+      <div class="range-row">
+        <input type="range" id="quality" min="0.4" max="0.95" step="0.01" value="0.86">
+        <output id="qualityValue">0.86</output>
+      </div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>The preview matches the downloaded file. Large images are processed at full resolution in your browser.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Output preview</h2><span class="hint" id="outHint">No image yet</span></div>
+
+    <div class="canvas-box">
+      <span class="canvas-empty" id="previewEmpty">Choose an image to see the resized preview.</span>
+      <canvas id="previewCanvas" hidden></canvas>
+    </div>
+
+    <div class="meta-stack" style="margin-top:12px">
+      <div class="meta-row"><span>Output size</span><b id="outDims">—</b></div>
+      <div class="meta-row"><span>File size</span><b id="outWeight">—</b></div>
+    </div>
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="downloadBtn" type="button" disabled>Download resized image</button>
+      <button class="btn btn-ghost" id="resetBtn" type="button">Reset</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Tip: for YouTube thumbnails use 1280 × 720, and keep important text away from the bottom-right corner where the duration badge sits.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+contentKey: image-compressor
+ldType: tool
+contentType: tool
+permalink: /image-compressor/
+sitemap: true
+mainClass: wrap
+pageScript: tools/compressor.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Images</h2><span class="hint">up to 30 files</span></div>
+
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose images to compress">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4"/><path d="M20 8V4h-4"/><path d="M4 16v4h4"/><path d="M20 16v4h-4"/><path d="m8 8 4 4 4-4"/><path d="m8 16 4-4 4 4"/></svg>
+      </div>
+      <b>Drop images here or click to choose</b>
+      <span class="mini">JPG, PNG, WebP or GIF · processed on your device</span>
+    </div>
+    <input class="visually-hidden" id="fileInput" type="file" accept="image/*" multiple>
+
+    <div class="row" style="margin-top:14px">
+      <div class="field">
+        <span class="field-label">Output format</span>
+        <div class="seg" id="formatSeg">
+          <button type="button" data-format="same" class="on" aria-pressed="true">Same as input</button>
+          <button type="button" data-format="image/webp" aria-pressed="false">WebP</button>
+          <button type="button" data-format="image/jpeg" aria-pressed="false">JPG</button>
+        </div>
+        <input type="hidden" id="format" value="same">
+      </div>
+      <div class="field" id="qualityField">
+        <label for="quality">Quality</label>
+        <div class="range-row">
+          <input type="range" id="quality" min="0.4" max="0.95" step="0.01" value="0.8">
+          <output id="qualityValue">0.80</output>
+        </div>
+      </div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>WebP usually gives the smallest file for photos. PNG keeps transparency and ignores the quality slider. A file that is already heavily compressed can get slightly larger - the result is shown honestly for every image.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head">
+      <h2>Results</h2>
+      <span class="hint" id="multiNotice" hidden>Allow multiple downloads if your browser asks.</span>
+    </div>
+
+    <div class="summary-bar" id="summary" hidden>
+      <div class="facts">
+        <span><b id="sumCount">0</b> files</span>
+        <span>Before <b id="sumBefore">—</b></span>
+        <span>After <b id="sumAfter">—</b></span>
+        <span>Saved <b id="sumSaved">—</b></span>
+        <span id="sumFailed" class="failed" hidden><b id="sumFailedNum">0</b> failed</span>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-sm btn-primary" id="downloadAll" type="button" disabled>Download all</button>
+        <button class="btn btn-sm btn-ghost" id="clearAll" type="button" disabled>Clear</button>
+      </div>
+    </div>
+
+    <div class="empty-muted" id="listEmpty">No images yet. Add a few files to compare before and after sizes.</div>
+    <div class="list-scroll" id="fileList"></div>
+
+    <div class="note"><span class="pin">i</span><span>Animated GIFs are compressed as a single still frame by the browser canvas.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

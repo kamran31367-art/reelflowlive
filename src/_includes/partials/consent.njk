@@ -1,0 +1,9 @@
+<div class="consent-bar" id="consent" role="region" aria-label="Cookie notice" data-version="{{ site.consent.version }}" hidden>
+  <div class="consent-inner">
+    <p>{{ site.consent.text }}{% if site.consent.privacyUrl %} <a href="{{ site.consent.privacyUrl }}">Privacy policy</a>{% endif %}</p>
+    <div class="consent-actions">
+      <button class="btn btn-sm btn-ghost" id="consentDecline" type="button">{{ site.consent.decline }}</button>
+      <button class="btn btn-sm btn-primary" id="consentAccept" type="button">{{ site.consent.accept }}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "metaTitle": "YouTube Chapters Generator - Valid Timestamps in Seconds | ReelFlow Toolkit",
+  "description": "Build a YouTube chapter list with timestamps and check every rule: 0:00 start, at least 3 chapters, 10 seconds apart. Copy the description block in one click.",
+  "ogTitle": "YouTube Chapters Generator - Check the Rules Before You Paste",
+  "ogDescription": "Create a valid chapter list with timestamps and see every YouTube rule pass or fail live.",
+  "ldDescription": "Build a YouTube chapter list with timestamps and validate every YouTube chapter rule before pasting it into the description.",
+  "breadcrumb": "Chapters Generator",
+  "kicker": "YouTube tool",
+  "h1": "YouTube Chapters Generator",
+  "lede": "Build a chapter list with timestamps and see every YouTube rule pass or fail as you type. Copy the finished block into your description.",
+  "faq": [
+    {
+      "q": "What are YouTube's chapter requirements?",
+      "a": "Use at least 3 chapters, start the first one at 0:00, keep every chapter at least 10 seconds long, and put each timestamp on its own line in the description. This tool checks each rule as you type."
+    },
+    {
+      "q": "Does this add chapters to my video automatically?",
+      "a": "No. Copy the generated block into your video description. YouTube creates the chapter markers when the description meets its rules."
+    },
+    {
+      "q": "Which time format should I use?",
+      "a": "Enter m:ss for short videos or h:mm:ss for long videos. The tool normalises the format and always outputs the shortest valid timestamp."
+    }
+  ],
+  "related": [
+    { "slug": "srt-editor", "letter": "S", "tone": "amber", "note": "Align subtitles with the same timestamps" },
+    { "slug": "character-counter", "letter": "C", "tone": "rose", "note": "Keep the description within limits" },
+    { "slug": "youtube-thumbnail-downloader", "letter": "T", "tone": "", "note": "Check the thumbnail before publishing" }
+  ]
+}
