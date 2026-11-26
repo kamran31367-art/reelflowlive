@@ -1,6 +1,6 @@
 {
   "provider": "monetag",
-  "enabled": true,
+  "enabled": false,
   "requireConsent": true,
   "scriptSrc": "https://quge5.com/88/tag.min.js",
   "attrs": { "zone": "316349", "cfasync": "false", "sdk": "" },
