@@ -61,13 +61,17 @@ The two starter posts are in `src/blog/posts/`. `youtube-thumbnail-size.md` is p
 
 ## Advertising (Monetag)
 
-Ads are off by default and no third-party script loads. To turn them on:
+The site runs Monetag's Multitag zone `316349`. Current settings in
+`src/_data/ads.json`: `enabled: true`, `scriptSrc: https://quge5.com/88/tag.min.js`,
+`attrs.zone: 316349`, `attrs.cfasync: false`. The loader injects
+`<script src=... data-zone=... data-cfasync="false" async>` and nothing else.
+
+To change or pause ads:
 
 1. In Pages CMS open **Advertising (Monetag)**.
-2. Set **Script URL** to the tag URL from the Monetag dashboard
-   (usually `https://libtl.com/sdk.js`).
-3. Fill **Zone ID** and **SDK ID** from the Monetag snippet.
-4. Switch **Load ads on the site** on and save.
+2. Paste the zone's **Script URL** and **Zone ID** from the Monetag dashboard
+   (Multitag zone → Installation).
+3. Switch **Load ads on the site** off to pause without deleting the IDs.
 
 The loader waits for the visitor to accept the cookie notice when
 **Wait for cookie consent** is on (recommended). If you change the cookie notice text,

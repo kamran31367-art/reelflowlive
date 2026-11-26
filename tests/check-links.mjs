@@ -158,17 +158,21 @@ for (const tool of tools) {
 
 /* Ads defaults */
 const ads = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/ads.json'), 'utf8'));
-check('ads disabled by default', ads.enabled === false);
+check('ads config is complete when enabled', !ads.enabled || (!!ads.scriptSrc && !!ads.attrs.zone));
+const adHost = ads.scriptSrc ? new URL(ads.scriptSrc).hostname : null;
+const adTag = adHost ? new RegExp('<script[^>]+src="https:\\/\\/' + adHost.replace(/\./g, '\\.') + '\\/') : null;
+check('ad tag never appears as static markup', !adTag || pages.every((p) => !adTag.test(read(p.file))));
 check('ads file has loader script', fs.existsSync(path.join(out, 'assets/js/ads.js')));
 check('ads loader is on every page', pages.every((p) => read(p.file).includes('/assets/js/ads.js')));
 check('ads excluded from privacy and 404', ads.excludePages.includes('/privacy/') && ads.excludePages.includes('/404.html'));
 
 /* Monetag service worker */
 const sw = read('sw.js');
-check('sw.js is served from the site root', /self\.options\s*=\s*\{/.test(sw) && sw.includes('"zoneId": 12360454'));
-check('sw.js imports the Monetag worker', sw.includes("importScripts('https://3nbf4.com/act/files/service-worker.min.js?r=sw')"));
+check('sw.js is served from the site root', /self\.options\s*=\s*\{/.test(sw) && sw.includes('"zoneId": 12360551'));
+check('sw.js imports the Monetag worker', sw.includes("importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')"));
 check('sw.js is not web-page markup', !/<html|<!doctype|layout/i.test(sw));
 check('sw.js stays out of the sitemap', !sitemap.includes('/sw.js'));
+check('privacy page discloses push notifications', read('privacy/index.html').includes('Push notifications'));
 
 /* Stale homepage rendering */
 check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card"/g) || []).length === 6);

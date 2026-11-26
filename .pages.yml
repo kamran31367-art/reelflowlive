@@ -353,6 +353,9 @@ content:
           - name: zone
             label: Zone ID
             type: string
+          - name: cfasync
+            label: Cloudflare async (data-cfasync)
+            type: string
           - name: sdk
             label: SDK ID
             type: string
