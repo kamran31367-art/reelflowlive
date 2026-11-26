@@ -35,6 +35,12 @@ const pages = [
   { file: 'character-counter/index.html', url: '/character-counter/' },
   { file: 'blog/index.html', url: '/blog/' },
   { file: 'blog/youtube-thumbnail-size/index.html', url: '/blog/youtube-thumbnail-size/' },
+  { file: 'blog/download-youtube-thumbnail/index.html', url: '/blog/download-youtube-thumbnail/' },
+  { file: 'blog/resize-images-without-blur/index.html', url: '/blog/resize-images-without-blur/' },
+  { file: 'blog/compress-images-before-upload/index.html', url: '/blog/compress-images-before-upload/' },
+  { file: 'blog/srt-to-vtt-conversion/index.html', url: '/blog/srt-to-vtt-conversion/' },
+  { file: 'blog/youtube-chapters-rules/index.html', url: '/blog/youtube-chapters-rules/' },
+  { file: 'blog/platform-character-limits/index.html', url: '/blog/platform-character-limits/' },
   { file: 'privacy/index.html', url: '/privacy/', noindex: true },
   { file: '404.html', url: '/404.html', noindex: true }
 ];
@@ -146,6 +152,22 @@ const postHtml = read('blog/youtube-thumbnail-size/index.html');
 check('post has BlogPosting data', /"@type":\s*"BlogPosting"/.test(postHtml) && postHtml.includes('"datePublished": "' + postDate + '"'));
 check('post links back to the blog', postHtml.includes('href="/blog/"'));
 check('draft post is not built', !fs.existsSync(path.join(out, 'blog/srt-subtitle-timing/index.html')));
+
+/* Tool guides */
+const guides = [
+  { post: 'blog/download-youtube-thumbnail/index.html', tool: '/youtube-thumbnail-downloader/' },
+  { post: 'blog/resize-images-without-blur/index.html', tool: '/image-resizer/' },
+  { post: 'blog/compress-images-before-upload/index.html', tool: '/image-compressor/' },
+  { post: 'blog/srt-to-vtt-conversion/index.html', tool: '/srt-editor/' },
+  { post: 'blog/youtube-chapters-rules/index.html', tool: '/youtube-chapters/' },
+  { post: 'blog/platform-character-limits/index.html', tool: '/character-counter/' }
+];
+for (const guide of guides) {
+  const html = read(guide.post);
+  check(guide.post + ': links its tool', html.includes('href="' + guide.tool + '"'));
+  check(guide.post + ': listed on the blog index', blogHtml.includes('href="/' + guide.post.replace(/index\.html$/, '') + '"'));
+  check(guide.post + ': listed in the feed', feed.includes(site.url + '/' + guide.post.replace(/index\.html$/, '')));
+}
 
 /* Tools data */
 const tools = toolsData.tools || [];
