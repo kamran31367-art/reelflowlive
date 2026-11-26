@@ -94,9 +94,10 @@ keeps all ad scripts unloaded.
 
 ## Privacy page
 
-The privacy page text is in `src/privacy.njk` (it is `noindex` until you finalise it).
-Replace the contact paragraph with your real contact details before submitting the
-site to ad networks.
+The privacy page text is in `src/privacy.njk` (it is `noindex`). It links from the footer
+and the cookie notice, and its **Change cookie choice** button clears `ct.consent` and
+reloads so the banner asks again (the ad script cannot be unloaded mid-page). Replace the
+contact paragraph with your real contact details before submitting the site to ad networks.
 
 ## Deploy setup (one time)
 

@@ -85,4 +85,14 @@
       document.body.classList.add('has-consent');
     }
   }
+
+  /* Opt-out door on the privacy page. The choice cannot be undone mid-page
+     because the ad script is already running, so clear it and reload. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-consent-reset]'), function (el) {
+    el.hidden = false;
+    el.addEventListener('click', function () {
+      try { localStorage.removeItem(STORAGE_KEY); } catch (err) { /* blocked storage */ }
+      window.location.reload();
+    });
+  });
 })();

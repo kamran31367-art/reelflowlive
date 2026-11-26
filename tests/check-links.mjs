@@ -173,6 +173,10 @@ check('sw.js imports the Monetag worker', sw.includes("importScripts('https://5g
 check('sw.js is not web-page markup', !/<html|<!doctype|layout/i.test(sw));
 check('sw.js stays out of the sitemap', !sitemap.includes('/sw.js'));
 check('privacy page discloses push notifications', read('privacy/index.html').includes('Push notifications'));
+const privacyHtml = read('privacy/index.html');
+check('privacy page offers a cookie opt-out', privacyHtml.includes('data-consent-reset') && privacyHtml.includes('Your choices and opt-out'));
+check('consent reset is wired in app.js', read('assets/js/app.js').includes('[data-consent-reset]'));
+check('footer links the privacy page', pages.every((p) => /<div class="footer-links">[\s\S]*?href="\/privacy\/"/.test(read(p.file))));
 
 /* Stale homepage rendering */
 check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card"/g) || []).length === 6);
