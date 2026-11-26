@@ -61,16 +61,19 @@ The two starter posts are in `src/blog/posts/`. `youtube-thumbnail-size.md` is p
 
 ## Advertising (Monetag)
 
-The site runs Monetag's Multitag zone `316349`. Current settings in
-`src/_data/ads.json`: `enabled: true`, `scriptSrc: https://quge5.com/88/tag.min.js`,
-`attrs.zone: 316349`, `attrs.cfasync: false`. The loader injects
+The site runs Monetag's classic In-Page Push zone `12360845`. Current settings in
+`src/_data/ads.json`: `enabled: true`, `scriptSrc: https://nap5k.com/tag.min.js`,
+`attrs.zone: 12360845`, `attrs.cfasync: false`. The loader injects
 `<script src=... data-zone=... data-cfasync="false" async>` and nothing else.
+
+The earlier Multitag install (`316349`, `quge5.com`) was paused because its OnClick
+popunder cannot be switched off on its own and opened on every click.
 
 To change or pause ads:
 
 1. In Pages CMS open **Advertising (Monetag)**.
 2. Paste the zone's **Script URL** and **Zone ID** from the Monetag dashboard
-   (Multitag zone → Installation).
+   (single-format zone → Get tag).
 3. Switch **Load ads on the site** off to pause without deleting the IDs.
 
 The loader waits for the visitor to accept the cookie notice when

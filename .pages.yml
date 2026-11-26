@@ -356,9 +356,6 @@ content:
           - name: cfasync
             label: Cloudflare async (data-cfasync)
             type: string
-          - name: sdk
-            label: SDK ID
-            type: string
       - name: excludePages
         label: Pages without ads
         type: string
