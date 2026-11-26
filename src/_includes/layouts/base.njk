@@ -1,23 +1,28 @@
 {% if contentType == "home" %}{% set c = home %}
 {% elif contentType == "tool" %}{% set c = toolpages[contentKey] %}
-{% else %}{% set c = system[contentKey] %}{% endif %}
+{% elif contentType == "system" %}{% set c = system[contentKey] %}{% endif %}
 {% set t = toolList | toolBySlug(contentKey) %}
 {% set badgeText = ldType == "home" and site.badges.home or site.badges.tools %}
+{% set pageTitle = (c and c.metaTitle) or metaTitle %}
+{% set pageDescription = (c and c.description) or description %}
+{% set pageOgTitle = (c and c.ogTitle) or ogTitle or pageTitle %}
+{% set pageOgDescription = (c and c.ogDescription) or ogDescription or pageDescription %}
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ c.metaTitle }}</title>
-<meta name="description" content="{{ c.description }}">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription }}">
 {% if not noindex %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
 <meta name="theme-color" content="#f6f8fb">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="ReelFlow Toolkit blog" href="/blog/feed.xml">
 {% if not noindex %}
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ ogType or 'website' }}">
 <meta property="og:site_name" content="ReelFlow Toolkit">
-<meta property="og:title" content="{{ c.ogTitle }}">
-<meta property="og:description" content="{{ c.ogDescription }}">
+<meta property="og:title" content="{{ pageOgTitle }}">
+<meta property="og:description" content="{{ pageOgDescription }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="{{ site.ogImage }}">
 <meta name="twitter:card" content="summary_large_image">
@@ -29,6 +34,10 @@
 <script type="application/ld+json">{{ toolList | homeLd(site) | jsonld | safe }}</script>
 {% elif ldType == "tool" %}
 <script type="application/ld+json">{{ c | toolLd(t, site, page.url) | jsonld | safe }}</script>
+{% elif ldType == "blog" %}
+<script type="application/ld+json">{{ collections.posts | blogLd(site) | jsonld | safe }}</script>
+{% elif ldType == "post" %}
+<script type="application/ld+json">{{ title | postLd(description, date, updated, cover, categories, site, page.url) | jsonld | safe }}</script>
 {% endif %}
 </head>
 <body>

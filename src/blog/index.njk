@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+contentType: blogindex
+ldType: blog
+permalink: /blog/
+sitemap: true
+mainClass: wrap
+metaTitle: "Blog - Guides for YouTube, Shorts and Reels | ReelFlow Toolkit"
+description: "Practical guides for creators: thumbnail sizes, image dimensions, subtitle timing and the rules behind YouTube, Shorts, Reels and TikTok."
+ogTitle: "ReelFlow Toolkit blog"
+ogDescription: "Short, practical guides for thumbnails, image sizes, subtitles and platform rules, each linked to a free browser tool."
+---
+<div class="breadcrumb">
+  <a href="/">Home</a><span>/</span><span>Blog</span>
+</div>
+
+<section class="tool-hero">
+  <span class="kicker">Blog</span>
+  <h1>Guides that make publishing easier</h1>
+  <p>Short, practical notes on thumbnails, image sizes, subtitles and the rules behind each platform. Every guide links to a free tool that runs in your browser.</p>
+  <p class="blog-feed"><a class="btn btn-ghost btn-sm" href="/blog/feed.xml" type="application/rss+xml">RSS feed</a></p>
+</section>
+
+{% set posts = collections.posts | reverse %}
+<section class="section">
+  <div class="section-head">
+    <h2>Latest articles</h2>
+    <p>{{ posts.length }} guide{% if posts.length != 1 %}s{% endif %}, newest first.</p>
+  </div>
+  {% if posts.length %}
+  <div class="tool-grid">
+    {% for post in posts %}{% if not post.data.draft %}
+    <a class="tool-card post-card" href="{{ post.url }}">
+      {% if post.data.cover %}<img class="post-cover" src="{{ post.data.cover | assetUrl }}" alt="{{ post.data.coverAlt or post.data.title }}" loading="lazy">{% endif %}
+      <span class="post-meta">{{ post.date | longDate }}{% if post.data.categories and post.data.categories.length %} · {{ post.data.categories | join(" · ") }}{% endif %}</span>
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.data.description }}</p>
+      <span class="card-link">Read article &rarr;</span>
+    </a>
+    {% endif %}{% endfor %}
+  </div>
+  {% else %}
+  <p class="post-empty">New guides are on the way. The free tools are ready in the meantime.</p>
+  {% endif %}
+</section>

@@ -266,6 +266,69 @@ content:
                 - name: rose
                   label: Rose
 
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: src/blog/posts
+    filename: "{primary}.md"
+    exclude: [posts.11tydata.js]
+    view:
+      fields: [title, date, draft]
+      primary: title
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Short description (used on cards and in search results)
+        type: text
+        required: true
+        options:
+          maxlength: 200
+      - name: date
+        label: Publish date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: updated
+        label: Last updated (optional)
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: cover
+        label: Cover image (optional, 1200x630)
+        type: image
+        options:
+          path: src/assets/img/blog
+          categories:
+            - image
+      - name: coverAlt
+        label: Cover image alt text
+        type: string
+      - name: categories
+        label: Categories
+        type: string
+        list: true
+      - name: draft
+        label: Draft (keep off the site)
+        type: boolean
+        default: true
+      - name: body
+        label: Article body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          path: src/assets/img/blog
+          categories:
+            - image
+
   - name: ads
     label: Advertising (Monetag)
     type: file

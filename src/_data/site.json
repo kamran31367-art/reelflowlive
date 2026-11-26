@@ -11,11 +11,13 @@
   },
   "headerLinks": [
     { "label": "All tools", "href": "/#tools" },
+    { "label": "Blog", "href": "/blog/" },
     { "label": "Why free", "href": "/#why" },
     { "label": "FAQ", "href": "/#faq" }
   ],
   "footerLinks": [
     { "label": "All tools", "href": "/#tools" },
+    { "label": "Blog", "href": "/blog/" },
     { "label": "Why free", "href": "/#why" },
     { "label": "FAQ", "href": "/#faq" },
     { "label": "Sitemap", "href": "/sitemap.xml" }

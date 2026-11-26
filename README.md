@@ -12,6 +12,7 @@ deployed to GitHub Pages by GitHub Actions. All tools run in the browser.
    - **Homepage** - hero text, buttons, trust points, tools section, features, FAQ.
    - **Tool page: ...** - browser title, meta description, kicker, heading, intro, FAQ, next tools.
    - **Tools list** - home cards, footer tool links and the sitemap order.
+   - **Blog posts** - write, edit and publish articles (`draft` keeps a post off the site).
    - **Advertising (Monetag)** - ad script settings (disabled until you fill them in).
    - **System page text** - 404 and privacy page titles.
 4. Click **Save**. Pages CMS commits to `main`; GitHub Actions rebuilds and deploys
@@ -29,6 +30,35 @@ npm run build     # writes _site/
 npm run check     # link + SEO checks against _site (run after build)
 ```
 
+## Blog
+
+The blog lives on the same site and hosting, so it adds no cost:
+
+- List page: `https://reelflow.live/blog/`
+- Article URL: `https://reelflow.live/blog/<file-name>/`
+- RSS feed: `https://reelflow.live/blog/feed.xml`
+
+To publish an article, open **Blog posts** in Pages CMS and create a post:
+
+1. Fill **Title**, **Short description** and **Publish date**.
+2. Write the **Article body** in Markdown. Use `##` for section headings.
+3. Optionally upload a **Cover image** (1200x630). Uploads go to
+   `src/assets/img/blog/`.
+4. Switch **Draft** off and save. GitHub Actions rebuilds the site in about a minute.
+
+New posts start with **Draft** on, so saving work in progress does not publish it.
+Drafts are left out of the blog list, the RSS feed and the sitemap.
+
+Keep the file name short and stable: it becomes the URL. Changing it after Google has
+indexed the post creates a new URL and loses the old one.
+
+After publishing a post, open Google Search Console > URL Inspection, paste the new
+article URL and choose **Request indexing**. The sitemap updates automatically, so a
+resubmission is not needed.
+
+The two starter posts are in `src/blog/posts/`. `youtube-thumbnail-size.md` is published;
+`srt-subtitle-timing.md` is a draft you can edit and publish later.
+
 ## Advertising (Monetag)
 
 Ads are off by default and no third-party script loads. To turn them on:
@@ -42,6 +72,15 @@ Ads are off by default and no third-party script loads. To turn them on:
 The loader waits for the visitor to accept the cookie notice when
 **Wait for cookie consent** is on (recommended). If you change the cookie notice text,
 increase its **Version** in Site settings so visitors are asked again.
+
+### Push notifications (`/sw.js`)
+
+Monetag's service worker is built from `src/sw.njk` and served at
+`https://reelflow.live/sw.js` (site root, scope `/`). Keep that path; the dashboard
+verifies it there. The file only imports Monetag's remote worker — nothing runs until
+the Monetag tag script is loaded and a visitor allows browser notifications, so cookie
+consent does not gate it and the privacy page discloses it. If Monetag issues a new
+`zoneId`, update it in `src/sw.njk` only.
 
 ## Cookie notice
 
@@ -69,6 +108,11 @@ src/
   <tool-slug>.njk            6 tool pages (tool UI markup)
   privacy.njk, 404.njk
   sitemap.njk
+  blog/
+    index.njk                blog list (/blog/)
+    feed.njk                 RSS feed (/blog/feed.xml)
+    posts/*.md               one Markdown file per article (CMS writes here)
+    posts/posts.11tydata.js  post defaults, draft handling, article URLs
   _data/
     site.json                brand, links, consent text
     home.json                homepage content
@@ -78,14 +122,16 @@ src/
     system.json              404 + privacy page meta
   _includes/
     layouts/base.njk         head, header, footer, consent, scripts
+    layouts/post.njk         article page layout
     partials/*.njk
   assets/                    CSS, JS, images (copied as-is)
+    img/blog/                blog cover and body images (Pages CMS uploads)
 archive/landing-legacy.html  previous one-page site, not published
 ```
 
 ## Tests
 
 - `npm run check` - built HTML: titles, canonical, JSON-LD, internal links,
-  sitemap, robots, consent banner, ad config.
+  sitemap, RSS feed, drafts, robots, consent banner, ad config.
 - Browser suites live outside this repository (`ct-shots`) and run against a local
   server of `_site`.

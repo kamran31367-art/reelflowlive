@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>{{ title }}</span>
+  </div>
+
+  <header class="tool-hero post-hero">
+    <span class="kicker">{% if categories and categories.length %}{{ categories | join(" · ") }}{% else %}Guide{% endif %}</span>
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <p class="post-meta">Published {{ date | longDate }}{% if updated %} · Updated {{ updated | longDate }}{% endif %}</p>
+  </header>
+
+  {% if cover %}<img class="post-cover-hero" src="{{ cover | assetUrl }}" alt="{{ coverAlt or title }}" width="1200" height="630" loading="eager">{% endif %}
+
+  <div class="prose">{{ content | safe }}</div>
+
+  <aside class="post-cta">
+    <div>
+      <b>Put this guide to work</b>
+      <span>Every tool runs on your device. No upload, no signup.</span>
+    </div>
+    <a class="btn btn-primary btn-sm" href="/#tools">Browse the tools</a>
+  </aside>
+
+  <p class="post-back"><a href="/blog/">&larr; All articles</a></p>
+</article>

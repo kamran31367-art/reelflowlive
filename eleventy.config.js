@@ -77,6 +77,111 @@ module.exports = function (eleventyConfig) {
     };
   });
 
+  const toDate = (value) => {
+    if (!value) return null;
+    const date = value instanceof Date ? value : new Date(value);
+    return Number.isNaN(date.getTime()) ? null : date;
+  };
+
+  const isoDate = (value) => {
+    const date = toDate(value);
+    return date ? date.toISOString().slice(0, 10) : "";
+  };
+
+  eleventyConfig.addFilter("isoDate", isoDate);
+
+  eleventyConfig.addFilter("longDate", function (value) {
+    const date = toDate(value);
+    return date
+      ? new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(date)
+      : "";
+  });
+
+  eleventyConfig.addFilter("rssDate", function (value) {
+    const date = toDate(value);
+    return date ? date.toUTCString() : "";
+  });
+
+  eleventyConfig.addFilter("assetUrl", function (value) {
+    if (!value) return "";
+    if (value.startsWith("http") || value.startsWith("/")) return value;
+    return "/" + value;
+  });
+
+  eleventyConfig.addFilter("postLd", function (title, description, date, updated, cover, categories, site, url) {
+    const canonical = site.url + url;
+    const image = cover
+      ? cover.startsWith("http")
+        ? cover
+        : site.url + (cover.startsWith("/") ? cover : "/" + cover)
+      : site.ogImage;
+    const published = isoDate(date);
+    const keywords = Array.isArray(categories) ? categories : categories ? [categories] : [];
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "headline": title,
+          "description": description,
+          "url": canonical,
+          "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
+          "datePublished": published,
+          "dateModified": isoDate(updated) || published,
+          "image": image,
+          "inLanguage": "en",
+          "keywords": keywords.join(", "),
+          "author": { "@type": "Organization", "name": "ReelFlow Toolkit", "url": site.url + "/" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ReelFlow Toolkit",
+            "url": site.url + "/",
+            "logo": { "@type": "ImageObject", "url": site.url + "/favicon.svg" }
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "ReelFlow Toolkit", "item": site.url + "/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": site.url + "/blog/" },
+            { "@type": "ListItem", "position": 3, "name": title, "item": canonical }
+          ]
+        }
+      ]
+    };
+  });
+
+  eleventyConfig.addFilter("blogLd", function (posts, site) {
+    const live = (posts || []).filter((post) => !post.data.draft);
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Blog",
+          "name": "ReelFlow Toolkit blog",
+          "url": site.url + "/blog/",
+          "description": "Guides for YouTube, Shorts, Reels and TikTok creators.",
+          "inLanguage": "en",
+          "publisher": { "@type": "Organization", "name": "ReelFlow Toolkit", "url": site.url + "/" },
+          "blogPost": live.map((post) => ({
+            "@type": "BlogPosting",
+            "headline": post.data.title,
+            "url": site.url + post.url,
+            "datePublished": isoDate(post.data.date || post.date),
+            "description": post.data.description
+          }))
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "ReelFlow Toolkit", "item": site.url + "/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": site.url + "/blog/" }
+          ]
+        }
+      ]
+    };
+  });
+
   return {
     dir: {
       input: "src",

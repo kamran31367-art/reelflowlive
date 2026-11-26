@@ -33,6 +33,8 @@ const pages = [
   { file: 'srt-editor/index.html', url: '/srt-editor/' },
   { file: 'youtube-chapters/index.html', url: '/youtube-chapters/' },
   { file: 'character-counter/index.html', url: '/character-counter/' },
+  { file: 'blog/index.html', url: '/blog/' },
+  { file: 'blog/youtube-thumbnail-size/index.html', url: '/blog/youtube-thumbnail-size/' },
   { file: 'privacy/index.html', url: '/privacy/', noindex: true },
   { file: '404.html', url: '/404.html', noindex: true }
 ];
@@ -109,9 +111,16 @@ check('OG cover image exists', fs.existsSync(path.join(out, 'assets/img/og-cover
 /* Sitemap */
 const sitemap = read('sitemap.xml');
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-check('sitemap has 7 URLs', locs.length === 7, String(locs.length));
+const indexable = pages.filter((page) => !page.noindex).map((page) => site.url + page.url);
+check('sitemap has ' + indexable.length + ' URLs', locs.length === indexable.length, String(locs.length));
 check('sitemap starts with homepage', locs[0] === site.url + '/', locs[0]);
 check('sitemap excludes privacy and 404', !locs.some((u) => /privacy|404/.test(u)));
+check('sitemap lists every indexable page', indexable.every((url) => locs.includes(url)), indexable.filter((url) => !locs.includes(url)).join(', '));
+check('sitemap excludes drafts', !sitemap.includes('/blog/srt-subtitle-timing/'));
+const postSource = fs.readFileSync(path.join(root, 'src/blog/posts/youtube-thumbnail-size.md'), 'utf8');
+const postDate = (postSource.match(/^date:\s*(\S+)/m) || [])[1] || '';
+const postBlock = sitemap.split('<url>').find((block) => block.includes('/blog/youtube-thumbnail-size/'));
+check('sitemap uses the post publish date', !!postBlock && postBlock.includes('<lastmod>' + postDate + '</lastmod>'), postDate);
 check('sitemap lastmod uses site data', sitemap.includes('<lastmod>' + site.lastUpdated + '</lastmod>'));
 let sitemapMissing = [];
 for (const loc of locs) {
@@ -123,6 +132,20 @@ check('sitemap URLs resolve', sitemapMissing.length === 0, sitemapMissing.join('
 
 /* Robots */
 check('robots.txt links the sitemap', /Sitemap: https:\/\/reelflow\.live\/sitemap\.xml/.test(read('robots.txt')));
+
+/* Blog */
+const feed = read('blog/feed.xml');
+check('blog feed is valid RSS', /^<\?xml/.test(feed.trim()) && /<rss version="2.0"/.test(feed) && /<\/rss>\s*$/.test(feed.trim()));
+check('feed lists the published post', feed.includes(site.url + '/blog/youtube-thumbnail-size/') && /<pubDate>[^<]+<\/pubDate>/.test(feed));
+check('feed excludes drafts', !feed.includes('srt-subtitle-timing'));
+const blogHtml = read('blog/index.html');
+check('blog index links the published post', blogHtml.includes('href="/blog/youtube-thumbnail-size/"'));
+check('blog index hides drafts', !blogHtml.includes('srt-subtitle-timing'));
+check('blog index links the RSS feed', blogHtml.includes('href="/blog/feed.xml"'));
+const postHtml = read('blog/youtube-thumbnail-size/index.html');
+check('post has BlogPosting data', /"@type":\s*"BlogPosting"/.test(postHtml) && postHtml.includes('"datePublished": "' + postDate + '"'));
+check('post links back to the blog', postHtml.includes('href="/blog/"'));
+check('draft post is not built', !fs.existsSync(path.join(out, 'blog/srt-subtitle-timing/index.html')));
 
 /* Tools data */
 const tools = toolsData.tools || [];
@@ -139,6 +162,13 @@ check('ads disabled by default', ads.enabled === false);
 check('ads file has loader script', fs.existsSync(path.join(out, 'assets/js/ads.js')));
 check('ads loader is on every page', pages.every((p) => read(p.file).includes('/assets/js/ads.js')));
 check('ads excluded from privacy and 404', ads.excludePages.includes('/privacy/') && ads.excludePages.includes('/404.html'));
+
+/* Monetag service worker */
+const sw = read('sw.js');
+check('sw.js is served from the site root', /self\.options\s*=\s*\{/.test(sw) && sw.includes('"zoneId": 12360454'));
+check('sw.js imports the Monetag worker', sw.includes("importScripts('https://3nbf4.com/act/files/service-worker.min.js?r=sw')"));
+check('sw.js is not web-page markup', !/<html|<!doctype|layout/i.test(sw));
+check('sw.js stays out of the sitemap', !sitemap.includes('/sw.js'));
 
 /* Stale homepage rendering */
 check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card"/g) || []).length === 6);

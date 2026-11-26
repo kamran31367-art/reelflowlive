@@ -1,0 +1,24 @@
+---
+permalink: /blog/feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ReelFlow Toolkit blog</title>
+    <link>{{ site.url }}/blog/</link>
+    <description>Guides for YouTube, Shorts, Reels and TikTok creators.</description>
+    <language>en</language>
+    <atom:link href="{{ site.url }}/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    {%- set posts = collections.posts | reverse %}
+    {%- for post in posts %}{% if not post.data.draft %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | rssDate }}</pubDate>
+      <description>{{ post.data.description }}</description>
+    </item>
+    {%- endif %}{% endfor %}
+  </channel>
+</rss>

@@ -15,10 +15,10 @@ eleventyExcludeFromCollections: true
 {%- endif %}
 {%- endfor %}
 {%- for item in collections.all %}
-{%- if item.data.sitemap and item.url != "/" %}
+{%- if item.data.sitemap and item.url != "/" and not item.data.draft %}
   <url>
     <loc>{{ site.url }}{{ item.url }}</loc>
-    <lastmod>{{ site.lastUpdated }}</lastmod>
+    <lastmod>{% if item.data.updated %}{{ item.data.updated | isoDate }}{% elif item.data.date %}{{ item.data.date | isoDate }}{% else %}{{ site.lastUpdated }}{% endif %}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
