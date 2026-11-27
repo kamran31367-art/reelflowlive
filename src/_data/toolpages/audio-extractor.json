@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Audio Extractor - MP3 or WAV from Video (Free) | ReelFlow Toolkit",
+  "description": "Pull the audio out of a video or trim an audio file, preview it and save WAV or MP3. Everything runs in your browser.",
+  "ogTitle": "Audio Extractor - Sound from Any Video",
+  "ogDescription": "Extract or trim audio and download it as WAV or MP3 without uploading the file.",
+  "ldDescription": "Extract the audio track from a video or trim an audio file, then export it as WAV or MP3 in the browser.",
+  "breadcrumb": "Audio Extractor",
+  "kicker": "Audio tool",
+  "h1": "Audio Extractor & Trimmer",
+  "lede": "Load a video or audio file, keep the part you need and download the result as WAV or MP3. The browser decodes and encodes it locally.",
+  "faq": [
+    {
+      "q": "Which files can I load?",
+      "a": "Anything the browser can decode: MP4, MOV and WebM videos, plus MP3, WAV, M4A and OGG audio. A rare codec may be refused - the tool then names the file instead of failing silently."
+    },
+    {
+      "q": "WAV or MP3?",
+      "a": "WAV is lossless and bigger; MP3 is about a tenth of the size at 128 kbps and is the right choice for most uploads."
+    },
+    {
+      "q": "Can I cut a section?",
+      "a": "Yes. Set a start and end time and only that part is exported. Leave the fields empty to keep the whole file."
+    }
+  ],
+  "related": [
+    { "slug": "audio-speed-pitch", "letter": "S", "tone": "", "note": "Change speed or pitch" },
+    { "slug": "video-trimmer", "letter": "T", "tone": "mint", "note": "Cut the video itself" },
+    { "slug": "video-frame-grabber", "letter": "F", "tone": "amber", "note": "Save a still frame" }
+  ]
+}

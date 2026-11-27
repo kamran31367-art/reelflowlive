@@ -1,0 +1,108 @@
+---
+layout: layouts/base.njk
+contentKey: video-trimmer
+ldType: tool
+contentType: tool
+permalink: /video-trimmer/
+sitemap: true
+mainClass: wrap
+pageScript: tools/trimmer.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Source</h2><span class="hint">MP4, WebM, MOV</span></div>
+
+    <div class="dropzone" id="vtDrop" tabindex="0" role="button" aria-label="Choose a video to trim">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8.2 7.8 20 19"/><path d="M8.2 16.2 20 5"/></svg>
+      </div>
+      <b>Drop a video here or click to choose</b>
+      <span class="mini">the file stays on your device</span>
+    </div>
+    <input class="visually-hidden" id="vtFile" type="file" accept="video/*">
+
+    <div class="file-info" id="vtInfo" hidden>
+      <div class="meta-row"><span>File</span><b id="vtName">—</b></div>
+      <div class="meta-row"><span>Size</span><b id="vtSize">—</b></div>
+      <div class="meta-row"><span>Length</span><b id="vtDur">—</b></div>
+      <div class="meta-row"><span>Frame size</span><b id="vtRes">—</b></div>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <label for="startRange">Start</label>
+      <div class="range-row">
+        <input type="range" id="startRange" min="0" max="1" step="0.05" value="0" disabled>
+        <input class="input mono" id="startText" type="text" value="0:00.0" style="width:92px" aria-label="Start time" disabled>
+      </div>
+    </div>
+    <div class="field">
+      <label for="endRange">End</label>
+      <div class="range-row">
+        <input type="range" id="endRange" min="0" max="1" step="0.05" value="1" disabled>
+        <input class="input mono" id="endText" type="text" value="0:00.0" style="width:92px" aria-label="End time" disabled>
+      </div>
+    </div>
+    <p class="field-hint" id="rangeNote">Choose a video first. Times accept 12.5 or 1:02.5.</p>
+
+    <div class="split-actions" style="margin-top:12px">
+      <button class="btn btn-primary" id="trimBtn" type="button" disabled>Trim video</button>
+    </div>
+    <div id="vtProgressWrap" hidden style="margin-top:10px">
+      <div class="progress-track"><div class="progress-fill" id="vtProgress"></div></div>
+      <div class="progress-label" id="vtProgressLabel">Preparing…</div>
+    </div>
+    <p class="field-hint" id="vtError" hidden></p>
+
+    <div class="note"><span class="pin">i</span><span>The clip is recorded as it plays, so a 20-second section takes about 20 seconds. Keep this tab open until it finishes. Chrome saves MP4; browsers without MP4 recording save WebM.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Preview</h2><span class="hint" id="srcHint">No video yet</span></div>
+
+    <div class="video-frame" id="srcFrame">
+      <video id="srcVideo" controls playsinline hidden></video>
+      <span class="canvas-empty" id="srcEmpty">Load a video to preview it here.</span>
+    </div>
+
+    <div id="outWrap" hidden style="margin-top:14px">
+      <div class="video-frame">
+        <video id="outVideo" controls playsinline></video>
+      </div>
+    </div>
+    <div class="split-actions" style="margin-top:12px">
+      <button class="btn btn-primary" id="downloadClip" type="button" disabled>Download trimmed clip</button>
+      <button class="btn btn-ghost" id="resetVt" type="button">Reset</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>The export is a fresh recording of your exact start and end, with the original sound kept.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

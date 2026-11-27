@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Video Trimmer - Cut a Video in Your Browser (Free) | ReelFlow Toolkit",
+  "description": "Choose a start and end time and download just that part of the video. The clip is recorded on your device with no upload.",
+  "ogTitle": "Video Trimmer - Cut a Clip Without Uploading",
+  "ogDescription": "Trim any video to the seconds you need and download the clip, all inside your browser.",
+  "ldDescription": "Trim a video by choosing start and end times; the browser records the chosen section locally.",
+  "breadcrumb": "Video Trimmer",
+  "kicker": "Video tool",
+  "h1": "Video Trimmer",
+  "lede": "Load a video, set the start and end, and download just that part. The file is processed on your device - nothing is uploaded.",
+  "faq": [
+    {
+      "q": "How accurate is the cut?",
+      "a": "The clip starts at the time you set and stops at the end you set, to the nearest recorded frame. Unlike a fast copy cut, there is no keyframe limitation."
+    },
+    {
+      "q": "Why does trimming take time?",
+      "a": "The chosen section is recorded as it plays, so a 40-second clip takes about 40 seconds. Keep the tab open and in front until it finishes; there is no encoder to download."
+    },
+    {
+      "q": "Which files work?",
+      "a": "Any video the browser can play - MP4 with H.264 works everywhere, while MOV and MKV depend on the browser's codecs. Chrome saves MP4; other browsers save WebM."
+    }
+  ],
+  "related": [
+    { "slug": "video-to-gif", "letter": "G", "tone": "mint", "note": "Turn the cut into a loop" },
+    { "slug": "video-frame-grabber", "letter": "F", "tone": "amber", "note": "Save a still frame" },
+    { "slug": "audio-extractor", "letter": "A", "tone": "rose", "note": "Keep only the sound" }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "metaTitle": "PDF to Images & Text - PNG Pages, Copied Text (Free) | ReelFlow Toolkit",
+  "description": "Render PDF pages as PNG images or copy the extracted text, page by page. Runs in your browser with no upload.",
+  "ogTitle": "PDF to Images & Text - Local Export",
+  "ogDescription": "Turn PDF pages into PNG images or copy their text without sending the file anywhere.",
+  "ldDescription": "Render PDF pages to PNG images and extract page text in the browser with pdf.js.",
+  "breadcrumb": "PDF to Images",
+  "kicker": "PDF tool",
+  "h1": "PDF to Images & Text",
+  "lede": "Open a PDF to see every page as an image, download them as PNG, or copy the text of the pages you need.",
+  "faq": [
+    {
+      "q": "How sharp are the images?",
+      "a": "Pages are rendered at twice their normal size (about 150 DPI), which is sharp on screen and good for slides. Choose a lower scale if you need smaller files."
+    },
+    {
+      "q": "Why is some text missing?",
+      "a": "Scanned PDFs store pictures of text, not text. Those pages render fine as images, but their text is empty - extracting it needs OCR, which this tool does not do."
+    },
+    {
+      "q": "Can I export only some pages?",
+      "a": "Yes. Write a range like 1-3,7 and only those pages are rendered or copied."
+    }
+  ],
+  "related": [
+    { "slug": "pdf-tools", "letter": "M", "tone": "mint", "note": "Merge or split PDFs" },
+    { "slug": "image-converter", "letter": "C", "tone": "", "note": "Convert the PNG pages" },
+    { "slug": "image-to-base64", "letter": "B", "tone": "rose", "note": "Embed a page image" }
+  ]
+}

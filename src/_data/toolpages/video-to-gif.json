@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Video to GIF - Convert a Clip to a Looping GIF (Free) | ReelFlow Toolkit",
+  "description": "Pick a few seconds of a video, choose the size and frame rate, and save a looping GIF. Runs in your browser with no upload.",
+  "ogTitle": "Video to GIF - A Looping Clip in Seconds",
+  "ogDescription": "Turn a short part of any video into a GIF with adjustable width, frame rate and speed.",
+  "ldDescription": "Convert a chosen part of a video into a looping GIF with adjustable size and frame rate in the browser.",
+  "breadcrumb": "Video to GIF",
+  "kicker": "Video tool",
+  "h1": "Video to GIF",
+  "lede": "Choose a few seconds of a video, set the width and frame rate, and download a looping GIF. Frames are captured and encoded on your device.",
+  "faq": [
+    {
+      "q": "How long can the GIF be?",
+      "a": "Up to about 8 seconds. GIF files grow fast, so a 5-second 480 px loop is usually the sweet spot for chat apps and forums."
+    },
+    {
+      "q": "Why is my GIF big?",
+      "a": "A GIF stores every frame with a 256-colour palette. Lower the width, frame rate or duration to shrink it - MP4 stays much smaller for long clips."
+    },
+    {
+      "q": "Is the video uploaded?",
+      "a": "No. Frames are drawn to a canvas and encoded by a Web Worker in your browser, so the file never leaves your device."
+    }
+  ],
+  "related": [
+    { "slug": "video-trimmer", "letter": "T", "tone": "", "note": "Cut the clip first" },
+    { "slug": "video-frame-grabber", "letter": "F", "tone": "amber", "note": "Save one still instead" },
+    { "slug": "image-compressor", "letter": "C", "tone": "mint", "note": "Shrink the frames" }
+  ]
+}

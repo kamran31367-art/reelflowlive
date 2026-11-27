@@ -1,0 +1,155 @@
+---
+layout: layouts/base.njk
+contentKey: text-tools
+ldType: tool
+contentType: tool
+permalink: /text-tools/
+sitemap: true
+mainClass: wrap
+pageScript: tools/text.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Input</h2><span class="hint" id="inputHint">Nothing entered yet</span></div>
+
+    <div class="field">
+      <span class="field-label">Tool</span>
+      <div class="seg" id="toolSeg">
+        <button type="button" data-panel="case" class="on" aria-pressed="true">Case</button>
+        <button type="button" data-panel="lines" aria-pressed="false">Lines</button>
+        <button type="button" data-panel="dupes" aria-pressed="false">Duplicates</button>
+        <button type="button" data-panel="slug" aria-pressed="false">Slug</button>
+        <button type="button" data-panel="lorem" aria-pressed="false">Lorem</button>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-case">
+      <div class="field">
+        <label for="caseInput">Your text</label>
+        <textarea class="textarea" id="caseInput" spellcheck="true" placeholder="Paste the text you want to change"></textarea>
+        <p class="field-hint" id="caseCount" aria-live="polite">0 characters</p>
+      </div>
+      <div class="row" style="margin-bottom:10px">
+        <button class="btn btn-sm" type="button" data-case="upper">UPPER CASE</button>
+        <button class="btn btn-sm" type="button" data-case="lower">lower case</button>
+        <button class="btn btn-sm" type="button" data-case="title">Title Case</button>
+        <button class="btn btn-sm" type="button" data-case="sentence">Sentence case</button>
+      </div>
+      <div class="split-actions">
+        <span class="spacer"></span>
+        <button class="btn btn-primary btn-sm" id="caseCopy" type="button" disabled>Copy result</button>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-lines" hidden>
+      <div class="field">
+        <label for="linesInput">Text with line breaks</label>
+        <textarea class="textarea" id="linesInput" spellcheck="true" placeholder="One line&#10;per line&#10;like this"></textarea>
+      </div>
+      <div class="field">
+        <label style="display:flex;gap:8px;align-items:center;font-weight:550">
+          <input type="checkbox" id="linesTrim" checked> Trim spaces around each line
+        </label>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-primary btn-sm" id="linesRun" type="button">Remove line breaks</button>
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="linesCopy" type="button" disabled>Copy result</button>
+      </div>
+      <p class="field-hint" id="linesHint" aria-live="polite">Line breaks become single spaces.</p>
+    </div>
+
+    <div class="panel" id="panel-dupes" hidden>
+      <div class="field">
+        <label for="dupesInput">Lines to de-duplicate</label>
+        <textarea class="textarea" id="dupesInput" spellcheck="true" placeholder="apple&#10;banana&#10;apple&#10;cherry"></textarea>
+      </div>
+      <div class="field">
+        <label style="display:flex;gap:8px;align-items:center;font-weight:550">
+          <input type="checkbox" id="dupesCase"> Case-sensitive matching
+        </label>
+        <p class="field-hint" id="dupesHint" aria-live="polite">The first occurrence of every line is kept.</p>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-primary btn-sm" id="dupesRun" type="button">Remove duplicates</button>
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="dupesCopy" type="button" disabled>Copy result</button>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-slug" hidden>
+      <div class="field">
+        <label for="slugInput">Title or phrase</label>
+        <input class="input" id="slugInput" type="text" autocomplete="off" spellcheck="false" placeholder="Crème Brûlée Recipe!">
+        <p class="field-hint">Accents are folded, letters are lowercased and everything else becomes a hyphen.</p>
+      </div>
+      <div class="field">
+        <label for="slugOutput">Slug</label>
+        <input class="input mono" id="slugOutput" type="text" readonly value="">
+      </div>
+      <div class="split-actions">
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="slugCopy" type="button" disabled>Copy slug</button>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-lorem" hidden>
+      <div class="field">
+        <label for="loremCount">Paragraphs</label>
+        <select class="select" id="loremCount">
+          <option value="1">1 paragraph</option>
+          <option value="2">2 paragraphs</option>
+          <option value="3" selected>3 paragraphs</option>
+          <option value="4">4 paragraphs</option>
+          <option value="5">5 paragraphs</option>
+        </select>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-primary btn-sm" id="loremRun" type="button">Generate</button>
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="loremCopy" type="button">Copy text</button>
+      </div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Each tab works on its own text, so you can switch back and forth without losing anything.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Output</h2><span class="hint" id="outHint">Result appears here</span></div>
+    <textarea class="textarea output-box" id="output" readonly aria-label="Tool output"></textarea>
+    <div class="split-actions" style="margin-top:10px">
+      <button class="btn btn-primary" id="outputCopy" type="button" disabled>Copy output</button>
+      <button class="btn btn-ghost" id="outputClear" type="button">Clear</button>
+    </div>
+    <p class="field-hint err" id="outError" role="alert" hidden></p>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

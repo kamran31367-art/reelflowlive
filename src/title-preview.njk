@@ -1,0 +1,113 @@
+---
+layout: layouts/base.njk
+contentKey: title-preview
+ldType: tool
+contentType: tool
+permalink: /title-preview/
+sitemap: true
+mainClass: wrap
+pageScript: tools/titlepreview.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Your text</h2><span class="hint">live preview</span></div>
+
+    <div class="field">
+      <label for="titleInput">Title</label>
+      <input class="input" id="titleInput" type="text" placeholder="How I edit a Short in 10 minutes" autocomplete="off">
+      <p class="field-hint"><span id="titleCount">0</span> characters · YouTube allows up to 100.</p>
+    </div>
+
+    <div class="field">
+      <label for="channelInput">Channel name</label>
+      <input class="input" id="channelInput" type="text" placeholder="ReelFlow Studio" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <span class="field-label">Thumbnail (optional)</span>
+      <div class="split-actions">
+        <label class="btn btn-sm" for="thumbInput" style="cursor:pointer">Choose image</label>
+        <button class="btn btn-sm btn-ghost" id="thumbClear" type="button" hidden>Remove</button>
+        <span class="field-hint" id="thumbName">No image - a placeholder is shown</span>
+      </div>
+      <input class="visually-hidden" id="thumbInput" type="file" accept="image/*">
+    </div>
+
+    <div class="field">
+      <label for="captionInput">Instagram caption</label>
+      <textarea class="textarea" id="captionInput" rows="6" placeholder="Write the caption as you would post it, with or without hashtags." autocomplete="off"></textarea>
+      <p class="field-hint"><span id="captionCount">0</span> characters · Instagram allows up to 2200.</p>
+    </div>
+
+    <div class="field">
+      <span class="field-label">Mock views in the meta line</span>
+      <div class="seg" id="viewsSeg">
+        <button type="button" data-views="small" class="on" aria-pressed="true">Small channel</button>
+        <button type="button" data-views="large" aria-pressed="false">Large channel</button>
+      </div>
+      <input type="hidden" id="viewsMode" value="small">
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Nothing is uploaded. The image you choose is shown from your own device only, and the preview matches the text you type on this page.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head">
+      <h2>Preview</h2>
+      <label class="meta-row" for="narrowToggle" style="gap:8px"><span>Narrow phone width</span><input type="checkbox" id="narrowToggle"></label>
+    </div>
+
+    <div id="mockWrap">
+      <h3 class="pane-head" style="margin:0 0 10px"><span style="font-size:12px;color:#64748b;text-transform:uppercase">YouTube search</span></h3>
+      <div class="preview-frame">
+        <div class="yt-result" id="ytResult">
+          <div class="yt-thumb" id="ytThumb">No thumbnail</div>
+          <div>
+            <div class="yt-title" id="ytTitle">Your title appears here</div>
+            <div class="yt-meta" id="ytMeta">ReelFlow Studio · 0 views · just now</div>
+          </div>
+        </div>
+      </div>
+      <p class="field-hint" id="ytNote">The title is clamped at two lines, exactly like the search card.</p>
+
+      <h3 class="pane-head" style="margin:20px 0 10px"><span style="font-size:12px;color:#64748b;text-transform:uppercase">Instagram post</span></h3>
+      <div class="ig-card" id="igCard">
+        <div class="ig-user"><span class="ig-avatar" aria-hidden="true"></span><span id="igUser">ReelFlow Studio</span></div>
+        <div class="ig-caption clamped" id="igCaption">Your caption appears here.</div>
+        <p class="ig-more" id="igMore" role="button" tabindex="0" hidden>… more</p>
+        <p class="field-hint" id="igNote">Instagram hides everything after the first two lines behind the “more” link.</p>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:14px"><span class="pin">i</span><span>Switch on “Narrow phone width” to see how the search card rearranges on a small screen. Tap the “more” line to expand the caption.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

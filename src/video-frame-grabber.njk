@@ -1,0 +1,120 @@
+---
+layout: layouts/base.njk
+contentKey: video-frame-grabber
+ldType: tool
+contentType: tool
+permalink: /video-frame-grabber/
+sitemap: true
+mainClass: wrap
+pageScript: tools/framegrab.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Video</h2><span class="hint">one file</span></div>
+
+    <div class="dropzone" id="grabDropzone" tabindex="0" role="button" aria-label="Choose a video to grab a frame from">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="14" height="12" rx="2"/><path d="m16.5 12 4.5-3v6z"/></svg>
+      </div>
+      <b>Drop a video here or click to choose</b>
+      <span class="mini">MP4, WebM or MOV the browser can play · nothing is uploaded</span>
+    </div>
+    <input class="visually-hidden" id="grabFile" type="file" accept="video/*">
+
+    <div class="file-info" id="grabInfo" hidden>
+      <div class="meta-row"><span>File</span><b id="grabName">—</b></div>
+      <div class="meta-row"><span>Size</span><b id="grabBytes">—</b></div>
+      <div class="meta-row"><span>Video</span><b id="grabDims">—</b></div>
+      <div class="meta-row"><span>Duration</span><b id="grabDuration">—</b></div>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <label for="grabRange">Time</label>
+      <div class="range-row">
+        <input type="range" id="grabRange" min="0" max="0" step="0.05" value="0" disabled aria-label="Frame time in seconds">
+        <output id="grabRangeValue">0.00 s</output>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="grabTime">Exact seconds</label>
+      <div class="row" style="flex-wrap:nowrap;align-items:center">
+        <button class="btn btn-sm btn-ghost" id="grabMinus" type="button" style="flex:0 0 auto" aria-label="Go back 0.1 seconds">-0.1</button>
+        <input class="input" id="grabTime" type="text" inputmode="decimal" value="0.00" autocomplete="off" disabled aria-describedby="grabTimeHint">
+        <button class="btn btn-sm btn-ghost" id="grabPlus" type="button" style="flex:0 0 auto" aria-label="Go forward 0.1 seconds">+0.1</button>
+      </div>
+      <p class="field-hint" id="grabTimeHint">Type any time in seconds and press Enter to preview it.</p>
+    </div>
+
+    <div class="field-hint err" id="grabError" hidden></div>
+
+    <div class="note"><span class="pin">i</span><span>Step the time with the arrow keys on the slider or the -0.1 / +0.1 buttons until the frame looks right, then grab it.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Frame</h2><span class="hint" id="grabHint">No video yet</span></div>
+
+    <div class="video-frame" id="grabVideoFrame">
+      <span class="canvas-empty" id="grabVideoEmpty">Choose a video to preview it.</span>
+      <video id="grabVideo" playsinline muted preload="metadata" hidden></video>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <span class="field-label">Preview (scaled)</span>
+      <div class="canvas-box" style="min-height:180px">
+        <span class="canvas-empty" id="grabPreviewEmpty">The scaled preview appears here.</span>
+        <canvas id="grabPreviewCanvas" style="max-width:100%;height:auto" hidden></canvas>
+      </div>
+    </div>
+
+    <div class="split-actions">
+      <button class="btn btn-primary" id="grabFrame" type="button" disabled>Grab frame</button>
+      <button class="btn btn-ghost" id="grabDownload" type="button" disabled>Download PNG</button>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <span class="field-label">What you will save (full resolution)</span>
+      <div class="canvas-box" style="min-height:180px">
+        <span class="canvas-empty" id="grabFullEmpty">Press Grab frame to render it at full size.</span>
+        <canvas id="grabFullCanvas" style="max-width:100%;height:auto" hidden></canvas>
+      </div>
+    </div>
+
+    <div class="meta-stack" id="grabFullMeta" hidden>
+      <div class="meta-row"><span>Resolution</span><b id="grabFullSize">—</b></div>
+      <div class="meta-row"><span>Time</span><b id="grabFullTime">—</b></div>
+      <div class="meta-row"><span>PNG</span><b id="grabFullBytes">—</b></div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Full resolution: the PNG is drawn from the video's native size (for example 1920 x 1080), not from the scaled preview above.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

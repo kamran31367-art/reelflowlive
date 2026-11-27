@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Image to Base64 Converter - Data URI for CSS and HTML | ReelFlow Toolkit",
+  "description": "Turn an image into a Base64 data URI for CSS, HTML or JSON. Copy the string, check the encoded size, or paste an existing data URI to preview it.",
+  "ogTitle": "Image to Base64 - Copy a Data URI in One Step",
+  "ogDescription": "Encode an image as a Base64 data URI or decode one back to a file, entirely in your browser.",
+  "ldDescription": "Encode any image as a Base64 data URI for CSS or HTML, check the encoded size, and decode existing data URIs back into files.",
+  "breadcrumb": "Image to Base64",
+  "kicker": "Developer tool",
+  "h1": "Image to Base64",
+  "lede": "Drop an image to get its Base64 data URI, or paste a data URI to preview and save the image again. Nothing leaves your browser.",
+  "faq": [
+    {
+      "q": "What is a Base64 data URI?",
+      "a": "It is the image itself written as text and prefixed with a MIME type, for example data:image/png;base64,iVBOR... Browsers can display it directly from CSS or HTML without a separate file request."
+    },
+    {
+      "q": "How much bigger is the encoded string?",
+      "a": "About 33% larger than the binary file, because every three bytes become four characters. The tool shows both sizes so you can judge whether inlining is worth it."
+    },
+    {
+      "q": "When should I avoid data URIs?",
+      "a": "For large images. The encoded string lives inside the HTML or CSS file and cannot be cached separately, so keep data URIs for small icons and logos."
+    }
+  ],
+  "related": [
+    { "slug": "image-converter", "letter": "C", "tone": "mint", "note": "Convert the format first" },
+    { "slug": "developer-tools", "letter": "D", "tone": "amber", "note": "Encode or hash other text" },
+    { "slug": "image-compressor", "letter": "M", "tone": "", "note": "Shrink before inlining" }
+  ]
+}

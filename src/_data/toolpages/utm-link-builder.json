@@ -1,0 +1,30 @@
+{
+  "metaTitle": "UTM Link Builder - Track Campaign Links (Free) | ReelFlow Toolkit",
+  "description": "Build a campaign URL with source, medium, campaign, term and content tags. See the final link, copy it in one click and keep every tag readable.",
+  "ogTitle": "UTM Link Builder - Campaign Tags Without Guessing",
+  "ogDescription": "Add UTM tags to any link, preview the final URL and copy it for your next campaign.",
+  "ldDescription": "Build a tracked campaign URL with standard UTM parameters, preview the encoded result and copy it, entirely in the browser.",
+  "breadcrumb": "UTM Builder",
+  "kicker": "Marketing tool",
+  "h1": "UTM Link Builder",
+  "lede": "Paste a destination URL, fill in source, medium and campaign, and copy the tagged link. Existing query parameters are preserved.",
+  "faq": [
+    {
+      "q": "What are UTM tags?",
+      "a": "Five URL parameters (utm_source, utm_medium, utm_campaign, utm_term and utm_content) that analytics tools read to show where a visit came from."
+    },
+    {
+      "q": "Do capitals and spaces matter?",
+      "a": "Yes. Analytics treat Youtube and youtube as different sources, so use lower case and hyphens instead of spaces. Spaces are encoded as %20 in the final URL."
+    },
+    {
+      "q": "What happens to a link that already has parameters?",
+      "a": "The tool adds the UTM parameters after the existing ones instead of replacing them, so tracking information is merged rather than lost."
+    }
+  ],
+  "related": [
+    { "slug": "qr-code-generator", "letter": "Q", "tone": "rose", "note": "Turn the tagged link into a QR code" },
+    { "slug": "text-tools", "letter": "T", "tone": "mint", "note": "Clean up campaign names" },
+    { "slug": "developer-tools", "letter": "D", "tone": "amber", "note": "Format or hash the final URL" }
+  ]
+}

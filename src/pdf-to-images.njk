@@ -1,0 +1,125 @@
+---
+layout: layouts/base.njk
+contentKey: pdf-to-images
+ldType: tool
+contentType: tool
+permalink: /pdf-to-images/
+sitemap: true
+mainClass: wrap
+pageScript: tools/pdfrender.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>PDF</h2><span class="hint">one file</span></div>
+
+    <div class="dropzone" id="pdfDropzone" tabindex="0" role="button" aria-label="Choose a PDF to open">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 17v-4"/><path d="M12 17v-6"/><path d="M15 17v-2"/></svg>
+      </div>
+      <b>Drop a PDF here or click to choose</b>
+      <span class="mini">Pages are rendered on your device · nothing is uploaded</span>
+    </div>
+    <input class="visually-hidden" id="pdfFile" type="file" accept="application/pdf,.pdf">
+
+    <div class="file-info" id="pdfInfo" hidden>
+      <div class="meta-row"><span>File</span><b id="pdfName">—</b></div>
+      <div class="meta-row"><span>Pages</span><b id="pdfCount">—</b></div>
+      <div class="meta-row"><span>File size</span><b id="pdfBytes">—</b></div>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <label for="pageRange">Pages</label>
+      <input class="input" id="pageRange" type="text" placeholder="Empty = all pages, or 1-3,7" autocomplete="off" spellcheck="false">
+      <p class="field-hint" id="rangeHint">Counted from 1. Leave empty to use every page.</p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <span class="field-label">Number of pages</span>
+        <div class="seg" id="scaleSeg">
+          <button type="button" data-scale="1" aria-pressed="false">1x</button>
+          <button type="button" data-scale="2" class="on" aria-pressed="true">2x</button>
+          <button type="button" data-scale="3" aria-pressed="false">3x</button>
+        </div>
+        <input type="hidden" id="scaleValue" value="2">
+      </div>
+      <div class="field">
+        <span class="field-label">Output</span>
+        <div class="seg" id="viewSeg">
+          <button type="button" data-view="images" class="on" aria-pressed="true">Images</button>
+          <button type="button" data-view="text" aria-pressed="false">Text</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-actions" style="margin-top:6px">
+      <button class="btn btn-primary" id="renderBtn" type="button">Render pages</button>
+      <button class="btn btn-ghost" id="clearPdf" type="button">Clear</button>
+    </div>
+
+    <div class="progress-track" id="renderProgress" hidden><div class="progress-fill" id="renderProgressFill"></div></div>
+    <p class="progress-label" id="renderProgressLabel" hidden></p>
+
+    <p class="field-hint err" id="renderError" hidden></p>
+
+    <div class="note"><span class="pin">i</span><span>2x renders a page about twice its normal size, which reads well on screen. Higher numbers are sharper but take more memory.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Result</h2><span class="hint" id="resultHint">Nothing yet</span></div>
+
+    <div id="imagesPane">
+      <div class="summary-bar" id="pageSummary" hidden>
+        <div class="facts">
+          <span>Pages <b id="sumPages">0</b></span>
+          <span>Scale <b id="sumScale">2x</b></span>
+        </div>
+        <button class="btn btn-sm" id="downloadAll" type="button" disabled>Download all PNG</button>
+      </div>
+      <p class="field-hint" id="multiHint" hidden>Several downloads were triggered. Your browser may ask once to allow multiple files from this page.</p>
+      <div class="page-grid" id="pageGrid"></div>
+      <div class="empty-muted" id="gridEmpty">Open a PDF to see its pages as images.</div>
+    </div>
+
+    <div id="textPane" hidden>
+      <div class="split-actions" style="margin-bottom:12px">
+        <button class="btn btn-sm" id="downloadText" type="button" disabled>Download .txt</button>
+      </div>
+      <div class="list-scroll" id="textBlocks"></div>
+      <div class="empty-muted" id="textEmpty">Open a PDF to read its text.</div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Scanned pages are pictures of text, so their text tab stays empty. The PNG downloads still work.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>
+
+<script src="/assets/js/vendor/pdfjs/pdf.min.js"></script>

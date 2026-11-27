@@ -1,0 +1,111 @@
+---
+layout: layouts/base.njk
+contentKey: thumbnail-safe-zone
+ldType: tool
+contentType: tool
+permalink: /thumbnail-safe-zone/
+sitemap: true
+mainClass: wrap
+pageScript: tools/safezone.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Thumbnail</h2><span class="hint">one file</span></div>
+
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a thumbnail image">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L9 18"/></svg>
+      </div>
+      <b>Drop a thumbnail here or click to choose</b>
+      <span class="mini">JPG, PNG or WebP · 1280 × 720 works best</span>
+    </div>
+    <input class="visually-hidden" id="fileInput" type="file" accept="image/*">
+
+    <div class="file-info" id="sourceStats" hidden>
+      <div class="meta-row"><span>Source</span><b id="srcName">—</b></div>
+      <div class="meta-row"><span>Dimensions</span><b id="srcDims">—</b></div>
+      <div class="meta-row"><span>File size</span><b id="srcWeight">—</b></div>
+    </div>
+    <p class="field-hint" id="sizeHint" hidden></p>
+
+    <div class="field" style="margin-top:14px">
+      <span class="field-label">Guides</span>
+      <div class="preview-box">
+        <label class="meta-row" for="safeToggle"><span>Safe margin (5% on every side)</span><input type="checkbox" id="safeToggle" checked></label>
+        <label class="meta-row" for="gradientToggle"><span>Bottom gradient band</span><input type="checkbox" id="gradientToggle" checked></label>
+        <label class="meta-row" for="badgeToggle"><span>Duration badge</span><input type="checkbox" id="badgeToggle" checked></label>
+        <label class="meta-row" for="cropToggle"><span>Phone crop lines</span><input type="checkbox" id="cropToggle" checked></label>
+      </div>
+    </div>
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="downloadBtn" type="button" disabled>Download PNG with guides</button>
+      <button class="btn btn-ghost" id="resetBtn" type="button">Reset</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>The image stays on your device. The exported PNG is the same size as the original, with the guides drawn on top for reference only.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Previews</h2><span class="hint" id="previewHint">No image yet</span></div>
+
+    <div class="grid2">
+      <div style="min-width:0">
+        <div class="safe-stage" id="stage" style="aspect-ratio:16/9">
+          <span class="canvas-empty" id="stageEmpty">16:9 player card</span>
+          <img id="stageImg" alt="Thumbnail in a 16:9 player card" hidden>
+          <div id="safeBox" hidden style="position:absolute;inset:5%;border:2px dashed #fbbf24;border-radius:4px"></div>
+          <div id="gradientBand" hidden style="position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0))"></div>
+          <span class="overlay-label" id="safeLabel" hidden style="top:6px;left:6px">Safe margin</span>
+          <span class="overlay-label" id="badge" hidden style="right:8px;bottom:8px">12:46</span>
+        </div>
+        <p class="field-hint">16:9 — what viewers see in the player and on desktop cards.</p>
+      </div>
+
+      <div style="min-width:0">
+        <div id="stagePhone" style="position:relative;aspect-ratio:9/16;max-width:190px;margin:0 auto;border-radius:14px;overflow:hidden;background:#0b1220;display:grid;place-items:center">
+          <span class="canvas-empty" id="phoneEmpty">9:16 phone</span>
+          <img id="phoneImg" alt="Thumbnail in a vertical phone preview" hidden style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <div id="phoneCrop" hidden style="position:absolute;top:0;bottom:0;left:25%;right:25%;border-left:2px dashed #fbbf24;border-right:2px dashed #fbbf24"></div>
+        </div>
+        <p class="field-hint" id="phoneNote">9:16 phone feed — the left and right sides crop, keep key text in the middle.</p>
+      </div>
+    </div>
+
+    <div class="canvas-box" style="margin-top:14px;min-height:150px">
+      <span class="canvas-empty" id="exportEmpty">The guide export appears here after you load an image.</span>
+      <canvas id="exportCanvas" hidden aria-label="Export preview with guides"></canvas>
+    </div>
+
+    <div class="note" style="margin-top:14px"><span class="pin">i</span><span>Text inside the dashed box survives every placement. The bottom-right corner is the first thing covered by the duration badge.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

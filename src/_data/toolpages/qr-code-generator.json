@@ -1,0 +1,30 @@
+{
+  "metaTitle": "QR Code Generator - PNG and SVG, Free and Offline | ReelFlow Toolkit",
+  "description": "Create a QR code for a link, text, Wi-Fi network or contact details. Choose the size and margin, then download a sharp PNG or a vector SVG.",
+  "ogTitle": "QR Code Generator - Download PNG or SVG",
+  "ogDescription": "Generate a QR code for any link or text in your browser and download it as PNG or SVG.",
+  "ldDescription": "Generate QR codes for links, text, Wi-Fi and contact cards entirely in the browser, then download a PNG or vector SVG.",
+  "breadcrumb": "QR Code Generator",
+  "kicker": "Utility tool",
+  "h1": "QR Code Generator",
+  "lede": "Type a link, text or Wi-Fi details, choose the size and quiet-zone margin, then download a crisp PNG or an SVG that scales forever.",
+  "faq": [
+    {
+      "q": "Can I use the QR code offline?",
+      "a": "Yes. The code is generated on your device and the downloaded PNG or SVG works anywhere, because the data is inside the image itself."
+    },
+    {
+      "q": "Why does the code have a blank margin?",
+      "a": "That blank border is the quiet zone scanners need to find the code. Removing it or placing the code on a busy background is the most common reason a QR code fails to scan."
+    },
+    {
+      "q": "Which download format should I use?",
+      "a": "PNG for social posts, slides and print up to poster size. SVG for logos, laser cutting or anything that will be scaled and must stay sharp."
+    }
+  ],
+  "related": [
+    { "slug": "utm-link-builder", "letter": "U", "tone": "amber", "note": "Tag the link before encoding" },
+    { "slug": "text-tools", "letter": "T", "tone": "mint", "note": "Clean up the text or URL" },
+    { "slug": "developer-tools", "letter": "D", "tone": "", "note": "Encode links for other uses" }
+  ]
+}

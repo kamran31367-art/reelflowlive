@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Thumbnail Safe-Zone Tester - Check YouTube Crops Before Upload | ReelFlow Toolkit",
+  "description": "Load a thumbnail and overlay the crops and badges YouTube adds in search, on phones and on TV. See what text survives before you publish.",
+  "ogTitle": "Thumbnail Safe-Zone Tester - See Every Crop",
+  "ogDescription": "Overlay the YouTube player, search card, phone and TV crops on your thumbnail to keep text inside the safe area.",
+  "ldDescription": "Preview a thumbnail under the crop areas and badges YouTube applies in different placements, so important text stays inside the safe zone.",
+  "breadcrumb": "Safe-Zone Tester",
+  "kicker": "YouTube tool",
+  "h1": "Thumbnail Safe-Zone Tester",
+  "lede": "Open a thumbnail and switch on the crops YouTube applies - search card, phone feed, player and TV - to see exactly which text survives.",
+  "faq": [
+    {
+      "q": "Which overlays are shown?",
+      "a": "The 16:9 player frame, the dark gradient and duration badge YouTube adds at the bottom-right, the tighter search-card crop and the vertical phone-feed crop."
+    },
+    {
+      "q": "Why does my text disappear on some devices?",
+      "a": "Different placements crop or cover different edges. Text close to the right edge sits under the duration badge, and vertical previews cut the sides, so keep key words in the middle."
+    },
+    {
+      "q": "Is the image uploaded?",
+      "a": "No. The thumbnail is loaded and drawn in your browser. You can also export a copy with the guides drawn on it for reference."
+    }
+  ],
+  "related": [
+    { "slug": "youtube-thumbnail-downloader", "letter": "T", "tone": "rose", "note": "Grab the thumbnail to test" },
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Fix the 1280 x 720 size" },
+    { "slug": "title-preview", "letter": "P", "tone": "mint", "note": "Preview the title beside it" }
+  ]
+}

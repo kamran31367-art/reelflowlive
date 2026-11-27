@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Developer Tools - JSON Formatter, Base64, SHA-256 and Passwords | ReelFlow Toolkit",
+  "description": "Format and validate JSON, encode or decode Base64, hash text with SHA-256 and generate a strong random password - all on your device.",
+  "ogTitle": "Developer Tools - JSON, Base64, Hash and Passwords",
+  "ogDescription": "Four everyday developer utilities that run entirely in your browser, with no uploads.",
+  "ldDescription": "Format and validate JSON, encode and decode Base64, compute SHA-256 and SHA-1 hashes, and generate strong passwords in the browser.",
+  "breadcrumb": "Developer Tools",
+  "kicker": "Developer tool",
+  "h1": "Developer Tools",
+  "lede": "Four small utilities in one page: JSON formatter, Base64 encoder and decoder, SHA-256 hash and a strong password generator.",
+  "faq": [
+    {
+      "q": "Is my data sent to a server?",
+      "a": "No. Parsing, encoding and hashing all happen in the page. Nothing is logged and there is no account."
+    },
+    {
+      "q": "Which hash algorithms are available?",
+      "a": "SHA-256 and SHA-1 through the browser's Web Crypto API. SHA-256 is the right choice for checksums and signatures; SHA-1 is included only for legacy comparisons."
+    },
+    {
+      "q": "How are passwords generated?",
+      "a": "Characters are picked with crypto.getRandomValues, the browser's cryptographic random source, and you choose the length and which character groups to include."
+    }
+  ],
+  "related": [
+    { "slug": "image-to-base64", "letter": "B", "tone": "amber", "note": "Encode an image instead" },
+    { "slug": "text-tools", "letter": "T", "tone": "mint", "note": "Clean the text before formatting" },
+    { "slug": "utm-link-builder", "letter": "U", "tone": "", "note": "Tag a URL while you are here" }
+  ]
+}

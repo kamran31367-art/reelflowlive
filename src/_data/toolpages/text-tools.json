@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Text Tools - Case Converter, Line Cleaner and Slug Generator | ReelFlow Toolkit",
+  "description": "Change text case, remove line breaks, delete duplicate lines, build a URL slug or generate placeholder text - five small text tools on one page.",
+  "ogTitle": "Text Tools - Clean, Convert and Slug in One Page",
+  "ogDescription": "Five quick text utilities: case conversion, line-break removal, duplicate removal, slugs and placeholder text.",
+  "ldDescription": "A set of browser-based text utilities: case conversion, line-break removal, duplicate line removal, URL slug generation and placeholder text.",
+  "breadcrumb": "Text Tools",
+  "kicker": "Writing tool",
+  "h1": "Text Tools",
+  "lede": "Five small fixes for everyday text: change case, join or split lines, drop duplicates, make a clean URL slug, or generate placeholder text.",
+  "faq": [
+    {
+      "q": "Which text tools are included?",
+      "a": "Case converter (upper, lower, title and sentence case), line-break remover, duplicate-line remover, URL slug generator and a lorem ipsum generator."
+    },
+    {
+      "q": "Is my text stored anywhere?",
+      "a": "No. Everything is processed in the page and disappears when you close it. There is no account and no history."
+    },
+    {
+      "q": "How does the slug generator handle accents and symbols?",
+      "a": "Accented letters are converted to their closest Latin form, everything is lowercased, and characters other than letters and digits become single hyphens."
+    }
+  ],
+  "related": [
+    { "slug": "character-counter", "letter": "C", "tone": "rose", "note": "Count the cleaned text" },
+    { "slug": "utm-link-builder", "letter": "U", "tone": "amber", "note": "Turn a slug into campaign tags" },
+    { "slug": "title-preview", "letter": "P", "tone": "mint", "note": "See how the title truncates" }
+  ]
+}

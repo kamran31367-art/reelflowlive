@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Audio Speed & Pitch Changer + Waveform (Free) | ReelFlow Toolkit",
+  "description": "Speed up or slow down audio, shift the pitch and save a new WAV, plus a waveform PNG. Runs entirely in your browser.",
+  "ogTitle": "Audio Speed & Pitch - Playback and Waveform",
+  "ogDescription": "Change audio speed or pitch on your device and export a WAV or a waveform image.",
+  "ldDescription": "Adjust audio playback speed and pitch in the browser, export the result as WAV and save a waveform image.",
+  "breadcrumb": "Audio Speed & Pitch",
+  "kicker": "Audio tool",
+  "h1": "Audio Speed & Pitch",
+  "lede": "Load an audio or video file, change the speed or shift the pitch, and export a new WAV. The same page also saves a waveform image for thumbnails and show notes.",
+  "faq": [
+    {
+      "q": "Does changing speed change the pitch?",
+      "a": "Yes - this works like a tape: faster playback raises the pitch and shortens the file. The pitch slider applies the same effect on top. There is no time-stretch, so every change alters the length."
+    },
+    {
+      "q": "What is the waveform image for?",
+      "a": "It draws the loudness over time as a clean PNG you can use in a video thumbnail, podcast cover or show notes."
+    },
+    {
+      "q": "Which files work?",
+      "a": "Audio the browser can decode (MP3, WAV, M4A, OGG) plus the audio track of MP4, MOV and WebM videos."
+    }
+  ],
+  "related": [
+    { "slug": "audio-extractor", "letter": "A", "tone": "rose", "note": "Extract or trim first" },
+    { "slug": "video-trimmer", "letter": "T", "tone": "mint", "note": "Cut the matching video" },
+    { "slug": "video-to-gif", "letter": "G", "tone": "amber", "note": "Animate a short clip" }
+  ]
+}

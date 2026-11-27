@@ -252,6 +252,46 @@ content:
                   label: Chapters
                 - name: counter
                   label: Counter
+                - name: favicon
+                  label: Favicon
+                - name: swap
+                  label: Swap
+                - name: codefile
+                  label: Code file
+                - name: qr
+                  label: QR code
+                - name: meme
+                  label: Meme
+                - name: text
+                  label: Text
+                - name: link
+                  label: Link
+                - name: clock
+                  label: Clock
+                - name: crop
+                  label: Crop
+                - name: preview
+                  label: Preview
+                - name: code
+                  label: Code
+                - name: contrast
+                  label: Contrast
+                - name: scissors
+                  label: Scissors
+                - name: film
+                  label: Film
+                - name: camera
+                  label: Camera
+                - name: wave
+                  label: Waveform
+                - name: gauge
+                  label: Gauge
+                - name: pdf
+                  label: PDF
+                - name: pages
+                  label: Pages
+                - name: eraser
+                  label: Eraser
           - name: tone
             label: Card colour
             type: select
@@ -720,6 +760,1426 @@ content:
     label: "Tool page: Character Counter"
     type: file
     path: src/_data/toolpages/character-counter.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-favicon-generator
+    label: "Tool page: Favicon Generator"
+    type: file
+    path: src/_data/toolpages/favicon-generator.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-image-converter
+    label: "Tool page: Image Format Converter"
+    type: file
+    path: src/_data/toolpages/image-converter.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-image-to-base64
+    label: "Tool page: Image to Base64"
+    type: file
+    path: src/_data/toolpages/image-to-base64.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-qr-code-generator
+    label: "Tool page: QR Code Generator"
+    type: file
+    path: src/_data/toolpages/qr-code-generator.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-meme-generator
+    label: "Tool page: Meme Generator"
+    type: file
+    path: src/_data/toolpages/meme-generator.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-text-tools
+    label: "Tool page: Text Tools"
+    type: file
+    path: src/_data/toolpages/text-tools.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-utm-link-builder
+    label: "Tool page: UTM Link Builder"
+    type: file
+    path: src/_data/toolpages/utm-link-builder.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-youtube-timestamp-link
+    label: "Tool page: YouTube Timestamp Link"
+    type: file
+    path: src/_data/toolpages/youtube-timestamp-link.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-thumbnail-safe-zone
+    label: "Tool page: Thumbnail Safe-Zone Tester"
+    type: file
+    path: src/_data/toolpages/thumbnail-safe-zone.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-title-preview
+    label: "Tool page: Title & Caption Preview"
+    type: file
+    path: src/_data/toolpages/title-preview.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-developer-tools
+    label: "Tool page: Developer Tools"
+    type: file
+    path: src/_data/toolpages/developer-tools.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-color-contrast-checker
+    label: "Tool page: Color Contrast Checker"
+    type: file
+    path: src/_data/toolpages/color-contrast-checker.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-video-trimmer
+    label: "Tool page: Video Trimmer"
+    type: file
+    path: src/_data/toolpages/video-trimmer.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-video-to-gif
+    label: "Tool page: Video to GIF"
+    type: file
+    path: src/_data/toolpages/video-to-gif.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-video-frame-grabber
+    label: "Tool page: Video Frame Grabber"
+    type: file
+    path: src/_data/toolpages/video-frame-grabber.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-audio-extractor
+    label: "Tool page: Audio Extractor & Trimmer"
+    type: file
+    path: src/_data/toolpages/audio-extractor.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-audio-speed-pitch
+    label: "Tool page: Audio Speed & Pitch"
+    type: file
+    path: src/_data/toolpages/audio-speed-pitch.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-pdf-tools
+    label: "Tool page: PDF Merge & Split"
+    type: file
+    path: src/_data/toolpages/pdf-tools.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-pdf-to-images
+    label: "Tool page: PDF to Images & Text"
+    type: file
+    path: src/_data/toolpages/pdf-to-images.json
+    fields:
+      - name: metaTitle
+        label: Browser title
+        type: string
+      - name: description
+        label: Meta description
+        type: text
+      - name: ogTitle
+        label: Social share title
+        type: string
+      - name: ogDescription
+        label: Social share description
+        type: text
+      - name: ldDescription
+        label: Structured data description
+        type: text
+      - name: breadcrumb
+        label: Breadcrumb label
+        type: string
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: h1
+        label: Page heading
+        type: string
+      - name: lede
+        label: Intro paragraph
+        type: text
+      - name: faq
+        label: FAQ items
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Question
+            type: string
+          - name: a
+            label: Answer
+            type: text
+      - name: related
+        label: Next tools
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Tool slug
+            type: string
+          - name: letter
+            label: Letter tile
+            type: string
+          - name: tone
+            label: Tile colour
+            type: select
+            options:
+              values:
+                - name: ""
+                  label: Blue (default)
+                - name: mint
+                  label: Mint
+                - name: amber
+                  label: Amber
+                - name: rose
+                  label: Rose
+          - name: note
+            label: Note
+            type: string
+
+  - name: page-background-remover
+    label: "Tool page: Background Remover"
+    type: file
+    path: src/_data/toolpages/background-remover.json
     fields:
       - name: metaTitle
         label: Browser title

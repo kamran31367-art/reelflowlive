@@ -27,12 +27,7 @@ const toolsData = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/tools.js
 
 const pages = [
   { file: 'index.html', url: '/' },
-  { file: 'youtube-thumbnail-downloader/index.html', url: '/youtube-thumbnail-downloader/' },
-  { file: 'image-resizer/index.html', url: '/image-resizer/' },
-  { file: 'image-compressor/index.html', url: '/image-compressor/' },
-  { file: 'srt-editor/index.html', url: '/srt-editor/' },
-  { file: 'youtube-chapters/index.html', url: '/youtube-chapters/' },
-  { file: 'character-counter/index.html', url: '/character-counter/' },
+  ...(toolsData.tools || []).map((tool) => ({ file: tool.url.replace(/^\//, '') + 'index.html', url: tool.url })),
   { file: 'blog/index.html', url: '/blog/' },
   { file: 'blog/youtube-thumbnail-size/index.html', url: '/blog/youtube-thumbnail-size/' },
   { file: 'blog/download-youtube-thumbnail/index.html', url: '/blog/download-youtube-thumbnail/' },
@@ -171,11 +166,26 @@ for (const guide of guides) {
 
 /* Tools data */
 const tools = toolsData.tools || [];
-check('tools.json has 6 tools', tools.length === 6, String(tools.length));
+const cms = fs.readFileSync(path.join(root, '.pages.yml'), 'utf8');
+check('tools.json lists tools', tools.length >= 6, String(tools.length));
+const toolSlugs = tools.map((tool) => tool.slug);
+check('tool slugs are unique', new Set(toolSlugs).size === toolSlugs.length);
 for (const tool of tools) {
   check('tool "' + tool.slug + '": page + content + footer label',
     !!tool.url && !!tool.footerName && fs.existsSync(path.join(out, tool.url, 'index.html')) &&
     fs.existsSync(path.join(root, 'src/_data/toolpages', tool.slug + '.json')));
+  const pageData = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/toolpages', tool.slug + '.json'), 'utf8'));
+  const unknown = (pageData.related || []).map((rel) => rel.slug).filter((slug) => !toolSlugs.includes(slug));
+  check('tool "' + tool.slug + '": related tools exist', unknown.length === 0, unknown.join(', '));
+  check('tool "' + tool.slug + '": editable in Pages CMS with its icon',
+    cms.includes('path: src/_data/toolpages/' + tool.slug + '.json') &&
+    cms.includes('                - name: ' + tool.icon + '\n'));
+  const pageSrc = fs.readFileSync(path.join(root, 'src', tool.slug + '.njk'), 'utf8');
+  const scriptMatch = pageSrc.match(/pageScript:\s*(\S+)/);
+  const scriptTags = scriptMatch
+    ? read(tool.url.replace(/^\//, '') + 'index.html').split('assets/js/' + scriptMatch[1]).length - 1
+    : 0;
+  check('tool "' + tool.slug + '": tool script included exactly once', scriptTags === 1, String(scriptTags));
 }
 
 /* Ads defaults */
@@ -202,7 +212,7 @@ check('consent reset is wired in app.js', read('assets/js/app.js').includes('[da
 check('footer links the privacy page', pages.every((p) => /<div class="footer-links">[\s\S]*?href="\/privacy\/"/.test(read(p.file))));
 
 /* Stale homepage rendering */
-check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card"/g) || []).length === 6);
+check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card"/g) || []).length === tools.length, String(tools.length));
 check('no leftover client card renderer', !read('assets/js/app.js').includes('toolGrid'));
 
 console.log('\n' + (failures.length ? failures.length + ' FAILED of ' + checks : 'ALL ' + checks + ' CHECKS PASSED'));

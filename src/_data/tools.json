@@ -62,6 +62,206 @@
       "tags": ["Hashtags", "Limits", "Titles"],
       "icon": "counter",
       "tone": "rose"
+    },
+    {
+      "slug": "favicon-generator",
+      "url": "/favicon-generator/",
+      "name": "Favicon Generator",
+      "footerName": "Favicon Generator",
+      "desc": "Turn an image or a letter into every favicon size, including a ready favicon.ico.",
+      "tags": ["Icons", "favicon.ico", "Canvas"],
+      "icon": "favicon",
+      "tone": "mint"
+    },
+    {
+      "slug": "image-converter",
+      "url": "/image-converter/",
+      "name": "Image Format Converter",
+      "footerName": "Image Converter",
+      "desc": "Convert PNG, JPG and WebP images to another format in one batch, on your device.",
+      "tags": ["PNG", "JPG", "WebP"],
+      "icon": "swap",
+      "tone": ""
+    },
+    {
+      "slug": "image-to-base64",
+      "url": "/image-to-base64/",
+      "name": "Image to Base64",
+      "footerName": "Image to Base64",
+      "desc": "Turn an image into a Base64 data URI for CSS or HTML, or preview one you already have.",
+      "tags": ["Data URI", "CSS", "Developers"],
+      "icon": "codefile",
+      "tone": "amber"
+    },
+    {
+      "slug": "qr-code-generator",
+      "url": "/qr-code-generator/",
+      "name": "QR Code Generator",
+      "footerName": "QR Code Generator",
+      "desc": "Create a QR code for any link or text and download it as PNG or SVG, fully offline.",
+      "tags": ["PNG", "SVG", "Offline"],
+      "icon": "qr",
+      "tone": "rose"
+    },
+    {
+      "slug": "meme-generator",
+      "url": "/meme-generator/",
+      "name": "Meme Generator",
+      "footerName": "Meme Generator",
+      "desc": "Add top and bottom text to any image and download the finished meme as a PNG.",
+      "tags": ["Caption", "Top & bottom", "Download"],
+      "icon": "meme",
+      "tone": ""
+    },
+    {
+      "slug": "text-tools",
+      "url": "/text-tools/",
+      "name": "Text Tools",
+      "footerName": "Text Tools",
+      "desc": "Change case, remove line breaks, drop duplicate lines, make a slug or generate placeholder text.",
+      "tags": ["Case", "Clean-up", "Slug"],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "utm-link-builder",
+      "url": "/utm-link-builder/",
+      "name": "UTM Link Builder",
+      "footerName": "UTM Builder",
+      "desc": "Build a campaign URL with source, medium and campaign tags, then copy it in one click.",
+      "tags": ["Campaigns", "Analytics", "Links"],
+      "icon": "link",
+      "tone": "amber"
+    },
+    {
+      "slug": "youtube-timestamp-link",
+      "url": "/youtube-timestamp-link/",
+      "name": "YouTube Timestamp Link",
+      "footerName": "Timestamp Link",
+      "desc": "Make a share link that opens a YouTube video at an exact time, with a readable timestamp.",
+      "tags": ["YouTube", "Sharing", "Timestamps"],
+      "icon": "clock",
+      "tone": "rose"
+    },
+    {
+      "slug": "thumbnail-safe-zone",
+      "url": "/thumbnail-safe-zone/",
+      "name": "Thumbnail Safe-Zone Tester",
+      "footerName": "Safe-Zone Tester",
+      "desc": "Overlay the crops and badges YouTube applies so text never disappears from your thumbnail.",
+      "tags": ["Thumbnails", "Crop", "Overlay"],
+      "icon": "crop",
+      "tone": ""
+    },
+    {
+      "slug": "title-preview",
+      "url": "/title-preview/",
+      "name": "Title & Caption Preview",
+      "footerName": "Title Preview",
+      "desc": "See how a title looks in YouTube search and how a caption truncates on Instagram before you publish.",
+      "tags": ["YouTube", "Instagram", "Preview"],
+      "icon": "preview",
+      "tone": "mint"
+    },
+    {
+      "slug": "developer-tools",
+      "url": "/developer-tools/",
+      "name": "Developer Tools",
+      "footerName": "Developer Tools",
+      "desc": "Format JSON, encode Base64, hash text with SHA-256 and generate a strong password offline.",
+      "tags": ["JSON", "Base64", "Hash"],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "color-contrast-checker",
+      "url": "/color-contrast-checker/",
+      "name": "Color Contrast Checker",
+      "footerName": "Contrast Checker",
+      "desc": "Check any two colours against WCAG AA and AAA contrast rules, with a live text preview.",
+      "tags": ["WCAG", "Accessibility", "Design"],
+      "icon": "contrast",
+      "tone": "rose"
+    },
+    {
+      "slug": "video-trimmer",
+      "url": "/video-trimmer/",
+      "name": "Video Trimmer",
+      "footerName": "Video Trimmer",
+      "desc": "Cut the start and end of a video and download the trimmed clip, recorded on your device.",
+      "tags": ["Trim", "MP4", "On-device"],
+      "icon": "scissors",
+      "tone": ""
+    },
+    {
+      "slug": "video-to-gif",
+      "url": "/video-to-gif/",
+      "name": "Video to GIF",
+      "footerName": "Video to GIF",
+      "desc": "Turn a few seconds of any video into a looping GIF with adjustable size, frames and speed.",
+      "tags": ["GIF", "Loop", "Canvas"],
+      "icon": "film",
+      "tone": "mint"
+    },
+    {
+      "slug": "video-frame-grabber",
+      "url": "/video-frame-grabber/",
+      "name": "Video Frame Grabber",
+      "footerName": "Frame Grabber",
+      "desc": "Save any frame of a video as a full-size PNG at the exact second you choose.",
+      "tags": ["PNG", "Frames", "Video"],
+      "icon": "camera",
+      "tone": "amber"
+    },
+    {
+      "slug": "audio-extractor",
+      "url": "/audio-extractor/",
+      "name": "Audio Extractor & Trimmer",
+      "footerName": "Audio Extractor",
+      "desc": "Pull the audio out of a video or trim an audio file, then save it as WAV or MP3.",
+      "tags": ["WAV", "MP3", "WebAudio"],
+      "icon": "wave",
+      "tone": "rose"
+    },
+    {
+      "slug": "audio-speed-pitch",
+      "url": "/audio-speed-pitch/",
+      "name": "Audio Speed & Pitch",
+      "footerName": "Speed & Pitch",
+      "desc": "Change the speed or pitch of an audio file and export it, and save a waveform image.",
+      "tags": ["Speed", "Pitch", "Waveform"],
+      "icon": "gauge",
+      "tone": ""
+    },
+    {
+      "slug": "pdf-tools",
+      "url": "/pdf-tools/",
+      "name": "PDF Merge & Split",
+      "footerName": "PDF Tools",
+      "desc": "Merge PDFs, extract page ranges, rotate pages or turn a set of images into one PDF.",
+      "tags": ["Merge", "Split", "PDF"],
+      "icon": "pdf",
+      "tone": "mint"
+    },
+    {
+      "slug": "pdf-to-images",
+      "url": "/pdf-to-images/",
+      "name": "PDF to Images & Text",
+      "footerName": "PDF to Images",
+      "desc": "Render PDF pages as PNG images or copy the extracted text, page by page.",
+      "tags": ["PNG", "Text", "PDF"],
+      "icon": "pages",
+      "tone": "amber"
+    },
+    {
+      "slug": "background-remover",
+      "url": "/background-remover/",
+      "name": "Background Remover",
+      "footerName": "Background Remover",
+      "desc": "Remove the background from photos of people and download a transparent PNG.",
+      "tags": ["PNG", "People", "On-device"],
+      "icon": "eraser",
+      "tone": "rose"
     }
   ]
 }

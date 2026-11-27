@@ -1,0 +1,159 @@
+---
+layout: layouts/base.njk
+contentKey: developer-tools
+ldType: tool
+contentType: tool
+permalink: /developer-tools/
+sitemap: true
+mainClass: wrap
+pageScript: tools/devtools.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Input</h2><span class="hint" id="modeHint">JSON formatter</span></div>
+
+    <div class="field">
+      <span class="field-label">Tool</span>
+      <div class="seg" id="toolSeg">
+        <button type="button" data-panel="json" class="on" aria-pressed="true">JSON</button>
+        <button type="button" data-panel="base64" aria-pressed="false">Base64</button>
+        <button type="button" data-panel="hash" aria-pressed="false">Hash</button>
+        <button type="button" data-panel="password" aria-pressed="false">Password</button>
+        <button type="button" data-panel="url" aria-pressed="false">URL</button>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-json">
+      <div class="field">
+        <label for="jsonInput">JSON</label>
+        <textarea class="textarea" id="jsonInput" spellcheck="false" placeholder='{"title":"My video","tags":["shorts","tips"]}'></textarea>
+      </div>
+      <div class="row" style="margin-bottom:10px">
+        <button class="btn btn-sm" id="jsonFormat" type="button">Format</button>
+        <button class="btn btn-sm" id="jsonMinify" type="button">Minify</button>
+        <button class="btn btn-sm" id="jsonValidate" type="button">Validate</button>
+      </div>
+      <div class="split-actions">
+        <span class="badge" id="jsonBadge">Nothing parsed yet</span>
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="jsonCopy" type="button" disabled>Copy JSON</button>
+      </div>
+      <p class="field-hint err" id="jsonError" role="alert" hidden></p>
+    </div>
+
+    <div class="panel" id="panel-base64" hidden>
+      <div class="field">
+        <label for="b64Input">Text or Base64</label>
+        <textarea class="textarea" id="b64Input" spellcheck="false" placeholder="Type text to encode, or paste Base64 to decode"></textarea>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-sm" id="b64Encode" type="button">Encode to Base64</button>
+        <button class="btn btn-sm" id="b64Decode" type="button">Decode from Base64</button>
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="b64Swap" type="button">Swap</button>
+      </div>
+      <p class="field-hint err" id="b64Error" role="alert" hidden></p>
+    </div>
+
+    <div class="panel" id="panel-hash" hidden>
+      <div class="field">
+        <label for="hashInput">Text to hash</label>
+        <textarea class="textarea" id="hashInput" spellcheck="false" placeholder="abc"></textarea>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-sm" id="hashSha256" type="button">SHA-256 hex</button>
+        <button class="btn btn-sm" id="hashSha1" type="button">SHA-1 hex</button>
+      </div>
+      <p class="field-hint err" id="hashError" role="alert" hidden></p>
+      <table class="kv-table" aria-label="Hash values" style="margin-top:10px">
+        <tbody>
+          <tr><td>SHA-256</td><td id="hashOut256" class="wrap-any">-</td></tr>
+          <tr><td>SHA-1</td><td id="hashOut1" class="wrap-any">-</td></tr>
+        </tbody>
+      </table>
+      <div class="split-actions" style="margin-top:10px">
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="hashCopy" type="button" disabled>Copy hash</button>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-password" hidden>
+      <div class="field">
+        <label for="pwdLength">Length</label>
+        <div class="range-row">
+          <input type="range" id="pwdLength" min="8" max="64" value="20" step="1" aria-describedby="pwdLengthOut">
+          <output id="pwdLengthOut">20</output>
+        </div>
+      </div>
+      <div class="field">
+        <span class="field-label">Include</span>
+        <div class="chip-row">
+          <label style="display:inline-flex;gap:6px;align-items:center;font-size:13px"><input type="checkbox" id="pwdLower" checked> Lowercase</label>
+          <label style="display:inline-flex;gap:6px;align-items:center;font-size:13px"><input type="checkbox" id="pwdUpper" checked> Uppercase</label>
+          <label style="display:inline-flex;gap:6px;align-items:center;font-size:13px"><input type="checkbox" id="pwdDigits" checked> Digits</label>
+          <label style="display:inline-flex;gap:6px;align-items:center;font-size:13px"><input type="checkbox" id="pwdSymbols" checked> Symbols</label>
+        </div>
+        <p class="field-hint" id="pwdNote">At least one group must stay checked.</p>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-primary btn-sm" id="pwdGenerate" type="button">Generate</button>
+      </div>
+      <p class="field-hint err" id="pwdError" role="alert" hidden></p>
+      <p class="field-hint" id="pwdEntropy" aria-live="polite"></p>
+    </div>
+
+    <div class="panel" id="panel-url" hidden>
+      <div class="field">
+        <label for="urlInput">Text or encoded URL</label>
+        <textarea class="textarea" id="urlInput" spellcheck="false" placeholder="https://example.com/search?q=hello world"></textarea>
+      </div>
+      <div class="split-actions">
+        <button class="btn btn-sm" id="urlEncode" type="button">Encode</button>
+        <button class="btn btn-sm" id="urlDecode" type="button">Decode</button>
+        <span class="spacer"></span>
+        <button class="btn btn-sm" id="urlSwap" type="button">Swap</button>
+      </div>
+      <p class="field-hint err" id="urlError" role="alert" hidden></p>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Everything runs in this tab. Nothing you paste is uploaded, stored or logged.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Output</h2><span class="hint" id="outHint">Result appears here</span></div>
+    <textarea class="textarea output-box" id="output" readonly aria-label="Tool output"></textarea>
+    <div class="split-actions" style="margin-top:10px">
+      <button class="btn btn-primary" id="outputCopy" type="button" disabled>Copy output</button>
+      <button class="btn btn-ghost" id="outputClear" type="button">Clear</button>
+    </div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

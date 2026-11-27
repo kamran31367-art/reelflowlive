@@ -1,0 +1,30 @@
+{
+  "metaTitle": "PDF Merge & Split - Free Browser PDF Tools | ReelFlow Toolkit",
+  "description": "Merge several PDFs, extract page ranges, rotate pages or build a PDF from images. Files stay on your device.",
+  "ogTitle": "PDF Merge & Split - All in the Browser",
+  "ogDescription": "Combine, split, rotate and create PDFs locally - no upload and no signup.",
+  "ldDescription": "Merge PDFs, extract page ranges, rotate pages and create a PDF from images locally in the browser.",
+  "breadcrumb": "PDF Tools",
+  "kicker": "PDF tool",
+  "h1": "PDF Merge & Split",
+  "lede": "Combine several PDFs, keep only the pages you need, rotate a document or build a PDF from images. Every step happens on your device.",
+  "faq": [
+    {
+      "q": "How do I merge files?",
+      "a": "Add two or more PDFs, put them in the order you want with the arrows, then press Merge. The download contains every page in that order."
+    },
+    {
+      "q": "How do I write page ranges?",
+      "a": "Use numbers and ranges separated by commas, like 1-3,5. Pages are counted from 1. For split mode, each range creates one page in the new file."
+    },
+    {
+      "q": "Do password-protected PDFs work?",
+      "a": "No. Encrypted PDFs must be unlocked first - the tool reports the file instead of producing an empty document."
+    }
+  ],
+  "related": [
+    { "slug": "pdf-to-images", "letter": "I", "tone": "amber", "note": "Turn pages into PNG" },
+    { "slug": "image-converter", "letter": "C", "tone": "", "note": "Prepare images for the PDF" },
+    { "slug": "image-to-base64", "letter": "B", "tone": "rose", "note": "Embed an image in code" }
+  ]
+}

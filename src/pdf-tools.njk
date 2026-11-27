@@ -1,0 +1,164 @@
+---
+layout: layouts/base.njk
+contentKey: pdf-tools
+ldType: tool
+contentType: tool
+permalink: /pdf-tools/
+sitemap: true
+mainClass: wrap
+pageScript: tools/pdftools.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Task</h2><span class="hint">merge, split, rotate, build</span></div>
+
+    <div class="field">
+      <span class="field-label">Mode</span>
+      <div class="seg" id="pdfModeSeg">
+        <button type="button" data-mode="merge" class="on" aria-pressed="true">Merge</button>
+        <button type="button" data-mode="extract" aria-pressed="false">Extract pages</button>
+        <button type="button" data-mode="rotate" aria-pressed="false">Rotate</button>
+        <button type="button" data-mode="images" aria-pressed="false">Images to PDF</button>
+      </div>
+    </div>
+
+    <div id="panel-merge">
+      <div class="dropzone" id="mergeDropzone" tabindex="0" role="button" aria-label="Choose or drop PDFs to merge">
+        <div class="dz-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>
+        </div>
+        <b>Drop PDFs here or click to choose</b>
+        <span class="mini">Two or more files · combined on your device</span>
+      </div>
+      <div class="field" style="margin-top:14px">
+        <span class="field-label">PDF files</span>
+        <div class="split-actions">
+          <button class="btn btn-sm" id="mergePick" type="button">Add PDFs</button>
+          <button class="btn btn-ghost btn-sm" id="mergeClear" type="button">Clear list</button>
+        </div>
+        <p class="field-hint" id="mergeHint">Add two or more PDFs, then set their order.</p>
+      </div>
+      <ol class="list-scroll" id="mergeList" aria-label="Files to merge"></ol>
+      <div class="empty-muted" id="mergeEmpty">No PDFs added yet.</div>
+    </div>
+    <input class="visually-hidden" id="mergeFile" type="file" accept="application/pdf,.pdf" multiple>
+
+    <div id="panel-extract" hidden>
+      <div class="field">
+        <span class="field-label">PDF file</span>
+        <div class="split-actions">
+          <button class="btn btn-sm" id="extractPick" type="button">Choose PDF</button>
+          <span class="field-hint" id="extractName">No file chosen</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="extractRange">Pages to keep</label>
+        <input class="input" id="extractRange" type="text" placeholder="1-3,5" autocomplete="off" spellcheck="false">
+        <p class="field-hint" id="extractHint">Counted from 1. Leave empty to keep every page.</p>
+      </div>
+    </div>
+    <input class="visually-hidden" id="extractFile" type="file" accept="application/pdf,.pdf">
+
+    <div id="panel-rotate" hidden>
+      <div class="field">
+        <span class="field-label">PDF file</span>
+        <div class="split-actions">
+          <button class="btn btn-sm" id="rotatePick" type="button">Choose PDF</button>
+          <span class="field-hint" id="rotateName">No file chosen</span>
+        </div>
+      </div>
+      <div class="field">
+        <span class="field-label">Turn</span>
+        <div class="seg" id="rotateSeg">
+          <button type="button" data-angle="90" class="on" aria-pressed="true">90&deg; clockwise</button>
+          <button type="button" data-angle="180" aria-pressed="false">180&deg;</button>
+          <button type="button" data-angle="270" aria-pressed="false">270&deg;</button>
+        </div>
+        <input type="hidden" id="rotateAngle" value="90">
+      </div>
+      <div class="field">
+        <label for="rotateRange">Pages to rotate</label>
+        <input class="input" id="rotateRange" type="text" placeholder="Empty = all pages" autocomplete="off" spellcheck="false">
+        <p class="field-hint" id="rotateHint">Optional range like 1-3,5. Empty rotates the whole document.</p>
+      </div>
+    </div>
+    <input class="visually-hidden" id="rotateFile" type="file" accept="application/pdf,.pdf">
+
+    <div id="panel-images" hidden>
+      <div class="field">
+        <span class="field-label">Images</span>
+        <div class="split-actions">
+          <button class="btn btn-sm" id="imagesPick" type="button">Add images</button>
+          <button class="btn btn-ghost btn-sm" id="imagesClear" type="button">Clear list</button>
+        </div>
+        <p class="field-hint" id="imagesHint">JPG, PNG or WebP. Each image becomes one page, in list order.</p>
+      </div>
+      <ol class="list-scroll" id="imagesList" aria-label="Images for the PDF"></ol>
+      <div class="empty-muted" id="imagesEmpty">No images added yet.</div>
+      <div class="field" style="margin-top:14px">
+        <label for="imagePageSize">Page size</label>
+        <select class="select" id="imagePageSize">
+          <option value="a4" selected>A4 (595 x 842 pt)</option>
+          <option value="letter">Letter (612 x 792 pt)</option>
+          <option value="fit">Fit image</option>
+        </select>
+        <p class="field-hint">Fit image makes every page exactly the size of its picture.</p>
+      </div>
+    </div>
+    <input class="visually-hidden" id="imagesFile" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+
+    <div class="note"><span class="pin">i</span><span>Files never leave your device. Password-protected PDFs must be unlocked in another app before they open here.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Output</h2><span class="hint" id="pdfHint">Waiting for input</span></div>
+
+    <div class="progress-track" id="pdfProgress" hidden><div class="progress-fill" id="pdfProgressFill"></div></div>
+    <p class="progress-label" id="pdfProgressLabel" hidden></p>
+
+    <div class="meta-stack" id="pdfMeta">
+      <div class="meta-row"><span>Pages in result</span><b id="pdfPages">—</b></div>
+      <div class="meta-row"><span>File size</span><b id="pdfSize">—</b></div>
+    </div>
+
+    <p class="field-hint err" id="pdfError" hidden></p>
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="pdfRun" type="button">Merge PDFs</button>
+      <button class="btn btn-ghost" id="pdfDownload" type="button" disabled>Download</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>The result is built fresh from the pages you pick, so bookmarks and form fields from the originals are not carried over.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>
+
+<script src="/assets/js/vendor/pdf-lib.min.js"></script>

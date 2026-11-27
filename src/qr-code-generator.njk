@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+contentKey: qr-code-generator
+ldType: tool
+contentType: tool
+permalink: /qr-code-generator/
+sitemap: true
+mainClass: wrap
+pageScript: tools/qr.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Content</h2><span class="hint">link, text or Wi-Fi</span></div>
+
+    <div class="field">
+      <span class="field-label">Type</span>
+      <div class="seg" id="typeSeg">
+        <button type="button" data-type="url" class="on" aria-pressed="true">Link</button>
+        <button type="button" data-type="text" aria-pressed="false">Text</button>
+        <button type="button" data-type="wifi" aria-pressed="false">Wi-Fi</button>
+      </div>
+      <input type="hidden" id="typeValue" value="url">
+    </div>
+
+    <div id="textFields">
+      <div class="field">
+        <label for="contentInput" id="contentLabel">Link</label>
+        <textarea class="textarea" id="contentInput" rows="4" placeholder="https://example.com" autocomplete="off" spellcheck="false"></textarea>
+        <p class="field-hint" id="contentHint">Paste the address the code should open.</p>
+      </div>
+    </div>
+
+    <div id="wifiFields" hidden>
+      <div class="field">
+        <label for="wifiSsid">Network name (SSID)</label>
+        <input class="input" id="wifiSsid" type="text" placeholder="MyNetwork" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="field">
+        <label for="wifiPass">Password</label>
+        <input class="input" id="wifiPass" type="text" placeholder="Leave empty for an open network" autocomplete="off" spellcheck="false">
+        <p class="field-hint">The password is written inside the code in plain form. Share the code only where that is acceptable.</p>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="wifiEnc">Security</label>
+          <select class="select" id="wifiEnc">
+            <option value="WPA" selected>WPA / WPA2 / WPA3</option>
+            <option value="WEP">WEP</option>
+            <option value="nopass">Open (no password)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="wifiHidden">Hidden network</label>
+          <select class="select" id="wifiHidden">
+            <option value="false" selected>No</option>
+            <option value="true">Yes</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="qrSize">Size</label>
+        <select class="select" id="qrSize">
+          <option value="256">256 × 256 px</option>
+          <option value="512" selected>512 × 512 px</option>
+          <option value="1024">1024 × 1024 px</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qrMargin">Quiet zone (modules)</label>
+        <div class="range-row">
+          <input type="range" id="qrMargin" min="0" max="8" step="1" value="4">
+          <output id="qrMarginValue">4</output>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="fgColor">Code colour</label>
+        <input type="color" id="fgColor" value="#111827">
+      </div>
+      <div class="field">
+        <label for="bgColor">Background colour</label>
+        <input type="color" id="bgColor" value="#ffffff">
+      </div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Keep a quiet zone of at least 4 modules and strong contrast between the code and the background. Scan the result before you print it.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Preview</h2><span class="hint" id="qrHint">Waiting for input</span></div>
+
+    <div class="canvas-box">
+      <span class="canvas-empty" id="qrEmpty">Type a link, text or Wi-Fi name to see the code.</span>
+      <canvas id="qrCanvas" hidden aria-label="QR code preview"></canvas>
+    </div>
+
+    <div class="meta-stack" style="margin-top:12px">
+      <div class="meta-row"><span>Modules</span><b id="qrModules">—</b></div>
+      <div class="meta-row"><span>Export size</span><b id="qrExport">—</b></div>
+      <div class="meta-row"><span>Data</span><b id="qrLength">—</b></div>
+    </div>
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="pngBtn" type="button" disabled>Download PNG</button>
+      <button class="btn" id="svgBtn" type="button" disabled>Download SVG</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>PNG for posts and slides, SVG for logos and print that gets scaled. The code is generated on this device and never uploaded.</span></div>
+  </div>
+</section>
+
+<script src="/assets/js/vendor/qrcode.js"></script>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

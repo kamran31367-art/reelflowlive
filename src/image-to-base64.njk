@@ -1,0 +1,108 @@
+---
+layout: layouts/base.njk
+contentKey: image-to-base64
+ldType: tool
+contentType: tool
+permalink: /image-to-base64/
+sitemap: true
+mainClass: wrap
+pageScript: tools/base64img.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Input</h2><span class="hint">image or data URI</span></div>
+
+    <div class="field">
+      <span class="field-label">Direction</span>
+      <div class="seg" id="dirSeg">
+        <button type="button" data-dir="encode" class="on" aria-pressed="true">Image to Base64</button>
+        <button type="button" data-dir="decode" aria-pressed="false">Base64 to image</button>
+      </div>
+    </div>
+
+    <div id="encodePane">
+      <div class="dropzone" id="b64Dropzone" tabindex="0" role="button" aria-label="Choose an image to encode">
+        <div class="dz-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12-2 2 2 2"/><path d="m14 12 2 2-2 2"/></svg>
+        </div>
+        <b>Drop an image here or click to choose</b>
+        <span class="mini">JPG, PNG, WebP or SVG · small icons work best as data URIs</span>
+      </div>
+      <input class="visually-hidden" id="b64File" type="file" accept="image/*">
+
+      <div class="file-info" id="b64Info" hidden>
+        <div class="meta-row"><span>File</span><b id="b64Name">—</b></div>
+        <div class="meta-row"><span>Dimensions</span><b id="b64Dims">—</b></div>
+        <div class="meta-row"><span>Original</span><b id="b64Bytes">—</b></div>
+        <div class="meta-row"><span>Encoded</span><b id="b64Encoded">—</b></div>
+      </div>
+    </div>
+
+    <div id="decodePane" hidden>
+      <div class="field">
+        <label for="dataInput">Paste a data URI</label>
+        <textarea class="textarea" id="dataInput" placeholder="data:image/png;base64,iVBORw0KGgo..." spellcheck="false"></textarea>
+        <p class="field-hint" id="decodeHint">Start with data:image/…;base64, - everything after the comma is the image.</p>
+      </div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>The encoded string is about a third larger than the file, because every three bytes become four characters. Keep data URIs for icons and small graphics, not photos.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Output</h2><span class="hint" id="outHint">Nothing yet</span></div>
+
+    <div id="encodeOut" hidden>
+      <textarea class="output-box" id="dataOutput" readonly spellcheck="false"></textarea>
+      <div class="split-actions" style="margin-top:12px">
+        <button class="btn btn-primary" id="copyData" type="button">Copy data URI</button>
+        <button class="btn btn-ghost" id="downloadData" type="button">Save as .txt</button>
+      </div>
+    </div>
+
+    <div id="decodeOut" hidden>
+      <div class="canvas-box" style="min-height:220px">
+        <img id="decodedImg" alt="Decoded image preview" style="max-width:100%;max-height:340px;border-radius:8px" hidden>
+        <span class="canvas-empty" id="decodedEmpty">Paste a data URI to preview the image.</span>
+      </div>
+      <div class="meta-stack" style="margin-top:12px">
+        <div class="meta-row"><span>Type</span><b id="decodedType">—</b></div>
+        <div class="meta-row"><span>Size</span><b id="decodedSize">—</b></div>
+      </div>
+      <div class="split-actions" style="margin-top:12px">
+        <button class="btn btn-primary" id="downloadDecoded" type="button" disabled>Download image</button>
+      </div>
+    </div>
+
+    <div class="empty-muted" id="outEmpty">Choose an image to get its Base64 data URI.</div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

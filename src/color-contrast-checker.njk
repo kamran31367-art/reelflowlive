@@ -1,0 +1,99 @@
+---
+layout: layouts/base.njk
+contentKey: color-contrast-checker
+ldType: tool
+contentType: tool
+permalink: /color-contrast-checker/
+sitemap: true
+mainClass: wrap
+pageScript: tools/contrast.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Colors</h2><span class="hint">hex or picker</span></div>
+
+    <div class="grid2">
+      <div class="field">
+        <label for="textPick">Text color</label>
+        <input type="color" id="textPick" value="#000000" aria-describedby="textHex">
+        <div class="chip-row" style="margin-top:8px">
+          <span class="swatch" id="textSwatch" aria-hidden="true"></span>
+          <input class="input mono" id="textHex" type="text" value="#000000" spellcheck="false" autocomplete="off" aria-label="Text color hex value" style="flex:1;min-width:100px">
+        </div>
+        <p class="field-hint err" id="textErr" role="alert" hidden></p>
+      </div>
+
+      <div class="field">
+        <label for="bgPick">Background color</label>
+        <input type="color" id="bgPick" value="#ffffff" aria-describedby="bgHex">
+        <div class="chip-row" style="margin-top:8px">
+          <span class="swatch" id="bgSwatch" aria-hidden="true"></span>
+          <input class="input mono" id="bgHex" type="text" value="#ffffff" spellcheck="false" autocomplete="off" aria-label="Background color hex value" style="flex:1;min-width:100px">
+        </div>
+        <p class="field-hint err" id="bgErr" role="alert" hidden></p>
+      </div>
+    </div>
+
+    <div class="split-actions" style="margin-bottom:14px">
+      <button class="btn btn-sm" id="swapBtn" type="button">Swap colors</button>
+      <button class="btn btn-ghost btn-sm" id="resetBtn" type="button">Reset defaults</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Ratios follow the WCAG relative luminance formula. The minimums are 4.5:1 for normal text and 3:1 for large text at AA; 7:1 and 4.5:1 at AAA.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Contrast ratio</h2><span class="hint" id="ratioHint">normal text</span></div>
+
+    <div class="stat-big" id="ratioValue" aria-live="polite">21.00</div>
+    <div class="chip-row" style="margin:10px 0 14px">
+      <span class="badge" id="badgeNormalAA">AA normal</span>
+      <span class="badge" id="badgeNormalAAA">AAA normal</span>
+      <span class="badge" id="badgeLargeAA">AA large</span>
+      <span class="badge" id="badgeLargeAAA">AAA large</span>
+    </div>
+
+    <div class="preview-frame" id="previewFrame">
+      <p id="previewSmall" style="font-size:16px;line-height:1.5;margin:0 0 10px">Normal text at 16 pixels: can you read this in bright daylight?</p>
+      <p id="previewLarge" style="font-size:24px;line-height:1.3;margin:0;font-weight:700">Large bold text at 24 pixels</p>
+    </div>
+
+    <table class="kv-table" aria-label="Contrast requirements" style="margin-top:14px">
+      <tbody>
+        <tr><td>Normal text AA needs</td><td>4.5:1</td></tr>
+        <tr><td>Normal text AAA needs</td><td>7.0:1</td></tr>
+        <tr><td>Large text AA needs</td><td>3.0:1</td></tr>
+        <tr><td>Large text AAA needs</td><td>4.5:1</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

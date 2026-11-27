@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Video Frame Grabber - Save Any Frame as PNG (Free) | ReelFlow Toolkit",
+  "description": "Scrub any video, pick the exact second and download that frame as a full-size PNG. Processed in your browser.",
+  "ogTitle": "Video Frame Grabber - A PNG at Any Second",
+  "ogDescription": "Save any frame of a video as a full-resolution PNG without uploading the file.",
+  "ldDescription": "Select a time in a video and export that frame as a PNG image using the browser canvas.",
+  "breadcrumb": "Frame Grabber",
+  "kicker": "Video tool",
+  "h1": "Video Frame Grabber",
+  "lede": "Load a video, move to the exact second and save that frame as a PNG. The image keeps the full resolution of the video.",
+  "faq": [
+    {
+      "q": "How exact is the frame?",
+      "a": "You can step the time in fractions of a second. The browser seeks to the nearest frame it can decode, so the saved image matches what the preview shows."
+    },
+    {
+      "q": "What size is the PNG?",
+      "a": "The full resolution of the video - a 1920x1080 clip gives a 1920x1080 PNG. No scaling is applied."
+    },
+    {
+      "q": "Does it work for every format?",
+      "a": "Any video the browser can play. MP4 with H.264 works everywhere; MOV and MKV depend on the browser's codecs."
+    }
+  ],
+  "related": [
+    { "slug": "video-to-gif", "letter": "G", "tone": "mint", "note": "Animate several frames" },
+    { "slug": "video-trimmer", "letter": "T", "tone": "", "note": "Cut the clip around it" },
+    { "slug": "thumbnail-safe-zone", "letter": "S", "tone": "amber", "note": "Check the crop before posting" }
+  ]
+}

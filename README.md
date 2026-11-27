@@ -30,6 +30,29 @@ npm run build     # writes _site/
 npm run check     # link + SEO checks against _site (run after build)
 ```
 
+## Tools
+
+Twenty-six tools, each a page plus a script in `src/assets/js/tools/`; the list and card
+text live in `src/_data/tools.json`, the page copy in `src/_data/toolpages/`.
+
+- YouTube: thumbnail downloader, chapters, timestamp/share links, title and description
+  preview, thumbnail safe-zone tester, character counter.
+- Images: resizer, compressor, format converter (JPG/WebP/PNG), image to Base64 and back,
+  meme generator, favicon generator (PNG sizes + ICO + HTML snippet), background remover
+  (person cut-out).
+- Video: trimmer (MediaRecorder, no encoder download), video to GIF, frame grabber.
+- Audio: extractor and trimmer (WAV/MP3), speed and pitch changer with waveform PNG.
+- PDF: merge, extract pages, rotate, images to PDF; PDF pages to PNG and text.
+- Text and links: text tools (case, lines, duplicates, slug, lorem), UTM link builder.
+- Developer: JSON/Base64/hash/password/URL tools, QR code generator (PNG/SVG),
+  color contrast checker (WCAG).
+- Subtitles: SRT editor with VTT export.
+
+All libraries are vendored in `src/assets/js/vendor/` (no runtime CDN): qrcode-generator,
+gif.js, lamejs, pdf-lib, pdf.js, and MediaPipe tasks-vision with the selfie segmenter
+model. The video trimmer uses the browser's own MediaRecorder because ffmpeg.wasm needs
+SharedArrayBuffer, which GitHub Pages cannot provide (no COOP/COEP headers).
+
 ## Blog
 
 The blog lives on the same site and hosting, so it adds no cost:
@@ -115,7 +138,7 @@ DNS keeps pointing at GitHub Pages.
 ```
 src/
   index.njk                  homepage template
-  <tool-slug>.njk            6 tool pages (tool UI markup)
+  <tool-slug>.njk            26 tool pages (tool UI markup)
   privacy.njk, 404.njk
   sitemap.njk
   blog/

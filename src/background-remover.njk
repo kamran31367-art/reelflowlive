@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+contentKey: background-remover
+ldType: tool
+contentType: tool
+permalink: /background-remover/
+sitemap: true
+mainClass: wrap
+pageScript: tools/bgremove.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Photo</h2><span class="hint">people work best</span></div>
+
+    <div class="dropzone" id="bgDrop" tabindex="0" role="button" aria-label="Choose a photo to cut out">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16 14 6l4 4L8 20H4z"/><path d="m10 10 4 4"/><path d="M14 20h6"/></svg>
+      </div>
+      <b>Drop a photo here or click to choose</b>
+      <span class="mini">JPG, PNG or WebP · the model runs on your device</span>
+    </div>
+    <input class="visually-hidden" id="bgFile" type="file" accept="image/jpeg,image/png,image/webp">
+
+    <div class="file-info" id="bgInfo" hidden>
+      <div class="meta-row"><span>File</span><b id="bgName">—</b></div>
+      <div class="meta-row"><span>Size</span><b id="bgDims">—</b></div>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <label for="bgThreshold">Cut strength</label>
+      <div class="range-row">
+        <input type="range" id="bgThreshold" min="15" max="85" step="1" value="50">
+        <output id="bgThresholdValue">50</output>
+      </div>
+    </div>
+    <div class="field">
+      <label for="bgSoften">Edge softness</label>
+      <div class="range-row">
+        <input type="range" id="bgSoften" min="0" max="3" step="1" value="1">
+        <output id="bgSoftenValue">1</output>
+      </div>
+    </div>
+
+    <div class="split-actions" style="margin-top:12px">
+      <button class="btn btn-primary" id="bgDownload" type="button" disabled>Download PNG</button>
+      <button class="btn btn-ghost" id="bgReset" type="button">Reset</button>
+    </div>
+    <p class="field-hint" id="bgError" hidden></p>
+
+    <div class="note"><span class="pin">i</span><span>The first photo downloads the segmentation model (about 10 MB) once; later visits use the browser cache. The mask is an estimate, so hair and fine edges can be soft.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Result</h2><span class="hint" id="bgStatus">Waiting for a photo</span></div>
+
+    <div class="checker" style="padding:10px">
+      <div class="canvas-box" style="min-height:240px;background-image:none;background-color:transparent">
+        <span class="canvas-empty" id="bgEmpty">The cut-out appears here with a transparent background.</span>
+        <canvas id="bgCanvas" hidden style="max-width:100%;height:auto"></canvas>
+      </div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>A transparent PNG can be dropped into any editor, thumbnail or slide deck. The cut keeps the original image resolution.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>
+
+<script type="module">
+  import { FilesetResolver, ImageSegmenter } from '/assets/js/vendor/mediapipe/vision_bundle.js';
+  window.__mp = { FilesetResolver, ImageSegmenter };
+  window.dispatchEvent(new Event('mp-ready'));
+</script>

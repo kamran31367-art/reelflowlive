@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Color Contrast Checker - WCAG AA and AAA (Free) | ReelFlow Toolkit",
+  "description": "Check the contrast ratio of any text and background colour against WCAG AA and AAA thresholds, with a live preview at small and large sizes.",
+  "ogTitle": "Color Contrast Checker - WCAG AA and AAA",
+  "ogDescription": "Pick two colours and see the contrast ratio, the WCAG verdicts and a readable text preview.",
+  "ldDescription": "Calculate the WCAG contrast ratio for any two colours and check AA and AAA results for normal and large text, with a live preview.",
+  "breadcrumb": "Contrast Checker",
+  "kicker": "Design tool",
+  "h1": "Color Contrast Checker",
+  "lede": "Choose a text colour and a background colour to see the contrast ratio, pass or fail for WCAG AA and AAA, and a live readable preview.",
+  "faq": [
+    {
+      "q": "What ratio does WCAG require?",
+      "a": "Normal text needs 4.5:1 for AA and 7:1 for AAA. Large text (about 18.66 px bold or 24 px regular) needs 3:1 for AA and 4.5:1 for AAA."
+    },
+    {
+      "q": "Why is contrast important for thumbnails and captions?",
+      "a": "Many viewers watch on phones in daylight. Text that just passes on a desktop screen can disappear outdoors, so a comfortable margin above the minimum matters."
+    },
+    {
+      "q": "Which colour inputs are accepted?",
+      "a": "The colour pickers are the simplest route, but you can also type a hex value such as #1d4ed8 in the field next to each swatch."
+    }
+  ],
+  "related": [
+    { "slug": "thumbnail-safe-zone", "letter": "S", "tone": "amber", "note": "Test thumbnail text placement" },
+    { "slug": "meme-generator", "letter": "M", "tone": "", "note": "Check the caption colours" },
+    { "slug": "favicon-generator", "letter": "F", "tone": "mint", "note": "Pick icon colours that read" }
+  ]
+}

@@ -1,0 +1,112 @@
+---
+layout: layouts/base.njk
+contentKey: favicon-generator
+ldType: tool
+contentType: tool
+permalink: /favicon-generator/
+sitemap: true
+mainClass: wrap
+pageScript: tools/favicon.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Source</h2><span class="hint">image or text</span></div>
+
+    <div class="field">
+      <span class="field-label">Build from</span>
+      <div class="seg" id="modeSeg">
+        <button type="button" data-mode="image" class="on" aria-pressed="true">Image</button>
+        <button type="button" data-mode="text" aria-pressed="false">Text</button>
+      </div>
+    </div>
+
+    <div id="imagePane">
+      <div class="dropzone" id="iconDropzone" tabindex="0" role="button" aria-label="Choose an image for the favicon">
+        <div class="dz-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.3l1.05 2.2 2.4.3-1.75 1.65.45 2.4L12 13.7l-2.15 1.15.45-2.4L8.55 10.8l2.4-.3z"/></svg>
+        </div>
+        <b>Drop an image here or click to choose</b>
+        <span class="mini">Square images work best · JPG, PNG or WebP</span>
+      </div>
+      <input class="visually-hidden" id="iconFile" type="file" accept="image/*">
+
+      <div class="file-info" id="iconInfo" hidden>
+        <div class="meta-row"><span>File</span><b id="iconName">—</b></div>
+        <div class="meta-row"><span>Dimensions</span><b id="iconDims">—</b></div>
+      </div>
+    </div>
+
+    <div id="textPane" hidden>
+      <div class="row">
+        <div class="field">
+          <label for="iconText">Letters (1-2)</label>
+          <input class="input" id="iconText" type="text" maxlength="2" value="R" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="iconShape">Shape</label>
+          <select class="select" id="iconShape">
+            <option value="rounded" selected>Rounded</option>
+            <option value="square">Square</option>
+            <option value="circle">Circle</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="iconBg">Background</label>
+          <input type="color" id="iconBg" value="#2563eb">
+        </div>
+        <div class="field">
+          <label for="iconInk">Letters</label>
+          <input type="color" id="iconInk" value="#ffffff">
+        </div>
+      </div>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Images are cropped to a square from the centre, then scaled down. Text icons use bold system letters so they stay readable at 16 pixels.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Icons</h2><span class="hint" id="iconStatus">Waiting for a source</span></div>
+
+    <div class="empty-muted" id="iconEmpty">Choose an image or switch to text to generate seven icon sizes.</div>
+    <div class="icon-grid" id="iconGrid"></div>
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="downloadIco" type="button" disabled>Download favicon.ico</button>
+      <button class="btn btn-ghost" id="copySnippet" type="button" disabled>Copy HTML snippet</button>
+      <button class="btn btn-ghost" id="resetIcons" type="button">Reset</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>Put every PNG in the site root and keep the snippet's paths. Browsers pick the size they need; favicon.ico covers older tabs and bookmarks.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

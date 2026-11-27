@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Favicon Generator - PNG Icons and favicon.ico (Free) | ReelFlow Toolkit",
+  "description": "Turn an image or a letter into every favicon size from 16 to 512 pixels. Preview each icon, download the PNGs and a ready favicon.ico - no upload.",
+  "ogTitle": "Favicon Generator - Every Icon Size From One Source",
+  "ogDescription": "Make 16-512 px PNG favicons plus a favicon.ico from an image or a letter, right in your browser.",
+  "ldDescription": "Generate favicon PNG files from 16 to 512 pixels and a multi-size favicon.ico from an uploaded image or a text glyph, entirely in the browser.",
+  "breadcrumb": "Favicon Generator",
+  "kicker": "Image tool",
+  "h1": "Favicon Generator",
+  "lede": "Use an image or a letter to build every favicon size you need, preview them at real size, and download the PNGs plus a ready favicon.ico.",
+  "faq": [
+    {
+      "q": "Which icon sizes are generated?",
+      "a": "16, 32, 48, 64, 180 (Apple touch icon), 192 and 512 pixel squares, plus a favicon.ico that packs the 16, 32 and 48 pixel versions."
+    },
+    {
+      "q": "Can I make an icon from text instead of an image?",
+      "a": "Yes. Pick one or two letters, choose a background and text colour, and the tool renders the same seven sizes. This is the quickest route for a new site."
+    },
+    {
+      "q": "Does the source image get uploaded?",
+      "a": "No. The image is drawn to a canvas in your browser and every icon is generated locally. Nothing is sent to a server."
+    }
+  ],
+  "related": [
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Resize or crop the source first" },
+    { "slug": "image-converter", "letter": "C", "tone": "mint", "note": "Switch the source to WebP or PNG" },
+    { "slug": "image-to-base64", "letter": "B", "tone": "amber", "note": "Inline the icon as a data URI" }
+  ]
+}

@@ -1,0 +1,107 @@
+---
+layout: layouts/base.njk
+contentKey: utm-link-builder
+ldType: tool
+contentType: tool
+permalink: /utm-link-builder/
+sitemap: true
+mainClass: wrap
+pageScript: tools/utm.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Campaign</h2><span class="hint">required: URL, source, medium</span></div>
+
+    <div class="field">
+      <label for="destUrl">Destination URL</label>
+      <input class="input" id="destUrl" type="text" autocomplete="off" spellcheck="false" placeholder="https://example.com/page">
+      <p class="field-hint" id="destHint">https:// is added when you leave it out.</p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="utmSource">Source <span class="mono">utm_source</span></label>
+        <input class="input" id="utmSource" type="text" autocomplete="off" spellcheck="false" placeholder="youtube">
+      </div>
+      <div class="field">
+        <label for="utmMedium">Medium <span class="mono">utm_medium</span></label>
+        <input class="input" id="utmMedium" type="text" autocomplete="off" spellcheck="false" placeholder="social">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="utmCampaign">Campaign <span class="mono">utm_campaign</span></label>
+      <input class="input" id="utmCampaign" type="text" autocomplete="off" spellcheck="false" placeholder="summer-launch">
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="utmTerm">Term <span class="mono">utm_term</span></label>
+        <input class="input" id="utmTerm" type="text" autocomplete="off" spellcheck="false" placeholder="optional">
+      </div>
+      <div class="field">
+        <label for="utmContent">Content <span class="mono">utm_content</span></label>
+        <input class="input" id="utmContent" type="text" autocomplete="off" spellcheck="false" placeholder="optional">
+      </div>
+    </div>
+
+    <div class="split-actions">
+      <button class="btn btn-ghost btn-sm" id="clearBtn" type="button">Clear</button>
+      <span class="spacer"></span>
+      <button class="btn btn-primary" id="copyBtn" type="button" disabled>Copy tagged link</button>
+    </div>
+
+    <p class="field-hint err" id="formError" role="alert" hidden></p>
+
+    <div class="note"><span class="pin">i</span><span>Use lower case and hyphens: Youtube and youtube are counted as different sources in most analytics tools.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Final link</h2><span class="badge" id="caseBadge">Waiting for input</span></div>
+
+    <div class="field">
+      <label for="finalUrl">Tagged URL</label>
+      <input class="input output-box sm mono wrap-any" id="finalUrl" type="text" readonly value="" aria-live="polite" placeholder="Your campaign link appears here">
+    </div>
+
+    <div class="split-actions" style="margin-bottom:14px">
+      <button class="btn btn-sm" id="openLink" type="button" disabled>Open link</button>
+    </div>
+
+    <div class="pane-head"><h2>Tags added</h2><span class="hint" id="tagCount">0 of 5</span></div>
+    <table class="kv-table" aria-label="UTM tags in the final link">
+      <tbody id="tagRows"></tbody>
+    </table>
+
+    <div class="note"><span class="pin">i</span><span>Optional fields left empty are dropped, and an existing utm_key on the destination is replaced rather than duplicated.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

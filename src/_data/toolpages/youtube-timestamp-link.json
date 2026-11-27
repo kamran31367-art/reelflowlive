@@ -1,0 +1,30 @@
+{
+  "metaTitle": "YouTube Timestamp Link Generator - Share a Video at Any Second | ReelFlow Toolkit",
+  "description": "Paste a YouTube link and a time to get a share link that opens at that second, plus a readable timestamp for comments and descriptions.",
+  "ogTitle": "YouTube Timestamp Link - Jump to the Exact Second",
+  "ogDescription": "Create a share link and a comment-ready timestamp for any moment in a YouTube video.",
+  "ldDescription": "Generate a YouTube share URL that starts at a chosen time, together with a readable timestamp for comments and descriptions.",
+  "breadcrumb": "Timestamp Link",
+  "kicker": "YouTube tool",
+  "h1": "YouTube Timestamp Link",
+  "lede": "Paste a video link and a time such as 1:42, and get a share link that opens exactly there - plus the timestamp text for your comment or description.",
+  "faq": [
+    {
+      "q": "Which links does it accept?",
+      "a": "Watch links, youtu.be short links, Shorts, Live and embed URLs, or just the 11-character video ID. Other parameters in the link are kept unless they conflict."
+    },
+    {
+      "q": "What is the difference between t and start?",
+      "a": "The link uses t, the parameter YouTube's own Share button writes. Embedded players also accept start; the tool shows both forms so you can copy the one you need."
+    },
+    {
+      "q": "Can the timestamp be negative or past the end?",
+      "a": "No. Times must be zero or later, and you should use a time inside the video. The tool shows the parsed time in seconds so you can check it before copying."
+    }
+  ],
+  "related": [
+    { "slug": "youtube-chapters", "letter": "C", "tone": "amber", "note": "Turn key moments into chapters" },
+    { "slug": "srt-editor", "letter": "S", "tone": "mint", "note": "Align subtitles with the same times" },
+    { "slug": "youtube-thumbnail-downloader", "letter": "T", "tone": "", "note": "Grab the thumbnail for a post" }
+  ]
+}

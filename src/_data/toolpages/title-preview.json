@@ -1,0 +1,30 @@
+{
+  "metaTitle": "YouTube and Instagram Title Preview - See the Truncation | ReelFlow Toolkit",
+  "description": "Paste a title and description to preview the YouTube search card, and a caption to see where Instagram cuts it off behind the More link.",
+  "ogTitle": "Title and Caption Preview - Before You Publish",
+  "ogDescription": "Preview YouTube search results and Instagram caption truncation with your own text, side by side.",
+  "ldDescription": "Preview how a title and description appear in YouTube search and where an Instagram caption truncates behind More, using your own text.",
+  "breadcrumb": "Title Preview",
+  "kicker": "Writing tool",
+  "h1": "Title & Caption Preview",
+  "lede": "Type a title, channel and caption to see the same text as a YouTube search card and an Instagram post - including exactly where it gets cut off.",
+  "faq": [
+    {
+      "q": "How does YouTube cut off a title?",
+      "a": "The search card shows about two lines, which is often 60-70 characters, depending on the letters and the screen. The preview clamps at two lines so you see the real cut."
+    },
+    {
+      "q": "Where does Instagram hide the caption?",
+      "a": "The feed shows roughly the first two lines before More. The first line should carry the hook, because everything after the cut is hidden."
+    },
+    {
+      "q": "Is anything saved or sent?",
+      "a": "No. The preview is drawn from the text you type and nothing leaves the page."
+    }
+  ],
+  "related": [
+    { "slug": "character-counter", "letter": "C", "tone": "rose", "note": "Check the exact limits" },
+    { "slug": "thumbnail-safe-zone", "letter": "S", "tone": "amber", "note": "Test the thumbnail beside it" },
+    { "slug": "youtube-thumbnail-downloader", "letter": "T", "tone": "", "note": "Load a real thumbnail" }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Background Remover - Transparent PNG for Photos (Free) | ReelFlow Toolkit",
+  "description": "Remove the background from photos of people and download a transparent PNG. The image is processed on your device.",
+  "ogTitle": "Background Remover - Transparent PNG, No Upload",
+  "ogDescription": "Cut out a person from a photo and save a transparent PNG without uploading the image.",
+  "ldDescription": "Remove the background from a photo of a person in the browser and download a transparent PNG.",
+  "breadcrumb": "Background Remover",
+  "kicker": "Image tool",
+  "h1": "Background Remover",
+  "lede": "Load a photo, let the on-device model find the person and download the cut-out as a transparent PNG. Nothing is uploaded.",
+  "faq": [
+    {
+      "q": "Which photos work best?",
+      "a": "Photos of people - portraits, talking-head frames and product shots with a person. The model is trained on people, so objects and animals are not its target."
+    },
+    {
+      "q": "Why does the first run take longer?",
+      "a": "The page downloads a segmentation model (about 10 MB) once. Later visits use the browser cache and the cut-out is quick."
+    },
+    {
+      "q": "Can I edit the edges?",
+      "a": "Not by hand. The mask is a smooth estimate, so hair and fine edges can be soft. Lower the edge strength slider if you want a cleaner, harder edge."
+    }
+  ],
+  "related": [
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Size the cut-out" },
+    { "slug": "image-converter", "letter": "C", "tone": "mint", "note": "Swap the format" },
+    { "slug": "image-compressor", "letter": "Z", "tone": "amber", "note": "Shrink the PNG" }
+  ]
+}

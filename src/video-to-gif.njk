@@ -1,0 +1,165 @@
+---
+layout: layouts/base.njk
+contentKey: video-to-gif
+ldType: tool
+contentType: tool
+permalink: /video-to-gif/
+sitemap: true
+mainClass: wrap
+pageScript: tools/videogif.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Clip</h2><span class="hint">one video</span></div>
+
+    <div class="dropzone" id="gifDropzone" tabindex="0" role="button" aria-label="Choose a video to turn into a GIF">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9h19"/><path d="M2.5 15h19"/><path d="M6.5 5v14"/><path d="M17.5 5v14"/></svg>
+      </div>
+      <b>Drop a video here or click to choose</b>
+      <span class="mini">MP4, WebM or MOV the browser can play · nothing is uploaded</span>
+    </div>
+    <input class="visually-hidden" id="gifFile" type="file" accept="video/*">
+
+    <div class="file-info" id="gifInfo" hidden>
+      <div class="meta-row"><span>File</span><b id="gifName">—</b></div>
+      <div class="meta-row"><span>Size</span><b id="gifBytes">—</b></div>
+      <div class="meta-row"><span>Video</span><b id="gifDims">—</b></div>
+      <div class="meta-row"><span>Duration</span><b id="gifDuration">—</b></div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="gifStart">Start time</label>
+        <div class="row" style="flex-wrap:nowrap;align-items:center">
+          <input class="input" id="gifStart" type="text" inputmode="decimal" value="0.0" autocomplete="off" aria-describedby="gifStartHint">
+          <button class="btn btn-sm btn-ghost" id="gifUseCurrent" type="button" style="flex:0 0 auto">Use current</button>
+        </div>
+        <p class="field-hint" id="gifStartHint">Seconds or m:ss - for example 2.5 or 0:12.</p>
+      </div>
+      <div class="field">
+        <label for="gifLength">Length</label>
+        <div class="range-row">
+          <input type="range" id="gifLength" min="1" max="8" step="0.5" value="3">
+          <output id="gifLengthValue">3 s</output>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <span class="field-label">Width</span>
+        <div class="seg" id="gifWidthSeg">
+          <button type="button" data-width="320" aria-pressed="false">320</button>
+          <button type="button" data-width="480" class="on" aria-pressed="true">480</button>
+          <button type="button" data-width="640" aria-pressed="false">640</button>
+        </div>
+        <input type="hidden" id="gifWidth" value="480">
+      </div>
+      <div class="field">
+        <span class="field-label">Frame rate</span>
+        <div class="seg" id="gifFpsSeg">
+          <button type="button" data-fps="8" aria-pressed="false">8</button>
+          <button type="button" data-fps="10" class="on" aria-pressed="true">10</button>
+          <button type="button" data-fps="12" aria-pressed="false">12</button>
+          <button type="button" data-fps="15" aria-pressed="false">15</button>
+        </div>
+        <input type="hidden" id="gifFps" value="10">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <span class="field-label">Loop speed</span>
+        <div class="seg" id="gifSpeedSeg">
+          <button type="button" data-speed="0.5" aria-pressed="false">0.5x</button>
+          <button type="button" data-speed="1" class="on" aria-pressed="true">1x</button>
+          <button type="button" data-speed="2" aria-pressed="false">2x</button>
+        </div>
+        <input type="hidden" id="gifSpeed" value="1">
+        <p class="field-hint">Playback speed of the GIF, not of the capture.</p>
+      </div>
+      <div class="field">
+        <label for="gifQuality">Quality</label>
+        <div class="range-row">
+          <input type="range" id="gifQuality" min="5" max="20" step="1" value="10">
+          <output id="gifQualityValue">10</output>
+        </div>
+        <p class="field-hint">Lower is sharper and larger; higher is smaller and softer.</p>
+      </div>
+    </div>
+
+    <div class="split-actions">
+      <button class="btn btn-primary" id="gifMake" type="button" disabled>Make GIF</button>
+      <button class="btn btn-ghost" id="gifCancel" type="button" disabled>Cancel</button>
+    </div>
+
+    <div class="field-hint err" id="gifError" hidden></div>
+
+    <div class="note"><span class="pin">i</span><span>Frames are captured by seeking the video to each time and drawn to a canvas, then encoded by a Web Worker in this tab.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Result</h2><span class="hint" id="gifHint">No video yet</span></div>
+
+    <div class="video-frame" id="gifVideoFrame">
+      <span class="canvas-empty" id="gifVideoEmpty">Choose a video to preview and seek.</span>
+      <video id="gifVideo" playsinline muted preload="metadata" hidden></video>
+    </div>
+
+    <div id="gifProgressWrap" style="margin-top:14px" hidden>
+      <div class="progress-track" role="progressbar" aria-label="GIF progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="gifProgress">
+        <div class="progress-fill" id="gifProgressFill"></div>
+      </div>
+      <div class="progress-label" id="gifProgressLabel">Waiting…</div>
+    </div>
+
+    <div class="canvas-box" id="gifPreviewBox" style="margin-top:14px" hidden>
+      <img id="gifPreview" alt="GIF preview" style="max-width:100%;max-height:380px;border-radius:8px" hidden>
+    </div>
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="gifDownload" type="button" disabled>Download GIF</button>
+    </div>
+
+    <div class="meta-stack" id="gifResultMeta" style="margin-top:12px" hidden>
+      <div class="meta-row"><span>Frames</span><b id="gifFrames">—</b></div>
+      <div class="meta-row"><span>Size</span><b id="gifResultBytes">—</b></div>
+    </div>
+
+    <div class="empty-muted" id="gifEmpty" style="margin-top:14px">Make a GIF to preview and download it.</div>
+
+    <div class="note"><span class="pin">i</span><span>The GIF starts at your chosen time and stops at the end of your length. Seeking lands on the nearest frame the browser can decode, so the first frame may differ by one frame step.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>
+
+<script src="/assets/js/vendor/gif/gif.js"></script>

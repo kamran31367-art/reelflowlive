@@ -1,0 +1,109 @@
+---
+layout: layouts/base.njk
+contentKey: audio-extractor
+ldType: tool
+contentType: tool
+permalink: /audio-extractor/
+sitemap: true
+mainClass: wrap
+pageScript: tools/audioextract.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Input</h2><span class="hint">video or audio</span></div>
+
+    <div class="dropzone" id="axDropzone" tabindex="0" role="button" aria-label="Choose a video or audio file">
+      <div class="dz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2l2-6 3 14 3-11 2 5h6"/></svg>
+      </div>
+      <b>Drop a video or audio file here, or click to choose</b>
+      <span class="mini">MP4, MOV, WebM, MP3, WAV, M4A, OGG · nothing is uploaded</span>
+    </div>
+    <input class="visually-hidden" id="axFile" type="file" accept="video/*,audio/*">
+
+    <p class="field-hint err" id="axError" role="alert" hidden></p>
+
+    <div class="file-info" id="axInfo" hidden>
+      <div class="meta-row"><span>File</span><b id="axName">—</b></div>
+      <div class="meta-row"><span>Duration</span><b id="axDuration">—</b></div>
+      <div class="meta-row"><span>Channels</span><b id="axChannels">—</b></div>
+      <div class="meta-row"><span>Sample rate</span><b id="axRate">—</b></div>
+      <div class="meta-row"><span>File size</span><b id="axBytes">—</b></div>
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <span class="field-label">Preview</span>
+      <audio id="axPlayer" controls preload="metadata" style="width:100%" hidden></audio>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="axStart">Start time</label>
+        <input class="input" id="axStart" type="text" placeholder="0:00.000" spellcheck="false" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="axEnd">End time</label>
+        <input class="input" id="axEnd" type="text" placeholder="end of file" spellcheck="false" autocomplete="off">
+      </div>
+    </div>
+    <p class="field-hint" id="axRangeHint">Empty fields keep the whole file. Use mm:ss.mmm or plain seconds.</p>
+
+    <div class="note"><span class="pin">i</span><span>The browser decodes the file and encodes the result on your device. A video codec the browser cannot read (for example some MOV variants) is reported by name instead of failing quietly.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Export</h2><span class="hint" id="axOutHint">Nothing yet</span></div>
+
+    <div class="meta-stack" id="axOutMeta" hidden>
+      <div class="meta-row"><span>Range</span><b id="axOutRange">—</b></div>
+      <div class="meta-row"><span>Length</span><b id="axOutLength">—</b></div>
+      <div class="meta-row"><span>WAV size</span><b id="axOutWav">—</b></div>
+      <div class="meta-row"><span>MP3 size</span><b id="axOutMp3">—</b></div>
+    </div>
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="axWavBtn" type="button" disabled>Download WAV</button>
+      <button class="btn" id="axMp3Btn" type="button" disabled>Download MP3</button>
+    </div>
+
+    <div id="axProgressWrap" hidden style="margin-top:14px">
+      <div class="progress-track"><div class="progress-fill" id="axProgress"></div></div>
+      <div class="progress-label" id="axProgressLabel">0%</div>
+    </div>
+
+    <div class="empty-muted" id="axOutEmpty" style="margin-top:14px">Load a file to unlock the WAV and MP3 exports.</div>
+
+    <div class="note"><span class="pin">i</span><span>WAV is 16-bit PCM at the source sample rate. MP3 is encoded at 128 kbps, which is roughly a tenth of the WAV size and fine for most uploads.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>
+
+<script src="/assets/js/vendor/lame/lame.min.js"></script>

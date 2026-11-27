@@ -1,15 +1,15 @@
 {
   "metaTitle": "ReelFlow Toolkit - Free Tools for YouTubers and Short-Video Creators",
-  "description": "Free browser-based tools for creators: YouTube thumbnail downloader, image resizer, image compressor, SRT subtitle editor, chapters generator and character counter. No upload, no signup.",
+  "description": "Free browser-based tools for creators: YouTube thumbnails, image resizing and compression, favicons, QR codes, memes, subtitles, chapters, titles, video trimming, GIFs, audio, PDF and developer utilities. No upload, no signup.",
   "ogTitle": "ReelFlow Toolkit - Free Tools for Creators",
-  "ogDescription": "Thumbnails, image sizes, compression, subtitles and chapters - six free tools that run entirely in your browser.",
+  "ogDescription": "Thumbnails, image sizes, compression, QR codes, subtitles, chapters, video trimming, GIFs, audio and PDF - twenty-six free tools that run entirely in your browser.",
   "heroTitle": "Every small tool a creator needs,",
   "heroEm": "right in the browser.",
-  "heroLead": "Thumbnails, image sizes, compression, subtitles and titles - all free, all local. Your files never leave your device.",
+  "heroLead": "Thumbnails, image sizes, compression, video trimming, GIFs, audio, PDF, QR codes and everyday utilities - all free, all local. Your files never leave your device.",
   "primaryCta": { "label": "Browse the toolkit", "href": "#tools" },
   "secondaryCta": { "label": "Try the thumbnail tool", "href": "/youtube-thumbnail-downloader/" },
   "trust": ["No signup", "No upload", "No watermark", "Built for YouTube, Shorts, Reels, TikTok"],
-  "toolsTitle": "Six tools to start",
+  "toolsTitle": "Twenty-six tools to start",
   "toolsNote": "Each tool has its own page and loads in under a second.",
   "features": [
     {
@@ -38,7 +38,7 @@
     },
     {
       "q": "Will more tools be added?",
-      "a": "Yes - the toolkit is built to grow. Video to GIF and video trimming are planned next, with each tool getting its own page under reelflow.live."
+      "a": "Yes - the toolkit keeps growing. Video trimming, video to GIF, audio extraction and speed control, PDF merge and split, PDF to images and background removal are already here, and more formats and utilities are planned on the same pattern."
     }
   ]
 }

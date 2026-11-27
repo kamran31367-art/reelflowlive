@@ -1,0 +1,108 @@
+---
+layout: layouts/base.njk
+contentKey: youtube-timestamp-link
+ldType: tool
+contentType: tool
+permalink: /youtube-timestamp-link/
+sitemap: true
+mainClass: wrap
+pageScript: tools/timestamp.js
+---
+{% set c = toolpages[contentKey] %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ c.kicker }}</span>
+  <h1>{{ c.h1 }}</h1>
+  <p>{{ c.lede }}</p>
+</section>
+
+<section class="workspace">
+  <div class="pane">
+    <div class="pane-head"><h2>Input</h2><span class="hint">link + time</span></div>
+
+    <div class="field">
+      <label for="videoInput">Video link or ID</label>
+      <input class="input" id="videoInput" type="text" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off" spellcheck="false">
+      <p class="field-hint" id="videoHint">Watch, youtu.be, Shorts, Live and embed links all work, or paste the 11-character ID.</p>
+    </div>
+
+    <div class="field">
+      <label for="timeInput">Start time</label>
+      <input class="input" id="timeInput" type="text" inputmode="numeric" placeholder="1:42" autocomplete="off">
+      <p class="field-hint" id="timeHint">Use seconds (102), m:ss (1:42) or h:mm:ss (1:02:03).</p>
+    </div>
+
+    <div class="split-actions" style="margin-top:16px">
+      <button class="btn btn-sm" id="resetBtn" type="button">Clear</button>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>The link keeps every other parameter of the original URL, such as a playlist or a share tag. Only the time parameter is replaced.</span></div>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>Results</h2><span class="hint" id="resultHint">Waiting for input</span></div>
+
+    <div class="meta-stack" style="margin-bottom:14px">
+      <div class="meta-row"><span>Video ID</span><b id="outId">—</b></div>
+      <div class="meta-row"><span>Start in seconds</span><b id="outSeconds">—</b></div>
+      <div class="meta-row"><span>Readable timestamp</span><b id="outClock">—</b></div>
+    </div>
+
+    <div class="field">
+      <label for="outShort">Short link</label>
+      <input class="input mono" id="outShort" type="text" readonly placeholder="Waiting for input">
+      <div class="split-actions" style="margin-top:6px">
+        <button class="btn btn-sm" id="copyShort" type="button" disabled>Copy</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="outWatch">Full watch link</label>
+      <input class="input mono" id="outWatch" type="text" readonly placeholder="Waiting for input">
+      <div class="split-actions" style="margin-top:6px">
+        <button class="btn btn-sm" id="copyWatch" type="button" disabled>Copy</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="outEmbed">Embed link</label>
+      <input class="input mono" id="outEmbed" type="text" readonly placeholder="Waiting for input">
+      <div class="split-actions" style="margin-top:6px">
+        <button class="btn btn-sm" id="copyEmbed" type="button" disabled>Copy</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="outComment">Comment timestamp</label>
+      <input class="input mono" id="outComment" type="text" readonly placeholder="Waiting for input">
+      <div class="split-actions" style="margin-top:6px">
+        <button class="btn btn-sm" id="copyComment" type="button" disabled>Copy</button>
+        <button class="btn btn-sm btn-ghost" id="copyCommentLink" type="button" disabled>Copy as markdown link</button>
+      </div>
+      <p class="field-hint">Paste the timestamp on its own line in a comment or description to make it clickable on YouTube.</p>
+    </div>
+
+    <div class="note"><span class="pin">i</span><span>YouTube writes t= with the Share button and embedded players accept start=. Both are shown so you can copy the form your player expects.</span></div>
+  </div>
+</section>
+
+<section class="below">
+  <div class="faq">
+    <h2>How it works</h2>
+    {% for item in c.faq %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

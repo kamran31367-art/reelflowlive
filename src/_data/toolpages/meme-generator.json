@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Meme Generator - Add Top and Bottom Text to Any Image (Free) | ReelFlow Toolkit",
+  "description": "Upload a photo, add top and bottom text in the classic meme style, adjust the size and download a clean PNG. Everything runs in your browser.",
+  "ogTitle": "Meme Generator - Top and Bottom Text on Your Image",
+  "ogDescription": "Caption an image with classic meme text and download the finished PNG, all on your device.",
+  "ldDescription": "Add top and bottom captions to an uploaded image with adjustable text size and colour, then export a PNG from the browser.",
+  "breadcrumb": "Meme Generator",
+  "kicker": "Image tool",
+  "h1": "Meme Generator",
+  "lede": "Drop in an image, write a top and a bottom line, tune the size, and download the finished meme as a PNG. No watermark, no upload.",
+  "faq": [
+    {
+      "q": "How is the text drawn?",
+      "a": "In a bold uppercase style with a dark outline, wrapped automatically to the image width, exactly like the classic format. You can turn off uppercase or the outline if you prefer."
+    },
+    {
+      "q": "Can I use any image?",
+      "a": "JPG, PNG and WebP files work. Use images you own or that are free to reuse - uploading a copyrighted photo to make a meme can still infringe rights."
+    },
+    {
+      "q": "Is the image uploaded anywhere?",
+      "a": "No. The preview and the exported PNG are rendered by your browser's canvas, so the file never leaves your device."
+    }
+  ],
+  "related": [
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Set the exact meme canvas size" },
+    { "slug": "image-compressor", "letter": "C", "tone": "mint", "note": "Shrink the finished PNG" },
+    { "slug": "thumbnail-safe-zone", "letter": "S", "tone": "amber", "note": "Keep text inside the crop" }
+  ]
+}

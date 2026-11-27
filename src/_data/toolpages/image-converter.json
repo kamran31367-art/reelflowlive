@@ -1,0 +1,30 @@
+{
+  "metaTitle": "Image Format Converter - PNG, JPG and WebP in Your Browser | ReelFlow Toolkit",
+  "description": "Convert PNG, JPG and WebP images to another format in one batch. Choose the output format and quality, compare sizes and download every file.",
+  "ogTitle": "Image Format Converter - PNG, JPG and WebP",
+  "ogDescription": "Convert a batch of images between PNG, JPG and WebP on your device and compare the real output sizes.",
+  "ldDescription": "Convert PNG, JPG and WebP images between formats in the browser, with a quality setting and before/after size comparison.",
+  "breadcrumb": "Image Converter",
+  "kicker": "Image tool",
+  "h1": "Image Format Converter",
+  "lede": "Drop a batch of images, pick the output format and quality, then download everything as PNG, JPG or WebP.",
+  "faq": [
+    {
+      "q": "What happens to transparency when I convert to JPG?",
+      "a": "JPG has no transparency, so transparent areas become the background colour you choose (white by default). WebP and PNG keep transparency."
+    },
+    {
+      "q": "Which format should I pick?",
+      "a": "JPG for photos, WebP when you want the smallest file with modern support, PNG for flat graphics, screenshots and anything with transparency."
+    },
+    {
+      "q": "How many images can I convert at once?",
+      "a": "Up to 30 files in one batch. They are processed one by one in your browser, so nothing is uploaded and there is no queue."
+    }
+  ],
+  "related": [
+    { "slug": "image-compressor", "letter": "C", "tone": "mint", "note": "Shrink the converted files" },
+    { "slug": "image-resizer", "letter": "R", "tone": "", "note": "Resize before converting" },
+    { "slug": "favicon-generator", "letter": "F", "tone": "amber", "note": "Turn one image into icons" }
+  ]
+}
