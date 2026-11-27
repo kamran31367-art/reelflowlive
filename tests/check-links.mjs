@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { JSON_SCHEMA, load as loadYaml } from 'js-yaml';
 
 const root = process.cwd();
 const out = path.join(root, '_site');
@@ -24,7 +25,43 @@ if (!fs.existsSync(out)) {
 const read = (rel) => fs.readFileSync(path.join(out, rel), 'utf8');
 const site = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/site.json'), 'utf8'));
 const toolsData = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/tools.json'), 'utf8'));
+const tools = toolsData.tools || [];
 
+const postDir = path.join(root, 'src/blog/posts');
+const postFiles = fs.readdirSync(postDir).filter((file) => /\.(md|liquid)$/.test(file)).sort();
+const publishedPosts = [];
+
+for (const file of postFiles) {
+  const source = fs.readFileSync(path.join(postDir, file), 'utf8');
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  check(file + ': frontmatter is present', !!match);
+  if (!match) continue;
+
+  let data;
+  try {
+    data = loadYaml(match[1], { schema: JSON_SCHEMA }) || {};
+  } catch (err) {
+    check(file + ': frontmatter parses', false, err.message);
+    continue;
+  }
+
+  const slug = file.replace(/\.(md|liquid)$/, '');
+  const url = typeof data.permalink === 'string' && data.permalink
+    ? data.permalink
+    : '/blog/' + slug + '/';
+  const post = {
+    file,
+    slug,
+    url,
+    source,
+    data,
+    date: (source.match(/^date:\s*['"]?(\d{4}-\d{2}-\d{2})/m) || [])[1] || '',
+    output: url.replace(/^\//, '') + (url.endsWith('/') ? 'index.html' : '')
+  };
+  if (data.draft !== true && data.permalink !== false) publishedPosts.push(post);
+}
+
+const publishedBySlug = new Map(publishedPosts.map((post) => [post.slug, post]));
 const pages = [
   { file: 'index.html', url: '/' },
   ...[
@@ -37,37 +74,30 @@ const pages = [
     'converter-tools',
     'misc-tools'
   ].map((slug) => ({ file: slug + '/index.html', url: '/' + slug + '/' })),
-  ...(toolsData.tools || []).map((tool) => ({ file: tool.url.replace(/^\//, '') + 'index.html', url: tool.url })),
+  ...tools.map((tool) => ({ file: tool.url.replace(/^\//, '') + 'index.html', url: tool.url })),
   { file: 'blog/index.html', url: '/blog/' },
-  { file: 'blog/download-youtube-thumbnail/index.html', url: '/blog/download-youtube-thumbnail/' },
-  { file: 'blog/resize-images-without-blur/index.html', url: '/blog/resize-images-without-blur/' },
-  { file: 'blog/compress-images-before-upload/index.html', url: '/blog/compress-images-before-upload/' },
-  { file: 'blog/srt-to-vtt-conversion/index.html', url: '/blog/srt-to-vtt-conversion/' },
-  { file: 'blog/youtube-chapters-rules/index.html', url: '/blog/youtube-chapters-rules/' },
-  { file: 'blog/platform-character-limits/index.html', url: '/blog/platform-character-limits/' },
-  { file: 'blog/favicon-sizes-guide/index.html', url: '/blog/favicon-sizes-guide/' },
-  { file: 'blog/jpg-png-webp-conversion/index.html', url: '/blog/jpg-png-webp-conversion/' },
-  { file: 'blog/base64-data-uri-images/index.html', url: '/blog/base64-data-uri-images/' },
-  { file: 'blog/thumbnail-safe-zone-guide/index.html', url: '/blog/thumbnail-safe-zone-guide/' },
-  { file: 'blog/meme-text-readable/index.html', url: '/blog/meme-text-readable/' },
-  { file: 'blog/clean-text-in-one-pass/index.html', url: '/blog/clean-text-in-one-pass/' },
-  { file: 'blog/title-preview-before-publish/index.html', url: '/blog/title-preview-before-publish/' },
-  { file: 'blog/utm-links-that-stay-readable/index.html', url: '/blog/utm-links-that-stay-readable/' },
-  { file: 'blog/share-youtube-at-second/index.html', url: '/blog/share-youtube-at-second/' },
-  { file: 'blog/qr-codes-print-and-screen/index.html', url: '/blog/qr-codes-print-and-screen/' },
-  { file: 'blog/json-base64-sha256-quick-fixes/index.html', url: '/blog/json-base64-sha256-quick-fixes/' },
-  { file: 'blog/contrast-ratio-captions/index.html', url: '/blog/contrast-ratio-captions/' },
-  { file: 'blog/trim-video-without-upload/index.html', url: '/blog/trim-video-without-upload/' },
-  { file: 'blog/video-to-gif-size-guide/index.html', url: '/blog/video-to-gif-size-guide/' },
-  { file: 'blog/grab-sharp-frame/index.html', url: '/blog/grab-sharp-frame/' },
-  { file: 'blog/extract-audio-from-video/index.html', url: '/blog/extract-audio-from-video/' },
-  { file: 'blog/speed-audio-tape-effect/index.html', url: '/blog/speed-audio-tape-effect/' },
-  { file: 'blog/merge-split-rotate-pdfs-locally/index.html', url: '/blog/merge-split-rotate-pdfs-locally/' },
-  { file: 'blog/pdf-pages-to-png/index.html', url: '/blog/pdf-pages-to-png/' },
-  { file: 'blog/background-removal-portraits/index.html', url: '/blog/background-removal-portraits/' },
+  ...publishedPosts.map((post) => ({
+    file: post.output,
+    url: post.url,
+    sitemap: post.data.sitemap !== false
+  })),
   { file: 'privacy/index.html', url: '/privacy/', noindex: true },
   { file: '404.html', url: '/404.html', noindex: true }
 ];
+
+const publishedPostUrls = publishedPosts.map((post) => post.url);
+check('published guide URLs are unique', new Set(publishedPostUrls).size === publishedPostUrls.length);
+check('published guides use the blog permalink scheme', publishedPosts.every((post) => post.url.startsWith('/blog/') && post.url.endsWith('/')));
+const builtPostFiles = fs.existsSync(path.join(out, 'blog'))
+  ? fs.readdirSync(path.join(out, 'blog'), { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(out, 'blog', entry.name, 'index.html')))
+    .map((entry) => 'blog/' + entry.name + '/index.html')
+    .sort()
+  : [];
+const expectedPostFiles = publishedPosts.map((post) => post.output).sort();
+check('built blog contains exactly the published guides',
+  builtPostFiles.length === expectedPostFiles.length && builtPostFiles.every((file, index) => file === expectedPostFiles[index]),
+  builtPostFiles.length + ' built, ' + expectedPostFiles.length + ' expected');
 
 function resolvePath(link) {
   let target = link.split('#')[0].split('?')[0];
@@ -134,6 +164,7 @@ for (const page of pages) {
   check(page.file + ': internal links resolve', broken.length === 0, broken.slice(0, 4).join(', '));
 }
 
+const builtPages = pages.filter((page) => fs.existsSync(path.join(out, page.file)));
 check('page titles are unique', titles.size === pages.length, titles.size + ' of ' + pages.length);
 check('OG cover image exists', fs.existsSync(path.join(out, 'assets/img/og-cover.png')) &&
   read('index.html').includes('property="og:image" content="' + site.ogImage + '"'));
@@ -141,15 +172,17 @@ check('OG cover image exists', fs.existsSync(path.join(out, 'assets/img/og-cover
 /* Sitemap */
 const sitemap = read('sitemap.xml');
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-const indexable = pages.filter((page) => !page.noindex).map((page) => site.url + page.url);
+const indexable = pages.filter((page) => !page.noindex && page.sitemap !== false).map((page) => site.url + page.url);
 check('sitemap has ' + indexable.length + ' URLs', locs.length === indexable.length, String(locs.length));
 check('sitemap starts with homepage', locs[0] === site.url + '/', locs[0]);
-check('sitemap excludes privacy and 404', !locs.some((u) => /privacy|404/.test(u)));
+check('sitemap excludes privacy and 404', !locs.includes(site.url + '/privacy/') && !locs.includes(site.url + '/404.html'));
 check('sitemap lists every indexable page', indexable.every((url) => locs.includes(url)), indexable.filter((url) => !locs.includes(url)).join(', '));
-const postSource = fs.readFileSync(path.join(root, 'src/blog/posts/download-youtube-thumbnail.md'), 'utf8');
-const postDate = (postSource.match(/^date:\s*(\S+)/m) || [])[1] || '';
-const postBlock = sitemap.split('<url>').find((block) => block.includes('/blog/download-youtube-thumbnail/'));
-check('sitemap uses the post publish date', !!postBlock && postBlock.includes('<lastmod>' + postDate + '</lastmod>'), postDate);
+const sitemapBlocks = sitemap.split('<url>').slice(1);
+const wrongPostDates = publishedPosts.filter((post) => {
+  const block = sitemapBlocks.find((entry) => entry.includes('<loc>' + site.url + post.url + '</loc>'));
+  return !post.date || !block || !block.includes('<lastmod>' + post.date + '</lastmod>');
+});
+check('sitemap uses every post publish date', wrongPostDates.length === 0, wrongPostDates.map((post) => post.slug).join(', '));
 check('sitemap lastmod uses site data', sitemap.includes('<lastmod>' + site.lastUpdated + '</lastmod>'));
 let sitemapMissing = [];
 for (const loc of locs) {
@@ -164,13 +197,22 @@ check('robots.txt links the sitemap', /Sitemap: https:\/\/reelflow\.live\/sitema
 
 /* Blog */
 const feed = read('blog/feed.xml');
+const feedItems = feed.split('<item>').slice(1);
 check('blog feed is valid RSS', /^<\?xml/.test(feed.trim()) && /<rss version="2.0"/.test(feed) && /<\/rss>\s*$/.test(feed.trim()));
-check('feed lists the published post', feed.includes(site.url + '/blog/download-youtube-thumbnail/') && /<pubDate>[^<]+<\/pubDate>/.test(feed));
+check('feed lists every published guide', publishedPosts.every((post) => feed.includes(site.url + post.url)));
+check('feed has one item per published guide', feedItems.length === publishedPosts.length, feedItems.length + ' of ' + publishedPosts.length);
+const missingFeedDates = publishedPosts.filter((post) => {
+  const item = feedItems.find((entry) => entry.includes('<link>' + site.url + post.url + '</link>'));
+  return !item || !/<pubDate>[^<]+<\/pubDate>/.test(item);
+});
+check('feed has a publish date for every guide', missingFeedDates.length === 0, missingFeedDates.map((post) => post.slug).join(', '));
 const blogHtml = read('blog/index.html');
-check('blog index links the published post', blogHtml.includes('href="/blog/download-youtube-thumbnail/"'));
+check('blog index links every published guide', publishedPosts.every((post) => blogHtml.includes('href="' + post.url + '"')));
 check('blog index links the RSS feed', blogHtml.includes('href="/blog/feed.xml"'));
-const postHtml = read('blog/download-youtube-thumbnail/index.html');
-check('post has BlogPosting data', /"@type":\s*"BlogPosting"/.test(postHtml) && postHtml.includes('"datePublished": "' + postDate + '"'));
+const thumbnailPost = publishedBySlug.get('download-youtube-thumbnail');
+check('thumbnail guide is published', !!thumbnailPost);
+const postHtml = thumbnailPost && fs.existsSync(path.join(out, thumbnailPost.output)) ? read(thumbnailPost.output) : '';
+check('post has BlogPosting data', /"@type":\s*"BlogPosting"/.test(postHtml) && postHtml.includes('"datePublished": "' + thumbnailPost?.date + '"'));
 check('post links back to the blog', postHtml.includes('href="/blog/"'));
 const thumbnailHtml = read('youtube-thumbnail-downloader/index.html');
 check('thumbnail page discloses permission and affiliation limits', thumbnailHtml.includes('Use only for videos you own or have permission to download.') && thumbnailHtml.includes('not affiliated with YouTube or Google') && !thumbnailHtml.includes('Download any YouTube thumbnail'));
@@ -178,98 +220,94 @@ check('thumbnail size labels are accurate', thumbnailHtml.includes('>SD<small>64
 check('thumbnail guide discloses affiliation limits', postHtml.includes('ReelFlow is not affiliated with YouTube or Google.'));
 
 /* Tool guides */
-const guides = [
-  { post: 'blog/download-youtube-thumbnail/index.html', tool: '/youtube-thumbnail-downloader/' },
-  { post: 'blog/resize-images-without-blur/index.html', tool: '/image-resizer/' },
-  { post: 'blog/compress-images-before-upload/index.html', tool: '/image-compressor/' },
-  { post: 'blog/srt-to-vtt-conversion/index.html', tool: '/srt-editor/' },
-  { post: 'blog/youtube-chapters-rules/index.html', tool: '/youtube-chapters/' },
-  { post: 'blog/platform-character-limits/index.html', tool: '/character-counter/' },
-  { post: 'blog/favicon-sizes-guide/index.html', tool: '/favicon-generator/' },
-  { post: 'blog/jpg-png-webp-conversion/index.html', tool: '/image-converter/' },
-  { post: 'blog/base64-data-uri-images/index.html', tool: '/image-to-base64/' },
-  { post: 'blog/thumbnail-safe-zone-guide/index.html', tool: '/thumbnail-safe-zone/' },
-  { post: 'blog/meme-text-readable/index.html', tool: '/meme-generator/' },
-  { post: 'blog/clean-text-in-one-pass/index.html', tool: '/text-tools/' },
-  { post: 'blog/title-preview-before-publish/index.html', tool: '/title-preview/' },
-  { post: 'blog/utm-links-that-stay-readable/index.html', tool: '/utm-link-builder/' },
-  { post: 'blog/share-youtube-at-second/index.html', tool: '/youtube-timestamp-link/' },
-  { post: 'blog/qr-codes-print-and-screen/index.html', tool: '/qr-code-generator/' },
-  { post: 'blog/json-base64-sha256-quick-fixes/index.html', tool: '/developer-tools/' },
-  { post: 'blog/contrast-ratio-captions/index.html', tool: '/color-contrast-checker/' },
-  { post: 'blog/trim-video-without-upload/index.html', tool: '/video-trimmer/' },
-  { post: 'blog/video-to-gif-size-guide/index.html', tool: '/video-to-gif/' },
-  { post: 'blog/grab-sharp-frame/index.html', tool: '/video-frame-grabber/' },
-  { post: 'blog/extract-audio-from-video/index.html', tool: '/audio-extractor/' },
-  { post: 'blog/speed-audio-tape-effect/index.html', tool: '/audio-speed-pitch/' },
-  { post: 'blog/merge-split-rotate-pdfs-locally/index.html', tool: '/pdf-tools/' },
-  { post: 'blog/pdf-pages-to-png/index.html', tool: '/pdf-to-images/' },
-  { post: 'blog/background-removal-portraits/index.html', tool: '/background-remover/' }
-];
-for (const guide of guides) {
-  const html = read(guide.post);
-  check(guide.post + ': links its tool', html.includes('href="' + guide.tool + '"'));
-  check(guide.post + ': listed on the blog index', blogHtml.includes('href="/' + guide.post.replace(/index\.html$/, '') + '"'));
-  check(guide.post + ': listed in the feed', feed.includes(site.url + '/' + guide.post.replace(/index\.html$/, '')));
+const relatedData = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/relatedTools.json'), 'utf8'));
+const toolUrls = new Set(tools.map((tool) => tool.url));
+const unpublishedRelatedGuides = Object.keys(relatedData).filter((slug) => !publishedBySlug.has(slug));
+check('every related-tool list belongs to a published guide', unpublishedRelatedGuides.length === 0, unpublishedRelatedGuides.join(', '));
+
+for (const tool of tools) {
+  const primaryGuides = Object.entries(relatedData)
+    .filter(([, items]) => Array.isArray(items) && items[0] && items[0].href === tool.url)
+    .map(([slug]) => slug);
+  check('tool "' + tool.slug + '": exactly one dedicated guide', primaryGuides.length === 1, primaryGuides.join(', '));
+  check('tool "' + tool.slug + '": dedicated guide is published', primaryGuides.length === 1 && publishedBySlug.has(primaryGuides[0]), primaryGuides.join(', '));
 }
 
-/* Long-form guides: hero, inline images, related list, FAQ, TOC */
-const longform = [
-  { slug: 'merge-split-rotate-pdfs-locally', tool: '/pdf-tools/' },
-  { slug: 'compress-images-before-upload', tool: '/image-compressor/' },
-  { slug: 'qr-codes-print-and-screen', tool: '/qr-code-generator/' },
-  { slug: 'background-removal-portraits', tool: '/background-remover/' },
-  { slug: 'base64-data-uri-images', tool: '/image-to-base64/' },
-  { slug: 'clean-text-in-one-pass', tool: '/text-tools/' },
-    { slug: 'contrast-ratio-captions', tool: '/color-contrast-checker/' },
-    { slug: 'download-youtube-thumbnail', tool: '/youtube-thumbnail-downloader/' },
-    { slug: 'extract-audio-from-video', tool: '/audio-extractor/' },
-  { slug: 'favicon-sizes-guide', tool: '/favicon-generator/' },
-  { slug: 'grab-sharp-frame', tool: '/video-frame-grabber/' },
-  { slug: 'jpg-png-webp-conversion', tool: '/image-converter/' },
-  { slug: 'json-base64-sha256-quick-fixes', tool: '/developer-tools/' },
-  { slug: 'meme-text-readable', tool: '/meme-generator/' },
-  { slug: 'pdf-pages-to-png', tool: '/pdf-to-images/' },
-  { slug: 'platform-character-limits', tool: '/character-counter/' },
-  { slug: 'resize-images-without-blur', tool: '/image-resizer/' },
-  { slug: 'share-youtube-at-second', tool: '/youtube-timestamp-link/' },
-  { slug: 'speed-audio-tape-effect', tool: '/audio-speed-pitch/' },
-  { slug: 'srt-to-vtt-conversion', tool: '/srt-editor/' },
-  { slug: 'thumbnail-safe-zone-guide', tool: '/thumbnail-safe-zone/' },
-  { slug: 'title-preview-before-publish', tool: '/title-preview/' },
-  { slug: 'trim-video-without-upload', tool: '/video-trimmer/' },
-  { slug: 'utm-links-that-stay-readable', tool: '/utm-link-builder/' },
-  { slug: 'video-to-gif-size-guide', tool: '/video-to-gif/' },
-  { slug: 'youtube-chapters-rules', tool: '/youtube-chapters/' }
-];
-const relatedData = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/relatedTools.json'), 'utf8'));
-for (const guide of longform) {
-  const html = read('blog/' + guide.slug + '/index.html');
-  const src = fs.readFileSync(path.join(root, 'src/blog/posts', guide.slug + '.md'), 'utf8');
-  const related = relatedData[guide.slug] || [];
+const guides = publishedPosts.map((post) => ({
+  ...post,
+  post: post.output,
+  tool: (relatedData[post.slug] || [])[0]?.href || ''
+}));
+
+for (const guide of guides) {
+  if (!fs.existsSync(path.join(out, guide.post))) {
+    check(guide.slug + ': built guide exists', false, guide.post);
+    continue;
+  }
+  const html = read(guide.post);
+  const src = guide.source;
+  const related = Array.isArray(relatedData[guide.slug]) ? relatedData[guide.slug] : [];
+  const primaryTool = tools.find((tool) => tool.url === guide.tool);
+  check(guide.slug + ': primary tool exists', toolUrls.has(guide.tool), guide.tool);
+  check(guide.slug + ': source links its tool', !!guide.tool && src.includes('](' + guide.tool + ')'));
+  check(guide.slug + ': links its tool', !!guide.tool && html.includes('href="' + guide.tool + '"'));
+  check(guide.slug + ': listed on the blog index', blogHtml.includes('href="' + guide.url + '"'));
+  check(guide.slug + ': listed in the feed', feed.includes(site.url + guide.url));
+  check(guide.slug + ': has BlogPosting data', /"@type":\s*"BlogPosting"/.test(html) && html.includes('"datePublished": "' + guide.date + '"'));
+  check(guide.slug + ': links back to the blog', html.includes('href="/blog/"'));
   check(guide.slug + ': 10 related tools', related.length === 10, String(related.length));
-  check(guide.slug + ': related #1 is its own tool', !!related[0] && related[0].href === guide.tool && !related[0].external);
+  check(guide.slug + ': related destinations are unique', new Set(related.map((item) => item.href)).size === related.length);
+  check(guide.slug + ': related #1 is internal', !!related[0] && !related[0].external);
   const external = related.filter((item) => item.external).length;
-  check(guide.slug + ': related list has external picks', external >= 1, String(external));
+  check(guide.slug + ': related list has three external picks', external === 3, String(external));
+  const invalidInternal = related.filter((item) => !item.external && !toolUrls.has(item.href));
+  check(guide.slug + ': internal related tools exist', invalidInternal.length === 0, invalidInternal.map((item) => item.href).join(', '));
   const relItems = (html.match(/class="rel-item(?: rel-top)?"/g) || []).length;
   check(guide.slug + ': related list rendered', relItems === 10, String(relItems));
-  check(guide.slug + ': external links are nofollow', (html.match(/rel="nofollow noopener" target="_blank"/g) || []).length === external);
+  const relatedHtml = (html.match(/<section class="rel-tools"[\s\S]*?<\/section>/) || [''])[0];
+  check(guide.slug + ': external links are nofollow', (relatedHtml.match(/rel="nofollow noopener" target="_blank"/g) || []).length === external);
   check(guide.slug + ': takeaways box present', /class="takeaways"/.test(html) && html.includes('Key takeaways'));
   const takeawayBox = (html.match(/class="takeaways"[\s\S]*?<\/section>/) || [''])[0];
   const takeawayItems = (takeawayBox.match(/<li>/g) || []).length;
-  check(guide.slug + ': takeaways are plain text', takeawayItems >= 3 && !html.includes('[object Object]'), String(takeawayItems));
+  const takeawayData = Array.isArray(guide.data.takeaways) ? guide.data.takeaways : [];
+  check(guide.slug + ': takeaways are plain text', takeawayItems >= 3 && takeawayItems === takeawayData.length && takeawayData.every((item) => typeof item === 'string') && !html.includes('[object Object]'), String(takeawayItems));
+  const faqData = Array.isArray(guide.data.faq) ? guide.data.faq : [];
+  check(guide.slug + ': FAQ has four or more questions', faqData.length >= 4, String(faqData.length));
   check(guide.slug + ': FAQ present and in JSON-LD', /class="post-faq"/.test(html) && /"@type": "FAQPage"/.test(html));
-  const cover = (src.match(/^cover:\s*(\S+)/m) || [])[1] || '';
-  check(guide.slug + ': hero image built', !!cover && fs.existsSync(path.join(out, cover)));
-  const imgs = [...src.matchAll(/<img src="([^"]+)" alt="([^"]*)"/g)];
+  const cover = typeof guide.data.cover === 'string' ? guide.data.cover : '';
+  check(guide.slug + ': hero image built', !!cover && fs.existsSync(path.join(out, cover.replace(/^\//, ''))));
+  const coverAlt = typeof guide.data.coverAlt === 'string' ? guide.data.coverAlt : '';
+  const coverCaption = typeof guide.data.coverCaption === 'string' ? guide.data.coverCaption : '';
+  check(guide.slug + ': hero has useful alt text and caption', coverAlt.trim().length > 15 && coverCaption.trim().length > 20, coverAlt.length + '/' + coverCaption.length);
+  const imgs = [...src.replace(/```[\s\S]*?```/g, ' ').matchAll(/<img src="([^"]+)" alt="([^"]*)"/g)];
   check(guide.slug + ': two inline images with alt text', imgs.length === 2 && imgs.every((m) => m[2].trim().length > 15), String(imgs.length));
-  check(guide.slug + ': inline images exist', imgs.every((m) => fs.existsSync(path.join(out, m[1]))));
+  check(guide.slug + ': inline images exist', imgs.every((m) => fs.existsSync(path.join(out, m[1].replace(/^\//, '')))));
   const anchors = [...html.matchAll(/<li><a href="#([^"]+)">/g)].map((m) => m[1]);
   check(guide.slug + ': TOC anchors resolve', anchors.length >= 4 && anchors.every((id) => html.includes('id="' + id + '"')), String(anchors.length));
+
+  if (primaryTool?.slug === guide.slug) {
+    const inheritedFields = ['layout', 'tags', 'author', 'sitemap', 'permalink'].filter((field) => field in guide.data);
+    check(guide.slug + ': new guide is published and keeps inherited defaults', inheritedFields.length === 0 && guide.data.draft !== true, inheritedFields.join(', '));
+    check(guide.slug + ': new guide has five takeaways', takeawayData.length === 5, String(takeawayData.length));
+    check(guide.slug + ': new guide has four FAQs', faqData.length === 4, String(faqData.length));
+    const description = typeof guide.data.description === 'string' ? guide.data.description : '';
+    check(guide.slug + ': new guide description fits the CMS', description.length > 40 && description.length <= 200, String(description.length));
+    const body = src.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '');
+    const wordCount = (body.replace(/<[^>]+>/g, ' ').match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g) || []).length;
+    check(guide.slug + ': new guide has 1000-1300 words', wordCount >= 1000 && wordCount <= 1300, String(wordCount));
+    const h2Count = (body.replace(/```[\s\S]*?```/g, ' ').match(/^##\s+/gm) || []).length;
+    check(guide.slug + ': new guide has 8-10 sections', h2Count >= 8 && h2Count <= 10, String(h2Count));
+    check(guide.slug + ': new guide leaves the H1 to the layout', !/^#\s+/m.test(body.replace(/```[\s\S]*?```/g, ' ')));
+    const imageSources = imgs.map((match) => match[1]);
+    check(guide.slug + ': new guide uses its generated artwork',
+      cover === 'assets/img/blog/' + guide.slug + '/hero.svg' &&
+      imageSources.length === 2 &&
+      imageSources.includes('/assets/img/blog/' + guide.slug + '/workflow.svg') &&
+      imageSources.includes('/assets/img/blog/' + guide.slug + '/example.svg'));
+  }
 }
 
 /* Tools data */
-const tools = toolsData.tools || [];
 const cms = fs.readFileSync(path.join(root, '.pages.yml'), 'utf8');
 check('tools.json lists tools', tools.length >= 6, String(tools.length));
 const toolSlugs = tools.map((tool) => tool.slug);
@@ -297,9 +335,9 @@ const ads = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/ads.json'), 'u
 check('ads config is complete when enabled', !ads.enabled || (!!ads.scriptSrc && !!ads.attrs.zone));
 const adHost = ads.scriptSrc ? new URL(ads.scriptSrc).hostname : null;
 const adTag = adHost ? new RegExp('<script[^>]+src="https:\\/\\/' + adHost.replace(/\./g, '\\.') + '\\/') : null;
-check('ad tag never appears as static markup', !adTag || pages.every((p) => !adTag.test(read(p.file))));
+check('ad tag never appears as static markup', !adTag || builtPages.every((p) => !adTag.test(read(p.file))));
 check('ads file has loader script', fs.existsSync(path.join(out, 'assets/js/ads.js')));
-check('ads loader is on every page', pages.every((p) => read(p.file).includes('/assets/js/ads.js')));
+check('ads loader is on every page', builtPages.every((p) => read(p.file).includes('/assets/js/ads.js')));
 check('ads excluded from privacy and 404', ads.excludePages.includes('/privacy/') && ads.excludePages.includes('/404.html'));
 
 /* Monetag service worker */
@@ -314,11 +352,11 @@ check('privacy page offers a cookie opt-out', privacyHtml.includes('data-consent
 check('privacy page lists a contact address', /href="mailto:[^"]+@[^"]+"/.test(privacyHtml));
 check('privacy page discloses Adsterra with its policy link', privacyHtml.includes('Adsterra') && privacyHtml.includes('https://adsterra.com/privacy-policy-managed/'));
 check('consent reset is wired in app.js', read('assets/js/app.js').includes('[data-consent-reset]'));
-check('footer links the privacy page', pages.every((p) => /<div class="footer-links">[\s\S]*?href="\/privacy\/"/.test(read(p.file))));
-check('footer labels the Adsterra smart link as an ad partner', pages.every((p) => read(p.file).includes('Visit our ad partner (ad)') && read(p.file).includes('asiafilm.org/4/') && /rel="sponsored noopener noreferrer"/.test(read(p.file))));
+check('footer links the privacy page', builtPages.every((p) => /<div class="footer-links">[\s\S]*?href="\/privacy\/"/.test(read(p.file))));
+check('footer labels the Adsterra smart link as an ad partner', builtPages.every((p) => read(p.file).includes('Visit our ad partner (ad)') && read(p.file).includes('asiafilm.org/4/') && /rel="sponsored noopener noreferrer"/.test(read(p.file))));
 const toolPageFiles = (toolsData.tools || []).map((tool) => tool.url.replace(/^\//, '') + 'index.html');
 check('tool pages disclose third-party advertising in the support note', toolPageFiles.every((f) => read(f).includes('id="supportNote"') && read(f).includes('third-party advertising') && read(f).includes('asiafilm.org/4/')));
-const postPageFiles = pages.filter((p) => p.file.startsWith('blog/') && p.file !== 'blog/index.html');
+const postPageFiles = builtPages.filter((p) => p.file.startsWith('blog/') && p.file !== 'blog/index.html');
 check('blog posts disclose third-party advertising in the support line', postPageFiles.every((p) => read(p.file).includes('class="post-support"') && read(p.file).includes('third-party advertising') && read(p.file).includes('asiafilm.org/4/')));
 check('support note waits for a download or copy result', read('assets/js/utils.js').includes("CustomEvent('ct:result')") && read('assets/js/app.js').includes("'ct:result'"));
 

@@ -32,8 +32,10 @@ npm run check     # link + SEO checks against _site (run after build)
 
 ## Tools
 
-Twenty-six tools, each a page plus a script in `src/assets/js/tools/`; the list and card
+139 tools, each a page plus a script in `src/assets/js/tools/`; the list and card
 text live in `src/_data/tools.json`, the page copy in `src/_data/toolpages/`.
+
+Core tools include:
 
 - YouTube: thumbnail downloader, chapters, timestamp/share links, title and description
   preview, thumbnail safe-zone tester, character counter.
@@ -79,8 +81,8 @@ After publishing a post, open Google Search Console > URL Inspection, paste the 
 article URL and choose **Request indexing**. The sitemap updates automatically, so a
 resubmission is not needed.
 
-The posts are in `src/blog/posts/`: one long-form guide per tool - all 26 tools have a
-published article, 26 in total. Every post is published right now; the draft switch still
+The posts are in `src/blog/posts/`: one long-form guide per tool - all 139 tools have a
+published article, 139 in total. Every post is published right now; the draft switch still
 works as described above.
 
 ## Advertising (Monetag)
@@ -137,7 +139,7 @@ DNS keeps pointing at GitHub Pages.
 ```
 src/
   index.njk                  homepage template
-  <tool-slug>.njk            26 tool pages (tool UI markup)
+  <tool-slug>.njk            139 tool pages (tool UI markup)
   privacy.njk, 404.njk
   sitemap.njk
   blog/
@@ -164,6 +166,7 @@ archive/landing-legacy.html  previous one-page site, not published
 ## Tests
 
 - `npm run check` - built HTML: titles, canonical, JSON-LD, internal links,
-  sitemap, RSS feed, drafts, robots, consent banner, ad config.
+  sitemap, RSS feed, one published guide per tool, post structure, robots, consent
+  banner and ad config.
 - Browser suites live outside this repository (`ct-shots`) and run against a local
   server of `_site`.

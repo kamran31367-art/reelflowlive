@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Trim Transparent Pixels worked example</title>
+  <desc id="desc">Example settings and expected result for Trim Transparent Pixels.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#4c1d95"/></linearGradient></defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <text x="70" y="82" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#c084fc" letter-spacing="2">WORKED EXAMPLE</text>
+  <text x="70" y="145" font-size="48" fill="#ffffff" text-anchor="start">Trim Transparent Pixels</text>
+  <text x="70" y="235" font-size="24" fill="#ffffff" fill-opacity=".72" text-anchor="start">Crop empty transparent edges from a PNG or WebP image.</text>
+  <g><rect x="70" y="300" width="500" height="70" rx="18" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".16"/><text x="92" y="343" font-family="Arial, sans-serif" font-size="21" fill="#ffffff">Transparent image: Transparent image</text></g><g><rect x="610" y="300" width="500" height="70" rx="18" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".16"/><text x="632" y="343" font-family="Arial, sans-serif" font-size="21" fill="#ffffff">Keep padding (px): 0</text></g>
+  <rect x="70" y="520" width="1060" height="92" rx="22" fill="#c084fc" fill-opacity=".14" stroke="#c084fc" stroke-opacity=".5"/>
+  <text x="96" y="558" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#fb7185">EXPECTED RESULT</text>
+  <text x="96" y="590" font-size="24" fill="#ffffff" text-anchor="start">Trimmed image</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Image Pixelator workflow</title>
+  <desc id="desc">Input, browser processing and output workflow for Image Pixelator.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#4c1d95"/></linearGradient></defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <text x="70" y="82" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#c084fc" letter-spacing="2">WORKFLOW</text>
+  <text x="70" y="145" font-size="48" fill="#ffffff" text-anchor="start">Image Pixelator</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="270" width="300" height="190" rx="24" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".18"/>
+    <rect x="450" y="270" width="300" height="190" rx="24" fill="#c084fc" fill-opacity=".16" stroke="#c084fc" stroke-opacity=".7"/>
+    <rect x="830" y="270" width="300" height="190" rx="24" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".18"/>
+    <text x="105" y="315" font-size="18" font-weight="700" fill="#fb7185">01 · INPUT</text>
+    <text x="105" y="365" font-size="28" fill="#ffffff" text-anchor="start">Image and pixel</text><text x="105" y="403" font-size="28" fill="#ffffff" text-anchor="start">size</text>
+    <text x="485" y="315" font-size="18" font-weight="700" fill="#fb7185">02 · PROCESS</text>
+    <text x="485" y="365" font-size="28" fill="#ffffff" text-anchor="start">Local browser</text><text x="485" y="403" font-size="28" fill="#ffffff" text-anchor="start">processing</text>
+    <text x="865" y="315" font-size="18" font-weight="700" fill="#fb7185">03 · OUTPUT</text>
+    <text x="865" y="365" font-size="28" fill="#ffffff" text-anchor="start">Pixelated image</text>
+    <path d="M382 365 H438 M420 347 L438 365 L420 383" fill="none" stroke="#c084fc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M762 365 H818 M800 347 L818 365 L800 383" fill="none" stroke="#c084fc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="70" y="570" font-size="20" fill="#ffffff" fill-opacity=".68" text-anchor="start">Pixelate image · review the result · copy or download when available</text>
+</svg>

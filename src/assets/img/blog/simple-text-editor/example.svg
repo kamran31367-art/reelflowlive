@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Simple Online Text Editor worked example</title>
+  <desc id="desc">Example settings and expected result for Simple Online Text Editor.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#3730a3"/></linearGradient></defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <text x="70" y="82" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#818cf8" letter-spacing="2">WORKED EXAMPLE</text>
+  <text x="70" y="145" font-size="48" fill="#ffffff" text-anchor="start">Simple Online Text Editor</text>
+  <text x="70" y="235" font-size="24" fill="#ffffff" fill-opacity=".72" text-anchor="start">Write and clean text with live word, character, sentence and reading-time</text><text x="70" y="269" font-size="24" fill="#ffffff" fill-opacity=".72" text-anchor="start">statistics.</text>
+  <g><rect x="70" y="300" width="500" height="70" rx="18" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".16"/><text x="92" y="343" font-family="Arial, sans-serif" font-size="21" fill="#ffffff">Your text: Start writing here...</text></g>
+  <rect x="70" y="520" width="1060" height="92" rx="22" fill="#818cf8" fill-opacity=".14" stroke="#818cf8" stroke-opacity=".5"/>
+  <text x="96" y="558" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#f0abfc">EXPECTED RESULT</text>
+  <text x="96" y="590" font-size="24" fill="#ffffff" text-anchor="start">Live text statistics</text>
+</svg>
