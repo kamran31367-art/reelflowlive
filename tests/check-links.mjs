@@ -56,6 +56,7 @@ const pages = [
   { file: 'blog/merge-split-rotate-pdfs-locally/index.html', url: '/blog/merge-split-rotate-pdfs-locally/' },
   { file: 'blog/pdf-pages-to-png/index.html', url: '/blog/pdf-pages-to-png/' },
   { file: 'blog/background-removal-portraits/index.html', url: '/blog/background-removal-portraits/' },
+  { file: 'blog/srt-subtitle-timing/index.html', url: '/blog/srt-subtitle-timing/' },
   { file: 'privacy/index.html', url: '/privacy/', noindex: true },
   { file: '404.html', url: '/404.html', noindex: true }
 ];
@@ -137,7 +138,7 @@ check('sitemap has ' + indexable.length + ' URLs', locs.length === indexable.len
 check('sitemap starts with homepage', locs[0] === site.url + '/', locs[0]);
 check('sitemap excludes privacy and 404', !locs.some((u) => /privacy|404/.test(u)));
 check('sitemap lists every indexable page', indexable.every((url) => locs.includes(url)), indexable.filter((url) => !locs.includes(url)).join(', '));
-check('sitemap excludes drafts', !sitemap.includes('/blog/srt-subtitle-timing/'));
+check('sitemap lists the subtitle timing post', sitemap.includes('/blog/srt-subtitle-timing/'));
 const postSource = fs.readFileSync(path.join(root, 'src/blog/posts/youtube-thumbnail-size.md'), 'utf8');
 const postDate = (postSource.match(/^date:\s*(\S+)/m) || [])[1] || '';
 const postBlock = sitemap.split('<url>').find((block) => block.includes('/blog/youtube-thumbnail-size/'));
@@ -158,15 +159,15 @@ check('robots.txt links the sitemap', /Sitemap: https:\/\/reelflow\.live\/sitema
 const feed = read('blog/feed.xml');
 check('blog feed is valid RSS', /^<\?xml/.test(feed.trim()) && /<rss version="2.0"/.test(feed) && /<\/rss>\s*$/.test(feed.trim()));
 check('feed lists the published post', feed.includes(site.url + '/blog/youtube-thumbnail-size/') && /<pubDate>[^<]+<\/pubDate>/.test(feed));
-check('feed excludes drafts', !feed.includes('srt-subtitle-timing'));
+check('feed lists the subtitle timing post', feed.includes(site.url + '/blog/srt-subtitle-timing/'));
 const blogHtml = read('blog/index.html');
 check('blog index links the published post', blogHtml.includes('href="/blog/youtube-thumbnail-size/"'));
-check('blog index hides drafts', !blogHtml.includes('srt-subtitle-timing'));
+check('blog index links the subtitle timing post', blogHtml.includes('href="/blog/srt-subtitle-timing/"'));
 check('blog index links the RSS feed', blogHtml.includes('href="/blog/feed.xml"'));
 const postHtml = read('blog/youtube-thumbnail-size/index.html');
 check('post has BlogPosting data', /"@type":\s*"BlogPosting"/.test(postHtml) && postHtml.includes('"datePublished": "' + postDate + '"'));
 check('post links back to the blog', postHtml.includes('href="/blog/"'));
-check('draft post is not built', !fs.existsSync(path.join(out, 'blog/srt-subtitle-timing/index.html')));
+check('subtitle timing post is built', fs.existsSync(path.join(out, 'blog/srt-subtitle-timing/index.html')));
 
 /* Tool guides */
 const guides = [
@@ -195,7 +196,8 @@ const guides = [
   { post: 'blog/speed-audio-tape-effect/index.html', tool: '/audio-speed-pitch/' },
   { post: 'blog/merge-split-rotate-pdfs-locally/index.html', tool: '/pdf-tools/' },
   { post: 'blog/pdf-pages-to-png/index.html', tool: '/pdf-to-images/' },
-  { post: 'blog/background-removal-portraits/index.html', tool: '/background-remover/' }
+  { post: 'blog/background-removal-portraits/index.html', tool: '/background-remover/' },
+  { post: 'blog/srt-subtitle-timing/index.html', tool: '/srt-editor/' }
 ];
 for (const guide of guides) {
   const html = read(guide.post);

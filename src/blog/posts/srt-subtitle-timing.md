@@ -5,7 +5,7 @@ date: 2026-11-24
 categories:
   - Subtitles
   - Workflow
-draft: true
+draft: false
 ---
 
 A subtitle file can be perfectly spelled and still be useless if the lines arrive two seconds late. The good news is that most timing problems are not typing problems. They are offset problems, and an offset is easy to fix.
