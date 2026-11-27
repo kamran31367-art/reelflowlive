@@ -117,4 +117,14 @@
     Array.prototype.forEach.call(document.querySelectorAll('.tool-card'), function (card) { tilt(card, 6, 7); });
     Array.prototype.forEach.call(document.querySelectorAll('.icon-hero'), function (tile) { tilt(tile, 10, 12); });
   }
+
+  /* Support note on tool pages: appears once the visitor has downloaded or
+     copied a result, never before. */
+  const supportNote = document.getElementById('supportNote');
+  if (supportNote) {
+    document.addEventListener('ct:result', function () {
+      supportNote.hidden = false;
+      supportNote.classList.add('on');
+    }, { once: true });
+  }
 })();

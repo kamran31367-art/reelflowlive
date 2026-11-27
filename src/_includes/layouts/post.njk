@@ -86,5 +86,9 @@ layout: layouts/base.njk
     <a class="btn btn-primary btn-sm" href="{% if tool %}{{ tool.url }}{% else %}/#tools{% endif %}">{% if tool %}Open the tool{% else %}Browse the tools{% endif %}</a>
   </aside>
 
+  {% if site.support %}
+  <p class="post-support">Guides like this stay free through a sponsor. If one saved you time, <a href="{{ site.support.href }}" target="_blank" rel="sponsored noopener noreferrer">{{ site.support.label }}</a>.</p>
+  {% endif %}
+
   <p class="post-back"><a href="/blog/">&larr; All articles</a></p>
 </article>

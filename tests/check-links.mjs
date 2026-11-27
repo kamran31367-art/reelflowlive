@@ -298,8 +298,15 @@ check('privacy page discloses push notifications', read('privacy/index.html').in
 const privacyHtml = read('privacy/index.html');
 check('privacy page offers a cookie opt-out', privacyHtml.includes('data-consent-reset') && privacyHtml.includes('Your choices and opt-out'));
 check('privacy page lists a contact address', /href="mailto:[^"]+@[^"]+"/.test(privacyHtml));
+check('privacy page discloses Adsterra with its policy link', privacyHtml.includes('Adsterra') && privacyHtml.includes('https://adsterra.com/privacy-policy-managed/'));
 check('consent reset is wired in app.js', read('assets/js/app.js').includes('[data-consent-reset]'));
 check('footer links the privacy page', pages.every((p) => /<div class="footer-links">[\s\S]*?href="\/privacy\/"/.test(read(p.file))));
+check('footer carries the Adsterra smart link as sponsored', pages.every((p) => read(p.file).includes('asiafilm.org/4/') && /rel="sponsored noopener noreferrer"/.test(read(p.file))));
+const toolPageFiles = (toolsData.tools || []).map((tool) => tool.url.replace(/^\//, '') + 'index.html');
+check('tool pages carry the support note and smart link', toolPageFiles.every((f) => read(f).includes('id="supportNote"') && read(f).includes('asiafilm.org/4/')));
+const postPageFiles = pages.filter((p) => p.file.startsWith('blog/') && p.file !== 'blog/index.html');
+check('blog posts carry the support line and smart link', postPageFiles.every((p) => read(p.file).includes('class="post-support"') && read(p.file).includes('asiafilm.org/4/')));
+check('support note waits for a download or copy result', read('assets/js/utils.js').includes("CustomEvent('ct:result')") && read('assets/js/app.js').includes("'ct:result'"));
 
 /* Stale homepage rendering */
 check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card"/g) || []).length === tools.length, String(tools.length));

@@ -27,7 +27,7 @@
         <h4>Site</h4>
         <div class="footer-links">
           {% for link in site.footerLinks %}
-          <a href="{{ link.href }}">{{ link.label }}</a>
+          <a href="{{ link.href }}"{% if link.external %} target="_blank" rel="sponsored noopener noreferrer"{% endif %}>{{ link.label }}</a>
           {% endfor %}
         </div>
       </div>

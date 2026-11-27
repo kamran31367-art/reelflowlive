@@ -5,6 +5,10 @@
   CT.$ = (sel, root) => (root || document).querySelector(sel);
   CT.$$ = (sel, root) => Array.prototype.slice.call((root || document).querySelectorAll(sel));
 
+  /* Fired once a visitor actually receives a result (download or copy), so the
+     tool page can offer its support note at the moment it is relevant. */
+  function noteResult() { document.dispatchEvent(new CustomEvent('ct:result')); }
+
   CT.fmtBytes = function (n, digits) {
     if (!isFinite(n) || n < 0) return '—';
     if (n === 0) return '0 B';
@@ -23,6 +27,7 @@
     document.body.appendChild(a);
     a.click();
     a.remove();
+    noteResult();
     setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
   };
 
@@ -34,11 +39,12 @@
     document.body.appendChild(a);
     a.click();
     a.remove();
+    noteResult();
   };
 
   CT.copy = function (text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return legacyCopy(text); });
+      return navigator.clipboard.writeText(text).then(function () { noteResult(); return true; }, function () { return legacyCopy(text); });
     }
     return Promise.resolve(legacyCopy(text));
   };
@@ -54,6 +60,7 @@
     let ok = false;
     try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
     ta.remove();
+    if (ok) noteResult();
     return ok;
   }
 
