@@ -1,5 +1,45 @@
 const toolData = require("./src/_data/tools.json");
 
+const categoryDefinitions = [
+  { name: "Tailwind", slug: "tailwind-tools", icon: "code", description: "Visual Tailwind and CSS generators for gradients, shadows, layouts, buttons, cards and colour palettes." },
+  { name: "Developer", slug: "developer-tools-hub", icon: "code", description: "Format, convert, compare, encode and generate common developer data without sending it to a server." },
+  { name: "Image", slug: "image-tools", icon: "crop", description: "Resize, edit, convert, animate and clean up images with browser-based tools." },
+  { name: "Mail", slug: "mail-tools", icon: "link", description: "Read email files and build reliable mailto links." },
+  { name: "Text", slug: "text-tools-hub", icon: "text", description: "Count, clean, convert, randomise and transform text for everyday creator work." },
+  { name: "Video & Audio", slug: "video-audio-tools", icon: "film", description: "Trim, convert and prepare video, audio, subtitles and creator media." },
+  { name: "Converters", slug: "converter-tools", icon: "swap", description: "Convert documents, images, media and structured data into the formats you need." },
+  { name: "Misc", slug: "misc-tools", icon: "clock", description: "Practical generators, planners, tests and everyday browser utilities." }
+];
+
+const originalToolCategories = {
+  "youtube-thumbnail-downloader": ["Image"],
+  "image-resizer": ["Image"],
+  "image-compressor": ["Image"],
+  "srt-editor": ["Video & Audio", "Converters"],
+  "youtube-chapters": ["Video & Audio"],
+  "character-counter": ["Text"],
+  "favicon-generator": ["Image"],
+  "image-converter": ["Image", "Converters"],
+  "image-to-base64": ["Developer", "Converters"],
+  "qr-code-generator": ["Misc"],
+  "meme-generator": ["Image"],
+  "text-tools": ["Text"],
+  "utm-link-builder": ["Misc"],
+  "youtube-timestamp-link": ["Video & Audio"],
+  "thumbnail-safe-zone": ["Image"],
+  "title-preview": ["Text", "Image"],
+  "developer-tools": ["Developer"],
+  "color-contrast-checker": ["Developer", "Misc"],
+  "video-trimmer": ["Video & Audio"],
+  "video-to-gif": ["Video & Audio", "Converters"],
+  "video-frame-grabber": ["Video & Audio"],
+  "audio-extractor": ["Video & Audio", "Converters"],
+  "audio-speed-pitch": ["Video & Audio"],
+  "pdf-tools": ["Converters"],
+  "pdf-to-images": ["Converters"],
+  "background-remover": ["Image"]
+};
+
 const slugifyHeading = (text) =>
   String(text || "")
     .toLowerCase()
@@ -11,6 +51,13 @@ const slugifyHeading = (text) =>
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("toolList", () => toolData.tools);
+  eleventyConfig.addGlobalData("toolCategories", () => categoryDefinitions.map((category) => {
+    const tools = toolData.tools.filter((tool) => {
+      const assigned = originalToolCategories[tool.slug] || (tool.category ? [tool.category] : []);
+      return assigned.includes(category.name);
+    });
+    return { ...category, count: tools.length, tools };
+  }));
   eleventyConfig.addGlobalData("buildYear", () => new Date().getFullYear());
 
   eleventyConfig.amendLibrary("md", (md) => {
@@ -74,6 +121,38 @@ module.exports = function (eleventyConfig) {
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "ReelFlow Toolkit", "item": site.url + "/" },
             { "@type": "ListItem", "position": 2, "name": tool.name, "item": canonical }
+          ]
+        }
+      ]
+    };
+  });
+
+  eleventyConfig.addFilter("categoryLd", function (category, site, url) {
+    const canonical = site.url + url;
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": category.name + " Tools",
+          "description": category.description,
+          "url": canonical,
+          "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": category.tools.length,
+            "itemListElement": category.tools.map((tool, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "name": tool.name,
+              "url": site.url + tool.url
+            }))
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "ReelFlow Toolkit", "item": site.url + "/" },
+            { "@type": "ListItem", "position": 2, "name": category.name + " Tools", "item": canonical }
           ]
         }
       ]

@@ -7,7 +7,7 @@
       "url": "/youtube-thumbnail-downloader/",
       "name": "YouTube Thumbnail Downloader",
       "footerName": "Thumbnail Downloader",
-      "desc": "Paste any YouTube link and save the thumbnail in every available size, up to 1280x720.",
+      "desc": "Preview and save publicly available YouTube thumbnail images in supported sizes, up to 1280x720.",
       "tags": [
         "YouTube",
         "Images",
@@ -375,11 +375,12 @@
       "desc": "Build linear, radial and conic gradients with ready-to-copy Tailwind classes and CSS.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Tailwind"
     },
     {
       "slug": "tailwind-shadow-generator",
@@ -389,11 +390,12 @@
       "desc": "Create layered CSS shadows and copy the matching Tailwind arbitrary-value classes.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Tailwind"
     },
     {
       "slug": "tailwind-grid-generator",
@@ -403,11 +405,12 @@
       "desc": "Design a responsive CSS grid and export Tailwind grid utilities with exact columns, rows and gaps.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Tailwind"
     },
     {
       "slug": "tailwind-button-generator",
@@ -417,11 +420,12 @@
       "desc": "Style a production-ready button with live preview and copyable Tailwind or CSS.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Tailwind"
     },
     {
       "slug": "css-to-tailwind",
@@ -431,11 +435,12 @@
       "desc": "Convert common CSS declarations into practical Tailwind utility classes.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Tailwind"
     },
     {
       "slug": "tailwind-to-css",
@@ -445,11 +450,12 @@
       "desc": "Turn a list of Tailwind utility classes into readable CSS declarations.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Tailwind"
     },
     {
       "slug": "tailwind-flexbox-generator",
@@ -459,11 +465,12 @@
       "desc": "Build flex layouts visually and copy exact Tailwind classes for direction, alignment and wrapping.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Tailwind"
     },
     {
       "slug": "tailwind-card-generator",
@@ -473,11 +480,12 @@
       "desc": "Create a polished card with a live preview and exportable Tailwind markup and CSS.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Tailwind"
     },
     {
       "slug": "tailwind-colors",
@@ -487,11 +495,12 @@
       "desc": "Generate harmonious colour shades from one base colour and copy any shade as HEX, RGB or HSL.",
       "tags": [
         "Tailwind",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Tailwind"
     },
     {
       "slug": "timestamp-converter",
@@ -501,11 +510,12 @@
       "desc": "Convert Unix timestamps to readable dates and dates back to Unix seconds or milliseconds.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Developer"
     },
     {
       "slug": "sql-formatter",
@@ -515,11 +525,12 @@
       "desc": "Format SQL queries with consistent indentation and several database dialects.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Developer"
     },
     {
       "slug": "yaml-json-converter",
@@ -529,11 +540,12 @@
       "desc": "Convert YAML to JSON or JSON to YAML locally, with clear validation errors.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Developer"
     },
     {
       "slug": "diff-compare",
@@ -543,11 +555,12 @@
       "desc": "Compare two blocks of text with line-by-line additions, removals and unchanged lines.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Developer"
     },
     {
       "slug": "xml-beautifier",
@@ -557,11 +570,12 @@
       "desc": "Pretty-print XML for reading or minify it for transport without losing content.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Developer"
     },
     {
       "slug": "keyboard-shortcut-image",
@@ -571,11 +585,12 @@
       "desc": "Turn a keyboard shortcut into a clean, shareable image for tutorials and documentation.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Developer"
     },
     {
       "slug": "url-encoder-decoder",
@@ -585,11 +600,12 @@
       "desc": "Encode text for URLs or decode percent-encoded URL components safely.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Developer"
     },
     {
       "slug": "prompt-to-url",
@@ -599,11 +615,12 @@
       "desc": "Package a reusable prompt into a shareable URL for popular AI assistants.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Developer"
     },
     {
       "slug": "svg-blob-generator",
@@ -613,11 +630,12 @@
       "desc": "Generate unique organic SVG blob shapes with adjustable complexity and contrast.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Developer"
     },
     {
       "slug": "json-csv-converter",
@@ -627,11 +645,12 @@
       "desc": "Convert JSON arrays to CSV and CSV back to JSON with delimiter control.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Developer"
     },
     {
       "slug": "css-minifier",
@@ -641,11 +660,12 @@
       "desc": "Remove comments and unnecessary whitespace from CSS while preserving values.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Developer"
     },
     {
       "slug": "keycode-info",
@@ -655,11 +675,12 @@
       "desc": "Inspect key, code, keyCode and modifier details for any keyboard key.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Developer"
     },
     {
       "slug": "oklch-color-converter",
@@ -669,11 +690,12 @@
       "desc": "Convert HEX, RGB, HSL and OKLCH colours with a live swatch and copyable values.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Developer"
     },
     {
       "slug": "cron-explainer",
@@ -683,11 +705,12 @@
       "desc": "Explain cron expressions in plain English and show the next scheduled run times.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Developer"
     },
     {
       "slug": "html-to-jsx",
@@ -697,11 +720,12 @@
       "desc": "Convert common HTML attributes and inline styles into valid JSX.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Developer"
     },
     {
       "slug": "css-unit-converter",
@@ -711,11 +735,12 @@
       "desc": "Convert between px, rem, em, pt, pc, cm, mm and inches with a configurable root size.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Developer"
     },
     {
       "slug": "token-generator",
@@ -725,11 +750,12 @@
       "desc": "Generate cryptographically secure random tokens with Web Crypto.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": ""
+      "tone": "",
+      "category": "Developer"
     },
     {
       "slug": "encrypt-decrypt",
@@ -739,11 +765,12 @@
       "desc": "Encrypt text with a password using AES-GCM and PBKDF2, entirely in your browser.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Developer"
     },
     {
       "slug": "phone-parser",
@@ -753,11 +780,12 @@
       "desc": "Parse international phone numbers and format them in E.164, national and international styles.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Developer"
     },
     {
       "slug": "mac-address-generator",
@@ -767,11 +795,12 @@
       "desc": "Generate valid locally administered MAC addresses for labs and testing.",
       "tags": [
         "Developer",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "code",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Developer"
     },
     {
       "slug": "image-watermark",
@@ -781,11 +810,12 @@
       "desc": "Add a text watermark to an image with position, opacity and size controls.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": ""
+      "tone": "",
+      "category": "Image"
     },
     {
       "slug": "laser-eyes-meme",
@@ -795,11 +825,12 @@
       "desc": "Add adjustable glowing laser eyes to a photo and download the meme.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Image"
     },
     {
       "slug": "invert-image",
@@ -809,11 +840,12 @@
       "desc": "Invert every colour channel in an image and download the result as PNG.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Image"
     },
     {
       "slug": "image-pixelator",
@@ -823,11 +855,12 @@
       "desc": "Pixelate an image with a controllable block size and download the result.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Image"
     },
     {
       "slug": "image-blur-pixelate",
@@ -837,11 +870,12 @@
       "desc": "Apply a soft blur or pixelation effect to an image with adjustable strength.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": ""
+      "tone": "",
+      "category": "Image"
     },
     {
       "slug": "image-color-picker",
@@ -851,11 +885,12 @@
       "desc": "Pick an exact colour from any point in an image and copy HEX, RGB and HSL values.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Image"
     },
     {
       "slug": "random-color-generator",
@@ -865,11 +900,12 @@
       "desc": "Generate random colours and copy them as HEX, RGB or HSL.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Image"
     },
     {
       "slug": "resize-gif",
@@ -879,11 +915,12 @@
       "desc": "Resize an animated GIF while preserving its animation and transparency.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Image"
     },
     {
       "slug": "compress-gif",
@@ -893,11 +930,12 @@
       "desc": "Reduce GIF file size by scaling frames, lowering frame rate and optimising the palette.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": ""
+      "tone": "",
+      "category": "Image"
     },
     {
       "slug": "trim-transparent-pixels",
@@ -907,25 +945,27 @@
       "desc": "Crop empty transparent edges from a PNG or WebP image.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Image"
     },
     {
       "slug": "image-border",
       "url": "/image-border/",
       "name": "Add Borders to Image",
       "footerName": "Add Borders to Image",
-      "desc": "Frame an image with a solid, rounded or dashed border.",
+      "desc": "Frame an image with a solid, rounded, double or dashed border.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Image"
     },
     {
       "slug": "image-splitter",
@@ -935,11 +975,12 @@
       "desc": "Split an image into a grid of tiles and download every tile in one ZIP.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Image"
     },
     {
       "slug": "merge-images",
@@ -949,11 +990,12 @@
       "desc": "Combine multiple images horizontally, vertically or in a grid.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": ""
+      "tone": "",
+      "category": "Image"
     },
     {
       "slug": "pixel-art-converter",
@@ -963,11 +1005,12 @@
       "desc": "Convert a photo into pixel art with palette reduction and optional dithering.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Image"
     },
     {
       "slug": "paste-image-download",
@@ -977,11 +1020,12 @@
       "desc": "Paste an image from your clipboard or choose a file, then download it as PNG.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Image"
     },
     {
       "slug": "image-to-ascii",
@@ -991,11 +1035,12 @@
       "desc": "Convert an image into text art using adjustable width and character sets.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Image"
     },
     {
       "slug": "image-exif-tool",
@@ -1005,11 +1050,12 @@
       "desc": "Read EXIF metadata or remove it by re-encoding an image locally.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": ""
+      "tone": "",
+      "category": "Image"
     },
     {
       "slug": "flip-image",
@@ -1019,11 +1065,12 @@
       "desc": "Flip an image horizontally or vertically and download the result.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Image"
     },
     {
       "slug": "collage-maker",
@@ -1033,11 +1080,12 @@
       "desc": "Arrange multiple photos into a clean grid collage with spacing and background controls.",
       "tags": [
         "Image",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "crop",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Image"
     },
     {
       "slug": "eml-viewer",
@@ -1047,11 +1095,12 @@
       "desc": "Open .eml email files locally and inspect headers, text, HTML and attachment names.",
       "tags": [
         "Mail",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "link",
-      "tone": ""
+      "tone": "",
+      "category": "Mail"
     },
     {
       "slug": "mailto-link-generator",
@@ -1061,11 +1110,12 @@
       "desc": "Build a mailto link with recipients, subject and a pre-filled message.",
       "tags": [
         "Mail",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "link",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Mail"
     },
     {
       "slug": "utf8-encoder-decoder",
@@ -1075,11 +1125,12 @@
       "desc": "Convert text to UTF-8 bytes or decode UTF-8 byte values back to text.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": ""
+      "tone": "",
+      "category": "Text"
     },
     {
       "slug": "utf8-byte-counter",
@@ -1089,11 +1140,12 @@
       "desc": "Count Unicode characters, code points and exact UTF-8 byte length.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Text"
     },
     {
       "slug": "add-text-to-lines",
@@ -1103,11 +1155,12 @@
       "desc": "Add a prefix, suffix or line number to every line in a block of text.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Text"
     },
     {
       "slug": "filter-lines",
@@ -1117,11 +1170,12 @@
       "desc": "Keep or remove lines using contains, starts-with, ends-with or regular-expression rules.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Text"
     },
     {
       "slug": "repeat-text",
@@ -1131,11 +1185,12 @@
       "desc": "Repeat a word, sentence or paragraph a set number of times with a custom separator.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": ""
+      "tone": "",
+      "category": "Text"
     },
     {
       "slug": "simple-text-editor",
@@ -1145,11 +1200,12 @@
       "desc": "Write and clean text with live word, character, sentence and reading-time statistics.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Text"
     },
     {
       "slug": "number-to-words",
@@ -1159,11 +1215,12 @@
       "desc": "Convert whole numbers into English words, including large values and optional currency.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Text"
     },
     {
       "slug": "markdown-editor",
@@ -1173,11 +1230,12 @@
       "desc": "Write Markdown with a live, sanitised HTML preview and export the rendered HTML.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Text"
     },
     {
       "slug": "random-letter-generator",
@@ -1187,11 +1245,12 @@
       "desc": "Generate random letters with optional vowels and uppercase styling.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": ""
+      "tone": "",
+      "category": "Text"
     },
     {
       "slug": "random-emoji-generator",
@@ -1201,11 +1260,12 @@
       "desc": "Pick random emoji from faces, animals, food, nature, objects and symbols.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Text"
     },
     {
       "slug": "list-randomizer",
@@ -1215,39 +1275,27 @@
       "desc": "Shuffle a list or pick random items with optional duplicate prevention.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Text"
     },
     {
       "slug": "random-group-generator",
       "url": "/random-group-generator/",
       "name": "Random Group Generator",
       "footerName": "Random Group Generator",
-      "desc": "Split names into balanced random groups.",
+      "desc": "Split a list of names into balanced random groups instantly.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "rose"
-    },
-    {
-      "slug": "random-word-generator",
-      "url": "/random-word-generator/",
-      "name": "Random Word Generator",
-      "footerName": "Random Word Generator",
-      "desc": "Generate random English words for writing prompts, games and brainstorming.",
-      "tags": [
-        "Text",
-        "No upload",
-        "Browser-based"
-      ],
-      "icon": "text",
-      "tone": ""
+      "tone": "rose",
+      "category": "Text"
     },
     {
       "slug": "zalgo-text-generator",
@@ -1257,11 +1305,12 @@
       "desc": "Add chaotic combining marks to text with adjustable intensity.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "mint"
+      "tone": "",
+      "category": "Text"
     },
     {
       "slug": "cursed-text-generator",
@@ -1271,11 +1320,12 @@
       "desc": "Create unsettling cursed text with dense combining characters.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "amber"
+      "tone": "mint",
+      "category": "Text"
     },
     {
       "slug": "glitch-text-generator",
@@ -1285,11 +1335,12 @@
       "desc": "Create glitch-style Unicode text by mixing look-alike characters.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "rose"
+      "tone": "amber",
+      "category": "Text"
     },
     {
       "slug": "duplicate-word-finder",
@@ -1299,11 +1350,12 @@
       "desc": "Find repeated words in text, with counts and case-sensitive matching.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": ""
+      "tone": "rose",
+      "category": "Text"
     },
     {
       "slug": "morse-code-translator",
@@ -1313,11 +1365,12 @@
       "desc": "Translate text to Morse code or Morse code back to text.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "mint"
+      "tone": "",
+      "category": "Text"
     },
     {
       "slug": "morse-code-practice",
@@ -1327,11 +1380,12 @@
       "desc": "Practise Morse code with random words, sound playback and a reveal button.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "amber"
+      "tone": "mint",
+      "category": "Text"
     },
     {
       "slug": "acronym-generator",
@@ -1341,39 +1395,27 @@
       "desc": "Create an acronym from a phrase or brainstorm expansions for an acronym.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "rose"
-    },
-    {
-      "slug": "spelling-bee-solver",
-      "url": "/spelling-bee-solver/",
-      "name": "Spelling Bee Solver",
-      "footerName": "Spelling Bee Solver",
-      "desc": "Find valid words from seven letters and an optional required centre letter.",
-      "tags": [
-        "Text",
-        "No upload",
-        "Browser-based"
-      ],
-      "icon": "text",
-      "tone": ""
+      "tone": "amber",
+      "category": "Text"
     },
     {
       "slug": "wingdings-translator",
       "url": "/wingdings-translator/",
-      "name": "Wingdings Translator",
-      "footerName": "Wingdings Translator",
-      "desc": "Convert text to Wingdings symbols or map Wingdings symbols back to letters.",
+      "name": "Dingbats Translator",
+      "footerName": "Dingbats Translator",
+      "desc": "Convert text to decorative Unicode dingbats or map those symbols back to letters.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "mint"
+      "tone": "rose",
+      "category": "Text"
     },
     {
       "slug": "invisible-character-generator",
@@ -1383,11 +1425,12 @@
       "desc": "Add zero-width or invisible Unicode characters to text for usernames and formatting.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "amber"
+      "tone": "",
+      "category": "Text"
     },
     {
       "slug": "small-text-generator",
@@ -1397,11 +1440,12 @@
       "desc": "Convert normal text into small superscript, subscript or full-width Unicode.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "rose"
+      "tone": "mint",
+      "category": "Text"
     },
     {
       "slug": "cursive-text-generator",
@@ -1411,11 +1455,12 @@
       "desc": "Transform text into Unicode mathematical script for stylish captions and bios.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": ""
+      "tone": "amber",
+      "category": "Text"
     },
     {
       "slug": "upside-down-text",
@@ -1425,11 +1470,12 @@
       "desc": "Flip and rotate text into upside-down Unicode.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "mint"
+      "tone": "rose",
+      "category": "Text"
     },
     {
       "slug": "strikethrough-text",
@@ -1439,11 +1485,12 @@
       "desc": "Add Unicode strikethrough styling to text for social posts and messages.",
       "tags": [
         "Text",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "text",
-      "tone": "amber"
+      "tone": "",
+      "category": "Text"
     },
     {
       "slug": "video-to-step-guide",
@@ -1453,11 +1500,12 @@
       "desc": "Extract frames at fixed intervals and build an editable step-by-step guide from a video.",
       "tags": [
         "Video & Audio",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "film",
-      "tone": ""
+      "tone": "",
+      "category": "Video & Audio"
     },
     {
       "slug": "webcam-mirror",
@@ -1467,11 +1515,12 @@
       "desc": "Mirror your webcam in the browser, flip the view and save a snapshot.",
       "tags": [
         "Video & Audio",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "film",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Video & Audio"
     },
     {
       "slug": "online-audio-recorder",
@@ -1481,11 +1530,12 @@
       "desc": "Record microphone audio, replay it and download the recording.",
       "tags": [
         "Video & Audio",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "film",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Video & Audio"
     },
     {
       "slug": "roman-numeral-date",
@@ -1495,11 +1545,12 @@
       "desc": "Convert a calendar date to Roman numerals or a Roman date back to calendar form.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": ""
+      "tone": "",
+      "category": "Converters"
     },
     {
       "slug": "document-to-markdown",
@@ -1509,11 +1560,12 @@
       "desc": "Convert DOCX, HTML or plain text documents into clean Markdown.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Converters"
     },
     {
       "slug": "pdf-to-markdown",
@@ -1523,11 +1575,12 @@
       "desc": "Extract text from a PDF and structure it into Markdown headings and paragraphs.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Converters"
     },
     {
       "slug": "word-to-markdown",
@@ -1537,11 +1590,12 @@
       "desc": "Convert Word DOCX files to Markdown while preserving headings, lists, links and tables.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Converters"
     },
     {
       "slug": "excel-to-markdown",
@@ -1551,11 +1605,12 @@
       "desc": "Convert the first sheet of an XLSX workbook into a Markdown table.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": ""
+      "tone": "",
+      "category": "Converters"
     },
     {
       "slug": "scanned-pdf",
@@ -1565,11 +1620,12 @@
       "desc": "Render PDF pages into image-only PDF pages with optional grayscale, rotation and noise.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Converters"
     },
     {
       "slug": "number-to-roman",
@@ -1579,11 +1635,12 @@
       "desc": "Convert whole numbers from 1 to 3,999,999 into Roman numerals.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Converters"
     },
     {
       "slug": "binary-translator",
@@ -1593,11 +1650,12 @@
       "desc": "Translate text to binary or binary back to text using UTF-8.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Converters"
     },
     {
       "slug": "avif-to-png",
@@ -1607,11 +1665,12 @@
       "desc": "Decode AVIF images in your browser and download a lossless PNG.",
       "tags": [
         "Converters",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "swap",
-      "tone": ""
+      "tone": "",
+      "category": "Converters"
     },
     {
       "slug": "calendar-link-generator",
@@ -1621,11 +1680,12 @@
       "desc": "Create Google Calendar, Outlook and Yahoo links plus a downloadable ICS file.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": ""
+      "tone": "",
+      "category": "Misc"
     },
     {
       "slug": "spin-the-wheel",
@@ -1635,11 +1695,12 @@
       "desc": "Add choices to a colourful wheel and spin for a random result.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Misc"
     },
     {
       "slug": "name-wheel",
@@ -1649,11 +1710,12 @@
       "desc": "Pick a random name from a list with an interactive spinning wheel.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Misc"
     },
     {
       "slug": "yes-no-wheel",
@@ -1663,11 +1725,12 @@
       "desc": "Let a simple yes/no wheel make a decision.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Misc"
     },
     {
       "slug": "random-number-wheel",
@@ -1677,11 +1740,12 @@
       "desc": "Spin a wheel to pick a random number inside your chosen range.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": ""
+      "tone": "",
+      "category": "Misc"
     },
     {
       "slug": "cross-sum-calculator",
@@ -1691,11 +1755,12 @@
       "desc": "Calculate the digit sum and digital root of any whole number.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Misc"
     },
     {
       "slug": "vanity-number-calculator",
@@ -1705,11 +1770,12 @@
       "desc": "Find memorable phone words from a number using the standard keypad mapping.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Misc"
     },
     {
       "slug": "date-countdown",
@@ -1719,11 +1785,12 @@
       "desc": "Count down to an important date with a live days, hours, minutes and seconds display.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Misc"
     },
     {
       "slug": "date-range-calculator",
@@ -1733,11 +1800,12 @@
       "desc": "Calculate the number of days, weeks and weekends between two dates.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": ""
+      "tone": "",
+      "category": "Misc"
     },
     {
       "slug": "work-hours-calculator",
@@ -1747,11 +1815,12 @@
       "desc": "Calculate paid work hours after breaks and show the total in decimal hours.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Misc"
     },
     {
       "slug": "click-counter",
@@ -1761,11 +1830,12 @@
       "desc": "Count clicks with a large button, keyboard support and local saving.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Misc"
     },
     {
       "slug": "analog-clock",
@@ -1775,11 +1845,12 @@
       "desc": "A clean live analog clock with local time and a digital readout.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Misc"
     },
     {
       "slug": "habit-tracker",
@@ -1789,11 +1860,12 @@
       "desc": "Track daily habits for the week and keep streaks saved in your browser.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": ""
+      "tone": "",
+      "category": "Misc"
     },
     {
       "slug": "checklist-manager",
@@ -1803,11 +1875,12 @@
       "desc": "Create, complete and organise a checklist that saves automatically in your browser.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Misc"
     },
     {
       "slug": "white-screen",
@@ -1817,11 +1890,12 @@
       "desc": "Open a full-screen white display for testing, lighting or presentations.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Misc"
     },
     {
       "slug": "black-screen",
@@ -1831,11 +1905,12 @@
       "desc": "Open a full-screen black display for testing, lighting or presentations.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Misc"
     },
     {
       "slug": "dead-pixel-test",
@@ -1845,11 +1920,12 @@
       "desc": "Cycle through solid colours to find stuck or dead pixels on your display.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": ""
+      "tone": "",
+      "category": "Misc"
     },
     {
       "slug": "flip-a-coin",
@@ -1859,11 +1935,12 @@
       "desc": "Flip a virtual coin for a quick heads-or-tails decision.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Misc"
     },
     {
       "slug": "secret-santa",
@@ -1873,11 +1950,12 @@
       "desc": "Create random Secret Santa assignments while avoiding excluded pairs.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Misc"
     },
     {
       "slug": "minecraft-circle-generator",
@@ -1887,11 +1965,12 @@
       "desc": "Generate a pixel-perfect Minecraft circle template with block coordinates.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Misc"
     },
     {
       "slug": "pictionary-words",
@@ -1901,11 +1980,12 @@
       "desc": "Generate drawing prompts by category and difficulty.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": ""
+      "tone": "",
+      "category": "Misc"
     },
     {
       "slug": "charades-generator",
@@ -1915,11 +1995,12 @@
       "desc": "Get random charades prompts for parties, classrooms and team games.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Misc"
     },
     {
       "slug": "random-animal",
@@ -1929,11 +2010,12 @@
       "desc": "Discover random animals with a short fact about each one.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "amber"
+      "tone": "amber",
+      "category": "Misc"
     },
     {
       "slug": "random-country",
@@ -1943,11 +2025,12 @@
       "desc": "Pick random countries with their capital, region and official language.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "rose"
+      "tone": "rose",
+      "category": "Misc"
     },
     {
       "slug": "random-object",
@@ -1957,11 +2040,12 @@
       "desc": "Generate random everyday objects for drawing, games and creative prompts.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": ""
+      "tone": "",
+      "category": "Misc"
     },
     {
       "slug": "random-team-generator",
@@ -1971,11 +2055,12 @@
       "desc": "Split a list of players into balanced teams with optional team names.",
       "tags": [
         "Misc",
-        "No upload",
+        "No file upload",
         "Browser-based"
       ],
       "icon": "clock",
-      "tone": "mint"
+      "tone": "mint",
+      "category": "Misc"
     }
   ]
 }

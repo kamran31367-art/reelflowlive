@@ -4,6 +4,13 @@ import {
 } from './core.js';
 
 const lines = (value) => String(value || '').replace(/\r/g, '').split('\n').map((s) => s.trim()).filter(Boolean);
+const drawFromPool = (pool, count, unique = false) => {
+  if (!pool.length) throw new Error('No prompts match those filters.');
+  if (unique) return shuffle(pool).slice(0, Math.min(count, pool.length));
+  const output = [];
+  while (output.length < count) output.push(...shuffle(pool));
+  return output.slice(0, count);
+};
 const pad = (n) => String(n).padStart(2, '0');
 const icsEscape = (value) => String(value || '').replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
 
@@ -91,9 +98,12 @@ operations['date-range-calculator'] = (v) => {
 };
 
 operations['work-hours-calculator'] = (v) => {
+  if (!/^\d{2}:\d{2}$/.test(v.start) || !/^\d{2}:\d{2}$/.test(v.end)) throw new Error('Choose both a start time and an end time.');
   const [sh, sm] = v.start.split(':').map(Number), [eh, em] = v.end.split(':').map(Number);
+  if (sh > 23 || sm > 59 || eh > 23 || em > 59) throw new Error('Choose valid start and end times.');
   let minutes = (eh * 60 + em) - (sh * 60 + sm);
   if (minutes < 0) minutes += 1440;
+  if (v.breakMinutes > minutes) throw new Error('The unpaid break cannot be longer than the shift.');
   minutes = Math.max(0, minutes - v.breakMinutes);
   const hours = minutes / 60;
   const pay = hours * v.rate;
@@ -179,7 +189,7 @@ const pictionaryAll = Object.values(pictionary).flat();
 operations['pictionary-words'] = (v) => {
   let pool = v.category === 'all' ? pictionaryAll : pictionary[v.category];
   pool = pool.filter((word) => v.difficulty === 'easy' ? word.length <= 7 : v.difficulty === 'medium' ? word.length <= 10 : true);
-  return textResult(shuffle(pool).slice(0, v.count).join('\n'));
+  return textResult(drawFromPool(pool, v.count).join('\n'));
 };
 
 const charades = {
@@ -192,7 +202,7 @@ const charades = {
 const charadesAll = Object.values(charades).flat().map((item) => item.trim());
 operations['charades-generator'] = (v) => {
   const pool = v.category === 'all' ? charadesAll : charades[v.category];
-  return textResult(shuffle(pool).slice(0, v.count).join('\n'));
+  return textResult(drawFromPool(pool, v.count).join('\n'));
 };
 
 const animals = [
@@ -204,12 +214,13 @@ const countries = [
   ['Japan', 'Tokyo', 'Asia', 'Japanese'], ['Canada', 'Ottawa', 'North America', 'English, French'], ['Brazil', 'Brasília', 'South America', 'Portuguese'], ['Kenya', 'Nairobi', 'Africa', 'Swahili, English'], ['Norway', 'Oslo', 'Europe', 'Norwegian'], ['New Zealand', 'Wellington', 'Oceania', 'English, Māori'], ['Morocco', 'Rabat', 'Africa', 'Arabic, Amazigh'], ['South Korea', 'Seoul', 'Asia', 'Korean'], ['Chile', 'Santiago', 'South America', 'Spanish'], ['Finland', 'Helsinki', 'Europe', 'Finnish, Swedish'], ['Vietnam', 'Hanoi', 'Asia', 'Vietnamese'], ['Peru', 'Lima', 'South America', 'Spanish, Quechua']
 ];
 operations['random-country'] = (v) => {
-  const pool = v.unique ? shuffle(countries).slice(0, Math.min(v.count, countries.length)) : Array.from({ length: v.count }, () => pick(countries));
-  return textResult(pool.map(([name, capital, region, language]) => `${name} — Capital: ${capital}; Region: ${region}; Language: ${language}`).join('\n'));
+  const pool = drawFromPool(countries, v.count, v.unique);
+  const status = v.unique && v.count > countries.length ? `${countries.length} unique countries available` : '';
+  return textResult(pool.map(([name, capital, region, language]) => `${name} — Capital: ${capital}; Region: ${region}; Language: ${language}`).join('\n'), { status });
 };
 
 const objects = ['alarm clock', 'backpack', 'balloon', 'basket', 'bicycle', 'binoculars', 'book', 'bottle', 'bowl', 'camera', 'candle', 'chair', 'clock', 'comb', 'computer mouse', 'cup', 'desk lamp', 'door key', 'envelope', 'flashlight', 'fork', 'glasses', 'guitar', 'hammer', 'headphones', 'helmet', 'keyboard', 'ladder', 'lighthouse', 'magnet', 'microphone', 'mirror', 'notebook', 'paintbrush', 'pencil', 'phone', 'pillow', 'scissors', 'shovel', 'soap', 'spoon', 'stapler', 'sunglasses', 'teapot', 'telephone', 'toothbrush', 'towel', 'umbrella', 'watch', 'water bottle', 'wheel'];
-operations['random-object'] = (v) => textResult(shuffle(objects).slice(0, Math.min(v.count, objects.length)).join('\n'));
+operations['random-object'] = (v) => textResult(drawFromPool(objects, v.count).join('\n'));
 
 const teamNames = ['Blue Comets', 'Red Rockets', 'Golden Lions', 'Silver Sharks', 'Green Giants', 'Purple Panthers', 'Orange Tigers', 'Black Hawks', 'White Wolves', 'Crimson Dragons'];
 operations['random-team-generator'] = (v) => {

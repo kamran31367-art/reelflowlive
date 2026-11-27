@@ -16,6 +16,7 @@ function fromRoman(value) {
   const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
   let total = 0;
   for (let i = 0; i < input.length; i++) total += map[input[i]] < map[input[i + 1]] ? -map[input[i]] : map[input[i]];
+  if (total < 1 || total > 3999999 || toRoman(total) !== input) throw new Error('Use canonical Roman numerals such as IV and IX.');
   return total;
 }
 
@@ -110,29 +111,50 @@ function xmlText(element) {
   return Array.from(element.getElementsByTagName('*')).filter((node) => node.tagName.toLowerCase() === 't').map((node) => node.textContent).join('');
 }
 function columnIndex(reference) {
-  const letters = (reference.match(/[A-Z]+/i) || ['A'])[0].toUpperCase();
-  return letters.split('').reduce((sum, letter) => sum * 26 + letter.charCodeAt(0) - 64, 0) - 1;
+  const match = String(reference || 'A1').toUpperCase().match(/^([A-Z]{1,3})([1-9]\d*)$/);
+  if (!match) throw new Error('The workbook contains an invalid cell reference.');
+  const index = match[1].split('').reduce((sum, letter) => sum * 26 + letter.charCodeAt(0) - 64, 0) - 1;
+  const row = Number(match[2]);
+  if (index >= 256 || row > 10000) throw new Error('This worksheet is too large. Use up to 256 columns and 10,000 rows.');
+  return index;
 }
 
 operations['excel-to-markdown'] = async (v, files) => {
-  const zip = await new window.CT_VENDOR.JSZip().loadAsync(await readArrayBuffer(requireFile(files, 'workbook')));
-  const workbook = new DOMParser().parseFromString(await zip.file('xl/workbook.xml').async('string'), 'application/xml');
-  const rels = new DOMParser().parseFromString(await zip.file('xl/_rels/workbook.xml.rels').async('string'), 'application/xml');
+  const file = requireFile(files, 'workbook');
+  if (file.size > 25 * 1024 * 1024) throw new Error('This workbook is too large. Choose an XLSX file under 25 MB.');
+  const zip = await new window.CT_VENDOR.JSZip().loadAsync(await readArrayBuffer(file));
+  const workbookEntry = zip.file('xl/workbook.xml'), relsEntry = zip.file('xl/_rels/workbook.xml.rels');
+  if (!workbookEntry || !relsEntry) throw new Error('This file is not a valid XLSX workbook.');
+  const workbookText = await workbookEntry.async('string');
+  const relsText = await relsEntry.async('string');
+  if (workbookText.length > 20000000 || relsText.length > 2000000) throw new Error('The workbook metadata is too large to process safely.');
+  const workbook = new DOMParser().parseFromString(workbookText, 'application/xml');
+  const rels = new DOMParser().parseFromString(relsText, 'application/xml');
   const relMap = new Map(Array.from(rels.getElementsByTagName('Relationship')).map((rel) => [rel.getAttribute('Id'), rel.getAttribute('Target')]));
   const sheet = workbook.getElementsByTagName('sheet')[0];
   if (!sheet) throw new Error('The workbook has no sheets.');
   const target = relMap.get(sheet.getAttribute('r:id')) || relMap.get(sheet.getAttribute('rel:id'));
   if (!target) throw new Error('The worksheet relationship is missing.');
   const sheetPath = target.replace(/^\//, '').startsWith('xl/') ? target.replace(/^\//, '') : 'xl/' + target.replace(/^\//, '');
-  const sheetXml = new DOMParser().parseFromString(await zip.file(sheetPath).async('string'), 'application/xml');
+  const sheetEntry = zip.file(sheetPath);
+  if (!sheetEntry) throw new Error('The worksheet file is missing.');
+  const sheetText = await sheetEntry.async('string');
+  if (sheetText.length > 20000000) throw new Error('This worksheet is too large to process safely.');
+  const sheetXml = new DOMParser().parseFromString(sheetText, 'application/xml');
   let shared = [];
   if (zip.file('xl/sharedStrings.xml')) {
-    const sharedXml = new DOMParser().parseFromString(await zip.file('xl/sharedStrings.xml').async('string'), 'application/xml');
+    const sharedText = await zip.file('xl/sharedStrings.xml').async('string');
+    if (sharedText.length > 20000000) throw new Error('The shared string table is too large to process safely.');
+    const sharedXml = new DOMParser().parseFromString(sharedText, 'application/xml');
     shared = Array.from(sharedXml.getElementsByTagName('si')).map(xmlText);
   }
+  let cellCount = 0;
   const rows = Array.from(sheetXml.getElementsByTagName('row')).map((row) => {
+    const rowReference = row.getAttribute('r');
+    if (rowReference && Number(rowReference) > 10000) throw new Error('This worksheet has more than 10,000 rows.');
     const cells = [];
     for (const cell of Array.from(row.getElementsByTagName('c'))) {
+      if (++cellCount > 100000) throw new Error('This worksheet has too many cells to convert safely.');
       const index = columnIndex(cell.getAttribute('r') || 'A1');
       const type = cell.getAttribute('t');
       const valueNode = Array.from(cell.getElementsByTagName('*')).find((node) => node.tagName.toLowerCase() === 'v') || Array.from(cell.getElementsByTagName('*')).find((node) => node.tagName.toLowerCase() === 't');
@@ -148,7 +170,9 @@ operations['excel-to-markdown'] = async (v, files) => {
   const width = Math.max(...rows.map((row) => row.length));
   const normalise = (row) => Array.from({ length: width }, (_, i) => row[i] || '');
   const header = normalise(rows[0]);
-  return textResult(`| ${header.join(' | ')} |\n| ${header.map(() => '---').join(' | ')} |\n` + rows.slice(1).map((row) => `| ${normalise(row).join(' | ')} |`).join('\n'));
+  const output = `| ${header.join(' | ')} |\n| ${header.map(() => '---').join(' | ')} |\n` + rows.slice(1).map((row) => `| ${normalise(row).join(' | ')} |`).join('\n');
+  if (output.length > 5000000) throw new Error('The resulting Markdown table is too large.');
+  return textResult(output);
 };
 
 async function renderPdfPage(page, canvas, viewport) {

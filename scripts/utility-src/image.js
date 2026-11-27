@@ -202,6 +202,9 @@ operations['image-border'] = async (v, files) => {
     if (v.style === 'double') {
       ctx.strokeStyle = v.borderColor; ctx.lineWidth = Math.max(2, size * .22); ctx.strokeRect(size * .45, size * .45, output.width - size * .9, output.height - size * .9);
       ctx.strokeRect(size, size, source.width, source.height);
+    } else if (v.style === 'dashed') {
+      ctx.save(); ctx.strokeStyle = v.borderColor; ctx.lineWidth = Math.max(2, size * .3); ctx.setLineDash([size * .55, size * .35]);
+      ctx.strokeRect(size * .5, size * .5, output.width - size, output.height - size); ctx.restore();
     }
   }
   return imageOutput(output);
@@ -214,12 +217,16 @@ function roundRect(ctx, x, y, w, h, r) {
 
 operations['image-splitter'] = async (v, files) => {
   const source = await sourceCanvas(files);
+  if (v.columns > source.width || v.rows > source.height) throw new Error('The grid cannot have more rows or columns than the image has pixels.');
   const zip = new (vendor().JSZip)();
   const thumbs = [];
-  const tileWidth = Math.floor(source.width / v.columns), tileHeight = Math.floor(source.height / v.rows);
   for (let row = 0; row < v.rows; row++) for (let col = 0; col < v.columns; col++) {
-    const canvas = document.createElement('canvas'); canvas.width = tileWidth; canvas.height = tileHeight;
-    canvas.getContext('2d').drawImage(source, col * tileWidth, row * tileHeight, tileWidth, tileHeight, 0, 0, tileWidth, tileHeight);
+    const left = Math.floor(col * source.width / v.columns);
+    const top = Math.floor(row * source.height / v.rows);
+    const right = Math.floor((col + 1) * source.width / v.columns);
+    const bottom = Math.floor((row + 1) * source.height / v.rows);
+    const canvas = document.createElement('canvas'); canvas.width = right - left; canvas.height = bottom - top;
+    canvas.getContext('2d').drawImage(source, left, top, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
     const blob = await canvasBlob(canvas);
     zip.file(`tile-${row + 1}-${col + 1}.png`, blob);
     thumbs.push(`<img src="${canvas.toDataURL('image/png')}" alt="Tile ${row + 1}-${col + 1}" style="max-width:150px;border-radius:6px">`);

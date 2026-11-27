@@ -1,6 +1,6 @@
 ---
-title: "Download a YouTube thumbnail in full size"
-description: "Every size YouTube stores for a thumbnail, the specs your own uploads need, and the fallbacks when a phone browser refuses the download."
+title: "Download a publicly available YouTube thumbnail"
+description: "Supported YouTube thumbnail sizes, the specs your own uploads need, permission basics and browser download fallbacks."
 date: 2026-11-27
 categories:
   - YouTube
@@ -9,7 +9,7 @@ cover: assets/img/blog/download-youtube-thumbnail/hero.webp
 coverAlt: "A glossy red YouTube play icon floating over a dark blue background"
 coverCaption: "The thumbnail is already a file on YouTube's CDN. There is no need to screenshot the player."
 takeaways:
-  - "YouTube stores up to four public sizes per video, from 1280 x 720 down to 320 x 180."
+  - "YouTube exposes several public thumbnail sizes per video, including 1280 x 720, 640 x 480, 480 x 360 and 320 x 180."
   - "The 1280 x 720 copy exists only when the uploader set a custom thumbnail at full size."
   - "Your own uploads want 1280 x 720, 16:9, under 2 MB, as JPG, PNG or GIF."
   - "If a phone browser opens the image instead of saving it, copy the image URL or long-press the preview."
@@ -29,7 +29,7 @@ There are a few honest reasons to download a thumbnail: you are moving an old vi
 
 This guide covers what each size is, the specs your own uploads need, and what to do when a phone browser refuses the file.
 
-## Every size YouTube stores
+## Supported YouTube thumbnail sizes
 
 For each video, YouTube keeps several copies of the thumbnail:
 
@@ -113,7 +113,7 @@ Doing these in the browser avoids the round trip through a heavyweight editor fo
 
 ## A quick word on ownership
 
-Downloading a thumbnail does not give you the rights to the artwork. Use it as a reference, for archiving your own uploads, or with the owner's permission. Re-uploading someone else's design as your own is a copyright problem regardless of how the file was obtained, and it is also the kind of thing channels get reported for.
+Downloading a thumbnail does not give you the rights to the artwork. ReelFlow is not affiliated with YouTube or Google. Use the image as a reference, for archiving your own uploads, or with the owner's permission. Re-uploading someone else's design as your own is a copyright problem regardless of how the file was obtained, and it is also the kind of thing channels get reported for.
 
 ## Checklist
 

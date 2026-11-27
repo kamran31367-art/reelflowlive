@@ -105,8 +105,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "tailwind-shadow-generator": {
     "engine": "utility",
@@ -187,8 +186,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "tailwind-grid-generator": {
     "engine": "utility",
@@ -226,7 +224,7 @@
         "id": "columnGap",
         "label": "Column gap override (px)",
         "type": "number",
-        "value": 0,
+        "value": "",
         "min": 0,
         "max": 100,
         "step": 1
@@ -235,7 +233,7 @@
         "id": "rowGap",
         "label": "Row gap override (px)",
         "type": "number",
-        "value": 0,
+        "value": "",
         "min": 0,
         "max": 100,
         "step": 1
@@ -281,8 +279,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "tailwind-button-generator": {
     "engine": "utility",
@@ -381,8 +378,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "css-to-tailwind": {
     "engine": "utility",
@@ -414,8 +410,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "tailwind-to-css": {
     "engine": "utility",
@@ -447,8 +442,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "tailwind-flexbox-generator": {
     "engine": "utility",
@@ -594,8 +588,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "tailwind-card-generator": {
     "engine": "utility",
@@ -690,8 +683,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "tailwind-colors": {
     "engine": "utility",
@@ -750,8 +742,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "timestamp-converter": {
     "engine": "utility",
@@ -806,8 +797,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "sql-formatter": {
     "engine": "utility",
@@ -867,8 +857,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "yaml-json-converter": {
     "engine": "utility",
@@ -895,7 +884,7 @@
         "id": "input",
         "label": "Input",
         "type": "textarea",
-        "value": "name: ReelFlow\ntools: 141\nlocal: true",
+        "value": "name: ReelFlow\ntools: 139\nlocal: true",
         "rows": 6,
         "spellcheck": false
       }
@@ -916,8 +905,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "diff-compare": {
     "engine": "utility",
@@ -935,7 +923,7 @@
         "id": "changed",
         "label": "Changed text",
         "type": "textarea",
-        "value": "ReelFlow Toolkit\n141 free tools\nRuns in your browser\nNo signup",
+        "value": "ReelFlow Toolkit\n139 free tools\nRuns in your browser\nNo signup",
         "rows": 7
       }
     ],
@@ -955,8 +943,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "xml-beautifier": {
     "engine": "utility",
@@ -1004,8 +991,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "keyboard-shortcut-image": {
     "engine": "utility",
@@ -1067,8 +1053,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "url-encoder-decoder": {
     "engine": "utility",
@@ -1114,8 +1099,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "prompt-to-url": {
     "engine": "utility",
@@ -1170,8 +1154,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "svg-blob-generator": {
     "engine": "utility",
@@ -1237,8 +1220,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "json-csv-converter": {
     "engine": "utility",
@@ -1306,8 +1288,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "css-minifier": {
     "engine": "utility",
@@ -1339,8 +1320,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "keycode-info": {
     "engine": "utility",
@@ -1371,8 +1351,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "oklch-color-converter": {
     "engine": "utility",
@@ -1381,9 +1360,10 @@
     "fields": [
       {
         "id": "color",
-        "label": "Colour",
-        "type": "color",
-        "value": "#2563eb"
+        "label": "Colour (HEX, RGB, HSL or OKLCH)",
+        "type": "text",
+        "value": "#2563eb",
+        "placeholder": "#2563eb or oklch(62.8% 0.2 264)"
       },
       {
         "id": "format",
@@ -1430,8 +1410,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "cron-explainer": {
     "engine": "utility",
@@ -1470,8 +1449,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "html-to-jsx": {
     "engine": "utility",
@@ -1503,8 +1481,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "css-unit-converter": {
     "engine": "utility",
@@ -1626,8 +1603,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "token-generator": {
     "engine": "utility",
@@ -1689,8 +1665,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "encrypt-decrypt": {
     "engine": "utility",
@@ -1743,8 +1718,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "phone-parser": {
     "engine": "utility",
@@ -1814,8 +1788,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "mac-address-generator": {
     "engine": "utility",
@@ -1884,8 +1857,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-watermark": {
     "engine": "utility",
@@ -1974,8 +1946,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "laser-eyes-meme": {
     "engine": "utility",
@@ -2057,8 +2028,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "invert-image": {
     "engine": "utility",
@@ -2089,8 +2059,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-pixelator": {
     "engine": "utility",
@@ -2130,8 +2099,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-blur-pixelate": {
     "engine": "utility",
@@ -2187,8 +2155,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-color-picker": {
     "engine": "utility",
@@ -2237,8 +2204,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-color-generator": {
     "engine": "utility",
@@ -2291,8 +2257,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "resize-gif": {
     "engine": "utility",
@@ -2341,8 +2306,7 @@
     "screenColor": "",
     "needsGif": true,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "compress-gif": {
     "engine": "utility",
@@ -2400,8 +2364,7 @@
     "screenColor": "",
     "needsGif": true,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "trim-transparent-pixels": {
     "engine": "utility",
@@ -2441,8 +2404,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-border": {
     "engine": "utility",
@@ -2488,6 +2450,10 @@
           {
             "value": "double",
             "label": "Double"
+          },
+          {
+            "value": "dashed",
+            "label": "Dashed"
           }
         ]
       }
@@ -2508,8 +2474,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-splitter": {
     "engine": "utility",
@@ -2558,8 +2523,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "merge-images": {
     "engine": "utility",
@@ -2634,8 +2598,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "pixel-art-converter": {
     "engine": "utility",
@@ -2690,8 +2653,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "paste-image-download": {
     "engine": "utility",
@@ -2722,8 +2684,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-to-ascii": {
     "engine": "utility",
@@ -2787,8 +2748,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "image-exif-tool": {
     "engine": "utility",
@@ -2835,8 +2795,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "flip-image": {
     "engine": "utility",
@@ -2887,8 +2846,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "collage-maker": {
     "engine": "utility",
@@ -2949,8 +2907,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "eml-viewer": {
     "engine": "utility",
@@ -2981,8 +2938,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "mailto-link-generator": {
     "engine": "utility",
@@ -3037,8 +2993,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "utf8-encoder-decoder": {
     "engine": "utility",
@@ -3085,8 +3040,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "utf8-byte-counter": {
     "engine": "utility",
@@ -3117,8 +3071,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "add-text-to-lines": {
     "engine": "utility",
@@ -3167,8 +3120,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "filter-lines": {
     "engine": "utility",
@@ -3239,8 +3191,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "repeat-text": {
     "engine": "utility",
@@ -3286,8 +3237,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "simple-text-editor": {
     "engine": "utility",
@@ -3318,8 +3268,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "number-to-words": {
     "engine": "utility",
@@ -3365,8 +3314,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "markdown-editor": {
     "engine": "utility",
@@ -3418,8 +3366,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-letter-generator": {
     "engine": "utility",
@@ -3478,8 +3425,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-emoji-generator": {
     "engine": "utility",
@@ -3548,8 +3494,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "list-randomizer": {
     "engine": "utility",
@@ -3611,8 +3556,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-group-generator": {
     "engine": "utility",
@@ -3652,60 +3596,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
-  },
-  "random-word-generator": {
-    "engine": "utility",
-    "operation": "random-word-generator",
-    "autoRun": false,
-    "fields": [
-      {
-        "id": "count",
-        "label": "How many",
-        "type": "number",
-        "value": 10,
-        "min": 1,
-        "max": 200,
-        "step": 1
-      },
-      {
-        "id": "minLength",
-        "label": "Minimum length",
-        "type": "number",
-        "value": 3,
-        "min": 1,
-        "max": 12,
-        "step": 1
-      },
-      {
-        "id": "maxLength",
-        "label": "Maximum length",
-        "type": "number",
-        "value": 9,
-        "min": 2,
-        "max": 20,
-        "step": 1
-      }
-    ],
-    "actionLabel": "Generate words",
-    "inputTitle": "Word settings",
-    "inputHint": "Runs in your browser",
-    "outputTitle": "Random words",
-    "placeholder": "Your result will appear here.",
-    "emptyText": "Add your input to see the result.",
-    "note": "",
-    "outputNote": "",
-    "downloadExt": "txt",
-    "disableDownload": false,
-    "disableCopy": false,
-    "interactive": "",
-    "wheelItems": [],
-    "screenColor": "",
-    "needsGif": false,
-    "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": true
+    "needsPdfLib": false
   },
   "zalgo-text-generator": {
     "engine": "utility",
@@ -3763,8 +3654,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "cursed-text-generator": {
     "engine": "utility",
@@ -3804,8 +3694,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "glitch-text-generator": {
     "engine": "utility",
@@ -3845,8 +3734,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "duplicate-word-finder": {
     "engine": "utility",
@@ -3883,8 +3771,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "morse-code-translator": {
     "engine": "utility",
@@ -3931,8 +3818,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "morse-code-practice": {
     "engine": "utility",
@@ -3976,8 +3862,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "acronym-generator": {
     "engine": "utility",
@@ -4023,46 +3908,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
-  },
-  "spelling-bee-solver": {
-    "engine": "utility",
-    "operation": "spelling-bee-solver",
-    "autoRun": false,
-    "fields": [
-      {
-        "id": "letters",
-        "label": "Seven letters",
-        "type": "text",
-        "value": "reflown"
-      },
-      {
-        "id": "required",
-        "label": "Required centre letter",
-        "type": "text",
-        "value": "f",
-        "maxlength": 1
-      }
-    ],
-    "actionLabel": "Solve puzzle",
-    "inputTitle": "Puzzle letters",
-    "inputHint": "Runs in your browser",
-    "outputTitle": "Valid words",
-    "placeholder": "Your result will appear here.",
-    "emptyText": "Add your input to see the result.",
-    "note": "",
-    "outputNote": "",
-    "downloadExt": "txt",
-    "disableDownload": false,
-    "disableCopy": false,
-    "interactive": "",
-    "wheelItems": [],
-    "screenColor": "",
-    "needsGif": false,
-    "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": true
+    "needsPdfLib": false
   },
   "wingdings-translator": {
     "engine": "utility",
@@ -4077,11 +3923,11 @@
         "options": [
           {
             "value": "encode",
-            "label": "Text to Wingdings"
+            "label": "Text to dingbats"
           },
           {
             "value": "decode",
-            "label": "Wingdings to text"
+            "label": "Dingbats to text"
           }
         ]
       },
@@ -4093,10 +3939,10 @@
         "rows": 5
       }
     ],
-    "actionLabel": "Translate Wingdings",
+    "actionLabel": "Translate dingbats",
     "inputTitle": "Text or symbols",
     "inputHint": "Runs in your browser",
-    "outputTitle": "Wingdings translation",
+    "outputTitle": "Dingbats translation",
     "placeholder": "Your result will appear here.",
     "emptyText": "Add your input to see the result.",
     "note": "",
@@ -4109,8 +3955,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "invisible-character-generator": {
     "engine": "utility",
@@ -4193,8 +4038,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "small-text-generator": {
     "engine": "utility",
@@ -4245,8 +4089,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "cursive-text-generator": {
     "engine": "utility",
@@ -4297,8 +4140,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "upside-down-text": {
     "engine": "utility",
@@ -4329,8 +4171,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "strikethrough-text": {
     "engine": "utility",
@@ -4377,8 +4218,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "video-to-step-guide": {
     "engine": "utility",
@@ -4426,8 +4266,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "webcam-mirror": {
     "engine": "utility",
@@ -4450,8 +4289,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "online-audio-recorder": {
     "engine": "utility",
@@ -4474,8 +4312,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "roman-numeral-date": {
     "engine": "utility",
@@ -4527,8 +4364,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "document-to-markdown": {
     "engine": "utility",
@@ -4559,8 +4395,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "pdf-to-markdown": {
     "engine": "utility",
@@ -4591,8 +4426,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": true,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "word-to-markdown": {
     "engine": "utility",
@@ -4623,8 +4457,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "excel-to-markdown": {
     "engine": "utility",
@@ -4655,8 +4488,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "scanned-pdf": {
     "engine": "utility",
@@ -4731,8 +4563,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": true,
-    "needsPdfLib": true,
-    "needsWords": false
+    "needsPdfLib": true
   },
   "number-to-roman": {
     "engine": "utility",
@@ -4762,8 +4593,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "binary-translator": {
     "engine": "utility",
@@ -4810,8 +4640,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "avif-to-png": {
     "engine": "utility",
@@ -4842,8 +4671,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "calendar-link-generator": {
     "engine": "utility",
@@ -4896,8 +4724,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "spin-the-wheel": {
     "engine": "utility",
@@ -4928,8 +4755,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "name-wheel": {
     "engine": "utility",
@@ -4960,8 +4786,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "yes-no-wheel": {
     "engine": "utility",
@@ -4987,8 +4812,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-number-wheel": {
     "engine": "utility",
@@ -5030,8 +4854,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "cross-sum-calculator": {
     "engine": "utility",
@@ -5061,8 +4884,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "vanity-number-calculator": {
     "engine": "utility",
@@ -5101,8 +4923,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "date-countdown": {
     "engine": "utility",
@@ -5131,8 +4952,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "date-range-calculator": {
     "engine": "utility",
@@ -5166,8 +4986,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "work-hours-calculator": {
     "engine": "utility",
@@ -5221,8 +5040,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "click-counter": {
     "engine": "utility",
@@ -5245,8 +5063,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "analog-clock": {
     "engine": "utility",
@@ -5269,8 +5086,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "habit-tracker": {
     "engine": "utility",
@@ -5301,8 +5117,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "checklist-manager": {
     "engine": "utility",
@@ -5333,8 +5148,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "white-screen": {
     "engine": "utility",
@@ -5357,8 +5171,7 @@
     "screenColor": "#ffffff",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "black-screen": {
     "engine": "utility",
@@ -5381,8 +5194,7 @@
     "screenColor": "#000000",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "dead-pixel-test": {
     "engine": "utility",
@@ -5405,8 +5217,7 @@
     "screenColor": "#ff0000",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "flip-a-coin": {
     "engine": "utility",
@@ -5429,8 +5240,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "secret-santa": {
     "engine": "utility",
@@ -5468,8 +5278,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "minecraft-circle-generator": {
     "engine": "utility",
@@ -5524,8 +5333,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "pictionary-words": {
     "engine": "utility",
@@ -5610,8 +5418,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "charades-generator": {
     "engine": "utility",
@@ -5676,8 +5483,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-animal": {
     "engine": "utility",
@@ -5710,8 +5516,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-country": {
     "engine": "utility",
@@ -5750,8 +5555,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-object": {
     "engine": "utility",
@@ -5784,8 +5588,7 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   },
   "random-team-generator": {
     "engine": "utility",
@@ -5831,7 +5634,6 @@
     "screenColor": "",
     "needsGif": false,
     "needsPdf": false,
-    "needsPdfLib": false,
-    "needsWords": false
+    "needsPdfLib": false
   }
 }

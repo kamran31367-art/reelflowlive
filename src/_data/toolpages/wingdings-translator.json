@@ -1,16 +1,16 @@
 {
-  "metaTitle": "Wingdings Translator - ReelFlow Toolkit",
-  "description": "Convert text to Wingdings symbols or map Wingdings symbols back to letters.",
-  "ogTitle": "Wingdings Translator",
-  "ogDescription": "Convert text to Wingdings symbols or map Wingdings symbols back to letters.",
-  "ldDescription": "Convert text to Wingdings symbols or map Wingdings symbols back to letters.",
-  "breadcrumb": "Wingdings Translator",
+  "metaTitle": "Dingbats Translator - ReelFlow Toolkit",
+  "description": "Convert text to decorative Unicode dingbats or map those symbols back to letters.",
+  "ogTitle": "Dingbats Translator",
+  "ogDescription": "Convert text to decorative Unicode dingbats or map those symbols back to letters.",
+  "ldDescription": "Convert text to decorative Unicode dingbats or map those symbols back to letters.",
+  "breadcrumb": "Dingbats Translator",
   "kicker": "Text tool",
-  "h1": "Wingdings Translator",
-  "lede": "Convert text to Wingdings symbols or map Wingdings symbols back to letters.",
+  "h1": "Dingbats Translator",
+  "lede": "Convert text to decorative Unicode dingbats or map those symbols back to letters.",
   "faq": [
     {
-      "q": "Is Wingdings Translator free?",
+      "q": "Is Dingbats Translator free?",
       "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
     },
     {

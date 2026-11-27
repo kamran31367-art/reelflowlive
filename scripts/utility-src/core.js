@@ -7,6 +7,27 @@ const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const pick = (list) => list[Math.floor(Math.random() * list.length)];
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const sanitizeLocalHtml = (html) => {
+  const clean = window.CT_VENDOR?.DOMPurify
+    ? window.CT_VENDOR.DOMPurify.sanitize(String(html), { FORBID_TAGS: ['style', 'link', 'meta', 'base', 'iframe', 'object', 'embed', 'form'], FORBID_ATTR: ['srcset', 'background'] })
+    : escapeHtml(html);
+  const doc = new DOMParser().parseFromString(clean, 'text/html');
+  for (const element of doc.body.querySelectorAll('*')) {
+    for (const attribute of Array.from(element.attributes)) {
+      const name = attribute.name.toLowerCase();
+      const value = attribute.value.trim();
+      if (name === 'style') {
+        const safe = value.split(';').map((part) => part.trim()).filter(Boolean).filter((part) => !/(url\s*\(|@import|expression\s*\(|javascript:|https?:|\/\/|image-set\(|-moz-binding|behavior\s*:)/i.test(part)).join('; ');
+        if (safe) element.setAttribute('style', safe); else element.removeAttribute('style');
+      } else if (['src', 'poster', 'data', 'xlink:href'].includes(name) && !/^(data:|blob:)/i.test(value)) {
+        element.removeAttribute(attribute.name);
+      } else if (name === 'href' && !['a', 'area'].includes(element.tagName.toLowerCase()) && !/^(data:|blob:)/i.test(value)) {
+        element.removeAttribute(attribute.name);
+      }
+    }
+  }
+  return doc.body.innerHTML;
+};
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function shuffle(list) {
@@ -179,15 +200,21 @@ let files = {};
 let current = null;
 let running = false;
 let runAgain = false;
+let runToken = 0;
 let cleanup = [];
 let autoRunTimer = null;
 const onCleanup = (fn) => cleanup.push(fn);
 const runCleanup = () => { while (cleanup.length) { try { cleanup.pop()(); } catch (error) { console.warn(error); } } };
 const scheduleAutoRun = () => {
-  if (!config.autoRun) return;
+  if (!config.autoRun || !hasAutoRunInput()) return;
   clearTimeout(autoRunTimer);
   autoRunTimer = setTimeout(() => { autoRunTimer = null; run(); }, 180);
 };
+const hasAutoRunInput = () => (config.fields || []).every((field) => {
+  if (field.type === 'file') return field.multiple ? !!files[field.id]?.length : !!files[field.id];
+  if (field.type === 'date' || field.type === 'datetime-local') return !!document.getElementById(field.id)?.value;
+  return true;
+});
 
 function setBusy(busy) {
   running = busy;
@@ -256,7 +283,7 @@ function renderResult(result) {
     canvas.hidden = false;
   }
   if (result.html && preview) {
-    preview.innerHTML = window.CT_VENDOR?.DOMPurify ? window.CT_VENDOR.DOMPurify.sanitize(result.html) : result.html;
+    preview.innerHTML = sanitizeLocalHtml(result.html);
     preview.hidden = false;
   }
   if (result.text != null && text) {
@@ -278,6 +305,7 @@ function renderResult(result) {
 
 async function run() {
   if (running) { runAgain = true; return; }
+  const token = ++runToken;
   setBusy(true);
   try {
     do {
@@ -289,31 +317,33 @@ async function run() {
         const operation = operations[config.operation];
         if (!operation) throw new Error('This tool operation is not available.');
         const result = await operation(runValues, runFiles);
-        if (!runAgain) renderResult(result);
+        if (token === runToken && !runAgain) renderResult(result);
       } catch (error) {
+        if (token !== runToken || runAgain) continue;
         console.error(error);
-        if (!runAgain) {
-          runCleanup();
-          current = null;
-          const text = $('#utilityText'), preview = $('#utilityPreview'), canvas = $('#utilityCanvas'), empty = $('#utilityEmpty');
-          if (preview) preview.hidden = true;
-          if (canvas) canvas.hidden = true;
-          if (empty) empty.hidden = true;
-          if (text) { text.hidden = false; text.textContent = 'Error: ' + (error?.message || error); }
-          const status = $('#utilityStatus'); if (status) status.textContent = 'Error';
-          const download = $('#utilityDownload'), copy = $('#utilityCopy');
-          if (download) download.disabled = true;
-          if (copy) copy.disabled = true;
-          window.CT?.toast?.(error?.message || 'Something went wrong.', 'error');
-        }
+        runCleanup();
+        current = null;
+        const text = $('#utilityText'), preview = $('#utilityPreview'), canvas = $('#utilityCanvas'), empty = $('#utilityEmpty');
+        if (preview) preview.hidden = true;
+        if (canvas) canvas.hidden = true;
+        if (empty) empty.hidden = true;
+        if (text) { text.hidden = false; text.textContent = 'Error: ' + (error?.message || error); }
+        const status = $('#utilityStatus'); if (status) status.textContent = 'Error';
+        const download = $('#utilityDownload'), copy = $('#utilityCopy');
+        if (download) download.disabled = true;
+        if (copy) copy.disabled = true;
+        window.CT?.toast?.(error?.message || 'Something went wrong.', 'error');
       }
-    } while (runAgain);
+    } while (runAgain && token === runToken);
   } finally {
-    setBusy(false);
+    if (token === runToken) setBusy(false);
   }
 }
 
 function reset() {
+  runToken++;
+  runAgain = false;
+  setBusy(false);
   runCleanup();
   for (const field of config.fields || []) {
     const element = document.getElementById(field.id);
@@ -325,7 +355,7 @@ function reset() {
     updateRange(field);
   }
   resetOutput();
-  if (config.autoRun) run();
+  if (config.autoRun && hasAutoRunInput()) run();
 }
 
 function wireDropzone(field) {
@@ -376,8 +406,8 @@ async function copyCurrent() {
   if (!current || config.disableCopy) return;
   const value = current.copyText || current.text || current.html || '';
   if (!value) return;
-  await window.CT.copy(value);
-  window.CT?.toast?.('Copied to clipboard.');
+  const copied = await window.CT.copy(value);
+  window.CT?.toast?.(copied ? 'Copied to clipboard.' : 'Copy failed. Select the text and copy it manually.', copied ? '' : 'error');
 }
 
 function init() {
@@ -398,9 +428,15 @@ function init() {
   }
   document.addEventListener('keydown', (event) => {
     if (config.operation === 'keycode-info') {
-      values.key = event.key;
+      const key = event.key === ' ' ? 'Space' : event.key === '+' ? 'Plus' : event.key;
+      const modifiers = [];
+      if (event.ctrlKey) modifiers.push('Ctrl');
+      if (event.shiftKey) modifiers.push('Shift');
+      if (event.altKey) modifiers.push('Alt');
+      if (event.metaKey) modifiers.push('Meta');
+      values.key = [...modifiers, key].join('+');
       const input = document.getElementById('key');
-      if (input) input.value = event.key === ' ' ? 'Space' : event.key;
+      if (input) input.value = values.key;
       if (config.autoRun) run();
     }
   });
@@ -419,11 +455,11 @@ function init() {
   $('#utilityDownload')?.addEventListener('click', downloadCurrent);
   $('#utilityCopy')?.addEventListener('click', copyCurrent);
   resetOutput();
-  if (config.autoRun) run();
+  if (config.autoRun && hasAutoRunInput()) run();
 }
 
 export {
-  operations, $, $$, clamp, randomInt, pick, escapeHtml, sleep, shuffle,
+  operations, $, $$, clamp, randomInt, pick, escapeHtml, sanitizeLocalHtml, sleep, shuffle,
   hexToRgb, rgbToHex, rgbToHsl, hslToRgb, rgbToOklch, parseColor, formatColor,
   canvasBlob, loadImage, imageCanvas, readText, readArrayBuffer, readDataUrl,
   requireFile, requireFiles, textResult, htmlResult, canvasResult, blobResult,

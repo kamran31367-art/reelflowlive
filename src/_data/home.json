@@ -1,11 +1,11 @@
 {
   "metaTitle": "ReelFlow Toolkit - Free Tools for YouTubers and Short-Video Creators",
-  "description": "Free browser-based tools for creators: YouTube thumbnails, image resizing and compression, favicons, QR codes, memes, subtitles, chapters, titles, video trimming, GIFs, audio, PDF and developer utilities. No upload, no signup.",
+  "description": "Free browser-based tools for creators: YouTube thumbnails, image resizing and compression, favicons, QR codes, memes, subtitles, chapters, titles, video trimming, GIFs, audio, PDF and developer utilities. No file upload, no signup.",
   "ogTitle": "ReelFlow Toolkit - Free Tools for Creators",
-  "ogDescription": "Thumbnails, image sizes, compression, QR codes, subtitles, chapters, video trimming, GIFs, audio and PDF - 141 free tools that run entirely in your browser.",
+  "ogDescription": "Thumbnails, image sizes, compression, QR codes, subtitles, chapters, video trimming, GIFs, audio and PDF - 139 free tools that process your files in the browser.",
   "heroTitle": "Every small tool a creator needs,",
   "heroEm": "right in the browser.",
-  "heroLead": "Thumbnails, image sizes, compression, video trimming, GIFs, audio, PDF, QR codes and everyday utilities - all free, all local. Your files never leave your device.",
+  "heroLead": "Thumbnails, image sizes, compression, video trimming, GIFs, audio, PDF, QR codes and everyday utilities - all free. Tool processing stays on your device, so your files are not uploaded.",
   "primaryCta": {
     "label": "Browse the toolkit",
     "href": "#tools"
@@ -16,16 +16,16 @@
   },
   "trust": [
     "No signup",
-    "No upload",
+    "No file upload",
     "No watermark",
     "Built for YouTube, Shorts, Reels, TikTok"
   ],
-  "toolsTitle": "141 tools to start",
+  "toolsTitle": "139 tools to start",
   "toolsNote": "Each tool has its own page and loads in under a second.",
   "features": [
     {
       "title": "Runs on your device",
-      "text": "Files are processed with Canvas and JavaScript in your browser. Nothing is uploaded to a server."
+      "text": "Files are processed with Canvas and JavaScript in your browser. The tools do not upload them to a server; optional ads may load after you give consent."
     },
     {
       "title": "No account, no limits",
@@ -45,7 +45,7 @@
     },
     {
       "q": "Do my files get uploaded anywhere?",
-      "a": "No. Images, videos and subtitle files stay on your device. The tools use the browser's own Canvas and file APIs."
+      "a": "No. Images, videos and subtitle files are processed on your device with the browser's own Canvas and file APIs. Optional advertising resources may load only after you accept the cookie notice."
     },
     {
       "q": "Will more tools be added?",

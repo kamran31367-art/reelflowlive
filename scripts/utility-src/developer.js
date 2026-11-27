@@ -67,18 +67,30 @@ operations['diff-compare'] = (v) => {
   return textResult(`+${added} added  -${removed} removed\n\n` + lines.join('\n'));
 };
 
+function xmlEscape(value, attribute = false) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, attribute ? '&quot;' : '"');
+}
+
 function formatXml(xml, minify) {
   const doc = new DOMParser().parseFromString(xml, 'application/xml');
   if (doc.querySelector('parsererror')) throw new Error('The XML is not valid.');
   const serialize = (node, depth) => {
     const pad = minify ? '' : '  '.repeat(depth);
-    if (node.nodeType === Node.TEXT_NODE) return minify ? node.textContent.trim() : pad + node.textContent.trim();
+    if (node.nodeType === Node.TEXT_NODE) return minify ? xmlEscape(node.textContent) : pad + xmlEscape(node.textContent.trim());
+    if (node.nodeType === Node.CDATA_SECTION_NODE) return `${pad}<![CDATA[${node.textContent}]]>`;
+    if (node.nodeType === Node.COMMENT_NODE) return `${pad}<!--${node.textContent}-->`;
     if (node.nodeType !== Node.ELEMENT_NODE) return '';
-    const attrs = Array.from(node.attributes).map((a) => ` ${a.name}="${a.value.replace(/"/g, '&quot;')}"`).join('');
-    const children = Array.from(node.childNodes).map((child) => serialize(child, depth + 1)).filter(Boolean);
-    if (!children.length) return `${pad}<${node.tagName}${attrs}${node.childNodes.length ? `>${node.textContent}</${node.tagName}>` : ' />'}`;
-    if (minify) return `<${node.tagName}${attrs}>${children.join('')}</${node.tagName}>`;
-    return `${pad}<${node.tagName}${attrs}>\n${children.join('\n')}\n${pad}</${node.tagName}>`;
+    const attrs = Array.from(node.attributes).map((a) => ` ${a.name}="${xmlEscape(a.value, true)}"`).join('');
+    const children = Array.from(node.childNodes).filter((child) => !(child.nodeType === Node.TEXT_NODE && !child.textContent.trim()));
+    if (!children.length) return `${pad}<${node.tagName}${attrs} />`;
+    const inlineChildren = () => children.map((child) => serialize(child, 0)).join('');
+    if (children.every((child) => child.nodeType === Node.TEXT_NODE || child.nodeType === Node.CDATA_SECTION_NODE)) {
+      return `${pad}<${node.tagName}${attrs}>${inlineChildren()}</${node.tagName}>`;
+    }
+    if (minify || children.some((child) => child.nodeType === Node.TEXT_NODE && child.textContent.trim())) {
+      return `${pad}<${node.tagName}${attrs}>${inlineChildren()}</${node.tagName}>`;
+    }
+    return `${pad}<${node.tagName}${attrs}>\n${children.map((child) => serialize(child, depth + 1)).join('\n')}\n${pad}</${node.tagName}>`;
   };
   return serialize(doc.documentElement, 0);
 }
@@ -89,7 +101,10 @@ operations['xml-beautifier'] = (v) => {
 };
 
 operations['keyboard-shortcut-image'] = async (v) => {
-  const keys = v.keys.split(/\s*\+\s*/).filter(Boolean);
+  const aliases = v.platform === 'mac'
+    ? { ctrl: '⌘', cmd: '⌘', command: '⌘', alt: '⌥', option: '⌥', shift: '⇧', win: '⌘' }
+    : { cmd: 'Ctrl', command: 'Ctrl', option: 'Alt', win: 'Win' };
+  const keys = v.keys.split(/\s*\+\s*/).filter(Boolean).map((key) => aliases[key.toLowerCase()] || key);
   const width = Math.max(720, keys.length * 150 + 80);
   const canvas = document.createElement('canvas'); canvas.width = width; canvas.height = 300;
   const ctx = canvas.getContext('2d');
@@ -164,7 +179,7 @@ operations['json-csv-converter'] = (v) => {
     const headers = Array.from(new Set(data.flatMap((row) => Object.keys(row))));
     const quote = (value) => {
       const s = value == null ? '' : typeof value === 'object' ? JSON.stringify(value) : String(value);
-      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+      return /[",\r\n]/.test(s) || s.includes(v.delimiter) ? '"' + s.replace(/"/g, '""') + '"' : s;
     };
     return textResult([headers.map(quote).join(v.delimiter), ...data.map((row) => headers.map((h) => quote(row[h])).join(v.delimiter))].join('\n'));
   }
@@ -199,19 +214,42 @@ operations['css-minifier'] = (v) => {
 };
 
 operations['keycode-info'] = (v) => {
-  const key = String(v.key || '').trim();
+  const parts = String(v.key || '').split('+').map((part) => part.trim()).filter(Boolean);
+  const key = parts.pop() || '';
   if (!key) throw new Error('Press a key or enter a key name.');
+  const modifierAliases = { ctrl: 'Ctrl', control: 'Ctrl', shift: 'Shift', alt: 'Alt', option: 'Alt', meta: 'Meta', cmd: 'Meta', command: 'Meta' };
+  const modifiers = parts.map((part) => modifierAliases[part.toLowerCase()] || part);
   const aliases = { ' ': 'Space', spacebar: 'Space', control: 'Control', esc: 'Escape', return: 'Enter', arrowup: 'ArrowUp', arrowdown: 'ArrowDown', arrowleft: 'ArrowLeft', arrowright: 'ArrowRight' };
   const normalized = aliases[key.toLowerCase()] || key.length === 1 ? (aliases[key.toLowerCase()] || key) : key;
   const keyCodes = { Enter: 13, Escape: 27, Space: 32, Tab: 9, Backspace: 8, Delete: 46, ArrowUp: 38, ArrowDown: 40, ArrowLeft: 37, ArrowRight: 39, Shift: 16, Control: 17, Alt: 18, Meta: 91 };
   const codes = { Enter: 'Enter', Escape: 'Escape', Space: 'Space', Tab: 'Tab', Backspace: 'Backspace', Delete: 'Delete', ArrowUp: 'ArrowUp', ArrowDown: 'ArrowDown', ArrowLeft: 'ArrowLeft', ArrowRight: 'ArrowRight', Shift: 'ShiftLeft', Control: 'ControlLeft', Alt: 'AltLeft', Meta: 'MetaLeft' };
   const keyCode = keyCodes[normalized] || (normalized.length === 1 ? normalized.toUpperCase().charCodeAt(0) : 0);
   const code = codes[normalized] || (normalized.length === 1 ? 'Key' + normalized.toUpperCase() : 'Unknown');
-  return textResult(`key: ${JSON.stringify(normalized.length === 1 ? normalized.toLowerCase() : normalized)}\ncode: ${code}\nkeyCode (legacy): ${keyCode || 'not available'}\nwhich (legacy): ${keyCode || 'not available'}\nlength: ${normalized.length}`);
+  const shifted = modifiers.some((modifier) => modifier.toLowerCase() === 'shift');
+  const displayKey = normalized.length === 1 && shifted ? normalized.toUpperCase() : normalized;
+  return textResult(`key: ${JSON.stringify(displayKey)}\nmodifiers: ${modifiers.length ? modifiers.join(', ') : 'none'}\ncode: ${code}\nkeyCode (legacy): ${keyCode || 'not available'}\nwhich (legacy): ${keyCode || 'not available'}\nlength: ${normalized.length}`);
 };
 
+function parseOklch(value) {
+  const match = String(value || '').trim().match(/^oklch\(\s*([\d.]+)(%?)\s+([\d.]+)(%?)\s+([\d.]+)(?:deg)?\s*\)$/i);
+  if (!match) return null;
+  let lightness = Number(match[1]);
+  let chroma = Number(match[3]);
+  const hue = Number(match[5]);
+  if (match[2]) lightness /= 100;
+  if (match[4]) chroma /= 100;
+  const radians = hue * Math.PI / 180;
+  const a = chroma * Math.cos(radians), b = chroma * Math.sin(radians);
+  const l = (lightness + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+  const m = (lightness - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+  const s = (lightness - 0.0894841775 * a - 1.291485548 * b) ** 3;
+  const linear = [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s];
+  const channel = (v) => Math.round(clamp(255 * (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055), 0, 255));
+  return { r: channel(linear[0]), g: channel(linear[1]), b: channel(linear[2]) };
+}
+
 operations['oklch-color-converter'] = (v) => {
-  const rgb = parseColor(v.color);
+  const rgb = parseOklch(v.color) || parseColor(v.color);
   const hex = rgbToHex(rgb.r, rgb.g, rgb.b), hsl = rgbToHsl(rgb.r, rgb.g, rgb.b), oklch = rgbToOklch(rgb.r, rgb.g, rgb.b);
   const lines = [
     `HEX: ${hex}`,
@@ -238,8 +276,29 @@ operations['cron-explainer'] = (v) => {
 };
 
 function explainCron(parts) {
-  const names = ['Minute', 'Hour', 'Day of month', 'Month', 'Day of week'];
-  return parts.map((part, i) => `${names[i]}: ${part === '*' ? 'every' : part}`).join(' · ');
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const units = ['minute', 'hour', 'day of the month', 'month', 'day of the week'];
+  const every = ['every minute', 'every hour', 'every day of the month', 'every month', 'every day of the week'];
+  const describe = (part, index) => {
+    if (part === '*') return every[index];
+    if (part.includes(',')) return part.split(',').map((item) => describe(item, index)).join(', ');
+    const stepMatch = part.match(/^(.+)\/(\d+)$/);
+    const step = stepMatch ? Number(stepMatch[2]) : 1;
+    const base = stepMatch ? stepMatch[1] : part;
+    const stepText = step > 1 ? `every ${step} ${units[index]}s` : '';
+    if (base === '*') return stepText || every[index];
+    if (base.includes('-')) {
+      const [start, end] = base.split('-').map(Number);
+      if (index === 4 && Number.isInteger(start) && Number.isInteger(end)) return `${weekdays[start] || start} through ${weekdays[end] || end}${stepText ? `, ${stepText}` : ''}`;
+      return `${start} through ${end}${stepText ? `, ${stepText}` : ''}`;
+    }
+    const number = Number(base);
+    if (index === 3 && months[number - 1]) return `in ${months[number - 1]}${stepText ? `, ${stepText}` : ''}`;
+    if (index === 4 && weekdays[number]) return `on ${weekdays[number]}${stepText ? `, ${stepText}` : ''}`;
+    return `at ${base} ${units[index]}${step > 1 ? ` (${stepText})` : ''}`;
+  };
+  return parts.map((part, index) => `${['Minute', 'Hour', 'Day of month', 'Month', 'Day of week'][index]}: ${describe(part, index)}`).join('; ');
 }
 
 operations['html-to-jsx'] = (v) => {

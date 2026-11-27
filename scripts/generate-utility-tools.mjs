@@ -37,7 +37,7 @@ const categories = [
       ], { inputTitle: 'Shadow settings', outputTitle: 'Shadow code', actionLabel: 'Generate shadow', autoRun: true, downloadExt: 'css' }),
       tool('tailwind-grid-generator', 'Tailwind CSS Grid Generator', 'Design a responsive CSS grid and export Tailwind grid utilities with exact columns, rows and gaps.', [
         num('columns', 'Columns', 3, 1, 12), num('rows', 'Rows', 2, 1, 12), num('gap', 'Gap (px)', 16, 0, 100),
-        num('columnGap', 'Column gap override (px)', 0, 0, 100), num('rowGap', 'Row gap override (px)', 0, 0, 100),
+        num('columnGap', 'Column gap override (px)', '', 0, 100), num('rowGap', 'Row gap override (px)', '', 0, 100),
         select('responsive', 'Responsive columns', 'none', [['none', 'Fixed'], ['sm', 'sm and up'], ['md', 'md and up'], ['lg', 'lg and up']])
       ], { inputTitle: 'Grid layout', outputTitle: 'Grid code', actionLabel: 'Generate grid', autoRun: true, downloadExt: 'css' }),
       tool('tailwind-button-generator', 'Tailwind CSS Button Generator', 'Style a production-ready button with live preview and copyable Tailwind or CSS.', [
@@ -83,11 +83,11 @@ const categories = [
       ], { inputTitle: 'SQL query', outputTitle: 'Formatted SQL', actionLabel: 'Format SQL', downloadExt: 'sql' }),
       tool('yaml-json-converter', 'YAML/JSON Converter', 'Convert YAML to JSON or JSON to YAML locally, with clear validation errors.', [
         select('mode', 'Conversion', 'yaml-to-json', [['yaml-to-json', 'YAML to JSON'], ['json-to-yaml', 'JSON to YAML']]),
-        area('input', 'Input', 'name: ReelFlow\ntools: 141\nlocal: true', { spellcheck: false })
+        area('input', 'Input', 'name: ReelFlow\ntools: 139\nlocal: true', { spellcheck: false })
       ], { inputTitle: 'YAML or JSON', outputTitle: 'Converted data', actionLabel: 'Convert', downloadExt: 'txt' }),
       tool('diff-compare', 'Diff Compare Tool', 'Compare two blocks of text with line-by-line additions, removals and unchanged lines.', [
         area('original', 'Original text', 'ReelFlow Toolkit\n26 free tools\nRuns in your browser', { rows: 7 }),
-        area('changed', 'Changed text', 'ReelFlow Toolkit\n141 free tools\nRuns in your browser\nNo signup', { rows: 7 })
+        area('changed', 'Changed text', 'ReelFlow Toolkit\n139 free tools\nRuns in your browser\nNo signup', { rows: 7 })
       ], { inputTitle: 'Two versions', outputTitle: 'Differences', actionLabel: 'Compare text', downloadExt: 'txt' }),
       tool('xml-beautifier', 'XML Beautifier and Minifier', 'Pretty-print XML for reading or minify it for transport without losing content.', [
         select('mode', 'Mode', 'beautify', [['beautify', 'Beautify'], ['minify', 'Minify']]),
@@ -116,7 +116,7 @@ const categories = [
         text('key', 'Key name', 'Enter', { placeholder: 'Type a key name or press a key on this page' })
       ], { inputTitle: 'Keyboard key', outputTitle: 'JavaScript key details', actionLabel: 'Inspect key', autoRun: true, downloadExt: 'txt' }),
       tool('oklch-color-converter', 'OKLCH Color Picker and Converter', 'Convert HEX, RGB, HSL and OKLCH colours with a live swatch and copyable values.', [
-        color('color', 'Colour', '#2563eb'), select('format', 'Preferred output', 'all', [['all', 'All formats'], ['oklch', 'OKLCH'], ['hex', 'HEX'], ['rgb', 'RGB'], ['hsl', 'HSL']])
+        text('color', 'Colour (HEX, RGB, HSL or OKLCH)', '#2563eb', { placeholder: '#2563eb or oklch(62.8% 0.2 264)' }), select('format', 'Preferred output', 'all', [['all', 'All formats'], ['oklch', 'OKLCH'], ['hex', 'HEX'], ['rgb', 'RGB'], ['hsl', 'HSL']])
       ], { inputTitle: 'Colour', outputTitle: 'Colour conversions', actionLabel: 'Convert colour', autoRun: true, downloadExt: 'txt' }),
       tool('cron-explainer', 'Cron Expression Explainer', 'Explain cron expressions in plain English and show the next scheduled run times.', [
         text('expression', 'Cron expression', '*/15 * * * *'), num('runs', 'Next runs to show', 5, 1, 20)
@@ -163,7 +163,7 @@ const categories = [
       tool('resize-gif', 'Resize GIF', 'Resize an animated GIF while preserving its animation and transparency.', [file('gif', 'GIF image', 'image/gif'), num('width', 'New width', 480, 16, 2000), range('fps', 'Frames per second', 12, 1, 30)], { inputTitle: 'GIF and size', outputTitle: 'Resized GIF', actionLabel: 'Resize GIF', needsGif: true, downloadExt: 'gif' }),
       tool('compress-gif', 'Compress GIF', 'Reduce GIF file size by scaling frames, lowering frame rate and optimising the palette.', [file('gif', 'GIF image', 'image/gif'), range('scale', 'Scale', 70, 10, 100), num('colors', 'Colour count', 128, 2, 256), range('fps', 'Frames per second', 10, 1, 30)], { inputTitle: 'GIF and compression', outputTitle: 'Compressed GIF', actionLabel: 'Compress GIF', needsGif: true, downloadExt: 'gif' }),
       tool('trim-transparent-pixels', 'Trim Transparent Pixels', 'Crop empty transparent edges from a PNG or WebP image.', [file('image', 'Transparent image', 'image/png,image/webp'), num('padding', 'Keep padding (px)', 0, 0, 100)], { inputTitle: 'Transparent image', outputTitle: 'Trimmed image', actionLabel: 'Trim image', downloadExt: 'png' }),
-      tool('image-border', 'Add Borders to Image', 'Frame an image with a solid, rounded or dashed border.', [file('image', 'Image', 'image/*'), num('size', 'Border size', 24, 1, 200), color('borderColor', 'Border colour', '#ffffff'), select('style', 'Border style', 'solid', [['solid', 'Solid'], ['rounded', 'Rounded'], ['double', 'Double']])], { inputTitle: 'Image and border', outputTitle: 'Framed image', actionLabel: 'Add border', autoRun: true, downloadExt: 'png' }),
+      tool('image-border', 'Add Borders to Image', 'Frame an image with a solid, rounded, double or dashed border.', [file('image', 'Image', 'image/*'), num('size', 'Border size', 24, 1, 200), color('borderColor', 'Border colour', '#ffffff'), select('style', 'Border style', 'solid', [['solid', 'Solid'], ['rounded', 'Rounded'], ['double', 'Double'], ['dashed', 'Dashed']])], { inputTitle: 'Image and border', outputTitle: 'Framed image', actionLabel: 'Add border', autoRun: true, downloadExt: 'png' }),
       tool('image-splitter', 'Image Splitter', 'Split an image into a grid of tiles and download every tile in one ZIP.', [file('image', 'Image', 'image/*'), num('columns', 'Columns', 2, 1, 10), num('rows', 'Rows', 2, 1, 10)], { inputTitle: 'Image and grid', outputTitle: 'Image tiles', actionLabel: 'Split image', downloadExt: 'zip' }),
       tool('merge-images', 'Merge Images Online', 'Combine multiple images horizontally, vertically or in a grid.', [file('images', 'Images', 'image/*', true), select('layout', 'Layout', 'horizontal', [['horizontal', 'Horizontal'], ['vertical', 'Vertical'], ['grid', 'Grid']]), num('columns', 'Grid columns', 2, 1, 6), num('gap', 'Gap (px)', 0, 0, 100), color('background', 'Background', '#ffffff')], { inputTitle: 'Images and layout', outputTitle: 'Merged image', actionLabel: 'Merge images', downloadExt: 'png' }),
       tool('pixel-art-converter', 'Pixel Art Converter', 'Convert a photo into pixel art with palette reduction and optional dithering.', [file('image', 'Photo', 'image/*'), range('pixelSize', 'Pixel size', 10, 2, 50), range('colors', 'Palette colours', 16, 2, 64), check('dither', 'Use dithering', true)], { inputTitle: 'Photo and pixel settings', outputTitle: 'Pixel art', actionLabel: 'Create pixel art', autoRun: true, downloadExt: 'png' }),
@@ -200,7 +200,6 @@ const categories = [
       tool('random-emoji-generator', 'Random Emoji Generator', 'Pick random emoji from faces, animals, food, nature, objects and symbols.', [num('count', 'How many', 12, 1, 200), select('category', 'Category', 'all', [['all', 'All'], ['faces', 'Faces'], ['animals', 'Animals'], ['food', 'Food'], ['nature', 'Nature'], ['objects', 'Objects'], ['symbols', 'Symbols']])], { inputTitle: 'Emoji settings', outputTitle: 'Random emoji', actionLabel: 'Generate emoji', downloadExt: 'txt' }),
       tool('list-randomizer', 'List Randomizer', 'Shuffle a list or pick random items with optional duplicate prevention.', [area('items', 'List items', 'Apple\nBanana\nCherry\nDate\nElderberry', { rows: 7 }), num('count', 'Items to pick', 3, 1, 1000), check('unique', 'No duplicates', true), select('mode', 'Mode', 'pick', [['pick', 'Pick items'], ['shuffle', 'Shuffle all']])], { inputTitle: 'List and options', outputTitle: 'Randomised list', actionLabel: 'Randomize list', downloadExt: 'txt' }),
       tool('random-group-generator', 'Random Group Generator', 'Split a list of names into balanced random groups instantly.', [area('items', 'Names', 'Ayesha\nBilal\nChen\nDaniyal\nEmma\nFarah\nGeorge\nHina', { rows: 8 }), num('groups', 'Number of groups', 3, 1, 50)], { inputTitle: 'Names and groups', outputTitle: 'Random groups', actionLabel: 'Create groups', downloadExt: 'txt' }),
-      tool('random-word-generator', 'Random Word Generator', 'Generate random English words for writing prompts, games and brainstorming.', [num('count', 'How many', 10, 1, 200), num('minLength', 'Minimum length', 3, 1, 12), num('maxLength', 'Maximum length', 9, 2, 20)], { inputTitle: 'Word settings', outputTitle: 'Random words', actionLabel: 'Generate words', needsWords: true, downloadExt: 'txt' }),
       tool('zalgo-text-generator', 'Zalgo Text Generator', 'Add chaotic combining marks to text with adjustable intensity.', [area('text', 'Text', 'ReelFlow', { rows: 4 }), range('intensity', 'Intensity', 50, 0, 100), check('up', 'Marks above', true), check('down', 'Marks below', true), check('middle', 'Marks through middle', true)], { inputTitle: 'Text and intensity', outputTitle: 'Zalgo text', actionLabel: 'Generate Zalgo text', autoRun: true, downloadExt: 'txt' }),
       tool('cursed-text-generator', 'Cursed Text Generator', 'Create unsettling cursed text with dense combining characters.', [area('text', 'Text', 'Do not look behind you', { rows: 4 }), range('intensity', 'Intensity', 65, 0, 100)], { inputTitle: 'Text and intensity', outputTitle: 'Cursed text', actionLabel: 'Generate cursed text', autoRun: true, downloadExt: 'txt' }),
       tool('glitch-text-generator', 'Glitch Text Generator', 'Create glitch-style Unicode text by mixing look-alike characters.', [area('text', 'Text', 'SYSTEM ONLINE', { rows: 4 }), range('intensity', 'Glitch amount', 35, 0, 100)], { inputTitle: 'Text and glitch amount', outputTitle: 'Glitch text', actionLabel: 'Generate glitch text', autoRun: true, downloadExt: 'txt' }),
@@ -208,8 +207,7 @@ const categories = [
       tool('morse-code-translator', 'Morse Code Translator', 'Translate text to Morse code or Morse code back to text.', [select('mode', 'Mode', 'encode', [['encode', 'Text to Morse'], ['decode', 'Morse to text']]), area('input', 'Input', 'SOS HELP', { rows: 5 })], { inputTitle: 'Text or Morse', outputTitle: 'Morse translation', actionLabel: 'Translate Morse', downloadExt: 'txt' }),
       tool('morse-code-practice', 'Morse Code Practice', 'Practise Morse code with random words, sound playback and a reveal button.', [select('level', 'Level', 'easy', [['easy', 'Easy letters'], ['medium', 'Letters and numbers'], ['hard', 'Mixed characters']])], { inputTitle: 'Practice level', outputTitle: 'Morse practice', actionLabel: 'Start practice', autoRun: true, interactive: 'morse-practice', downloadExt: 'txt' }),
       tool('acronym-generator', 'Acronym Generator and Expander', 'Create an acronym from a phrase or brainstorm expansions for an acronym.', [select('mode', 'Mode', 'generate', [['generate', 'Phrase to acronym'], ['expand', 'Acronym to phrase ideas']]), text('input', 'Phrase or acronym', 'ReelFlow Toolkit')], { inputTitle: 'Phrase or acronym', outputTitle: 'Acronym ideas', actionLabel: 'Generate acronyms', downloadExt: 'txt' }),
-      tool('spelling-bee-solver', 'Spelling Bee Solver', 'Find valid words from seven letters and an optional required centre letter.', [text('letters', 'Seven letters', 'reflown'), text('required', 'Required centre letter', 'f', { maxlength: 1 })], { inputTitle: 'Puzzle letters', outputTitle: 'Valid words', actionLabel: 'Solve puzzle', needsWords: true, downloadExt: 'txt' }),
-      tool('wingdings-translator', 'Wingdings Translator', 'Convert text to Wingdings symbols or map Wingdings symbols back to letters.', [select('mode', 'Mode', 'encode', [['encode', 'Text to Wingdings'], ['decode', 'Wingdings to text']]), area('input', 'Input', 'HELLO', { rows: 5 })], { inputTitle: 'Text or symbols', outputTitle: 'Wingdings translation', actionLabel: 'Translate Wingdings', downloadExt: 'txt' }),
+      tool('wingdings-translator', 'Dingbats Translator', 'Convert text to decorative Unicode dingbats or map those symbols back to letters.', [select('mode', 'Mode', 'encode', [['encode', 'Text to dingbats'], ['decode', 'Dingbats to text']]), area('input', 'Input', 'HELLO', { rows: 5 })], { inputTitle: 'Text or symbols', outputTitle: 'Dingbats translation', actionLabel: 'Translate dingbats', downloadExt: 'txt' }),
       tool('invisible-character-generator', 'Invisible Character Generator', 'Add zero-width or invisible Unicode characters to text for usernames and formatting.', [area('text', 'Visible text', 'ReelFlow', { rows: 4 }), select('type', 'Invisible character', 'zero-width', [['zero-width', 'Zero-width space'], ['zero-width-nonjoiner', 'Zero-width non-joiner'], ['word-joiner', 'Word joiner'], ['hair-space', 'Hair space'], ['thin-space', 'Thin space']]), select('position', 'Position', 'between', [['between', 'Between characters'], ['start', 'At start'], ['end', 'At end'], ['both', 'At both ends']])], { inputTitle: 'Text and character', outputTitle: 'Text with invisible characters', actionLabel: 'Generate invisible text', autoRun: true, downloadExt: 'txt' }),
       tool('small-text-generator', 'Small Text Generator', 'Convert normal text into small superscript, subscript or full-width Unicode.', [area('text', 'Text', 'Small but powerful', { rows: 4 }), select('style', 'Style', 'superscript', [['superscript', 'Superscript small'], ['subscript', 'Subscript small'], ['fullwidth', 'Full-width small']])], { inputTitle: 'Text and style', outputTitle: 'Small text', actionLabel: 'Generate small text', autoRun: true, downloadExt: 'txt' }),
       tool('cursive-text-generator', 'Cursive Text Generator', 'Transform text into Unicode mathematical script for stylish captions and bios.', [area('text', 'Text', 'ReelFlow looks beautiful', { rows: 4 }), select('style', 'Script style', 'script', [['script', 'Script'], ['bold-script', 'Bold script'], ['italic', 'Italic']])], { inputTitle: 'Text and style', outputTitle: 'Cursive text', actionLabel: 'Generate cursive text', autoRun: true, downloadExt: 'txt' }),
@@ -289,22 +287,6 @@ const readJson = (rel, fallback) => {
 };
 const writeJson = (rel, data) => fs.writeFileSync(path.join(root, rel), JSON.stringify(data, null, 2) + '\n');
 const slugify = (s) => s.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const numberWords = (n) => {
-  const ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
-  const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-  const below1000 = (v) => {
-    let out = '';
-    if (v >= 100) { out += ones[Math.floor(v / 100)] + ' hundred'; v %= 100; if (v) out += ' '; }
-    if (v >= 20) { out += tens[Math.floor(v / 10)]; if (v % 10) out += '-' + ones[v % 10]; }
-    else if (v > 0) out += ones[v];
-    return out;
-  };
-  if (n < 1000) return below1000(n);
-  if (n < 1000000) return below1000(Math.floor(n / 1000)) + ' thousand' + (n % 1000 ? ' ' + below1000(n % 1000) : '');
-  return below1000(Math.floor(n / 1000000)) + ' million' + (n % 1000000 ? ' ' + numberWords(n % 1000000) : '');
-};
-const titleCase = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
-
 const all = categories.flatMap((category) => category.tools.map((definition, index) => ({
   ...definition,
   category: category.name,
@@ -328,6 +310,7 @@ if (unknown.length) {
 const toolsData = readJson('src/_data/tools.json', { tools: [] });
 const utilityPath = 'src/_data/utilityTools.json';
 const utilities = readJson(utilityPath, {});
+const previousUtilitySlugs = Object.keys(utilities);
 const cmsPath = path.join(root, '.pages.yml');
 let cms = fs.readFileSync(cmsPath, 'utf8');
 const generated = [];
@@ -355,8 +338,7 @@ for (const slug of requested) {
     screenColor: d.screenColor || '',
     needsGif: !!d.needsGif,
     needsPdf: !!d.needsPdf,
-    needsPdfLib: !!d.needsPdfLib,
-    needsWords: !!d.needsWords
+    needsPdfLib: !!d.needsPdfLib
   };
   utilities[slug] = utility;
 
@@ -391,23 +373,32 @@ for (const slug of requested) {
     });
   }
 
-  if (!toolsData.tools.some((entry) => entry.slug === slug)) {
-    toolsData.tools.push({
-      slug,
-      url: '/' + slug + '/',
-      name: d.name,
-      footerName: d.name,
-      desc: d.desc,
-      tags: [d.category, 'No upload', 'Browser-based'],
-      icon: d.icon,
-      tone: d.tone
-    });
-  }
+  const existingIndex = toolsData.tools.findIndex((entry) => entry.slug === slug);
+  const registryEntry = {
+    slug,
+    url: '/' + slug + '/',
+    name: d.name,
+    footerName: d.name,
+    desc: d.desc,
+    tags: [d.category, 'No file upload', 'Browser-based'],
+    icon: d.icon,
+    tone: d.tone,
+    category: d.category
+  };
+  if (existingIndex === -1) toolsData.tools.push(registryEntry);
+  else Object.assign(toolsData.tools[existingIndex], registryEntry);
 
   if (!cms.includes('path: src/_data/toolpages/' + slug + '.json')) {
     cms += `\n  - name: page-${slug}\n    label: "Tool page: ${d.name.replace(/"/g, '\\"')}"\n    type: file\n    path: src/_data/toolpages/${slug}.json\n    fields:\n      - name: metaTitle\n        label: Browser title\n        type: string\n      - name: description\n        label: Meta description\n        type: text\n      - name: ogTitle\n        label: Social share title\n        type: string\n      - name: ogDescription\n        label: Social share description\n        type: text\n      - name: ldDescription\n        label: Structured data description\n        type: text\n      - name: breadcrumb\n        label: Breadcrumb label\n        type: string\n      - name: kicker\n        label: Kicker\n        type: string\n      - name: h1\n        label: Page heading\n        type: string\n      - name: lede\n        label: Intro paragraph\n        type: text\n      - name: faq\n        label: FAQ items\n        type: object\n        list: true\n        fields:\n          - name: q\n            label: Question\n            type: string\n          - name: a\n            label: Answer\n            type: text\n      - name: related\n        label: Next tools\n        type: object\n        list: true\n        fields:\n          - name: slug\n            label: Tool slug\n            type: string\n          - name: letter\n            label: Letter tile\n            type: string\n          - name: tone\n            label: Tile colour\n            type: select\n            options:\n              values:\n                - name: ""\n                  label: Blue (default)\n                - name: mint\n                  label: Mint\n                - name: amber\n                  label: Amber\n                - name: rose\n                  label: Rose\n          - name: note\n            label: Note\n            type: string\n`;
   }
   generated.push(slug);
+}
+
+if (args.includes('--all')) {
+  for (const slug of Object.keys(utilities)) {
+    if (!bySlug.has(slug)) delete utilities[slug];
+  }
+  toolsData.tools = toolsData.tools.filter((entry) => !previousUtilitySlugs.includes(entry.slug) || bySlug.has(entry.slug));
 }
 
 writeJson('src/_data/tools.json', toolsData);
@@ -420,7 +411,7 @@ site.badges.tools = count + ' free tools';
 writeJson('src/_data/site.json', site);
 const home = readJson('src/_data/home.json', {});
 home.ogDescription = home.ogDescription.replace(/(?:twenty-six|\d+) free tools/i, count + ' free tools');
-home.toolsTitle = titleCase(numberWords(count)) + ' tools to start';
+home.toolsTitle = count + ' tools to start';
 writeJson('src/_data/home.json', home);
 
 console.log('Generated ' + generated.length + ' tool(s): ' + generated.join(', '));

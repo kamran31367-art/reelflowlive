@@ -3,10 +3,17 @@
 {% elif contentType == "system" %}{% set c = system[contentKey] %}{% endif %}
 {% set t = toolList | toolBySlug(contentKey) %}
 {% set badgeText = ldType == "home" and site.badges.home or site.badges.tools %}
+{% if ldType == "category" %}
+{% set pageTitle = category.name + " Tools - ReelFlow Toolkit" %}
+{% set pageDescription = category.description %}
+{% set pageOgTitle = pageTitle %}
+{% set pageOgDescription = pageDescription %}
+{% else %}
 {% set pageTitle = (c and c.metaTitle) or metaTitle %}
 {% set pageDescription = (c and c.description) or description %}
 {% set pageOgTitle = (c and c.ogTitle) or ogTitle or pageTitle %}
 {% set pageOgDescription = (c and c.ogDescription) or ogDescription or pageDescription %}
+{% endif %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,6 +41,8 @@
 <script type="application/ld+json">{{ toolList | homeLd(site) | jsonld | safe }}</script>
 {% elif ldType == "tool" %}
 <script type="application/ld+json">{{ c | toolLd(t, site, page.url) | jsonld | safe }}</script>
+{% elif ldType == "category" %}
+<script type="application/ld+json">{{ category | categoryLd(site, page.url) | jsonld | safe }}</script>
 {% elif ldType == "blog" %}
 <script type="application/ld+json">{{ collections.posts | blogLd(site) | jsonld | safe }}</script>
 {% elif ldType == "post" %}

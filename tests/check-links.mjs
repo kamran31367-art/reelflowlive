@@ -27,6 +27,16 @@ const toolsData = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/tools.js
 
 const pages = [
   { file: 'index.html', url: '/' },
+  ...[
+    'tailwind-tools',
+    'developer-tools-hub',
+    'image-tools',
+    'mail-tools',
+    'text-tools-hub',
+    'video-audio-tools',
+    'converter-tools',
+    'misc-tools'
+  ].map((slug) => ({ file: slug + '/index.html', url: '/' + slug + '/' })),
   ...(toolsData.tools || []).map((tool) => ({ file: tool.url.replace(/^\//, '') + 'index.html', url: tool.url })),
   { file: 'blog/index.html', url: '/blog/' },
   { file: 'blog/download-youtube-thumbnail/index.html', url: '/blog/download-youtube-thumbnail/' },
@@ -162,6 +172,10 @@ check('blog index links the RSS feed', blogHtml.includes('href="/blog/feed.xml"'
 const postHtml = read('blog/download-youtube-thumbnail/index.html');
 check('post has BlogPosting data', /"@type":\s*"BlogPosting"/.test(postHtml) && postHtml.includes('"datePublished": "' + postDate + '"'));
 check('post links back to the blog', postHtml.includes('href="/blog/"'));
+const thumbnailHtml = read('youtube-thumbnail-downloader/index.html');
+check('thumbnail page discloses permission and affiliation limits', thumbnailHtml.includes('Use only for videos you own or have permission to download.') && thumbnailHtml.includes('not affiliated with YouTube or Google') && !thumbnailHtml.includes('Download any YouTube thumbnail'));
+check('thumbnail size labels are accurate', thumbnailHtml.includes('>SD<small>640×480</small>') && !thumbnailHtml.includes('>HD<small>640×480</small>'));
+check('thumbnail guide discloses affiliation limits', postHtml.includes('ReelFlow is not affiliated with YouTube or Google.'));
 
 /* Tool guides */
 const guides = [
@@ -301,11 +315,11 @@ check('privacy page lists a contact address', /href="mailto:[^"]+@[^"]+"/.test(p
 check('privacy page discloses Adsterra with its policy link', privacyHtml.includes('Adsterra') && privacyHtml.includes('https://adsterra.com/privacy-policy-managed/'));
 check('consent reset is wired in app.js', read('assets/js/app.js').includes('[data-consent-reset]'));
 check('footer links the privacy page', pages.every((p) => /<div class="footer-links">[\s\S]*?href="\/privacy\/"/.test(read(p.file))));
-check('footer carries the Adsterra smart link as sponsored', pages.every((p) => read(p.file).includes('asiafilm.org/4/') && /rel="sponsored noopener noreferrer"/.test(read(p.file))));
+check('footer labels the Adsterra smart link as an ad partner', pages.every((p) => read(p.file).includes('Visit our ad partner (ad)') && read(p.file).includes('asiafilm.org/4/') && /rel="sponsored noopener noreferrer"/.test(read(p.file))));
 const toolPageFiles = (toolsData.tools || []).map((tool) => tool.url.replace(/^\//, '') + 'index.html');
-check('tool pages carry the support note and smart link', toolPageFiles.every((f) => read(f).includes('id="supportNote"') && read(f).includes('asiafilm.org/4/')));
+check('tool pages disclose third-party advertising in the support note', toolPageFiles.every((f) => read(f).includes('id="supportNote"') && read(f).includes('third-party advertising') && read(f).includes('asiafilm.org/4/')));
 const postPageFiles = pages.filter((p) => p.file.startsWith('blog/') && p.file !== 'blog/index.html');
-check('blog posts carry the support line and smart link', postPageFiles.every((p) => read(p.file).includes('class="post-support"') && read(p.file).includes('asiafilm.org/4/')));
+check('blog posts disclose third-party advertising in the support line', postPageFiles.every((p) => read(p.file).includes('class="post-support"') && read(p.file).includes('third-party advertising') && read(p.file).includes('asiafilm.org/4/')));
 check('support note waits for a download or copy result', read('assets/js/utils.js').includes("CustomEvent('ct:result')") && read('assets/js/app.js').includes("'ct:result'"));
 
 /* Stale homepage rendering */

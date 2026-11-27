@@ -11,31 +11,36 @@ const wireCopy = (preview) => {
 operations['tailwind-gradient-generator'] = (v) => {
   const colours = [v.from, v.via, v.to].filter(Boolean);
   const list = v.useVia && v.via ? `${v.from}, ${v.via}, ${v.to}` : `${v.from}, ${v.to}`;
+  const angle = Number.parseFloat(v.direction) * Math.PI / 180;
+  const radialPosition = `circle at ${(50 + Math.sin(angle) * 45).toFixed(1)}% ${(50 - Math.cos(angle) * 45).toFixed(1)}%`;
   const css = v.type === 'radial'
-    ? `background: radial-gradient(circle at center, ${list});`
+    ? `background: radial-gradient(${radialPosition}, ${list});`
     : v.type === 'conic'
       ? `background: conic-gradient(from ${v.direction}, ${list});`
       : `background: linear-gradient(${v.direction}, ${list});`;
-  const tw = `bg-[${v.type === 'linear' ? `linear-gradient(${v.direction},${list.replace(/\s+/g, '_')})` : v.type === 'radial' ? `radial-gradient(circle,${list.replace(/\s+/g, '_')})` : `conic-gradient(from_${v.direction},${list.replace(/\s+/g, '_')})`}]`;
+  const tw = `bg-[${v.type === 'linear' ? `linear-gradient(${v.direction},${list.replace(/\s+/g, '_')})` : v.type === 'radial' ? `radial-gradient(${radialPosition.replace(/\s+/g, '_')},${list.replace(/\s+/g, '_')})` : `conic-gradient(from_${v.direction},${list.replace(/\s+/g, '_')})`}]`;
   const html = `<div class="utility-list"><div class="utility-swatch" style="background:${css.replace('background:', '')}"></div>${codeBlock('Tailwind', tw)}${codeBlock('CSS', css)}</div>`;
   return { html, copyText: tw + '\n' + css, blob: new Blob([css + '\n'], { type: 'text/css' }), filename: 'gradient.css', onMount: wireCopy };
 };
 
 operations['tailwind-shadow-generator'] = (v) => {
   const rgba = hexToRgb(v.shadowColor);
-  const shadow = `${v.inset ? 'inset ' : ''}${v.x}px ${v.y}px ${v.blur}px ${v.spread}px rgba(${rgba.r}, ${rgba.g}, ${rgba.b}, ${(v.opacity / 100).toFixed(2)})`;
+  const primary = `${v.inset ? 'inset ' : ''}${v.x}px ${v.y}px ${v.blur}px ${v.spread}px rgba(${rgba.r}, ${rgba.g}, ${rgba.b}, ${(v.opacity / 100).toFixed(2)})`;
+  const ambient = `${v.inset ? 'inset ' : ''}${Math.round(v.x / 2)}px ${Math.round(v.y / 2)}px ${Math.max(0, Math.round(v.blur / 2))}px ${Math.round(v.spread / 2)}px rgba(${rgba.r}, ${rgba.g}, ${rgba.b}, ${(v.opacity / 200).toFixed(2)})`;
+  const shadow = `${primary}, ${ambient}`;
   const tw = `shadow-[${shadow.replace(/\s+/g, '_')}]`;
   const html = `<div class="utility-list"><div class="utility-card-preview" style="background:#fff;box-shadow:${shadow}"><b>Shadow preview</b><p>Adjust the controls to shape the glow.</p></div>${codeBlock('Tailwind', tw)}${codeBlock('CSS', `box-shadow: ${shadow};`)}</div>`;
   return { html, copyText: tw + '\nbox-shadow: ' + shadow + ';', blob: new Blob([`box-shadow: ${shadow};\n`], { type: 'text/css' }), filename: 'shadow.css', onMount: wireCopy };
 };
 
 operations['tailwind-grid-generator'] = (v) => {
-  const colGap = v.columnGap || v.gap, rowGap = v.rowGap || v.gap;
+  const colGap = v.columnGap === '' || v.columnGap == null ? v.gap : v.columnGap;
+  const rowGap = v.rowGap === '' || v.rowGap == null ? v.gap : v.rowGap;
   const prefix = v.responsive === 'none' ? '' : v.responsive + ':';
   const tw = `grid ${prefix}grid-cols-${v.columns} ${prefix}grid-rows-${v.rows} gap-x-[${colGap}px] gap-y-[${rowGap}px]`;
   const css = `display: grid;\ngrid-template-columns: repeat(${v.columns}, minmax(0, 1fr));\ngrid-template-rows: repeat(${v.rows}, minmax(0, 1fr));\ncolumn-gap: ${colGap}px;\nrow-gap: ${rowGap}px;`;
   const cells = Array.from({ length: v.columns * v.rows }, (_, i) => `<div class="utility-item" style="display:grid;place-items:center;min-height:58px;background:#eff6ff">${i + 1}</div>`).join('');
-  const html = `<div class="utility-list"><div style="display:grid;grid-template-columns:repeat(${v.columns},1fr);grid-template-rows:repeat(${v.rows},58px);gap:${v.gap}px">${cells}</div>${codeBlock('Tailwind', tw)}${codeBlock('CSS', css)}</div>`;
+  const html = `<div class="utility-list"><div style="display:grid;grid-template-columns:repeat(${v.columns},1fr);grid-template-rows:repeat(${v.rows},58px);column-gap:${colGap}px;row-gap:${rowGap}px">${cells}</div>${codeBlock('Tailwind', tw)}${codeBlock('CSS', css)}</div>`;
   return { html, copyText: tw + '\n' + css, blob: new Blob([css], { type: 'text/css' }), filename: 'grid.css', onMount: wireCopy };
 };
 
@@ -137,8 +142,11 @@ operations['tailwind-card-generator'] = (v) => {
   const shadows = { none: 'none', sm: '0 1px 2px rgba(15,23,42,.08)', md: '0 4px 6px -1px rgba(15,23,42,.12)', lg: '0 10px 15px -3px rgba(15,23,42,.16)', xl: '0 20px 25px -5px rgba(15,23,42,.18)' };
   const tw = `rounded-[${v.radius}px] bg-[${v.background}] text-[${v.foreground}] p-[${v.padding}px] shadow-${v.shadow}`;
   const css = `border-radius: ${v.radius}px;\nbackground: ${v.background};\ncolor: ${v.foreground};\npadding: ${v.padding}px;\nbox-shadow: ${shadows[v.shadow]};`;
-  const html = `<div class="utility-list"><div class="utility-card-preview" style="border-radius:${v.radius}px;background:${v.background};color:${v.foreground};padding:${v.padding}px;box-shadow:${shadows[v.shadow]}"><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.body)}</p></div>${codeBlock('Tailwind', tw)}${codeBlock('CSS', css)}</div>`;
-  return { html, copyText: tw + '\n' + css, blob: new Blob([css], { type: 'text/css' }), filename: 'card.css', onMount: wireCopy };
+  const style = `border-radius:${v.radius}px;background:${v.background};color:${v.foreground};padding:${v.padding}px;box-shadow:${shadows[v.shadow]}`;
+  const markup = `<article class="card" style="${style}"><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.body)}</p></article>`;
+  const documentHtml = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(v.title)}</title><style>body{font:16px/1.6 system-ui;margin:40px auto;padding:0 20px;max-width:720px}.card h2{margin-top:0}</style></head><body>${markup}</body></html>`;
+  const html = `<div class="utility-list"><div class="utility-card-preview" style="${style}"><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.body)}</p></div>${codeBlock('Tailwind', tw)}${codeBlock('HTML', markup)}${codeBlock('CSS', css)}</div>`;
+  return { html, copyText: tw + '\n' + markup + '\n' + css, blob: new Blob([documentHtml], { type: 'text/html' }), filename: 'card.html', onMount: wireCopy };
 };
 
 operations['tailwind-colors'] = (v) => {

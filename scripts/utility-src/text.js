@@ -1,5 +1,5 @@
 import {
-  operations, $, $$, clamp, randomInt, pick, escapeHtml, shuffle, textResult, htmlResult
+  operations, $, $$, clamp, randomInt, pick, escapeHtml, sanitizeLocalHtml, shuffle, textResult, htmlResult
 } from './core.js';
 
 const encoder = new TextEncoder();
@@ -82,17 +82,25 @@ operations['number-to-words'] = (v) => {
   if (number > 999999999999999) throw new Error('That number is too large.');
   let output = (negative ? 'negative ' : '') + integerWords(number);
   if (fraction) output += ' point ' + fraction.split('').map((digit) => ones[+digit]).join(' ');
-  if (v.style === 'currency') output = integerWords(number) + ' dollars' + (fraction ? ' and ' + integerWords(Number(fraction).toString().padStart(2, '0')) + ' cents' : '');
+  if (v.style === 'currency') output = (negative ? 'negative ' : '') + integerWords(number) + (number === 1 ? ' dollar' : ' dollars') + (fraction ? ' and ' + integerWords(Number(fraction).toString().padStart(2, '0')) + ' cents' : '');
   return textResult(output);
 };
 
 operations['markdown-editor'] = (v) => {
   if (!v.markdown.trim()) return htmlResult('<p class="mini">Start writing Markdown to see a preview.</p>', { copyText: '' });
-  const html = window.CT_VENDOR.marked.parse(v.markdown, { breaks: true, gfm: true });
-  const clean = window.CT_VENDOR.DOMPurify.sanitize(html);
-  if (v.view === 'html') return textResult(clean);
-  if (v.view === 'markdown') return textResult(v.markdown);
-  return { html: `<div class="preview-frame post-content">${clean}</div>`, copyText: clean, blob: new Blob([`<!doctype html><meta charset="utf-8"><title>Markdown export</title>${clean}`], { type: 'text/html' }), filename: 'markdown-export.html' };
+  const clean = sanitizeLocalHtml(window.CT_VENDOR.marked.parse(v.markdown, { breaks: true, gfm: true }));
+  const htmlBlob = new Blob([`<!doctype html><meta charset="utf-8"><title>Markdown export</title>${clean}`], { type: 'text/html' });
+  if (v.view === 'html') return { text: clean, copyText: clean, blob: htmlBlob, filename: 'markdown-export.html' };
+  if (v.view === 'markdown') return { text: v.markdown, copyText: v.markdown, blob: new Blob([v.markdown], { type: 'text/markdown' }), filename: 'markdown-export.md' };
+  const previewDocument = new DOMParser().parseFromString(clean, 'text/html');
+  for (const heading of Array.from(previewDocument.querySelectorAll('h1, h2, h3, h4, h5, h6'))) {
+    const level = Number(heading.tagName.slice(1));
+    const replacement = previewDocument.createElement(`h${Math.min(level + 1, 6)}`);
+    replacement.innerHTML = heading.innerHTML;
+    heading.replaceWith(replacement);
+  }
+  const previewHtml = previewDocument.body.innerHTML;
+  return { html: `<div class="preview-frame post-content">${previewHtml}</div>`, copyText: clean, blob: htmlBlob, filename: 'markdown-export.html' };
 };
 
 operations['random-letter-generator'] = (v) => {
@@ -134,13 +142,6 @@ operations['random-group-generator'] = (v) => {
   const groups = Array.from({ length: Math.min(v.groups, items.length) }, (_, i) => ({ name: `Group ${i + 1}`, items: [] }));
   items.forEach((item, index) => groups[index % groups.length].items.push(item));
   return textResult(groups.map((group) => `${group.name}:\n${group.items.map((item) => '  ' + item).join('\n')}`).join('\n\n'));
-};
-
-operations['random-word-generator'] = (v) => {
-  const words = window.CT_WORDS || [];
-  const pool = words.filter((word) => word.length >= v.minLength && word.length <= v.maxLength);
-  if (!pool.length) throw new Error('No words match that length range.');
-  return textResult(Array.from({ length: v.count }, () => pick(pool)).join(' '));
 };
 
 function combining(intensity, sets) {
@@ -218,17 +219,6 @@ operations['acronym-generator'] = (v) => {
   };
   const ideas = Array.from({ length: 12 }, () => letters.map((letter) => pick(banks[letter] || [letter])).join(' '));
   return textResult(Array.from(new Set(ideas)).join('\n'));
-};
-
-operations['spelling-bee-solver'] = (v) => {
-  const letters = v.letters.toLowerCase().replace(/[^a-z]/g, '').split('');
-  const required = v.required.toLowerCase().replace(/[^a-z]/g, '').charAt(0);
-  if (letters.length < 4 || new Set(letters).size < 4) throw new Error('Enter at least four different letters.');
-  if (required && !letters.includes(required)) throw new Error('The required letter must be one of the puzzle letters.');
-  const allowed = new Set(letters);
-  const words = (window.CT_WORDS || []).filter((word) => word.length >= 4 && (!required || word.includes(required)) && Array.from(word).every((letter) => allowed.has(letter))).sort((a, b) => a.length - b.length || a.localeCompare(b));
-  if (!words.length) return textResult('No words found in the built-in dictionary.');
-  return textResult(`${words.length} words found\n\n${words.join('\n')}`);
 };
 
 const wingdings = '✁✂✃✄☎✆✇✈✉☛☞✌✍✎✏✐✑✒✓✔✕✖✗✘✙✚✛✜✝✞✟✠✡✢✣✤✥✦✧★✩✪✫✬✭✮✯✰✱✲✳✴✵✶✷✸✹✺✻✼✽✾✿❀❁❂❃❄❅❆❇❈❉❊❋●❍■❏❐❑❒▲▼◆❖◗❘❙❚❛❜❝❞';

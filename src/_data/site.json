@@ -2,12 +2,12 @@
   "url": "https://reelflow.live",
   "brandName": "ReelFlow",
   "brandSub": "Toolkit",
-  "tagline": "Free, browser-based tools for YouTubers and short-video creators. No upload, no signup.",
+  "tagline": "Free, browser-based tools for YouTubers and short-video creators. Tool processing stays on your device. No file upload, no signup.",
   "description": "Free browser-based tools for YouTubers and short-video creators.",
   "ogImage": "https://reelflow.live/assets/img/og-cover.png",
   "badges": {
     "home": "Free forever",
-    "tools": "141 free tools"
+    "tools": "139 free tools"
   },
   "headerLinks": [
     {
@@ -53,18 +53,18 @@
       "href": "/sitemap.xml"
     },
     {
-      "label": "Support this site",
+      "label": "Visit our ad partner (ad)",
       "href": "https://asiafilm.org/4/bbe390e9563d8281e6b5bcc3bd8dd3f5",
       "external": true
     }
   ],
   "support": {
     "href": "https://asiafilm.org/4/bbe390e9563d8281e6b5bcc3bd8dd3f5",
-    "label": "visit our sponsor"
+    "label": "visit our advertising partner"
   },
   "socials": [],
   "copyrightName": "ReelFlow Toolkit - reelflow.live",
-  "bottomNote": "All tools run locally in your browser.",
+  "bottomNote": "Tool processing runs locally in your browser.",
   "lastUpdated": "2026-11-27",
   "consent": {
     "version": 1,

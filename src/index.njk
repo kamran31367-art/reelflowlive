@@ -29,6 +29,16 @@ mainClass: ""
     <p>{{ c.toolsNote }}</p>
   </div>
 
+  <nav class="category-grid" aria-label="Tool categories">
+    {% for category in toolCategories %}
+    <a class="category-card" href="/{{ category.slug }}/">
+      <span class="icon-tile" aria-hidden="true">{{ icon(category.icon) }}</span>
+      <span><b>{{ category.name }}</b><small>{{ category.count }} tools</small></span>
+      <span class="category-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    {% endfor %}
+  </nav>
+
   <div class="tool-grid">
     {% for tool in toolList %}
     <a class="tool-card{% if tool.tone %} tone-{{ tool.tone }}{% endif %}" href="{{ tool.url }}">

@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+ldType: category
+eleventyExcludeFromCollections: true
+pagination:
+  data: toolCategories
+  size: 1
+  alias: category
+permalink: "/{{ category.slug }}/"
+sitemap: true
+mainClass: wrap
+---
+{% from "partials/icons.njk" import icon %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><a href="/#tools">All tools</a><span aria-hidden="true">/</span><span>{{ category.name }}</span></div>
+
+<section class="tool-hero">
+  <span class="kicker">{{ category.count }} free tools</span>
+  <div class="category-title">
+    <span class="icon-tile" aria-hidden="true">{{ icon(category.icon) }}</span>
+    <h1>{{ category.name }} tools</h1>
+  </div>
+  <p>{{ category.description }} Every tool runs in your browser with no account required.</p>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="tool-grid">
+    {% for tool in category.tools %}
+    <a class="tool-card{% if tool.tone %} tone-{{ tool.tone }}{% endif %}" href="{{ tool.url }}">
+      <span class="icon-tile {{ tool.tone }}" aria-hidden="true">{{ icon(tool.icon) }}</span>
+      <h3>{{ tool.name }}</h3>
+      <p>{{ tool.desc }}</p>
+      <span class="tags">{% for tag in tool.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</span>
+      <span class="card-link">Open tool &rarr;</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>

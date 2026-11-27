@@ -1,4 +1,4 @@
-import { operations, escapeHtml, requireFile, readText, textResult, htmlResult } from './core.js';
+import { operations, escapeHtml, sanitizeLocalHtml, requireFile, readText, textResult, htmlResult } from './core.js';
 
 operations['mailto-link-generator'] = (v) => {
   const params = [];
@@ -76,7 +76,7 @@ operations['eml-viewer'] = async (v, files) => {
   const plain = output.text.join('\n\n');
   let bodyHtml = '';
   if (output.html.length) {
-    bodyHtml = window.CT_VENDOR.DOMPurify.sanitize(output.html.join('<hr>'));
+    bodyHtml = sanitizeLocalHtml(output.html.join('<hr>'));
     bodyHtml = bodyHtml.replace(/<img\b[^>]*>/gi, '<p class="mini">[Remote image blocked for privacy]</p>').replace(/<link\b[^>]*>/gi, '');
   } else bodyHtml = '<pre style="white-space:pre-wrap">' + escapeHtml(plain || 'No text body found.') + '</pre>';
   const rows = ['from', 'to', 'cc', 'subject', 'date'].filter((key) => headers[key]).map((key) => `<tr><td>${key}</td><td>${escapeHtml(headers[key])}</td></tr>`).join('');

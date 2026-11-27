@@ -49,7 +49,7 @@
       </div>
       {% else %}
       <label for="{{ field.id }}">{{ field.label }}</label>
-      <input class="input" id="{{ field.id }}" type="{{ field.type or "text" }}" value="{{ field.value if field.value is defined else "" }}"{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %}{% if field.min != null %} min="{{ field.min }}"{% endif %}{% if field.max != null %} max="{{ field.max }}"{% endif %}{% if field.step != null %} step="{{ field.step }}"{% endif %}>
+      <input class="input" id="{{ field.id }}" type="{{ field.type or "text" }}" value="{{ field.value if field.value is defined else "" }}"{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %}{% if field.maxlength != null %} maxlength="{{ field.maxlength }}"{% endif %}{% if field.min != null %} min="{{ field.min }}"{% endif %}{% if field.max != null %} max="{{ field.max }}"{% endif %}{% if field.step != null %} step="{{ field.step }}"{% endif %}>
       {% endif %}
       {% if field.help %}<p class="field-hint">{{ field.help }}</p>{% endif %}
     </div>
@@ -82,7 +82,6 @@
 {% if u.needsGif %}<script src="/assets/js/vendor/gif/gif.js"></script>{% endif %}
 {% if u.needsPdf %}<script src="/assets/js/vendor/pdfjs/pdf.min.js"></script>{% endif %}
 {% if u.needsPdfLib %}<script src="/assets/js/vendor/pdf-lib.min.js"></script>{% endif %}
-{% if u.needsWords %}<script src="/assets/js/vendor/words.js"></script>{% endif %}
 <script type="application/json" id="utilityConfig">{{ u | dump | safe }}</script>
 
 {% include "partials/support.njk" %}

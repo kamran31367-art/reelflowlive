@@ -1,13 +1,13 @@
 {
-  "metaTitle": "YouTube Thumbnail Downloader - Free HD Thumbnail Saver | ReelFlow Toolkit",
-  "description": "Download any YouTube thumbnail in HD or max resolution. Paste a video link, pick a size and save the image - free, no signup, no upload.",
-  "ogTitle": "YouTube Thumbnail Downloader - Free HD Thumbnail Saver",
-  "ogDescription": "Paste a YouTube link and save the thumbnail in every available size, up to 1280x720.",
-  "ldDescription": "Paste a YouTube link and download the thumbnail in every available size, up to 1280x720.",
+  "metaTitle": "YouTube Thumbnail Downloader - Public Thumbnail Preview | ReelFlow Toolkit",
+  "description": "Preview and save publicly available YouTube thumbnail images in supported sizes, up to 1280x720. Use only with permission.",
+  "ogTitle": "YouTube Thumbnail Downloader - Public Thumbnail Preview",
+  "ogDescription": "Preview publicly available YouTube thumbnail images and save supported sizes up to 1280x720. Downloading does not grant reuse rights.",
+  "ldDescription": "Preview publicly available YouTube thumbnail images and save supported sizes up to 1280x720. Use only for videos you own or have permission to download.",
   "breadcrumb": "Thumbnail Downloader",
   "kicker": "YouTube tool",
   "h1": "YouTube Thumbnail Downloader",
-  "lede": "Paste a YouTube link and save its thumbnail. Pick the largest size the video has - up to 1280x720.",
+  "lede": "Preview a publicly available YouTube thumbnail and save a supported size, up to 1280x720. Use only for videos you own or have permission to download.",
   "faq": [
     {
       "q": "Which links are supported?",
@@ -15,11 +15,15 @@
     },
     {
       "q": "Why is my image smaller than 1280x720?",
-      "a": "YouTube only stores a max-resolution thumbnail when the uploader set one. The tool always shows the largest available size for the video."
+      "a": "YouTube only stores a max-resolution thumbnail when the uploader set one. The tool always shows the largest supported size available for the video."
     },
     {
       "q": "Can I download a thumbnail on my phone?",
       "a": "Yes. The tool works in mobile browsers. If your browser blocks the download, use Copy image URL or Open image and save it from the new tab."
+    },
+    {
+      "q": "Can I reuse a downloaded thumbnail?",
+      "a": "Only if you own the video or have permission from the rights holder. Downloading does not grant reuse rights, and ReelFlow is not affiliated with YouTube or Google."
     }
   ],
   "related": [

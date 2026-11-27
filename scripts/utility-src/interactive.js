@@ -105,10 +105,12 @@ function morseHandler(preview, result, context) {
     const button = preview.querySelector('[data-morse-word]');
     button?.animate([{ transform: 'scale(.92)', opacity: .5 }, { transform: 'scale(1)', opacity: 1 }], { duration: 260 });
   });
+  let activeAudio = null;
   play?.addEventListener('click', async () => {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (!AudioCtx) return;
+    if (!AudioCtx || activeAudio) return;
     const audio = new AudioCtx();
+    activeAudio = audio;
     const code = result.morseFor(word);
     let time = audio.currentTime + .05;
     for (const symbol of code) {
@@ -124,10 +126,14 @@ function morseHandler(preview, result, context) {
       oscillator.start(time); oscillator.stop(time + duration + .02);
       time += duration + .08;
     }
-    await audio.close();
+    setTimeout(async () => {
+      if (activeAudio !== audio) return;
+      activeAudio = null;
+      try { await audio.close(); } catch (error) {}
+    }, Math.max(0, (time - audio.currentTime + .1) * 1000));
   });
   render();
-  context.onCleanup(() => {});
+  context.onCleanup(() => { if (activeAudio) { activeAudio.close().catch(() => {}); activeAudio = null; } });
 }
 
 function webcamHandler(preview, result, context) {
@@ -138,20 +144,35 @@ function webcamHandler(preview, result, context) {
   const flip = preview.querySelector('[data-camera-flip]');
   let stream = null;
   let mirrored = true;
+  let generation = 0;
+  let starting = false;
   const applyFlip = () => { if (video) video.style.transform = mirrored ? 'scaleX(-1)' : 'none'; };
-  applyFlip();
-  start?.addEventListener('click', async () => {
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
-      video.srcObject = stream; await video.play();
-      start.hidden = true; stop.hidden = false; snapshot.hidden = false;
-    } catch (error) { window.CT.toast(error.message || 'Camera access was denied.', 'error'); }
-  });
   const stopCamera = () => {
+    generation++;
     stream?.getTracks().forEach((track) => track.stop());
     stream = null; if (video) video.srcObject = null;
-    if (start) start.hidden = false; if (stop) stop.hidden = true; if (snapshot) snapshot.hidden = true;
+    if (start) { start.hidden = false; start.disabled = false; }
+    if (stop) stop.hidden = true; if (snapshot) snapshot.hidden = true;
+    starting = false;
   };
+  applyFlip();
+  start?.addEventListener('click', async () => {
+    if (starting || stream) return;
+    const request = ++generation;
+    starting = true; start.disabled = true;
+    try {
+      const pending = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+      if (request !== generation) { pending.getTracks().forEach((track) => track.stop()); return; }
+      stream = pending;
+      video.srcObject = stream; await video.play();
+      if (request !== generation) { stopCamera(); return; }
+      start.hidden = true; stop.hidden = false; snapshot.hidden = false;
+    } catch (error) {
+      if (request === generation) window.CT.toast(error.message || 'Camera access was denied.', 'error');
+    } finally {
+      if (request === generation) { starting = false; start.disabled = false; }
+    }
+  });
   stop?.addEventListener('click', stopCamera);
   flip?.addEventListener('click', () => { mirrored = !mirrored; applyFlip(); });
   snapshot?.addEventListener('click', async () => {
@@ -173,35 +194,71 @@ function recorderHandler(preview, result, context) {
   const timer = preview.querySelector('[data-record-timer]');
   const audio = preview.querySelector('audio');
   const download = preview.querySelector('[data-record-download]');
-  let recorder = null, chunks = [], started = 0, interval = 0, blobUrl = '';
+  let recorder = null, stream = null, started = 0, interval = 0, blobUrl = '', generation = 0, starting = false;
   const formatTime = (seconds) => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+  const clearRecordingUrl = () => { if (blobUrl) URL.revokeObjectURL(blobUrl); blobUrl = ''; if (audio) audio.removeAttribute('src'); };
   start?.addEventListener('click', async () => {
+    if (starting || recorder) return;
+    const request = ++generation;
+    starting = true; start.disabled = true;
+    let recordingStream = null;
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mime = MediaRecorder.isTypeSupported('audio/webm;codecs=opus') ? 'audio/webm;codecs=opus' : '';
-      recorder = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
-      chunks = [];
-      recorder.ondataavailable = (event) => { if (event.data.size) chunks.push(event.data); };
-      recorder.onstop = () => {
-        stream.getTracks().forEach((track) => track.stop());
-        const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
+      const pending = await navigator.mediaDevices.getUserMedia({ audio: true });
+      if (request !== generation) { pending.getTracks().forEach((track) => track.stop()); return; }
+      recordingStream = pending; stream = pending;
+      clearRecordingUrl(); download.hidden = true;
+      const mime = MediaRecorder.isTypeSupported('audio/webm;codecs=opus') ? 'audio/webm;codecs=opus' : MediaRecorder.isTypeSupported('audio/mp4') ? 'audio/mp4' : '';
+      const activeRecorder = new MediaRecorder(recordingStream, mime ? { mimeType: mime } : undefined);
+      const recordingChunks = [];
+      let timerInterval = 0;
+      recorder = activeRecorder;
+      activeRecorder.ondataavailable = (event) => { if (event.data.size) recordingChunks.push(event.data); };
+      activeRecorder.onstop = () => {
+        clearInterval(timerInterval);
+        if (interval === timerInterval) interval = 0;
+        recordingStream.getTracks().forEach((track) => track.stop());
+        if (stream === recordingStream) stream = null;
+        if (recorder === activeRecorder) recorder = null;
+        if (request !== generation) return;
+        const type = activeRecorder.mimeType || mime || 'audio/webm';
+        const extension = type.includes('mp4') ? 'm4a' : type.includes('ogg') ? 'ogg' : type.includes('wav') ? 'wav' : 'webm';
+        const filename = `recording.${extension}`;
+        const blob = new Blob(recordingChunks, { type });
         blobUrl = URL.createObjectURL(blob);
-        audio.src = blobUrl; download.href = blobUrl; download.hidden = false;
-        context.setCurrent({ blob, filename: 'recording.webm', text: 'Recording ready.', status: 'Recording ready' });
+        audio.src = blobUrl; download.href = blobUrl; download.download = filename; download.hidden = false;
+        context.setCurrent({ blob, filename, text: 'Recording ready.', status: 'Recording ready' });
       };
-      recorder.start();
-      started = Date.now(); start.hidden = true; stop.hidden = false;
-      interval = setInterval(() => { timer.textContent = formatTime(Math.floor((Date.now() - started) / 1000)); }, 250);
-    } catch (error) { window.CT.toast(error.message || 'Microphone access was denied.', 'error'); }
+      activeRecorder.start();
+      started = Date.now();
+      timerInterval = setInterval(() => { timer.textContent = formatTime(Math.floor((Date.now() - started) / 1000)); }, 250);
+      interval = timerInterval;
+      start.hidden = true; stop.hidden = false;
+    } catch (error) {
+      recordingStream?.getTracks().forEach((track) => track.stop());
+      if (stream === recordingStream) stream = null;
+      if (request === generation) window.CT.toast(error.message || 'Microphone access was denied.', 'error');
+    } finally {
+      if (request === generation) { starting = false; start.disabled = false; }
+    }
   });
   stop?.addEventListener('click', () => {
-    if (recorder?.state === 'recording') recorder.stop();
-    clearInterval(interval); start.hidden = false; stop.hidden = true;
+    const activeRecorder = recorder;
+    const activeInterval = interval;
+    if (activeRecorder?.state === 'recording') activeRecorder.stop();
+    if (recorder === activeRecorder) recorder = null;
+    clearInterval(activeInterval);
+    if (interval === activeInterval) interval = 0;
+    start.hidden = false; stop.hidden = true;
   });
   context.onCleanup(() => {
-    clearInterval(interval);
+    generation++;
+    clearInterval(interval); interval = 0;
     if (recorder?.state === 'recording') recorder.stop();
-    if (blobUrl) URL.revokeObjectURL(blobUrl);
+    recorder = null;
+    stream?.getTracks().forEach((track) => track.stop()); stream = null;
+    clearRecordingUrl();
+    if (start) { start.hidden = false; start.disabled = false; }
+    if (stop) stop.hidden = true;
   });
 }
 
@@ -262,17 +319,25 @@ function clockHandler(preview, result, context) {
 }
 
 function habitsHandler(preview, result, context) {
-  const key = 'reelflow.habits.v1';
-  let saved = null;
-  try { saved = JSON.parse(localStorage.getItem(key) || 'null'); } catch (error) { saved = null; }
-  const habits = saved?.habits || result.habits;
-  const checks = saved?.checks || {};
+  const key = 'reelflow.habits.v1:' + result.habits.join('\u0001');
+  const habits = result.habits.slice();
+  let checks = {};
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || 'null');
+    if (saved?.checks && typeof saved.checks === 'object') checks = saved.checks;
+  } catch (error) { checks = {}; }
   const today = new Date();
   const monday = new Date(today); monday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
   const days = Array.from({ length: 7 }, (_, i) => { const d = new Date(monday); d.setDate(monday.getDate() + i); return d; });
-  const dateKey = (date) => date.toISOString().slice(0, 10);
-  const render = () => {
+  const dateKey = (date) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  const currentStreak = (index) => {
+    const cursor = new Date(today);
+    if (!checks[index + ':' + dateKey(cursor)]) cursor.setDate(cursor.getDate() - 1);
     let streak = 0;
+    while (checks[index + ':' + dateKey(cursor)]) { streak++; cursor.setDate(cursor.getDate() - 1); }
+    return streak;
+  };
+  const render = () => {
     const rows = habits.map((habit, index) => {
       let count = 0;
       const cells = days.map((day) => {
@@ -280,14 +345,13 @@ function habitsHandler(preview, result, context) {
         if (checked) count++;
         return `<button class="habit-check ${checked ? 'on' : ''}" data-habit="${index}" data-day="${k}" aria-label="${escapeHtml(habit)} ${k}">${checked ? '✓' : ''}</button>`;
       }).join('');
-      if (count === 7) streak++;
-      return `<div>${escapeHtml(habit)}<br><small>${count}/7 this week</small></div>${cells}`;
+      return `<div>${escapeHtml(habit)}<br><small>${currentStreak(index)}-day streak · ${count}/7 this week</small></div>${cells}`;
     }).join('');
-    preview.innerHTML = `<div class="habit-grid"><div></div>${days.map((d) => `<div class="habit-day">${d.toLocaleDateString(undefined, { weekday: 'short' })}</div>`).join('')}${rows}</div><p class="mini">Perfect weeks: ${streak}. Saved automatically in this browser.</p>`;
+    preview.innerHTML = `<div class="habit-grid"><div></div>${days.map((d) => `<div class="habit-day">${d.toLocaleDateString(undefined, { weekday: 'short' })}</div>`).join('')}${rows}</div><p class="mini">Streaks count consecutive completed days. Saved automatically in this browser.</p>`;
     preview.querySelectorAll('[data-habit]').forEach((button) => button.addEventListener('click', () => {
       const k = button.dataset.habit + ':' + button.dataset.day;
       checks[k] = !checks[k];
-      try { localStorage.setItem(key, JSON.stringify({ habits, checks })); } catch (error) {}
+      try { localStorage.setItem(key, JSON.stringify({ checks })); } catch (error) {}
       render();
     }));
   };
@@ -296,17 +360,17 @@ function habitsHandler(preview, result, context) {
 }
 
 function checklistHandler(preview, result, context) {
-  const key = 'reelflow.checklist.v1';
+  const key = 'reelflow.checklist.v1:' + result.items.join('\u0001');
   let items = result.items.map((text) => ({ text, done: false }));
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null');
-    if (Array.isArray(saved) && saved.length) items = saved;
+    if (Array.isArray(saved)) items = saved.filter((item) => item && typeof item.text === 'string').map((item) => ({ text: item.text, done: !!item.done }));
   } catch (error) {}
   const save = () => { try { localStorage.setItem(key, JSON.stringify(items)); } catch (error) {} };
   const render = () => {
-    preview.innerHTML = `<div>${items.map((item, index) => `<div class="checklist-row"><input type="checkbox" data-check="${index}" ${item.done ? 'checked' : ''}><input class="input" type="text" data-edit="${index}" value="${escapeHtml(item.text)}"><button class="btn btn-ghost" data-delete="${index}" type="button">Delete</button></div>`).join('')}</div><div class="split-actions"><input class="input" id="newChecklistItem" placeholder="Add an item"><button class="btn btn-primary" id="addChecklistItem" type="button">Add</button></div>`;
-    preview.querySelectorAll('[data-check]').forEach((input) => input.addEventListener('change', () => { items[+input.dataset.check].done = input.checked; save(); }));
-    preview.querySelectorAll('[data-edit]').forEach((input) => input.addEventListener('input', () => { items[+input.dataset.edit].text = input.value; save(); }));
+    preview.innerHTML = `<div>${items.map((item, index) => `<div class="checklist-row"><input type="checkbox" data-check="${index}" aria-label="Mark ${escapeHtml(item.text)} complete" ${item.done ? 'checked' : ''}><input class="input" type="text" data-edit="${index}" aria-label="Edit ${escapeHtml(item.text)}" value="${escapeHtml(item.text)}"><button class="btn btn-ghost" data-delete="${index}" type="button">Delete</button></div>`).join('')}</div><div class="split-actions"><input class="input" id="newChecklistItem" aria-label="New checklist item" placeholder="Add an item"><button class="btn btn-primary" id="addChecklistItem" type="button">Add</button></div>`;
+    preview.querySelectorAll('[data-check]').forEach((input) => input.addEventListener('change', () => { items[+input.dataset.check].done = input.checked; save(); context.setCurrent({ text: items.map((item) => `${item.done ? '[x]' : '[ ]'} ${item.text}`).join('\n'), copyText: items.map((item) => item.text).join('\n') }); }));
+    preview.querySelectorAll('[data-edit]').forEach((input) => input.addEventListener('input', () => { items[+input.dataset.edit].text = input.value; save(); context.setCurrent({ text: items.map((item) => `${item.done ? '[x]' : '[ ]'} ${item.text}`).join('\n'), copyText: items.map((item) => item.text).join('\n') }); }));
     preview.querySelectorAll('[data-delete]').forEach((button) => button.addEventListener('click', () => { items.splice(+button.dataset.delete, 1); save(); render(); }));
     const add = () => { const input = preview.querySelector('#newChecklistItem'); if (!input.value.trim()) return; items.push({ text: input.value.trim(), done: false }); save(); render(); };
     preview.querySelector('#addChecklistItem')?.addEventListener('click', add);
@@ -325,36 +389,38 @@ function screenHandler(preview, result, context) {
   overlay.innerHTML = '<button class="btn btn-primary" type="button">Next colour / close</button>';
   document.body.appendChild(overlay);
   const close = () => { clearInterval(interval); overlay.remove(); };
+  const onKeyDown = (event) => { if (event.key === 'Escape') close(); };
   overlay.querySelector('button').addEventListener('click', () => {
     index++;
     if (index >= colors.length) { close(); return; }
     overlay.style.background = colors[index];
   });
   if (colors.length > 1) interval = setInterval(() => { index = (index + 1) % colors.length; overlay.style.background = colors[index]; }, 1400);
-  document.addEventListener('keydown', close, { once: true });
-  context.onCleanup(() => { close(); document.removeEventListener('keydown', close); });
+  document.addEventListener('keydown', onKeyDown);
+  context.onCleanup(() => { close(); document.removeEventListener('keydown', onKeyDown); });
 }
 
 function coinHandler(preview, result, context) {
   const output = preview.querySelector('[data-coin-result]');
   const button = preview.querySelector('[data-coin-flip]');
   let spinning = false;
+  let interval = 0;
   button?.addEventListener('click', () => {
     if (spinning) return;
     spinning = true; button.disabled = true;
     let ticks = 0;
-    const interval = setInterval(() => {
+    interval = setInterval(() => {
       output.textContent = pick(['Heads', 'Tails']);
       if (++ticks > 12) {
-        clearInterval(interval);
+        clearInterval(interval); interval = 0;
         const winner = pick(['Heads', 'Tails']);
         output.textContent = winner;
         context.setCurrent({ text: winner, copyText: winner, status: winner });
         button.disabled = false; spinning = false;
       }
     }, 70);
-    context.onCleanup(() => clearInterval(interval));
   });
+  context.onCleanup(() => { clearInterval(interval); interval = 0; });
 }
 
 export const interactiveHandlers = {
