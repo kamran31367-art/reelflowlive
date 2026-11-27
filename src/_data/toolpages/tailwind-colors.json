@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Tailwind Colors - ReelFlow Toolkit",
+  "description": "Generate harmonious colour shades from one base colour and copy any shade as HEX, RGB or HSL.",
+  "ogTitle": "Tailwind Colors",
+  "ogDescription": "Generate harmonious colour shades from one base colour and copy any shade as HEX, RGB or HSL.",
+  "ldDescription": "Generate harmonious colour shades from one base colour and copy any shade as HEX, RGB or HSL.",
+  "breadcrumb": "Tailwind Colors",
+  "kicker": "Tailwind tool",
+  "h1": "Tailwind Colors",
+  "lede": "Generate harmonious colour shades from one base colour and copy any shade as HEX, RGB or HSL.",
+  "faq": [
+    {
+      "q": "Is Tailwind Colors free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "color-contrast-checker",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

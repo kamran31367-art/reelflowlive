@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Vanity Number Calculator - ReelFlow Toolkit",
+  "description": "Find memorable phone words from a number using the standard keypad mapping.",
+  "ogTitle": "Vanity Number Calculator",
+  "ogDescription": "Find memorable phone words from a number using the standard keypad mapping.",
+  "ldDescription": "Find memorable phone words from a number using the standard keypad mapping.",
+  "breadcrumb": "Vanity Number Calculator",
+  "kicker": "Misc tool",
+  "h1": "Vanity Number Calculator",
+  "lede": "Find memorable phone words from a number using the standard keypad mapping.",
+  "faq": [
+    {
+      "q": "Is Vanity Number Calculator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

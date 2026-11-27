@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Pixel Art Converter - ReelFlow Toolkit",
+  "description": "Convert a photo into pixel art with palette reduction and optional dithering.",
+  "ogTitle": "Pixel Art Converter",
+  "ogDescription": "Convert a photo into pixel art with palette reduction and optional dithering.",
+  "ldDescription": "Convert a photo into pixel art with palette reduction and optional dithering.",
+  "breadcrumb": "Pixel Art Converter",
+  "kicker": "Image tool",
+  "h1": "Pixel Art Converter",
+  "lede": "Convert a photo into pixel art with palette reduction and optional dithering.",
+  "faq": [
+    {
+      "q": "Is Pixel Art Converter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "image-resizer",
+      "letter": "I",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-compressor",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

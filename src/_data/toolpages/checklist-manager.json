@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Checklist Creator and Manager - ReelFlow Toolkit",
+  "description": "Create, complete and organise a checklist that saves automatically in your browser.",
+  "ogTitle": "Checklist Creator and Manager",
+  "ogDescription": "Create, complete and organise a checklist that saves automatically in your browser.",
+  "ldDescription": "Create, complete and organise a checklist that saves automatically in your browser.",
+  "breadcrumb": "Checklist Creator and Manager",
+  "kicker": "Misc tool",
+  "h1": "Checklist Creator and Manager",
+  "lede": "Create, complete and organise a checklist that saves automatically in your browser.",
+  "faq": [
+    {
+      "q": "Is Checklist Creator and Manager free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

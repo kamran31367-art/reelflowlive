@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Dead Pixel Test - ReelFlow Toolkit",
+  "description": "Cycle through solid colours to find stuck or dead pixels on your display.",
+  "ogTitle": "Dead Pixel Test",
+  "ogDescription": "Cycle through solid colours to find stuck or dead pixels on your display.",
+  "ldDescription": "Cycle through solid colours to find stuck or dead pixels on your display.",
+  "breadcrumb": "Dead Pixel Test",
+  "kicker": "Misc tool",
+  "h1": "Dead Pixel Test",
+  "lede": "Cycle through solid colours to find stuck or dead pixels on your display.",
+  "faq": [
+    {
+      "q": "Is Dead Pixel Test free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

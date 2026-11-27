@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Trim Transparent Pixels - ReelFlow Toolkit",
+  "description": "Crop empty transparent edges from a PNG or WebP image.",
+  "ogTitle": "Trim Transparent Pixels",
+  "ogDescription": "Crop empty transparent edges from a PNG or WebP image.",
+  "ldDescription": "Crop empty transparent edges from a PNG or WebP image.",
+  "breadcrumb": "Trim Transparent Pixels",
+  "kicker": "Image tool",
+  "h1": "Trim Transparent Pixels",
+  "lede": "Crop empty transparent edges from a PNG or WebP image.",
+  "faq": [
+    {
+      "q": "Is Trim Transparent Pixels free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "image-resizer",
+      "letter": "I",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-compressor",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

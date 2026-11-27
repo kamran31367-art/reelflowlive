@@ -1,0 +1,41 @@
+{
+  "metaTitle": "XML Beautifier and Minifier - ReelFlow Toolkit",
+  "description": "Pretty-print XML for reading or minify it for transport without losing content.",
+  "ogTitle": "XML Beautifier and Minifier",
+  "ogDescription": "Pretty-print XML for reading or minify it for transport without losing content.",
+  "ldDescription": "Pretty-print XML for reading or minify it for transport without losing content.",
+  "breadcrumb": "XML Beautifier and Minifier",
+  "kicker": "Developer tool",
+  "h1": "XML Beautifier and Minifier",
+  "lede": "Pretty-print XML for reading or minify it for transport without losing content.",
+  "faq": [
+    {
+      "q": "Is XML Beautifier and Minifier free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "utm-link-builder",
+      "letter": "U",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

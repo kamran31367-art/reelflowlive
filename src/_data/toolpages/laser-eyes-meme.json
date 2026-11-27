@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Laser Eyes Meme Generator - ReelFlow Toolkit",
+  "description": "Add adjustable glowing laser eyes to a photo and download the meme.",
+  "ogTitle": "Laser Eyes Meme Generator",
+  "ogDescription": "Add adjustable glowing laser eyes to a photo and download the meme.",
+  "ldDescription": "Add adjustable glowing laser eyes to a photo and download the meme.",
+  "breadcrumb": "Laser Eyes Meme Generator",
+  "kicker": "Image tool",
+  "h1": "Laser Eyes Meme Generator",
+  "lede": "Add adjustable glowing laser eyes to a photo and download the meme.",
+  "faq": [
+    {
+      "q": "Is Laser Eyes Meme Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "image-resizer",
+      "letter": "I",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-compressor",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

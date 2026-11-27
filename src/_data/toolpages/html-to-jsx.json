@@ -1,0 +1,41 @@
+{
+  "metaTitle": "HTML to JSX Converter - ReelFlow Toolkit",
+  "description": "Convert common HTML attributes and inline styles into valid JSX.",
+  "ogTitle": "HTML to JSX Converter",
+  "ogDescription": "Convert common HTML attributes and inline styles into valid JSX.",
+  "ldDescription": "Convert common HTML attributes and inline styles into valid JSX.",
+  "breadcrumb": "HTML to JSX Converter",
+  "kicker": "Developer tool",
+  "h1": "HTML to JSX Converter",
+  "lede": "Convert common HTML attributes and inline styles into valid JSX.",
+  "faq": [
+    {
+      "q": "Is HTML to JSX Converter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "utm-link-builder",
+      "letter": "U",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Pictionary Word Generator - ReelFlow Toolkit",
+  "description": "Generate drawing prompts by category and difficulty.",
+  "ogTitle": "Pictionary Word Generator",
+  "ogDescription": "Generate drawing prompts by category and difficulty.",
+  "ldDescription": "Generate drawing prompts by category and difficulty.",
+  "breadcrumb": "Pictionary Word Generator",
+  "kicker": "Misc tool",
+  "h1": "Pictionary Word Generator",
+  "lede": "Generate drawing prompts by category and difficulty.",
+  "faq": [
+    {
+      "q": "Is Pictionary Word Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

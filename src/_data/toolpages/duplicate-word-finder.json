@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Duplicate Word Finder - ReelFlow Toolkit",
+  "description": "Find repeated words in text, with counts and case-sensitive matching.",
+  "ogTitle": "Duplicate Word Finder",
+  "ogDescription": "Find repeated words in text, with counts and case-sensitive matching.",
+  "ldDescription": "Find repeated words in text, with counts and case-sensitive matching.",
+  "breadcrumb": "Duplicate Word Finder",
+  "kicker": "Text tool",
+  "h1": "Duplicate Word Finder",
+  "lede": "Find repeated words in text, with counts and case-sensitive matching.",
+  "faq": [
+    {
+      "q": "Is Duplicate Word Finder free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

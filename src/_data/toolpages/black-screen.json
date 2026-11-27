@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Black Screen - ReelFlow Toolkit",
+  "description": "Open a full-screen black display for testing, lighting or presentations.",
+  "ogTitle": "Black Screen",
+  "ogDescription": "Open a full-screen black display for testing, lighting or presentations.",
+  "ldDescription": "Open a full-screen black display for testing, lighting or presentations.",
+  "breadcrumb": "Black Screen",
+  "kicker": "Misc tool",
+  "h1": "Black Screen",
+  "lede": "Open a full-screen black display for testing, lighting or presentations.",
+  "faq": [
+    {
+      "q": "Is Black Screen free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

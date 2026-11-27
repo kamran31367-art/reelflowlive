@@ -8,7 +8,11 @@
       "name": "YouTube Thumbnail Downloader",
       "footerName": "Thumbnail Downloader",
       "desc": "Paste any YouTube link and save the thumbnail in every available size, up to 1280x720.",
-      "tags": ["YouTube", "Images", "No upload"],
+      "tags": [
+        "YouTube",
+        "Images",
+        "No upload"
+      ],
       "icon": "download",
       "tone": "rose"
     },
@@ -18,7 +22,11 @@
       "name": "Image Resizer",
       "footerName": "Image Resizer",
       "desc": "Resize photos for YouTube, Shorts, Reels, Instagram and X with the exact dimensions.",
-      "tags": ["Canvas", "Presets", "Batch"],
+      "tags": [
+        "Canvas",
+        "Presets",
+        "Batch"
+      ],
       "icon": "resize",
       "tone": ""
     },
@@ -28,7 +36,11 @@
       "name": "Image Compressor",
       "footerName": "Image Compressor",
       "desc": "Shrink JPG and PNG files or convert them to WebP, right inside your browser.",
-      "tags": ["WebP", "Batch", "On-device"],
+      "tags": [
+        "WebP",
+        "Batch",
+        "On-device"
+      ],
       "icon": "compress",
       "tone": "mint"
     },
@@ -39,7 +51,11 @@
       "footerName": "Subtitle Editor",
       "relatedName": "SRT Subtitle Editor",
       "desc": "Edit, shift timing and convert subtitles between SRT, VTT and plain text.",
-      "tags": ["SRT", "VTT", "Timing shift"],
+      "tags": [
+        "SRT",
+        "VTT",
+        "Timing shift"
+      ],
       "icon": "subtitles",
       "tone": "amber"
     },
@@ -49,7 +65,11 @@
       "name": "YouTube Chapters Generator",
       "footerName": "Chapters Generator",
       "desc": "Build a valid chapter list with timestamps and check every YouTube rule before you paste.",
-      "tags": ["Chapters", "Timestamps", "Rules check"],
+      "tags": [
+        "Chapters",
+        "Timestamps",
+        "Rules check"
+      ],
       "icon": "chapters",
       "tone": ""
     },
@@ -59,7 +79,11 @@
       "name": "Character Counter",
       "footerName": "Character Counter",
       "desc": "Count titles and captions against the limits of YouTube, TikTok, Instagram and X.",
-      "tags": ["Hashtags", "Limits", "Titles"],
+      "tags": [
+        "Hashtags",
+        "Limits",
+        "Titles"
+      ],
       "icon": "counter",
       "tone": "rose"
     },
@@ -69,7 +93,11 @@
       "name": "Favicon Generator",
       "footerName": "Favicon Generator",
       "desc": "Turn an image or a letter into every favicon size, including a ready favicon.ico.",
-      "tags": ["Icons", "favicon.ico", "Canvas"],
+      "tags": [
+        "Icons",
+        "favicon.ico",
+        "Canvas"
+      ],
       "icon": "favicon",
       "tone": "mint"
     },
@@ -79,7 +107,11 @@
       "name": "Image Format Converter",
       "footerName": "Image Converter",
       "desc": "Convert PNG, JPG and WebP images to another format in one batch, on your device.",
-      "tags": ["PNG", "JPG", "WebP"],
+      "tags": [
+        "PNG",
+        "JPG",
+        "WebP"
+      ],
       "icon": "swap",
       "tone": ""
     },
@@ -89,7 +121,11 @@
       "name": "Image to Base64",
       "footerName": "Image to Base64",
       "desc": "Turn an image into a Base64 data URI for CSS or HTML, or preview one you already have.",
-      "tags": ["Data URI", "CSS", "Developers"],
+      "tags": [
+        "Data URI",
+        "CSS",
+        "Developers"
+      ],
       "icon": "codefile",
       "tone": "amber"
     },
@@ -99,7 +135,11 @@
       "name": "QR Code Generator",
       "footerName": "QR Code Generator",
       "desc": "Create a QR code for any link or text and download it as PNG or SVG, fully offline.",
-      "tags": ["PNG", "SVG", "Offline"],
+      "tags": [
+        "PNG",
+        "SVG",
+        "Offline"
+      ],
       "icon": "qr",
       "tone": "rose"
     },
@@ -109,7 +149,11 @@
       "name": "Meme Generator",
       "footerName": "Meme Generator",
       "desc": "Add top and bottom text to any image and download the finished meme as a PNG.",
-      "tags": ["Caption", "Top & bottom", "Download"],
+      "tags": [
+        "Caption",
+        "Top & bottom",
+        "Download"
+      ],
       "icon": "meme",
       "tone": ""
     },
@@ -119,7 +163,11 @@
       "name": "Text Tools",
       "footerName": "Text Tools",
       "desc": "Change case, remove line breaks, drop duplicate lines, make a slug or generate placeholder text.",
-      "tags": ["Case", "Clean-up", "Slug"],
+      "tags": [
+        "Case",
+        "Clean-up",
+        "Slug"
+      ],
       "icon": "text",
       "tone": "mint"
     },
@@ -129,7 +177,11 @@
       "name": "UTM Link Builder",
       "footerName": "UTM Builder",
       "desc": "Build a campaign URL with source, medium and campaign tags, then copy it in one click.",
-      "tags": ["Campaigns", "Analytics", "Links"],
+      "tags": [
+        "Campaigns",
+        "Analytics",
+        "Links"
+      ],
       "icon": "link",
       "tone": "amber"
     },
@@ -139,7 +191,11 @@
       "name": "YouTube Timestamp Link",
       "footerName": "Timestamp Link",
       "desc": "Make a share link that opens a YouTube video at an exact time, with a readable timestamp.",
-      "tags": ["YouTube", "Sharing", "Timestamps"],
+      "tags": [
+        "YouTube",
+        "Sharing",
+        "Timestamps"
+      ],
       "icon": "clock",
       "tone": "rose"
     },
@@ -149,7 +205,11 @@
       "name": "Thumbnail Safe-Zone Tester",
       "footerName": "Safe-Zone Tester",
       "desc": "Overlay the crops and badges YouTube applies so text never disappears from your thumbnail.",
-      "tags": ["Thumbnails", "Crop", "Overlay"],
+      "tags": [
+        "Thumbnails",
+        "Crop",
+        "Overlay"
+      ],
       "icon": "crop",
       "tone": ""
     },
@@ -159,7 +219,11 @@
       "name": "Title & Caption Preview",
       "footerName": "Title Preview",
       "desc": "See how a title looks in YouTube search and how a caption truncates on Instagram before you publish.",
-      "tags": ["YouTube", "Instagram", "Preview"],
+      "tags": [
+        "YouTube",
+        "Instagram",
+        "Preview"
+      ],
       "icon": "preview",
       "tone": "mint"
     },
@@ -169,7 +233,11 @@
       "name": "Developer Tools",
       "footerName": "Developer Tools",
       "desc": "Format JSON, encode Base64, hash text with SHA-256 and generate a strong password offline.",
-      "tags": ["JSON", "Base64", "Hash"],
+      "tags": [
+        "JSON",
+        "Base64",
+        "Hash"
+      ],
       "icon": "code",
       "tone": "amber"
     },
@@ -179,7 +247,11 @@
       "name": "Color Contrast Checker",
       "footerName": "Contrast Checker",
       "desc": "Check any two colours against WCAG AA and AAA contrast rules, with a live text preview.",
-      "tags": ["WCAG", "Accessibility", "Design"],
+      "tags": [
+        "WCAG",
+        "Accessibility",
+        "Design"
+      ],
       "icon": "contrast",
       "tone": "rose"
     },
@@ -189,7 +261,11 @@
       "name": "Video Trimmer",
       "footerName": "Video Trimmer",
       "desc": "Cut the start and end of a video and download the trimmed clip, recorded on your device.",
-      "tags": ["Trim", "MP4", "On-device"],
+      "tags": [
+        "Trim",
+        "MP4",
+        "On-device"
+      ],
       "icon": "scissors",
       "tone": ""
     },
@@ -199,7 +275,11 @@
       "name": "Video to GIF",
       "footerName": "Video to GIF",
       "desc": "Turn a few seconds of any video into a looping GIF with adjustable size, frames and speed.",
-      "tags": ["GIF", "Loop", "Canvas"],
+      "tags": [
+        "GIF",
+        "Loop",
+        "Canvas"
+      ],
       "icon": "film",
       "tone": "mint"
     },
@@ -209,7 +289,11 @@
       "name": "Video Frame Grabber",
       "footerName": "Frame Grabber",
       "desc": "Save any frame of a video as a full-size PNG at the exact second you choose.",
-      "tags": ["PNG", "Frames", "Video"],
+      "tags": [
+        "PNG",
+        "Frames",
+        "Video"
+      ],
       "icon": "camera",
       "tone": "amber"
     },
@@ -219,7 +303,11 @@
       "name": "Audio Extractor & Trimmer",
       "footerName": "Audio Extractor",
       "desc": "Pull the audio out of a video or trim an audio file, then save it as WAV or MP3.",
-      "tags": ["WAV", "MP3", "WebAudio"],
+      "tags": [
+        "WAV",
+        "MP3",
+        "WebAudio"
+      ],
       "icon": "wave",
       "tone": "rose"
     },
@@ -229,7 +317,11 @@
       "name": "Audio Speed & Pitch",
       "footerName": "Speed & Pitch",
       "desc": "Change the speed or pitch of an audio file and export it, and save a waveform image.",
-      "tags": ["Speed", "Pitch", "Waveform"],
+      "tags": [
+        "Speed",
+        "Pitch",
+        "Waveform"
+      ],
       "icon": "gauge",
       "tone": ""
     },
@@ -239,7 +331,11 @@
       "name": "PDF Merge & Split",
       "footerName": "PDF Tools",
       "desc": "Merge PDFs, extract page ranges, rotate pages or turn a set of images into one PDF.",
-      "tags": ["Merge", "Split", "PDF"],
+      "tags": [
+        "Merge",
+        "Split",
+        "PDF"
+      ],
       "icon": "pdf",
       "tone": "mint"
     },
@@ -249,7 +345,11 @@
       "name": "PDF to Images & Text",
       "footerName": "PDF to Images",
       "desc": "Render PDF pages as PNG images or copy the extracted text, page by page.",
-      "tags": ["PNG", "Text", "PDF"],
+      "tags": [
+        "PNG",
+        "Text",
+        "PDF"
+      ],
       "icon": "pages",
       "tone": "amber"
     },
@@ -259,9 +359,1623 @@
       "name": "Background Remover",
       "footerName": "Background Remover",
       "desc": "Remove the background from photos of people and download a transparent PNG.",
-      "tags": ["PNG", "People", "On-device"],
+      "tags": [
+        "PNG",
+        "People",
+        "On-device"
+      ],
       "icon": "eraser",
       "tone": "rose"
+    },
+    {
+      "slug": "tailwind-gradient-generator",
+      "url": "/tailwind-gradient-generator/",
+      "name": "Tailwind and CSS Gradient Generator",
+      "footerName": "Tailwind and CSS Gradient Generator",
+      "desc": "Build linear, radial and conic gradients with ready-to-copy Tailwind classes and CSS.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "tailwind-shadow-generator",
+      "url": "/tailwind-shadow-generator/",
+      "name": "Tailwind CSS Shadow Generator",
+      "footerName": "Tailwind CSS Shadow Generator",
+      "desc": "Create layered CSS shadows and copy the matching Tailwind arbitrary-value classes.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "mint"
+    },
+    {
+      "slug": "tailwind-grid-generator",
+      "url": "/tailwind-grid-generator/",
+      "name": "Tailwind CSS Grid Generator",
+      "footerName": "Tailwind CSS Grid Generator",
+      "desc": "Design a responsive CSS grid and export Tailwind grid utilities with exact columns, rows and gaps.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "tailwind-button-generator",
+      "url": "/tailwind-button-generator/",
+      "name": "Tailwind CSS Button Generator",
+      "footerName": "Tailwind CSS Button Generator",
+      "desc": "Style a production-ready button with live preview and copyable Tailwind or CSS.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "rose"
+    },
+    {
+      "slug": "css-to-tailwind",
+      "url": "/css-to-tailwind/",
+      "name": "CSS to Tailwind Converter",
+      "footerName": "CSS to Tailwind Converter",
+      "desc": "Convert common CSS declarations into practical Tailwind utility classes.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "tailwind-to-css",
+      "url": "/tailwind-to-css/",
+      "name": "Tailwind to CSS Converter",
+      "footerName": "Tailwind to CSS Converter",
+      "desc": "Turn a list of Tailwind utility classes into readable CSS declarations.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "mint"
+    },
+    {
+      "slug": "tailwind-flexbox-generator",
+      "url": "/tailwind-flexbox-generator/",
+      "name": "Tailwind Flexbox Generator",
+      "footerName": "Tailwind Flexbox Generator",
+      "desc": "Build flex layouts visually and copy exact Tailwind classes for direction, alignment and wrapping.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "tailwind-card-generator",
+      "url": "/tailwind-card-generator/",
+      "name": "Tailwind Card Generator",
+      "footerName": "Tailwind Card Generator",
+      "desc": "Create a polished card with a live preview and exportable Tailwind markup and CSS.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "rose"
+    },
+    {
+      "slug": "tailwind-colors",
+      "url": "/tailwind-colors/",
+      "name": "Tailwind Colors",
+      "footerName": "Tailwind Colors",
+      "desc": "Generate harmonious colour shades from one base colour and copy any shade as HEX, RGB or HSL.",
+      "tags": [
+        "Tailwind",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "timestamp-converter",
+      "url": "/timestamp-converter/",
+      "name": "Timestamp Converter",
+      "footerName": "Timestamp Converter",
+      "desc": "Convert Unix timestamps to readable dates and dates back to Unix seconds or milliseconds.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "sql-formatter",
+      "url": "/sql-formatter/",
+      "name": "SQL Online Formatter",
+      "footerName": "SQL Online Formatter",
+      "desc": "Format SQL queries with consistent indentation and several database dialects.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "mint"
+    },
+    {
+      "slug": "yaml-json-converter",
+      "url": "/yaml-json-converter/",
+      "name": "YAML/JSON Converter",
+      "footerName": "YAML/JSON Converter",
+      "desc": "Convert YAML to JSON or JSON to YAML locally, with clear validation errors.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "diff-compare",
+      "url": "/diff-compare/",
+      "name": "Diff Compare Tool",
+      "footerName": "Diff Compare Tool",
+      "desc": "Compare two blocks of text with line-by-line additions, removals and unchanged lines.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "rose"
+    },
+    {
+      "slug": "xml-beautifier",
+      "url": "/xml-beautifier/",
+      "name": "XML Beautifier and Minifier",
+      "footerName": "XML Beautifier and Minifier",
+      "desc": "Pretty-print XML for reading or minify it for transport without losing content.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "keyboard-shortcut-image",
+      "url": "/keyboard-shortcut-image/",
+      "name": "Keyboard Shortcut Image Generator",
+      "footerName": "Keyboard Shortcut Image Generator",
+      "desc": "Turn a keyboard shortcut into a clean, shareable image for tutorials and documentation.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "mint"
+    },
+    {
+      "slug": "url-encoder-decoder",
+      "url": "/url-encoder-decoder/",
+      "name": "URL Encoder and Decoder",
+      "footerName": "URL Encoder and Decoder",
+      "desc": "Encode text for URLs or decode percent-encoded URL components safely.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "prompt-to-url",
+      "url": "/prompt-to-url/",
+      "name": "Prompt to URL Generator",
+      "footerName": "Prompt to URL Generator",
+      "desc": "Package a reusable prompt into a shareable URL for popular AI assistants.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "rose"
+    },
+    {
+      "slug": "svg-blob-generator",
+      "url": "/svg-blob-generator/",
+      "name": "SVG Blob Generator",
+      "footerName": "SVG Blob Generator",
+      "desc": "Generate unique organic SVG blob shapes with adjustable complexity and contrast.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "json-csv-converter",
+      "url": "/json-csv-converter/",
+      "name": "JSON/CSV Converter",
+      "footerName": "JSON/CSV Converter",
+      "desc": "Convert JSON arrays to CSV and CSV back to JSON with delimiter control.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "mint"
+    },
+    {
+      "slug": "css-minifier",
+      "url": "/css-minifier/",
+      "name": "CSS Minifier",
+      "footerName": "CSS Minifier",
+      "desc": "Remove comments and unnecessary whitespace from CSS while preserving values.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "keycode-info",
+      "url": "/keycode-info/",
+      "name": "Keycode JavaScript Info",
+      "footerName": "Keycode JavaScript Info",
+      "desc": "Inspect key, code, keyCode and modifier details for any keyboard key.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "rose"
+    },
+    {
+      "slug": "oklch-color-converter",
+      "url": "/oklch-color-converter/",
+      "name": "OKLCH Color Picker and Converter",
+      "footerName": "OKLCH Color Picker and Converter",
+      "desc": "Convert HEX, RGB, HSL and OKLCH colours with a live swatch and copyable values.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "cron-explainer",
+      "url": "/cron-explainer/",
+      "name": "Cron Expression Explainer",
+      "footerName": "Cron Expression Explainer",
+      "desc": "Explain cron expressions in plain English and show the next scheduled run times.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "mint"
+    },
+    {
+      "slug": "html-to-jsx",
+      "url": "/html-to-jsx/",
+      "name": "HTML to JSX Converter",
+      "footerName": "HTML to JSX Converter",
+      "desc": "Convert common HTML attributes and inline styles into valid JSX.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "css-unit-converter",
+      "url": "/css-unit-converter/",
+      "name": "CSS Unit Converter",
+      "footerName": "CSS Unit Converter",
+      "desc": "Convert between px, rem, em, pt, pc, cm, mm and inches with a configurable root size.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "rose"
+    },
+    {
+      "slug": "token-generator",
+      "url": "/token-generator/",
+      "name": "Token Generator",
+      "footerName": "Token Generator",
+      "desc": "Generate cryptographically secure random tokens with Web Crypto.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": ""
+    },
+    {
+      "slug": "encrypt-decrypt",
+      "url": "/encrypt-decrypt/",
+      "name": "Encrypt and Decrypt Text",
+      "footerName": "Encrypt and Decrypt Text",
+      "desc": "Encrypt text with a password using AES-GCM and PBKDF2, entirely in your browser.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "mint"
+    },
+    {
+      "slug": "phone-parser",
+      "url": "/phone-parser/",
+      "name": "Phone Parser and Formatter",
+      "footerName": "Phone Parser and Formatter",
+      "desc": "Parse international phone numbers and format them in E.164, national and international styles.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "amber"
+    },
+    {
+      "slug": "mac-address-generator",
+      "url": "/mac-address-generator/",
+      "name": "MAC Address Generator",
+      "footerName": "MAC Address Generator",
+      "desc": "Generate valid locally administered MAC addresses for labs and testing.",
+      "tags": [
+        "Developer",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "code",
+      "tone": "rose"
+    },
+    {
+      "slug": "image-watermark",
+      "url": "/image-watermark/",
+      "name": "Image Watermark",
+      "footerName": "Image Watermark",
+      "desc": "Add a text watermark to an image with position, opacity and size controls.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": ""
+    },
+    {
+      "slug": "laser-eyes-meme",
+      "url": "/laser-eyes-meme/",
+      "name": "Laser Eyes Meme Generator",
+      "footerName": "Laser Eyes Meme Generator",
+      "desc": "Add adjustable glowing laser eyes to a photo and download the meme.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "mint"
+    },
+    {
+      "slug": "invert-image",
+      "url": "/invert-image/",
+      "name": "Invert Image Colors",
+      "footerName": "Invert Image Colors",
+      "desc": "Invert every colour channel in an image and download the result as PNG.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "amber"
+    },
+    {
+      "slug": "image-pixelator",
+      "url": "/image-pixelator/",
+      "name": "Image Pixelator",
+      "footerName": "Image Pixelator",
+      "desc": "Pixelate an image with a controllable block size and download the result.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "rose"
+    },
+    {
+      "slug": "image-blur-pixelate",
+      "url": "/image-blur-pixelate/",
+      "name": "Image Blur and Pixelate",
+      "footerName": "Image Blur and Pixelate",
+      "desc": "Apply a soft blur or pixelation effect to an image with adjustable strength.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": ""
+    },
+    {
+      "slug": "image-color-picker",
+      "url": "/image-color-picker/",
+      "name": "Image Color Picker",
+      "footerName": "Image Color Picker",
+      "desc": "Pick an exact colour from any point in an image and copy HEX, RGB and HSL values.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "mint"
+    },
+    {
+      "slug": "random-color-generator",
+      "url": "/random-color-generator/",
+      "name": "Random Color Generator",
+      "footerName": "Random Color Generator",
+      "desc": "Generate random colours and copy them as HEX, RGB or HSL.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "amber"
+    },
+    {
+      "slug": "resize-gif",
+      "url": "/resize-gif/",
+      "name": "Resize GIF",
+      "footerName": "Resize GIF",
+      "desc": "Resize an animated GIF while preserving its animation and transparency.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "rose"
+    },
+    {
+      "slug": "compress-gif",
+      "url": "/compress-gif/",
+      "name": "Compress GIF",
+      "footerName": "Compress GIF",
+      "desc": "Reduce GIF file size by scaling frames, lowering frame rate and optimising the palette.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": ""
+    },
+    {
+      "slug": "trim-transparent-pixels",
+      "url": "/trim-transparent-pixels/",
+      "name": "Trim Transparent Pixels",
+      "footerName": "Trim Transparent Pixels",
+      "desc": "Crop empty transparent edges from a PNG or WebP image.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "mint"
+    },
+    {
+      "slug": "image-border",
+      "url": "/image-border/",
+      "name": "Add Borders to Image",
+      "footerName": "Add Borders to Image",
+      "desc": "Frame an image with a solid, rounded or dashed border.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "amber"
+    },
+    {
+      "slug": "image-splitter",
+      "url": "/image-splitter/",
+      "name": "Image Splitter",
+      "footerName": "Image Splitter",
+      "desc": "Split an image into a grid of tiles and download every tile in one ZIP.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "rose"
+    },
+    {
+      "slug": "merge-images",
+      "url": "/merge-images/",
+      "name": "Merge Images Online",
+      "footerName": "Merge Images Online",
+      "desc": "Combine multiple images horizontally, vertically or in a grid.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": ""
+    },
+    {
+      "slug": "pixel-art-converter",
+      "url": "/pixel-art-converter/",
+      "name": "Pixel Art Converter",
+      "footerName": "Pixel Art Converter",
+      "desc": "Convert a photo into pixel art with palette reduction and optional dithering.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "mint"
+    },
+    {
+      "slug": "paste-image-download",
+      "url": "/paste-image-download/",
+      "name": "Paste Image to Download",
+      "footerName": "Paste Image to Download",
+      "desc": "Paste an image from your clipboard or choose a file, then download it as PNG.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "amber"
+    },
+    {
+      "slug": "image-to-ascii",
+      "url": "/image-to-ascii/",
+      "name": "Image to ASCII Converter",
+      "footerName": "Image to ASCII Converter",
+      "desc": "Convert an image into text art using adjustable width and character sets.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "rose"
+    },
+    {
+      "slug": "image-exif-tool",
+      "url": "/image-exif-tool/",
+      "name": "Image EXIF Viewer and Metadata Remover",
+      "footerName": "Image EXIF Viewer and Metadata Remover",
+      "desc": "Read EXIF metadata or remove it by re-encoding an image locally.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": ""
+    },
+    {
+      "slug": "flip-image",
+      "url": "/flip-image/",
+      "name": "Flip Image Online",
+      "footerName": "Flip Image Online",
+      "desc": "Flip an image horizontally or vertically and download the result.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "mint"
+    },
+    {
+      "slug": "collage-maker",
+      "url": "/collage-maker/",
+      "name": "Online Collage Maker",
+      "footerName": "Online Collage Maker",
+      "desc": "Arrange multiple photos into a clean grid collage with spacing and background controls.",
+      "tags": [
+        "Image",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "crop",
+      "tone": "amber"
+    },
+    {
+      "slug": "eml-viewer",
+      "url": "/eml-viewer/",
+      "name": "EML File Viewer",
+      "footerName": "EML File Viewer",
+      "desc": "Open .eml email files locally and inspect headers, text, HTML and attachment names.",
+      "tags": [
+        "Mail",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "link",
+      "tone": ""
+    },
+    {
+      "slug": "mailto-link-generator",
+      "url": "/mailto-link-generator/",
+      "name": "Mailto Link Generator",
+      "footerName": "Mailto Link Generator",
+      "desc": "Build a mailto link with recipients, subject and a pre-filled message.",
+      "tags": [
+        "Mail",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "link",
+      "tone": "mint"
+    },
+    {
+      "slug": "utf8-encoder-decoder",
+      "url": "/utf8-encoder-decoder/",
+      "name": "UTF-8 Encoder and Decoder",
+      "footerName": "UTF-8 Encoder and Decoder",
+      "desc": "Convert text to UTF-8 bytes or decode UTF-8 byte values back to text.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": ""
+    },
+    {
+      "slug": "utf8-byte-counter",
+      "url": "/utf8-byte-counter/",
+      "name": "UTF-8 Byte Counter",
+      "footerName": "UTF-8 Byte Counter",
+      "desc": "Count Unicode characters, code points and exact UTF-8 byte length.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "add-text-to-lines",
+      "url": "/add-text-to-lines/",
+      "name": "Add Text to Each Line",
+      "footerName": "Add Text to Each Line",
+      "desc": "Add a prefix, suffix or line number to every line in a block of text.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "amber"
+    },
+    {
+      "slug": "filter-lines",
+      "url": "/filter-lines/",
+      "name": "Filter Lines Online",
+      "footerName": "Filter Lines Online",
+      "desc": "Keep or remove lines using contains, starts-with, ends-with or regular-expression rules.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "rose"
+    },
+    {
+      "slug": "repeat-text",
+      "url": "/repeat-text/",
+      "name": "Repeat Text Online",
+      "footerName": "Repeat Text Online",
+      "desc": "Repeat a word, sentence or paragraph a set number of times with a custom separator.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": ""
+    },
+    {
+      "slug": "simple-text-editor",
+      "url": "/simple-text-editor/",
+      "name": "Simple Online Text Editor",
+      "footerName": "Simple Online Text Editor",
+      "desc": "Write and clean text with live word, character, sentence and reading-time statistics.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "number-to-words",
+      "url": "/number-to-words/",
+      "name": "Number to Words Converter",
+      "footerName": "Number to Words Converter",
+      "desc": "Convert whole numbers into English words, including large values and optional currency.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "amber"
+    },
+    {
+      "slug": "markdown-editor",
+      "url": "/markdown-editor/",
+      "name": "Markdown Editor",
+      "footerName": "Markdown Editor",
+      "desc": "Write Markdown with a live, sanitised HTML preview and export the rendered HTML.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "rose"
+    },
+    {
+      "slug": "random-letter-generator",
+      "url": "/random-letter-generator/",
+      "name": "Random Letter Generator",
+      "footerName": "Random Letter Generator",
+      "desc": "Generate random letters with optional vowels and uppercase styling.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": ""
+    },
+    {
+      "slug": "random-emoji-generator",
+      "url": "/random-emoji-generator/",
+      "name": "Random Emoji Generator",
+      "footerName": "Random Emoji Generator",
+      "desc": "Pick random emoji from faces, animals, food, nature, objects and symbols.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "list-randomizer",
+      "url": "/list-randomizer/",
+      "name": "List Randomizer",
+      "footerName": "List Randomizer",
+      "desc": "Shuffle a list or pick random items with optional duplicate prevention.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "amber"
+    },
+    {
+      "slug": "random-group-generator",
+      "url": "/random-group-generator/",
+      "name": "Random Group Generator",
+      "footerName": "Random Group Generator",
+      "desc": "Split names into balanced random groups.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "rose"
+    },
+    {
+      "slug": "random-word-generator",
+      "url": "/random-word-generator/",
+      "name": "Random Word Generator",
+      "footerName": "Random Word Generator",
+      "desc": "Generate random English words for writing prompts, games and brainstorming.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": ""
+    },
+    {
+      "slug": "zalgo-text-generator",
+      "url": "/zalgo-text-generator/",
+      "name": "Zalgo Text Generator",
+      "footerName": "Zalgo Text Generator",
+      "desc": "Add chaotic combining marks to text with adjustable intensity.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "cursed-text-generator",
+      "url": "/cursed-text-generator/",
+      "name": "Cursed Text Generator",
+      "footerName": "Cursed Text Generator",
+      "desc": "Create unsettling cursed text with dense combining characters.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "amber"
+    },
+    {
+      "slug": "glitch-text-generator",
+      "url": "/glitch-text-generator/",
+      "name": "Glitch Text Generator",
+      "footerName": "Glitch Text Generator",
+      "desc": "Create glitch-style Unicode text by mixing look-alike characters.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "rose"
+    },
+    {
+      "slug": "duplicate-word-finder",
+      "url": "/duplicate-word-finder/",
+      "name": "Duplicate Word Finder",
+      "footerName": "Duplicate Word Finder",
+      "desc": "Find repeated words in text, with counts and case-sensitive matching.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": ""
+    },
+    {
+      "slug": "morse-code-translator",
+      "url": "/morse-code-translator/",
+      "name": "Morse Code Translator",
+      "footerName": "Morse Code Translator",
+      "desc": "Translate text to Morse code or Morse code back to text.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "morse-code-practice",
+      "url": "/morse-code-practice/",
+      "name": "Morse Code Practice",
+      "footerName": "Morse Code Practice",
+      "desc": "Practise Morse code with random words, sound playback and a reveal button.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "amber"
+    },
+    {
+      "slug": "acronym-generator",
+      "url": "/acronym-generator/",
+      "name": "Acronym Generator and Expander",
+      "footerName": "Acronym Generator and Expander",
+      "desc": "Create an acronym from a phrase or brainstorm expansions for an acronym.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "rose"
+    },
+    {
+      "slug": "spelling-bee-solver",
+      "url": "/spelling-bee-solver/",
+      "name": "Spelling Bee Solver",
+      "footerName": "Spelling Bee Solver",
+      "desc": "Find valid words from seven letters and an optional required centre letter.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": ""
+    },
+    {
+      "slug": "wingdings-translator",
+      "url": "/wingdings-translator/",
+      "name": "Wingdings Translator",
+      "footerName": "Wingdings Translator",
+      "desc": "Convert text to Wingdings symbols or map Wingdings symbols back to letters.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "invisible-character-generator",
+      "url": "/invisible-character-generator/",
+      "name": "Invisible Character Generator",
+      "footerName": "Invisible Character Generator",
+      "desc": "Add zero-width or invisible Unicode characters to text for usernames and formatting.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "amber"
+    },
+    {
+      "slug": "small-text-generator",
+      "url": "/small-text-generator/",
+      "name": "Small Text Generator",
+      "footerName": "Small Text Generator",
+      "desc": "Convert normal text into small superscript, subscript or full-width Unicode.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "rose"
+    },
+    {
+      "slug": "cursive-text-generator",
+      "url": "/cursive-text-generator/",
+      "name": "Cursive Text Generator",
+      "footerName": "Cursive Text Generator",
+      "desc": "Transform text into Unicode mathematical script for stylish captions and bios.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": ""
+    },
+    {
+      "slug": "upside-down-text",
+      "url": "/upside-down-text/",
+      "name": "Upside Down Text Generator",
+      "footerName": "Upside Down Text Generator",
+      "desc": "Flip and rotate text into upside-down Unicode.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "mint"
+    },
+    {
+      "slug": "strikethrough-text",
+      "url": "/strikethrough-text/",
+      "name": "Strikethrough Text Generator",
+      "footerName": "Strikethrough Text Generator",
+      "desc": "Add Unicode strikethrough styling to text for social posts and messages.",
+      "tags": [
+        "Text",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "text",
+      "tone": "amber"
+    },
+    {
+      "slug": "video-to-step-guide",
+      "url": "/video-to-step-guide/",
+      "name": "Video to Step-by-Step Guide",
+      "footerName": "Video to Step-by-Step Guide",
+      "desc": "Extract frames at fixed intervals and build an editable step-by-step guide from a video.",
+      "tags": [
+        "Video & Audio",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "film",
+      "tone": ""
+    },
+    {
+      "slug": "webcam-mirror",
+      "url": "/webcam-mirror/",
+      "name": "Webcam Mirror Online",
+      "footerName": "Webcam Mirror Online",
+      "desc": "Mirror your webcam in the browser, flip the view and save a snapshot.",
+      "tags": [
+        "Video & Audio",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "film",
+      "tone": "mint"
+    },
+    {
+      "slug": "online-audio-recorder",
+      "url": "/online-audio-recorder/",
+      "name": "Online Audio Recorder",
+      "footerName": "Online Audio Recorder",
+      "desc": "Record microphone audio, replay it and download the recording.",
+      "tags": [
+        "Video & Audio",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "film",
+      "tone": "amber"
+    },
+    {
+      "slug": "roman-numeral-date",
+      "url": "/roman-numeral-date/",
+      "name": "Roman Numeral Date Converter",
+      "footerName": "Roman Numeral Date Converter",
+      "desc": "Convert a calendar date to Roman numerals or a Roman date back to calendar form.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": ""
+    },
+    {
+      "slug": "document-to-markdown",
+      "url": "/document-to-markdown/",
+      "name": "Document to Markdown Converter",
+      "footerName": "Document to Markdown Converter",
+      "desc": "Convert DOCX, HTML or plain text documents into clean Markdown.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": "mint"
+    },
+    {
+      "slug": "pdf-to-markdown",
+      "url": "/pdf-to-markdown/",
+      "name": "PDF to Markdown Converter",
+      "footerName": "PDF to Markdown Converter",
+      "desc": "Extract text from a PDF and structure it into Markdown headings and paragraphs.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": "amber"
+    },
+    {
+      "slug": "word-to-markdown",
+      "url": "/word-to-markdown/",
+      "name": "Word to Markdown Converter",
+      "footerName": "Word to Markdown Converter",
+      "desc": "Convert Word DOCX files to Markdown while preserving headings, lists, links and tables.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": "rose"
+    },
+    {
+      "slug": "excel-to-markdown",
+      "url": "/excel-to-markdown/",
+      "name": "Excel to Markdown Table Converter",
+      "footerName": "Excel to Markdown Table Converter",
+      "desc": "Convert the first sheet of an XLSX workbook into a Markdown table.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": ""
+    },
+    {
+      "slug": "scanned-pdf",
+      "url": "/scanned-pdf/",
+      "name": "Make PDF Look Scanned Online",
+      "footerName": "Make PDF Look Scanned Online",
+      "desc": "Render PDF pages into image-only PDF pages with optional grayscale, rotation and noise.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": "mint"
+    },
+    {
+      "slug": "number-to-roman",
+      "url": "/number-to-roman/",
+      "name": "Number to Roman Numerals",
+      "footerName": "Number to Roman Numerals",
+      "desc": "Convert whole numbers from 1 to 3,999,999 into Roman numerals.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": "amber"
+    },
+    {
+      "slug": "binary-translator",
+      "url": "/binary-translator/",
+      "name": "Binary Translator",
+      "footerName": "Binary Translator",
+      "desc": "Translate text to binary or binary back to text using UTF-8.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": "rose"
+    },
+    {
+      "slug": "avif-to-png",
+      "url": "/avif-to-png/",
+      "name": "AVIF to PNG Converter",
+      "footerName": "AVIF to PNG Converter",
+      "desc": "Decode AVIF images in your browser and download a lossless PNG.",
+      "tags": [
+        "Converters",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "swap",
+      "tone": ""
+    },
+    {
+      "slug": "calendar-link-generator",
+      "url": "/calendar-link-generator/",
+      "name": "Add to Calendar Link Generator",
+      "footerName": "Add to Calendar Link Generator",
+      "desc": "Create Google Calendar, Outlook and Yahoo links plus a downloadable ICS file.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": ""
+    },
+    {
+      "slug": "spin-the-wheel",
+      "url": "/spin-the-wheel/",
+      "name": "Spin the Wheel",
+      "footerName": "Spin the Wheel",
+      "desc": "Add choices to a colourful wheel and spin for a random result.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "mint"
+    },
+    {
+      "slug": "name-wheel",
+      "url": "/name-wheel/",
+      "name": "Name Wheel",
+      "footerName": "Name Wheel",
+      "desc": "Pick a random name from a list with an interactive spinning wheel.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "amber"
+    },
+    {
+      "slug": "yes-no-wheel",
+      "url": "/yes-no-wheel/",
+      "name": "Yes or No Wheel",
+      "footerName": "Yes or No Wheel",
+      "desc": "Let a simple yes/no wheel make a decision.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "rose"
+    },
+    {
+      "slug": "random-number-wheel",
+      "url": "/random-number-wheel/",
+      "name": "Random Number Wheel",
+      "footerName": "Random Number Wheel",
+      "desc": "Spin a wheel to pick a random number inside your chosen range.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": ""
+    },
+    {
+      "slug": "cross-sum-calculator",
+      "url": "/cross-sum-calculator/",
+      "name": "Cross Sum Calculator",
+      "footerName": "Cross Sum Calculator",
+      "desc": "Calculate the digit sum and digital root of any whole number.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "mint"
+    },
+    {
+      "slug": "vanity-number-calculator",
+      "url": "/vanity-number-calculator/",
+      "name": "Vanity Number Calculator",
+      "footerName": "Vanity Number Calculator",
+      "desc": "Find memorable phone words from a number using the standard keypad mapping.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "amber"
+    },
+    {
+      "slug": "date-countdown",
+      "url": "/date-countdown/",
+      "name": "Date Countdown Calculator",
+      "footerName": "Date Countdown Calculator",
+      "desc": "Count down to an important date with a live days, hours, minutes and seconds display.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "rose"
+    },
+    {
+      "slug": "date-range-calculator",
+      "url": "/date-range-calculator/",
+      "name": "Date Range Calculator",
+      "footerName": "Date Range Calculator",
+      "desc": "Calculate the number of days, weeks and weekends between two dates.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": ""
+    },
+    {
+      "slug": "work-hours-calculator",
+      "url": "/work-hours-calculator/",
+      "name": "Work Hours Calculator",
+      "footerName": "Work Hours Calculator",
+      "desc": "Calculate paid work hours after breaks and show the total in decimal hours.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "mint"
+    },
+    {
+      "slug": "click-counter",
+      "url": "/click-counter/",
+      "name": "Click Counter",
+      "footerName": "Click Counter",
+      "desc": "Count clicks with a large button, keyboard support and local saving.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "amber"
+    },
+    {
+      "slug": "analog-clock",
+      "url": "/analog-clock/",
+      "name": "Interactive Analog Clock",
+      "footerName": "Interactive Analog Clock",
+      "desc": "A clean live analog clock with local time and a digital readout.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "rose"
+    },
+    {
+      "slug": "habit-tracker",
+      "url": "/habit-tracker/",
+      "name": "Habit Tracker and Streak Counter",
+      "footerName": "Habit Tracker and Streak Counter",
+      "desc": "Track daily habits for the week and keep streaks saved in your browser.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": ""
+    },
+    {
+      "slug": "checklist-manager",
+      "url": "/checklist-manager/",
+      "name": "Checklist Creator and Manager",
+      "footerName": "Checklist Creator and Manager",
+      "desc": "Create, complete and organise a checklist that saves automatically in your browser.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "mint"
+    },
+    {
+      "slug": "white-screen",
+      "url": "/white-screen/",
+      "name": "White Screen",
+      "footerName": "White Screen",
+      "desc": "Open a full-screen white display for testing, lighting or presentations.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "amber"
+    },
+    {
+      "slug": "black-screen",
+      "url": "/black-screen/",
+      "name": "Black Screen",
+      "footerName": "Black Screen",
+      "desc": "Open a full-screen black display for testing, lighting or presentations.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "rose"
+    },
+    {
+      "slug": "dead-pixel-test",
+      "url": "/dead-pixel-test/",
+      "name": "Dead Pixel Test",
+      "footerName": "Dead Pixel Test",
+      "desc": "Cycle through solid colours to find stuck or dead pixels on your display.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": ""
+    },
+    {
+      "slug": "flip-a-coin",
+      "url": "/flip-a-coin/",
+      "name": "Flip a Coin",
+      "footerName": "Flip a Coin",
+      "desc": "Flip a virtual coin for a quick heads-or-tails decision.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "mint"
+    },
+    {
+      "slug": "secret-santa",
+      "url": "/secret-santa/",
+      "name": "Secret Santa Generator",
+      "footerName": "Secret Santa Generator",
+      "desc": "Create random Secret Santa assignments while avoiding excluded pairs.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "amber"
+    },
+    {
+      "slug": "minecraft-circle-generator",
+      "url": "/minecraft-circle-generator/",
+      "name": "Minecraft Circle Generator",
+      "footerName": "Minecraft Circle Generator",
+      "desc": "Generate a pixel-perfect Minecraft circle template with block coordinates.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "rose"
+    },
+    {
+      "slug": "pictionary-words",
+      "url": "/pictionary-words/",
+      "name": "Pictionary Word Generator",
+      "footerName": "Pictionary Word Generator",
+      "desc": "Generate drawing prompts by category and difficulty.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": ""
+    },
+    {
+      "slug": "charades-generator",
+      "url": "/charades-generator/",
+      "name": "Charades Generator",
+      "footerName": "Charades Generator",
+      "desc": "Get random charades prompts for parties, classrooms and team games.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "mint"
+    },
+    {
+      "slug": "random-animal",
+      "url": "/random-animal/",
+      "name": "Random Animal Generator",
+      "footerName": "Random Animal Generator",
+      "desc": "Discover random animals with a short fact about each one.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "amber"
+    },
+    {
+      "slug": "random-country",
+      "url": "/random-country/",
+      "name": "Random Country Generator",
+      "footerName": "Random Country Generator",
+      "desc": "Pick random countries with their capital, region and official language.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "rose"
+    },
+    {
+      "slug": "random-object",
+      "url": "/random-object/",
+      "name": "Random Object Generator",
+      "footerName": "Random Object Generator",
+      "desc": "Generate random everyday objects for drawing, games and creative prompts.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": ""
+    },
+    {
+      "slug": "random-team-generator",
+      "url": "/random-team-generator/",
+      "name": "Random Team Generator",
+      "footerName": "Random Team Generator",
+      "desc": "Split a list of players into balanced teams with optional team names.",
+      "tags": [
+        "Misc",
+        "No upload",
+        "Browser-based"
+      ],
+      "icon": "clock",
+      "tone": "mint"
     }
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Simple Online Text Editor - ReelFlow Toolkit",
+  "description": "Write and clean text with live word, character, sentence and reading-time statistics.",
+  "ogTitle": "Simple Online Text Editor",
+  "ogDescription": "Write and clean text with live word, character, sentence and reading-time statistics.",
+  "ldDescription": "Write and clean text with live word, character, sentence and reading-time statistics.",
+  "breadcrumb": "Simple Online Text Editor",
+  "kicker": "Text tool",
+  "h1": "Simple Online Text Editor",
+  "lede": "Write and clean text with live word, character, sentence and reading-time statistics.",
+  "faq": [
+    {
+      "q": "Is Simple Online Text Editor free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

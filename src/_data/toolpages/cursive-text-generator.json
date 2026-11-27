@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Cursive Text Generator - ReelFlow Toolkit",
+  "description": "Transform text into Unicode mathematical script for stylish captions and bios.",
+  "ogTitle": "Cursive Text Generator",
+  "ogDescription": "Transform text into Unicode mathematical script for stylish captions and bios.",
+  "ldDescription": "Transform text into Unicode mathematical script for stylish captions and bios.",
+  "breadcrumb": "Cursive Text Generator",
+  "kicker": "Text tool",
+  "h1": "Cursive Text Generator",
+  "lede": "Transform text into Unicode mathematical script for stylish captions and bios.",
+  "faq": [
+    {
+      "q": "Is Cursive Text Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

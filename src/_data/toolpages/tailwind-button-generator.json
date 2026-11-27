@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Tailwind CSS Button Generator - ReelFlow Toolkit",
+  "description": "Style a production-ready button with live preview and copyable Tailwind or CSS.",
+  "ogTitle": "Tailwind CSS Button Generator",
+  "ogDescription": "Style a production-ready button with live preview and copyable Tailwind or CSS.",
+  "ldDescription": "Style a production-ready button with live preview and copyable Tailwind or CSS.",
+  "breadcrumb": "Tailwind CSS Button Generator",
+  "kicker": "Tailwind tool",
+  "h1": "Tailwind CSS Button Generator",
+  "lede": "Style a production-ready button with live preview and copyable Tailwind or CSS.",
+  "faq": [
+    {
+      "q": "Is Tailwind CSS Button Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "color-contrast-checker",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

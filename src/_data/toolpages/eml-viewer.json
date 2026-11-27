@@ -1,0 +1,41 @@
+{
+  "metaTitle": "EML File Viewer - ReelFlow Toolkit",
+  "description": "Open .eml email files locally and inspect headers, text, HTML and attachment names.",
+  "ogTitle": "EML File Viewer",
+  "ogDescription": "Open .eml email files locally and inspect headers, text, HTML and attachment names.",
+  "ldDescription": "Open .eml email files locally and inspect headers, text, HTML and attachment names.",
+  "breadcrumb": "EML File Viewer",
+  "kicker": "Mail tool",
+  "h1": "EML File Viewer",
+  "lede": "Open .eml email files locally and inspect headers, text, HTML and attachment names.",
+  "faq": [
+    {
+      "q": "Is EML File Viewer free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-resizer",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Image tool"
+    }
+  ]
+}

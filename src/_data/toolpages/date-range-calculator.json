@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Date Range Calculator - ReelFlow Toolkit",
+  "description": "Calculate the number of days, weeks and weekends between two dates.",
+  "ogTitle": "Date Range Calculator",
+  "ogDescription": "Calculate the number of days, weeks and weekends between two dates.",
+  "ldDescription": "Calculate the number of days, weeks and weekends between two dates.",
+  "breadcrumb": "Date Range Calculator",
+  "kicker": "Misc tool",
+  "h1": "Date Range Calculator",
+  "lede": "Calculate the number of days, weeks and weekends between two dates.",
+  "faq": [
+    {
+      "q": "Is Date Range Calculator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

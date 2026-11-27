@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Webcam Mirror Online - ReelFlow Toolkit",
+  "description": "Mirror your webcam in the browser, flip the view and save a snapshot.",
+  "ogTitle": "Webcam Mirror Online",
+  "ogDescription": "Mirror your webcam in the browser, flip the view and save a snapshot.",
+  "ldDescription": "Mirror your webcam in the browser, flip the view and save a snapshot.",
+  "breadcrumb": "Webcam Mirror Online",
+  "kicker": "Video & Audio tool",
+  "h1": "Webcam Mirror Online",
+  "lede": "Mirror your webcam in the browser, flip the view and save a snapshot.",
+  "faq": [
+    {
+      "q": "Is Webcam Mirror Online free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "video-trimmer",
+      "letter": "V",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "video-to-gif",
+      "letter": "V",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "audio-extractor",
+      "letter": "A",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

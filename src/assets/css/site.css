@@ -643,6 +643,69 @@ body.has-consent { padding-bottom: 84px; }
   background: #fff; border: 1px solid #b9cdf7; color: var(--accent-ink);
   font-size: 11px; font-weight: 650; vertical-align: 1px;
 }
+
+/* Config-driven utility tools */
+.utility-workspace { align-items: stretch; }
+.utility-result {
+  min-height: 300px; border: 1px solid var(--line); border-radius: 12px;
+  background: #fff; padding: 14px; display: grid; align-items: start; gap: 12px;
+  overflow: auto;
+}
+.utility-text {
+  margin: 0; white-space: pre-wrap; overflow-wrap: anywhere;
+  font-family: var(--mono); font-size: 12.5px; line-height: 1.6; color: #1e293b;
+}
+.utility-preview { min-height: 240px; display: grid; place-items: center; gap: 12px; width: 100%; }
+.utility-preview > * { max-width: 100%; }
+.utility-result canvas { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 12px rgba(16,24,40,.14); }
+.utility-swatch { width: 100%; min-height: 180px; border-radius: 12px; border: 1px solid var(--line); box-shadow: inset 0 1px 0 rgba(255,255,255,.4); }
+.utility-list { display: grid; gap: 8px; width: 100%; }
+.utility-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fff;
+}
+.utility-item b { font-size: 13.5px; }
+.utility-item small { color: var(--muted); font-size: 12px; }
+.utility-chip { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; background: #fff; font-size: 12.5px; }
+.utility-chip i { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(15,23,42,.12); }
+.utility-code { background: #0b1220; color: #e6edf7; border-radius: 10px; padding: 12px; font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow-wrap: anywhere; width: 100%; }
+.utility-button-preview { padding: 18px 24px; border-radius: 12px; font-weight: 700; }
+.utility-card-preview { width: min(100%, 320px); padding: 22px; border-radius: 16px; }
+.utility-card-preview h3 { font-size: 18px; margin-bottom: 8px; }
+.utility-card-preview p { font-size: 13px; opacity: .78; }
+.check-row { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 650; margin: 4px 0 14px; }
+.check-row input { width: 17px; height: 17px; accent-color: var(--accent); }
+.keycap {
+  display: inline-grid; place-items: center; min-width: 42px; height: 42px; padding: 0 12px;
+  border: 1px solid #cbd5e1; border-bottom-width: 4px; border-radius: 9px;
+  background: linear-gradient(#fff, #f1f5f9); color: #0f172a; font-weight: 700; font-size: 14px;
+  box-shadow: 0 2px 4px rgba(15,23,42,.08);
+}
+.wheel-wrap { display: grid; place-items: center; gap: 12px; width: 100%; }
+.wheel-wrap canvas { border-radius: 50%; box-shadow: 0 14px 30px -14px rgba(37,99,235,.55); }
+.screen-stage { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; }
+.screen-stage button { position: fixed; right: 18px; bottom: 18px; z-index: 101; }
+.full-white { background: #fff; }
+.full-black { background: #000; }
+.clock-wrap { display: grid; place-items: center; }
+.habit-grid { display: grid; grid-template-columns: minmax(150px, 1fr) repeat(7, 34px); gap: 6px; align-items: center; width: 100%; overflow-x: auto; }
+.habit-grid > * { min-width: 0; }
+.habit-day { font-size: 11px; color: var(--muted); text-align: center; }
+.habit-check { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--line); background: #fff; color: var(--muted); }
+.habit-check.on { background: var(--mint); border-color: #a7e3cb; color: #047857; font-weight: 800; }
+.checklist-row { display: flex; gap: 8px; align-items: center; margin-bottom: 7px; }
+.checklist-row input[type="text"] { flex: 1; }
+.checklist-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); }
+.media-preview { width: 100%; max-height: 360px; border-radius: 10px; background: #0b1220; }
+.step-list { display: grid; gap: 8px; width: 100%; }
+.step-row { display: grid; grid-template-columns: 84px 1fr; gap: 8px; }
+.step-row .input { font-family: var(--mono); font-size: 12px; }
+@media (max-width: 560px) {
+  .utility-result { min-height: 240px; padding: 10px; }
+  .habit-grid { grid-template-columns: minmax(120px, 1fr) repeat(7, 30px); }
+  .step-row { grid-template-columns: 70px 1fr; }
+}
+
 .post-faq { margin-top: 36px; }
 .post-faq h2 { font-size: 22px; margin: 0 0 12px; }
 .post-faq details {

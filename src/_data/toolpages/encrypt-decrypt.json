@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Encrypt and Decrypt Text - ReelFlow Toolkit",
+  "description": "Encrypt text with a password using AES-GCM and PBKDF2, entirely in your browser.",
+  "ogTitle": "Encrypt and Decrypt Text",
+  "ogDescription": "Encrypt text with a password using AES-GCM and PBKDF2, entirely in your browser.",
+  "ldDescription": "Encrypt text with a password using AES-GCM and PBKDF2, entirely in your browser.",
+  "breadcrumb": "Encrypt and Decrypt Text",
+  "kicker": "Developer tool",
+  "h1": "Encrypt and Decrypt Text",
+  "lede": "Encrypt text with a password using AES-GCM and PBKDF2, entirely in your browser.",
+  "faq": [
+    {
+      "q": "Is Encrypt and Decrypt Text free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "utm-link-builder",
+      "letter": "U",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

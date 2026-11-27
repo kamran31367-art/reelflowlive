@@ -1,0 +1,99 @@
+{% set c = toolpages[contentKey] %}
+{% set u = utilityTools[contentKey] %}
+{% set t = toolList | toolBySlug(contentKey) %}
+{% from "partials/icons.njk" import icon %}
+<div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
+
+<section class="tool-hero">
+  <div class="hero-row">
+    <span class="icon-tile icon-hero {{ t.tone }}" aria-hidden="true">{{ icon(t.icon) }}</span>
+    <div class="hero-copy">
+      <span class="kicker">{{ c.kicker }}</span>
+      <h1>{{ c.h1 }}</h1>
+      <p>{{ c.lede }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="workspace utility-workspace" id="utilityTool" data-engine="{{ u.engine }}">
+  <div class="pane">
+    <div class="pane-head"><h2>{{ u.inputTitle or "Input" }}</h2><span class="hint">{{ u.inputHint or "Runs in your browser" }}</span></div>
+
+    {% for field in u.fields %}
+    <div class="field"{% if field.width %} style="flex:{{ field.width }}"{% endif %}>
+      {% if field.type == "file" %}
+      <span class="field-label">{{ field.label }}</span>
+      <div class="dropzone" id="{{ field.id }}Drop" tabindex="0" role="button">
+        <div class="dz-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        </div>
+        <b>Drop a file here or click to choose</b>
+        <span class="mini">{{ field.hint or field.accept or "Choose a file" }}</span>
+      </div>
+      <input class="visually-hidden" id="{{ field.id }}" type="file" accept="{{ field.accept or "" }}"{% if field.multiple %} multiple{% endif %} aria-label="{{ field.label }}">
+      {% elif field.type == "textarea" %}
+      <label for="{{ field.id }}">{{ field.label }}</label>
+      <textarea class="textarea" id="{{ field.id }}" rows="{{ field.rows or 5 }}" placeholder="{{ field.placeholder or "" }}"{% if field.spellcheck == false %} spellcheck="false"{% endif %}>{{ field.value if field.value is defined else "" }}</textarea>
+      {% elif field.type == "select" %}
+      <label for="{{ field.id }}">{{ field.label }}</label>
+      <select class="select" id="{{ field.id }}">
+        {% for option in field.options %}<option value="{{ option.value }}"{% if option.value == field.value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
+      </select>
+      {% elif field.type == "checkbox" %}
+      <label class="check-row" for="{{ field.id }}"><input id="{{ field.id }}" type="checkbox"{% if field.value %} checked{% endif %}><span>{{ field.label }}</span></label>
+      {% elif field.type == "range" %}
+      <label for="{{ field.id }}">{{ field.label }}</label>
+      <div class="range-row">
+        <input id="{{ field.id }}" type="range" min="{{ field.min }}" max="{{ field.max }}" step="{{ field.step or 1 }}" value="{{ field.value }}">
+        <output id="{{ field.id }}Value">{{ field.value }}</output>
+      </div>
+      {% else %}
+      <label for="{{ field.id }}">{{ field.label }}</label>
+      <input class="input" id="{{ field.id }}" type="{{ field.type or "text" }}" value="{{ field.value if field.value is defined else "" }}"{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %}{% if field.min != null %} min="{{ field.min }}"{% endif %}{% if field.max != null %} max="{{ field.max }}"{% endif %}{% if field.step != null %} step="{{ field.step }}"{% endif %}>
+      {% endif %}
+      {% if field.help %}<p class="field-hint">{{ field.help }}</p>{% endif %}
+    </div>
+    {% endfor %}
+
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="utilityRun" type="button">{{ u.actionLabel or "Generate" }}</button>
+      <button class="btn btn-ghost" id="utilityReset" type="button">Reset</button>
+    </div>
+    {% if u.note %}<div class="note"><span class="pin">i</span><span>{{ u.note }}</span></div>{% endif %}
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h2>{{ u.outputTitle or "Result" }}</h2><span class="hint" id="utilityStatus">Ready</span></div>
+    <div class="utility-result" id="utilityResult">
+      <div class="utility-preview" id="utilityPreview" hidden></div>
+      <canvas id="utilityCanvas" hidden></canvas>
+      <pre class="utility-text" id="utilityText" tabindex="0">{{ u.placeholder or "Your result will appear here." }}</pre>
+      <span class="canvas-empty" id="utilityEmpty">{{ u.emptyText or "Add your input to see the result." }}</span>
+    </div>
+    <div class="split-actions" style="margin-top:14px">
+      <button class="btn btn-primary" id="utilityDownload" type="button" disabled>Download</button>
+      <button class="btn btn-ghost" id="utilityCopy" type="button" disabled>Copy</button>
+    </div>
+    {% if u.outputNote %}<div class="note"><span class="pin">i</span><span>{{ u.outputNote }}</span></div>{% endif %}
+  </div>
+</section>
+
+<script src="/assets/js/vendor/utility-vendor.js"></script>
+{% if u.needsGif %}<script src="/assets/js/vendor/gif/gif.js"></script>{% endif %}
+{% if u.needsPdf %}<script src="/assets/js/vendor/pdfjs/pdf.min.js"></script>{% endif %}
+{% if u.needsPdfLib %}<script src="/assets/js/vendor/pdf-lib.min.js"></script>{% endif %}
+{% if u.needsWords %}<script src="/assets/js/vendor/words.js"></script>{% endif %}
+<script type="application/json" id="utilityConfig">{{ u | dump | safe }}</script>
+
+{% include "partials/support.njk" %}
+
+<section class="below">
+  <aside class="aside">
+    <h2>Next tools</h2>
+    <div class="related">
+      {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ icon(rt.icon) }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      {% endfor %}
+    </div>
+  </aside>
+</section>

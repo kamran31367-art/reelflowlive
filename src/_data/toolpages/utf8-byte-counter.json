@@ -1,0 +1,41 @@
+{
+  "metaTitle": "UTF-8 Byte Counter - ReelFlow Toolkit",
+  "description": "Count Unicode characters, code points and exact UTF-8 byte length.",
+  "ogTitle": "UTF-8 Byte Counter",
+  "ogDescription": "Count Unicode characters, code points and exact UTF-8 byte length.",
+  "ldDescription": "Count Unicode characters, code points and exact UTF-8 byte length.",
+  "breadcrumb": "UTF-8 Byte Counter",
+  "kicker": "Text tool",
+  "h1": "UTF-8 Byte Counter",
+  "lede": "Count Unicode characters, code points and exact UTF-8 byte length.",
+  "faq": [
+    {
+      "q": "Is UTF-8 Byte Counter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

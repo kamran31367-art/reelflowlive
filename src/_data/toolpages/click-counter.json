@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Click Counter - ReelFlow Toolkit",
+  "description": "Count clicks with a large button, keyboard support and local saving.",
+  "ogTitle": "Click Counter",
+  "ogDescription": "Count clicks with a large button, keyboard support and local saving.",
+  "ldDescription": "Count clicks with a large button, keyboard support and local saving.",
+  "breadcrumb": "Click Counter",
+  "kicker": "Misc tool",
+  "h1": "Click Counter",
+  "lede": "Count clicks with a large button, keyboard support and local saving.",
+  "faq": [
+    {
+      "q": "Is Click Counter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Add to Calendar Link Generator - ReelFlow Toolkit",
+  "description": "Create Google Calendar, Outlook and Yahoo links plus a downloadable ICS file.",
+  "ogTitle": "Add to Calendar Link Generator",
+  "ogDescription": "Create Google Calendar, Outlook and Yahoo links plus a downloadable ICS file.",
+  "ldDescription": "Create Google Calendar, Outlook and Yahoo links plus a downloadable ICS file.",
+  "breadcrumb": "Add to Calendar Link Generator",
+  "kicker": "Misc tool",
+  "h1": "Add to Calendar Link Generator",
+  "lede": "Create Google Calendar, Outlook and Yahoo links plus a downloadable ICS file.",
+  "faq": [
+    {
+      "q": "Is Add to Calendar Link Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

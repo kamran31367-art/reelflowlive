@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Number to Words Converter - ReelFlow Toolkit",
+  "description": "Convert whole numbers into English words, including large values and optional currency.",
+  "ogTitle": "Number to Words Converter",
+  "ogDescription": "Convert whole numbers into English words, including large values and optional currency.",
+  "ldDescription": "Convert whole numbers into English words, including large values and optional currency.",
+  "breadcrumb": "Number to Words Converter",
+  "kicker": "Text tool",
+  "h1": "Number to Words Converter",
+  "lede": "Convert whole numbers into English words, including large values and optional currency.",
+  "faq": [
+    {
+      "q": "Is Number to Words Converter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

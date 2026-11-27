@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Tailwind Flexbox Generator - ReelFlow Toolkit",
+  "description": "Build flex layouts visually and copy exact Tailwind classes for direction, alignment and wrapping.",
+  "ogTitle": "Tailwind Flexbox Generator",
+  "ogDescription": "Build flex layouts visually and copy exact Tailwind classes for direction, alignment and wrapping.",
+  "ldDescription": "Build flex layouts visually and copy exact Tailwind classes for direction, alignment and wrapping.",
+  "breadcrumb": "Tailwind Flexbox Generator",
+  "kicker": "Tailwind tool",
+  "h1": "Tailwind Flexbox Generator",
+  "lede": "Build flex layouts visually and copy exact Tailwind classes for direction, alignment and wrapping.",
+  "faq": [
+    {
+      "q": "Is Tailwind Flexbox Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "color-contrast-checker",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

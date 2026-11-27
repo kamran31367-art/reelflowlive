@@ -1,0 +1,41 @@
+{
+  "metaTitle": "PDF to Markdown Converter - ReelFlow Toolkit",
+  "description": "Extract text from a PDF and structure it into Markdown headings and paragraphs.",
+  "ogTitle": "PDF to Markdown Converter",
+  "ogDescription": "Extract text from a PDF and structure it into Markdown headings and paragraphs.",
+  "ldDescription": "Extract text from a PDF and structure it into Markdown headings and paragraphs.",
+  "breadcrumb": "PDF to Markdown Converter",
+  "kicker": "Converters tool",
+  "h1": "PDF to Markdown Converter",
+  "lede": "Extract text from a PDF and structure it into Markdown headings and paragraphs.",
+  "faq": [
+    {
+      "q": "Is PDF to Markdown Converter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "pdf-tools",
+      "letter": "P",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

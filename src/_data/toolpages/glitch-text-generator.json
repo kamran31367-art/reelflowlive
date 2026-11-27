@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Glitch Text Generator - ReelFlow Toolkit",
+  "description": "Create glitch-style Unicode text by mixing look-alike characters.",
+  "ogTitle": "Glitch Text Generator",
+  "ogDescription": "Create glitch-style Unicode text by mixing look-alike characters.",
+  "ldDescription": "Create glitch-style Unicode text by mixing look-alike characters.",
+  "breadcrumb": "Glitch Text Generator",
+  "kicker": "Text tool",
+  "h1": "Glitch Text Generator",
+  "lede": "Create glitch-style Unicode text by mixing look-alike characters.",
+  "faq": [
+    {
+      "q": "Is Glitch Text Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

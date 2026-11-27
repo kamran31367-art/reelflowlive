@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Binary Translator - ReelFlow Toolkit",
+  "description": "Translate text to binary or binary back to text using UTF-8.",
+  "ogTitle": "Binary Translator",
+  "ogDescription": "Translate text to binary or binary back to text using UTF-8.",
+  "ldDescription": "Translate text to binary or binary back to text using UTF-8.",
+  "breadcrumb": "Binary Translator",
+  "kicker": "Converters tool",
+  "h1": "Binary Translator",
+  "lede": "Translate text to binary or binary back to text using UTF-8.",
+  "faq": [
+    {
+      "q": "Is Binary Translator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "pdf-tools",
+      "letter": "P",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

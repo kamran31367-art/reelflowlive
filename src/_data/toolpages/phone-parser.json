@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Phone Parser and Formatter - ReelFlow Toolkit",
+  "description": "Parse international phone numbers and format them in E.164, national and international styles.",
+  "ogTitle": "Phone Parser and Formatter",
+  "ogDescription": "Parse international phone numbers and format them in E.164, national and international styles.",
+  "ldDescription": "Parse international phone numbers and format them in E.164, national and international styles.",
+  "breadcrumb": "Phone Parser and Formatter",
+  "kicker": "Developer tool",
+  "h1": "Phone Parser and Formatter",
+  "lede": "Parse international phone numbers and format them in E.164, national and international styles.",
+  "faq": [
+    {
+      "q": "Is Phone Parser and Formatter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "utm-link-builder",
+      "letter": "U",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

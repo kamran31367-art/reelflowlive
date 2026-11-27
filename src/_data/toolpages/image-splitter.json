@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Image Splitter - ReelFlow Toolkit",
+  "description": "Split an image into a grid of tiles and download every tile in one ZIP.",
+  "ogTitle": "Image Splitter",
+  "ogDescription": "Split an image into a grid of tiles and download every tile in one ZIP.",
+  "ldDescription": "Split an image into a grid of tiles and download every tile in one ZIP.",
+  "breadcrumb": "Image Splitter",
+  "kicker": "Image tool",
+  "h1": "Image Splitter",
+  "lede": "Split an image into a grid of tiles and download every tile in one ZIP.",
+  "faq": [
+    {
+      "q": "Is Image Splitter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "image-resizer",
+      "letter": "I",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-compressor",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Excel to Markdown Table Converter - ReelFlow Toolkit",
+  "description": "Convert the first sheet of an XLSX workbook into a Markdown table.",
+  "ogTitle": "Excel to Markdown Table Converter",
+  "ogDescription": "Convert the first sheet of an XLSX workbook into a Markdown table.",
+  "ldDescription": "Convert the first sheet of an XLSX workbook into a Markdown table.",
+  "breadcrumb": "Excel to Markdown Table Converter",
+  "kicker": "Converters tool",
+  "h1": "Excel to Markdown Table Converter",
+  "lede": "Convert the first sheet of an XLSX workbook into a Markdown table.",
+  "faq": [
+    {
+      "q": "Is Excel to Markdown Table Converter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "pdf-tools",
+      "letter": "P",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

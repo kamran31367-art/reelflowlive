@@ -7,22 +7,56 @@
   "ogImage": "https://reelflow.live/assets/img/og-cover.png",
   "badges": {
     "home": "Free forever",
-    "tools": "26 free tools"
+    "tools": "141 free tools"
   },
   "headerLinks": [
-    { "label": "All tools", "href": "/#tools" },
-    { "label": "Blog", "href": "/blog/" },
-    { "label": "Why free", "href": "/#why" },
-    { "label": "FAQ", "href": "/#faq" }
+    {
+      "label": "All tools",
+      "href": "/#tools"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog/"
+    },
+    {
+      "label": "Why free",
+      "href": "/#why"
+    },
+    {
+      "label": "FAQ",
+      "href": "/#faq"
+    }
   ],
   "footerLinks": [
-    { "label": "All tools", "href": "/#tools" },
-    { "label": "Blog", "href": "/blog/" },
-    { "label": "Why free", "href": "/#why" },
-    { "label": "FAQ", "href": "/#faq" },
-    { "label": "Privacy", "href": "/privacy/" },
-    { "label": "Sitemap", "href": "/sitemap.xml" },
-    { "label": "Support this site", "href": "https://asiafilm.org/4/bbe390e9563d8281e6b5bcc3bd8dd3f5", "external": true }
+    {
+      "label": "All tools",
+      "href": "/#tools"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog/"
+    },
+    {
+      "label": "Why free",
+      "href": "/#why"
+    },
+    {
+      "label": "FAQ",
+      "href": "/#faq"
+    },
+    {
+      "label": "Privacy",
+      "href": "/privacy/"
+    },
+    {
+      "label": "Sitemap",
+      "href": "/sitemap.xml"
+    },
+    {
+      "label": "Support this site",
+      "href": "https://asiafilm.org/4/bbe390e9563d8281e6b5bcc3bd8dd3f5",
+      "external": true
+    }
   ],
   "support": {
     "href": "https://asiafilm.org/4/bbe390e9563d8281e6b5bcc3bd8dd3f5",

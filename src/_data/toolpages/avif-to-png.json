@@ -1,0 +1,41 @@
+{
+  "metaTitle": "AVIF to PNG Converter - ReelFlow Toolkit",
+  "description": "Decode AVIF images in your browser and download a lossless PNG.",
+  "ogTitle": "AVIF to PNG Converter",
+  "ogDescription": "Decode AVIF images in your browser and download a lossless PNG.",
+  "ldDescription": "Decode AVIF images in your browser and download a lossless PNG.",
+  "breadcrumb": "AVIF to PNG Converter",
+  "kicker": "Converters tool",
+  "h1": "AVIF to PNG Converter",
+  "lede": "Decode AVIF images in your browser and download a lossless PNG.",
+  "faq": [
+    {
+      "q": "Is AVIF to PNG Converter free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "pdf-tools",
+      "letter": "P",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

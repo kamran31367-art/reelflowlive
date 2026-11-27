@@ -2,14 +2,25 @@
   "metaTitle": "ReelFlow Toolkit - Free Tools for YouTubers and Short-Video Creators",
   "description": "Free browser-based tools for creators: YouTube thumbnails, image resizing and compression, favicons, QR codes, memes, subtitles, chapters, titles, video trimming, GIFs, audio, PDF and developer utilities. No upload, no signup.",
   "ogTitle": "ReelFlow Toolkit - Free Tools for Creators",
-  "ogDescription": "Thumbnails, image sizes, compression, QR codes, subtitles, chapters, video trimming, GIFs, audio and PDF - twenty-six free tools that run entirely in your browser.",
+  "ogDescription": "Thumbnails, image sizes, compression, QR codes, subtitles, chapters, video trimming, GIFs, audio and PDF - 141 free tools that run entirely in your browser.",
   "heroTitle": "Every small tool a creator needs,",
   "heroEm": "right in the browser.",
   "heroLead": "Thumbnails, image sizes, compression, video trimming, GIFs, audio, PDF, QR codes and everyday utilities - all free, all local. Your files never leave your device.",
-  "primaryCta": { "label": "Browse the toolkit", "href": "#tools" },
-  "secondaryCta": { "label": "Try the thumbnail tool", "href": "/youtube-thumbnail-downloader/" },
-  "trust": ["No signup", "No upload", "No watermark", "Built for YouTube, Shorts, Reels, TikTok"],
-  "toolsTitle": "Twenty-six tools to start",
+  "primaryCta": {
+    "label": "Browse the toolkit",
+    "href": "#tools"
+  },
+  "secondaryCta": {
+    "label": "Try the thumbnail tool",
+    "href": "/youtube-thumbnail-downloader/"
+  },
+  "trust": [
+    "No signup",
+    "No upload",
+    "No watermark",
+    "Built for YouTube, Shorts, Reels, TikTok"
+  ],
+  "toolsTitle": "141 tools to start",
   "toolsNote": "Each tool has its own page and loads in under a second.",
   "features": [
     {

@@ -1,0 +1,5837 @@
+{
+  "tailwind-gradient-generator": {
+    "engine": "utility",
+    "operation": "tailwind-gradient-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "from",
+        "label": "From colour",
+        "type": "color",
+        "value": "#6366f1"
+      },
+      {
+        "id": "via",
+        "label": "Via colour",
+        "type": "color",
+        "value": "#a855f7"
+      },
+      {
+        "id": "to",
+        "label": "To colour",
+        "type": "color",
+        "value": "#ec4899"
+      },
+      {
+        "id": "type",
+        "label": "Gradient type",
+        "type": "select",
+        "value": "linear",
+        "options": [
+          {
+            "value": "linear",
+            "label": "Linear"
+          },
+          {
+            "value": "radial",
+            "label": "Radial"
+          },
+          {
+            "value": "conic",
+            "label": "Conic"
+          }
+        ]
+      },
+      {
+        "id": "direction",
+        "label": "Direction",
+        "type": "select",
+        "value": "135deg",
+        "options": [
+          {
+            "value": "0deg",
+            "label": "To top"
+          },
+          {
+            "value": "45deg",
+            "label": "To top right"
+          },
+          {
+            "value": "90deg",
+            "label": "To right"
+          },
+          {
+            "value": "135deg",
+            "label": "To bottom right"
+          },
+          {
+            "value": "180deg",
+            "label": "To bottom"
+          },
+          {
+            "value": "225deg",
+            "label": "To bottom left"
+          },
+          {
+            "value": "270deg",
+            "label": "To left"
+          },
+          {
+            "value": "315deg",
+            "label": "To top left"
+          }
+        ]
+      },
+      {
+        "id": "useVia",
+        "label": "Include middle colour",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Generate gradient",
+    "inputTitle": "Gradient colours",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Gradient code",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "css",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "tailwind-shadow-generator": {
+    "engine": "utility",
+    "operation": "tailwind-shadow-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "shadowColor",
+        "label": "Shadow colour",
+        "type": "color",
+        "value": "#0f172a"
+      },
+      {
+        "id": "opacity",
+        "label": "Opacity",
+        "type": "range",
+        "value": 25,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "blur",
+        "label": "Blur",
+        "type": "range",
+        "value": 24,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "x",
+        "label": "Horizontal offset",
+        "type": "range",
+        "value": 0,
+        "min": -50,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "id": "y",
+        "label": "Vertical offset",
+        "type": "range",
+        "value": 16,
+        "min": -50,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "id": "spread",
+        "label": "Spread",
+        "type": "range",
+        "value": -8,
+        "min": -50,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "id": "inset",
+        "label": "Inset shadow",
+        "type": "checkbox",
+        "value": false
+      }
+    ],
+    "actionLabel": "Generate shadow",
+    "inputTitle": "Shadow settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Shadow code",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "css",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "tailwind-grid-generator": {
+    "engine": "utility",
+    "operation": "tailwind-grid-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "columns",
+        "label": "Columns",
+        "type": "number",
+        "value": 3,
+        "min": 1,
+        "max": 12,
+        "step": 1
+      },
+      {
+        "id": "rows",
+        "label": "Rows",
+        "type": "number",
+        "value": 2,
+        "min": 1,
+        "max": 12,
+        "step": 1
+      },
+      {
+        "id": "gap",
+        "label": "Gap (px)",
+        "type": "number",
+        "value": 16,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "columnGap",
+        "label": "Column gap override (px)",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "rowGap",
+        "label": "Row gap override (px)",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "responsive",
+        "label": "Responsive columns",
+        "type": "select",
+        "value": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "Fixed"
+          },
+          {
+            "value": "sm",
+            "label": "sm and up"
+          },
+          {
+            "value": "md",
+            "label": "md and up"
+          },
+          {
+            "value": "lg",
+            "label": "lg and up"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate grid",
+    "inputTitle": "Grid layout",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Grid code",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "css",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "tailwind-button-generator": {
+    "engine": "utility",
+    "operation": "tailwind-button-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "label",
+        "label": "Button text",
+        "type": "text",
+        "value": "Get started"
+      },
+      {
+        "id": "background",
+        "label": "Background",
+        "type": "color",
+        "value": "#2563eb"
+      },
+      {
+        "id": "foreground",
+        "label": "Text colour",
+        "type": "color",
+        "value": "#ffffff"
+      },
+      {
+        "id": "paddingX",
+        "label": "Horizontal padding",
+        "type": "number",
+        "value": 20,
+        "min": 0,
+        "max": 64,
+        "step": 1
+      },
+      {
+        "id": "paddingY",
+        "label": "Vertical padding",
+        "type": "number",
+        "value": 12,
+        "min": 0,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "id": "radius",
+        "label": "Corner radius",
+        "type": "number",
+        "value": 12,
+        "min": 0,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "id": "weight",
+        "label": "Font weight",
+        "type": "select",
+        "value": "600",
+        "options": [
+          {
+            "value": "400",
+            "label": "Normal"
+          },
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semibold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "id": "shadow",
+        "label": "Add shadow",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Generate button",
+    "inputTitle": "Button style",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Button preview and code",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "css",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "css-to-tailwind": {
+    "engine": "utility",
+    "operation": "css-to-tailwind",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "css",
+        "label": "CSS input",
+        "type": "textarea",
+        "value": ".card {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-radius: 12px;\n  background-color: #2563eb;\n  color: #ffffff;\n}",
+        "rows": 6,
+        "spellcheck": false
+      }
+    ],
+    "actionLabel": "Convert to Tailwind",
+    "inputTitle": "CSS",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Tailwind classes",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "tailwind-to-css": {
+    "engine": "utility",
+    "operation": "tailwind-to-css",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "classes",
+        "label": "Tailwind classes",
+        "type": "textarea",
+        "value": "flex items-center gap-3 rounded-xl bg-blue-600 px-4 py-2 text-white shadow-lg",
+        "rows": 6,
+        "spellcheck": false
+      }
+    ],
+    "actionLabel": "Convert to CSS",
+    "inputTitle": "Tailwind classes",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "CSS",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "css",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "tailwind-flexbox-generator": {
+    "engine": "utility",
+    "operation": "tailwind-flexbox-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "direction",
+        "label": "Direction",
+        "type": "select",
+        "value": "row",
+        "options": [
+          {
+            "value": "row",
+            "label": "Row"
+          },
+          {
+            "value": "row-reverse",
+            "label": "Row reverse"
+          },
+          {
+            "value": "col",
+            "label": "Column"
+          },
+          {
+            "value": "col-reverse",
+            "label": "Column reverse"
+          }
+        ]
+      },
+      {
+        "id": "justify",
+        "label": "Justify content",
+        "type": "select",
+        "value": "start",
+        "options": [
+          {
+            "value": "start",
+            "label": "Start"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "End"
+          },
+          {
+            "value": "between",
+            "label": "Space between"
+          },
+          {
+            "value": "around",
+            "label": "Space around"
+          },
+          {
+            "value": "evenly",
+            "label": "Space evenly"
+          }
+        ]
+      },
+      {
+        "id": "align",
+        "label": "Align items",
+        "type": "select",
+        "value": "center",
+        "options": [
+          {
+            "value": "start",
+            "label": "Start"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "End"
+          },
+          {
+            "value": "stretch",
+            "label": "Stretch"
+          },
+          {
+            "value": "baseline",
+            "label": "Baseline"
+          }
+        ]
+      },
+      {
+        "id": "wrap",
+        "label": "Wrap",
+        "type": "select",
+        "value": "wrap",
+        "options": [
+          {
+            "value": "nowrap",
+            "label": "No wrap"
+          },
+          {
+            "value": "wrap",
+            "label": "Wrap"
+          },
+          {
+            "value": "wrap-reverse",
+            "label": "Wrap reverse"
+          }
+        ]
+      },
+      {
+        "id": "gap",
+        "label": "Gap (px)",
+        "type": "number",
+        "value": 12,
+        "min": 0,
+        "max": 64,
+        "step": 1
+      },
+      {
+        "id": "items",
+        "label": "Preview items",
+        "type": "number",
+        "value": 3,
+        "min": 2,
+        "max": 6,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate flex layout",
+    "inputTitle": "Flex layout",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Flex preview and code",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "css",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "tailwind-card-generator": {
+    "engine": "utility",
+    "operation": "tailwind-card-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "title",
+        "label": "Card title",
+        "type": "text",
+        "value": "Build something great"
+      },
+      {
+        "id": "body",
+        "label": "Card text",
+        "type": "textarea",
+        "value": "A clean card component with flexible spacing, colour and shadow controls.",
+        "rows": 3
+      },
+      {
+        "id": "background",
+        "label": "Background",
+        "type": "color",
+        "value": "#ffffff"
+      },
+      {
+        "id": "foreground",
+        "label": "Text colour",
+        "type": "color",
+        "value": "#0f172a"
+      },
+      {
+        "id": "padding",
+        "label": "Padding",
+        "type": "number",
+        "value": 24,
+        "min": 0,
+        "max": 64,
+        "step": 1
+      },
+      {
+        "id": "radius",
+        "label": "Radius",
+        "type": "number",
+        "value": 20,
+        "min": 0,
+        "max": 48,
+        "step": 1
+      },
+      {
+        "id": "shadow",
+        "label": "Shadow",
+        "type": "select",
+        "value": "lg",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "md",
+            "label": "Medium"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          },
+          {
+            "value": "xl",
+            "label": "Extra large"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate card",
+    "inputTitle": "Card content and style",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Card preview and code",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "html",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "tailwind-colors": {
+    "engine": "utility",
+    "operation": "tailwind-colors",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "base",
+        "label": "Base colour",
+        "type": "color",
+        "value": "#2563eb"
+      },
+      {
+        "id": "count",
+        "label": "Number of shades",
+        "type": "range",
+        "value": 9,
+        "min": 3,
+        "max": 15,
+        "step": 1
+      },
+      {
+        "id": "format",
+        "label": "Output format",
+        "type": "select",
+        "value": "hex",
+        "options": [
+          {
+            "value": "hex",
+            "label": "HEX"
+          },
+          {
+            "value": "rgb",
+            "label": "RGB"
+          },
+          {
+            "value": "hsl",
+            "label": "HSL"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate palette",
+    "inputTitle": "Base colour",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Colour shades",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "timestamp-converter": {
+    "engine": "utility",
+    "operation": "timestamp-converter",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "value",
+        "label": "Timestamp or date",
+        "type": "text",
+        "value": "",
+        "placeholder": "1764288000 or 2026-11-27T12:00:00Z"
+      },
+      {
+        "id": "mode",
+        "label": "Input mode",
+        "type": "select",
+        "value": "auto",
+        "options": [
+          {
+            "value": "auto",
+            "label": "Auto detect"
+          },
+          {
+            "value": "seconds",
+            "label": "Unix seconds"
+          },
+          {
+            "value": "milliseconds",
+            "label": "Unix milliseconds"
+          },
+          {
+            "value": "date",
+            "label": "Date and time"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Convert timestamp",
+    "inputTitle": "Timestamp",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Converted dates",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "sql-formatter": {
+    "engine": "utility",
+    "operation": "sql-formatter",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "sql",
+        "label": "SQL query",
+        "type": "textarea",
+        "value": "select id,name,email from users where active=1 order by name;",
+        "rows": 9,
+        "spellcheck": false
+      },
+      {
+        "id": "dialect",
+        "label": "Dialect",
+        "type": "select",
+        "value": "sql",
+        "options": [
+          {
+            "value": "sql",
+            "label": "Standard SQL"
+          },
+          {
+            "value": "mysql",
+            "label": "MySQL"
+          },
+          {
+            "value": "postgresql",
+            "label": "PostgreSQL"
+          },
+          {
+            "value": "sqlite",
+            "label": "SQLite"
+          },
+          {
+            "value": "tsql",
+            "label": "SQL Server"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Format SQL",
+    "inputTitle": "SQL query",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Formatted SQL",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "sql",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "yaml-json-converter": {
+    "engine": "utility",
+    "operation": "yaml-json-converter",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Conversion",
+        "type": "select",
+        "value": "yaml-to-json",
+        "options": [
+          {
+            "value": "yaml-to-json",
+            "label": "YAML to JSON"
+          },
+          {
+            "value": "json-to-yaml",
+            "label": "JSON to YAML"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "label": "Input",
+        "type": "textarea",
+        "value": "name: ReelFlow\ntools: 141\nlocal: true",
+        "rows": 6,
+        "spellcheck": false
+      }
+    ],
+    "actionLabel": "Convert",
+    "inputTitle": "YAML or JSON",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Converted data",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "diff-compare": {
+    "engine": "utility",
+    "operation": "diff-compare",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "original",
+        "label": "Original text",
+        "type": "textarea",
+        "value": "ReelFlow Toolkit\n26 free tools\nRuns in your browser",
+        "rows": 7
+      },
+      {
+        "id": "changed",
+        "label": "Changed text",
+        "type": "textarea",
+        "value": "ReelFlow Toolkit\n141 free tools\nRuns in your browser\nNo signup",
+        "rows": 7
+      }
+    ],
+    "actionLabel": "Compare text",
+    "inputTitle": "Two versions",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Differences",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "xml-beautifier": {
+    "engine": "utility",
+    "operation": "xml-beautifier",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "beautify",
+        "options": [
+          {
+            "value": "beautify",
+            "label": "Beautify"
+          },
+          {
+            "value": "minify",
+            "label": "Minify"
+          }
+        ]
+      },
+      {
+        "id": "xml",
+        "label": "XML input",
+        "type": "textarea",
+        "value": "<root><item id=\"1\">Hello</item><item id=\"2\">World</item></root>",
+        "rows": 6,
+        "spellcheck": false
+      }
+    ],
+    "actionLabel": "Format XML",
+    "inputTitle": "XML",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Formatted XML",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "xml",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "keyboard-shortcut-image": {
+    "engine": "utility",
+    "operation": "keyboard-shortcut-image",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "keys",
+        "label": "Keys",
+        "type": "text",
+        "value": "Ctrl + Shift + K"
+      },
+      {
+        "id": "theme",
+        "label": "Theme",
+        "type": "select",
+        "value": "light",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "id": "platform",
+        "label": "Key style",
+        "type": "select",
+        "value": "windows",
+        "options": [
+          {
+            "value": "windows",
+            "label": "Windows / Linux"
+          },
+          {
+            "value": "mac",
+            "label": "macOS"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate image",
+    "inputTitle": "Shortcut",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Shortcut image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "url-encoder-decoder": {
+    "engine": "utility",
+    "operation": "url-encoder-decoder",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "value",
+        "label": "Text or URL component",
+        "type": "text",
+        "value": "ReelFlow free tools & more"
+      },
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "encode",
+        "options": [
+          {
+            "value": "encode",
+            "label": "Encode"
+          },
+          {
+            "value": "decode",
+            "label": "Decode"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Convert URL",
+    "inputTitle": "URL text",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Encoded or decoded text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "prompt-to-url": {
+    "engine": "utility",
+    "operation": "prompt-to-url",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "prompt",
+        "label": "Prompt",
+        "type": "textarea",
+        "value": "Explain this topic in simple steps: {{topic}}",
+        "rows": 5
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "type": "select",
+        "value": "chatgpt",
+        "options": [
+          {
+            "value": "chatgpt",
+            "label": "ChatGPT"
+          },
+          {
+            "value": "claude",
+            "label": "Claude"
+          },
+          {
+            "value": "perplexity",
+            "label": "Perplexity"
+          },
+          {
+            "value": "gemini",
+            "label": "Gemini"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate URL",
+    "inputTitle": "Prompt",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Shareable prompt URL",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "svg-blob-generator": {
+    "engine": "utility",
+    "operation": "svg-blob-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "width",
+        "label": "Width",
+        "type": "number",
+        "value": 600,
+        "min": 100,
+        "max": 2000,
+        "step": 1
+      },
+      {
+        "id": "height",
+        "label": "Height",
+        "type": "number",
+        "value": 600,
+        "min": 100,
+        "max": 2000,
+        "step": 1
+      },
+      {
+        "id": "points",
+        "label": "Points",
+        "type": "range",
+        "value": 7,
+        "min": 3,
+        "max": 16,
+        "step": 1
+      },
+      {
+        "id": "randomness",
+        "label": "Randomness",
+        "type": "range",
+        "value": 24,
+        "min": 0,
+        "max": 60,
+        "step": 1
+      },
+      {
+        "id": "gradient",
+        "label": "Use gradient fill",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Generate blob",
+    "inputTitle": "Blob settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "SVG blob",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "svg",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "json-csv-converter": {
+    "engine": "utility",
+    "operation": "json-csv-converter",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Conversion",
+        "type": "select",
+        "value": "json-to-csv",
+        "options": [
+          {
+            "value": "json-to-csv",
+            "label": "JSON to CSV"
+          },
+          {
+            "value": "csv-to-json",
+            "label": "CSV to JSON"
+          }
+        ]
+      },
+      {
+        "id": "delimiter",
+        "label": "CSV delimiter",
+        "type": "select",
+        "value": ",",
+        "options": [
+          {
+            "value": ",",
+            "label": "Comma"
+          },
+          {
+            "value": ";",
+            "label": "Semicolon"
+          },
+          {
+            "value": "\t",
+            "label": "Tab"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "label": "Input",
+        "type": "textarea",
+        "value": "[{\"name\":\"Ayesha\",\"score\":92},{\"name\":\"Bilal\",\"score\":87}]",
+        "rows": 6,
+        "spellcheck": false
+      }
+    ],
+    "actionLabel": "Convert",
+    "inputTitle": "JSON or CSV",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Converted data",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "css-minifier": {
+    "engine": "utility",
+    "operation": "css-minifier",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "css",
+        "label": "CSS input",
+        "type": "textarea",
+        "value": ".card {\n  display: flex;\n  gap: 16px;\n  color: #0f172a;\n}",
+        "rows": 9,
+        "spellcheck": false
+      }
+    ],
+    "actionLabel": "Minify CSS",
+    "inputTitle": "CSS",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Minified CSS",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "css",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "keycode-info": {
+    "engine": "utility",
+    "operation": "keycode-info",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "key",
+        "label": "Key name",
+        "type": "text",
+        "value": "Enter",
+        "placeholder": "Type a key name or press a key on this page"
+      }
+    ],
+    "actionLabel": "Inspect key",
+    "inputTitle": "Keyboard key",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "JavaScript key details",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "oklch-color-converter": {
+    "engine": "utility",
+    "operation": "oklch-color-converter",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "color",
+        "label": "Colour",
+        "type": "color",
+        "value": "#2563eb"
+      },
+      {
+        "id": "format",
+        "label": "Preferred output",
+        "type": "select",
+        "value": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "All formats"
+          },
+          {
+            "value": "oklch",
+            "label": "OKLCH"
+          },
+          {
+            "value": "hex",
+            "label": "HEX"
+          },
+          {
+            "value": "rgb",
+            "label": "RGB"
+          },
+          {
+            "value": "hsl",
+            "label": "HSL"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Convert colour",
+    "inputTitle": "Colour",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Colour conversions",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "cron-explainer": {
+    "engine": "utility",
+    "operation": "cron-explainer",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "expression",
+        "label": "Cron expression",
+        "type": "text",
+        "value": "*/15 * * * *"
+      },
+      {
+        "id": "runs",
+        "label": "Next runs to show",
+        "type": "number",
+        "value": 5,
+        "min": 1,
+        "max": 20,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Explain cron",
+    "inputTitle": "Cron expression",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Explanation and next runs",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "html-to-jsx": {
+    "engine": "utility",
+    "operation": "html-to-jsx",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "html",
+        "label": "HTML input",
+        "type": "textarea",
+        "value": "<div class=\"card\" style=\"color: red; font-size: 16px;\">\n  <img src=\"photo.png\" alt=\"Preview\" />\n  <button onclick=\"save()\">Save</button>\n</div>",
+        "rows": 9,
+        "spellcheck": false
+      }
+    ],
+    "actionLabel": "Convert to JSX",
+    "inputTitle": "HTML",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "JSX",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "jsx",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "css-unit-converter": {
+    "engine": "utility",
+    "operation": "css-unit-converter",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "value",
+        "label": "Value",
+        "type": "number",
+        "value": 16,
+        "min": -10000,
+        "max": 10000,
+        "step": 0.01
+      },
+      {
+        "id": "from",
+        "label": "From unit",
+        "type": "select",
+        "value": "px",
+        "options": [
+          {
+            "value": "px",
+            "label": "px"
+          },
+          {
+            "value": "rem",
+            "label": "rem"
+          },
+          {
+            "value": "em",
+            "label": "em"
+          },
+          {
+            "value": "pt",
+            "label": "pt"
+          },
+          {
+            "value": "pc",
+            "label": "pc"
+          },
+          {
+            "value": "cm",
+            "label": "cm"
+          },
+          {
+            "value": "mm",
+            "label": "mm"
+          },
+          {
+            "value": "in",
+            "label": "in"
+          }
+        ]
+      },
+      {
+        "id": "to",
+        "label": "To unit",
+        "type": "select",
+        "value": "rem",
+        "options": [
+          {
+            "value": "px",
+            "label": "px"
+          },
+          {
+            "value": "rem",
+            "label": "rem"
+          },
+          {
+            "value": "em",
+            "label": "em"
+          },
+          {
+            "value": "pt",
+            "label": "pt"
+          },
+          {
+            "value": "pc",
+            "label": "pc"
+          },
+          {
+            "value": "cm",
+            "label": "cm"
+          },
+          {
+            "value": "mm",
+            "label": "mm"
+          },
+          {
+            "value": "in",
+            "label": "in"
+          }
+        ]
+      },
+      {
+        "id": "rootSize",
+        "label": "Root font size (px)",
+        "type": "number",
+        "value": 16,
+        "min": 1,
+        "max": 100,
+        "step": 0.1
+      }
+    ],
+    "actionLabel": "Convert unit",
+    "inputTitle": "Value and units",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Converted value",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "token-generator": {
+    "engine": "utility",
+    "operation": "token-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "bytes",
+        "label": "Random bytes",
+        "type": "number",
+        "value": 32,
+        "min": 1,
+        "max": 256,
+        "step": 1
+      },
+      {
+        "id": "format",
+        "label": "Format",
+        "type": "select",
+        "value": "hex",
+        "options": [
+          {
+            "value": "hex",
+            "label": "Hexadecimal"
+          },
+          {
+            "value": "base64",
+            "label": "Base64"
+          },
+          {
+            "value": "base64url",
+            "label": "Base64 URL-safe"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "label": "Number of tokens",
+        "type": "number",
+        "value": 1,
+        "min": 1,
+        "max": 50,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate tokens",
+    "inputTitle": "Token settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Secure tokens",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "encrypt-decrypt": {
+    "engine": "utility",
+    "operation": "encrypt-decrypt",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "Private note",
+        "rows": 5
+      },
+      {
+        "id": "password",
+        "label": "Password",
+        "type": "password",
+        "value": ""
+      },
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "encrypt",
+        "options": [
+          {
+            "value": "encrypt",
+            "label": "Encrypt"
+          },
+          {
+            "value": "decrypt",
+            "label": "Decrypt"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Run encryption",
+    "inputTitle": "Text and password",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Encrypted or decrypted text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "Use a strong password. There is no password recovery.",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "phone-parser": {
+    "engine": "utility",
+    "operation": "phone-parser",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "phone",
+        "label": "Phone number",
+        "type": "text",
+        "value": "+44 7700 900123"
+      },
+      {
+        "id": "country",
+        "label": "Default country",
+        "type": "select",
+        "value": "US",
+        "options": [
+          {
+            "value": "US",
+            "label": "United States"
+          },
+          {
+            "value": "GB",
+            "label": "United Kingdom"
+          },
+          {
+            "value": "PK",
+            "label": "Pakistan"
+          },
+          {
+            "value": "IN",
+            "label": "India"
+          },
+          {
+            "value": "AE",
+            "label": "United Arab Emirates"
+          },
+          {
+            "value": "AU",
+            "label": "Australia"
+          },
+          {
+            "value": "DE",
+            "label": "Germany"
+          },
+          {
+            "value": "FR",
+            "label": "France"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Parse number",
+    "inputTitle": "Phone number",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Parsed phone details",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "mac-address-generator": {
+    "engine": "utility",
+    "operation": "mac-address-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 5,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "case",
+        "label": "Letter case",
+        "type": "select",
+        "value": "upper",
+        "options": [
+          {
+            "value": "upper",
+            "label": "Uppercase"
+          },
+          {
+            "value": "lower",
+            "label": "Lowercase"
+          }
+        ]
+      },
+      {
+        "id": "separator",
+        "label": "Separator",
+        "type": "select",
+        "value": ":",
+        "options": [
+          {
+            "value": ":",
+            "label": "Colon"
+          },
+          {
+            "value": "-",
+            "label": "Hyphen"
+          },
+          {
+            "value": "",
+            "label": "None"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate MAC addresses",
+    "inputTitle": "MAC settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Generated addresses",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-watermark": {
+    "engine": "utility",
+    "operation": "image-watermark",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "watermark",
+        "label": "Watermark text",
+        "type": "text",
+        "value": "© ReelFlow"
+      },
+      {
+        "id": "position",
+        "label": "Position",
+        "type": "select",
+        "value": "bottom-right",
+        "options": [
+          {
+            "value": "bottom-right",
+            "label": "Bottom right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "top-left",
+            "label": "Top left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "label": "Text size",
+        "type": "range",
+        "value": 36,
+        "min": 8,
+        "max": 160,
+        "step": 1
+      },
+      {
+        "id": "opacity",
+        "label": "Opacity",
+        "type": "range",
+        "value": 75,
+        "min": 5,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "color",
+        "label": "Text colour",
+        "type": "color",
+        "value": "#ffffff"
+      }
+    ],
+    "actionLabel": "Add watermark",
+    "inputTitle": "Image and watermark",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Watermarked image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "laser-eyes-meme": {
+    "engine": "utility",
+    "operation": "laser-eyes-meme",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Photo",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "leftX",
+        "label": "Left eye X",
+        "type": "range",
+        "value": 40,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "leftY",
+        "label": "Left eye Y",
+        "type": "range",
+        "value": 42,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "rightX",
+        "label": "Right eye X",
+        "type": "range",
+        "value": 60,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "rightY",
+        "label": "Right eye Y",
+        "type": "range",
+        "value": 42,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "laserColor",
+        "label": "Laser colour",
+        "type": "color",
+        "value": "#ff0033"
+      },
+      {
+        "id": "intensity",
+        "label": "Glow",
+        "type": "range",
+        "value": 70,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate meme",
+    "inputTitle": "Photo and eye positions",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Laser eyes meme",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "invert-image": {
+    "engine": "utility",
+    "operation": "invert-image",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Invert image",
+    "inputTitle": "Image",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Inverted image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-pixelator": {
+    "engine": "utility",
+    "operation": "image-pixelator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "blockSize",
+        "label": "Pixel block size",
+        "type": "range",
+        "value": 16,
+        "min": 2,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Pixelate image",
+    "inputTitle": "Image and pixel size",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Pixelated image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-blur-pixelate": {
+    "engine": "utility",
+    "operation": "image-blur-pixelate",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "mode",
+        "label": "Effect",
+        "type": "select",
+        "value": "blur",
+        "options": [
+          {
+            "value": "blur",
+            "label": "Blur"
+          },
+          {
+            "value": "pixelate",
+            "label": "Pixelate"
+          }
+        ]
+      },
+      {
+        "id": "amount",
+        "label": "Strength",
+        "type": "range",
+        "value": 12,
+        "min": 1,
+        "max": 60,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Apply effect",
+    "inputTitle": "Image and effect",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Processed image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-color-picker": {
+    "engine": "utility",
+    "operation": "image-color-picker",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "x",
+        "label": "Pick X",
+        "type": "range",
+        "value": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "y",
+        "label": "Pick Y",
+        "type": "range",
+        "value": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Pick colour",
+    "inputTitle": "Image and pick position",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Picked colour",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-color-generator": {
+    "engine": "utility",
+    "operation": "random-color-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many colours",
+        "type": "number",
+        "value": 8,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "format",
+        "label": "Format",
+        "type": "select",
+        "value": "hex",
+        "options": [
+          {
+            "value": "hex",
+            "label": "HEX"
+          },
+          {
+            "value": "rgb",
+            "label": "RGB"
+          },
+          {
+            "value": "hsl",
+            "label": "HSL"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate colours",
+    "inputTitle": "Palette settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random colours",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "resize-gif": {
+    "engine": "utility",
+    "operation": "resize-gif",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "gif",
+        "label": "GIF image",
+        "type": "file",
+        "accept": "image/gif",
+        "multiple": false
+      },
+      {
+        "id": "width",
+        "label": "New width",
+        "type": "number",
+        "value": 480,
+        "min": 16,
+        "max": 2000,
+        "step": 1
+      },
+      {
+        "id": "fps",
+        "label": "Frames per second",
+        "type": "range",
+        "value": 12,
+        "min": 1,
+        "max": 30,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Resize GIF",
+    "inputTitle": "GIF and size",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Resized GIF",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "gif",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": true,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "compress-gif": {
+    "engine": "utility",
+    "operation": "compress-gif",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "gif",
+        "label": "GIF image",
+        "type": "file",
+        "accept": "image/gif",
+        "multiple": false
+      },
+      {
+        "id": "scale",
+        "label": "Scale",
+        "type": "range",
+        "value": 70,
+        "min": 10,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "colors",
+        "label": "Colour count",
+        "type": "number",
+        "value": 128,
+        "min": 2,
+        "max": 256,
+        "step": 1
+      },
+      {
+        "id": "fps",
+        "label": "Frames per second",
+        "type": "range",
+        "value": 10,
+        "min": 1,
+        "max": 30,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Compress GIF",
+    "inputTitle": "GIF and compression",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Compressed GIF",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "gif",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": true,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "trim-transparent-pixels": {
+    "engine": "utility",
+    "operation": "trim-transparent-pixels",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Transparent image",
+        "type": "file",
+        "accept": "image/png,image/webp",
+        "multiple": false
+      },
+      {
+        "id": "padding",
+        "label": "Keep padding (px)",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Trim image",
+    "inputTitle": "Transparent image",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Trimmed image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-border": {
+    "engine": "utility",
+    "operation": "image-border",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "size",
+        "label": "Border size",
+        "type": "number",
+        "value": 24,
+        "min": 1,
+        "max": 200,
+        "step": 1
+      },
+      {
+        "id": "borderColor",
+        "label": "Border colour",
+        "type": "color",
+        "value": "#ffffff"
+      },
+      {
+        "id": "style",
+        "label": "Border style",
+        "type": "select",
+        "value": "solid",
+        "options": [
+          {
+            "value": "solid",
+            "label": "Solid"
+          },
+          {
+            "value": "rounded",
+            "label": "Rounded"
+          },
+          {
+            "value": "double",
+            "label": "Double"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Add border",
+    "inputTitle": "Image and border",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Framed image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-splitter": {
+    "engine": "utility",
+    "operation": "image-splitter",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "columns",
+        "label": "Columns",
+        "type": "number",
+        "value": 2,
+        "min": 1,
+        "max": 10,
+        "step": 1
+      },
+      {
+        "id": "rows",
+        "label": "Rows",
+        "type": "number",
+        "value": 2,
+        "min": 1,
+        "max": 10,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Split image",
+    "inputTitle": "Image and grid",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Image tiles",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "zip",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "merge-images": {
+    "engine": "utility",
+    "operation": "merge-images",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "images",
+        "label": "Images",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": true
+      },
+      {
+        "id": "layout",
+        "label": "Layout",
+        "type": "select",
+        "value": "horizontal",
+        "options": [
+          {
+            "value": "horizontal",
+            "label": "Horizontal"
+          },
+          {
+            "value": "vertical",
+            "label": "Vertical"
+          },
+          {
+            "value": "grid",
+            "label": "Grid"
+          }
+        ]
+      },
+      {
+        "id": "columns",
+        "label": "Grid columns",
+        "type": "number",
+        "value": 2,
+        "min": 1,
+        "max": 6,
+        "step": 1
+      },
+      {
+        "id": "gap",
+        "label": "Gap (px)",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "background",
+        "label": "Background",
+        "type": "color",
+        "value": "#ffffff"
+      }
+    ],
+    "actionLabel": "Merge images",
+    "inputTitle": "Images and layout",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Merged image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "pixel-art-converter": {
+    "engine": "utility",
+    "operation": "pixel-art-converter",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Photo",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "pixelSize",
+        "label": "Pixel size",
+        "type": "range",
+        "value": 10,
+        "min": 2,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "id": "colors",
+        "label": "Palette colours",
+        "type": "range",
+        "value": 16,
+        "min": 2,
+        "max": 64,
+        "step": 1
+      },
+      {
+        "id": "dither",
+        "label": "Use dithering",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Create pixel art",
+    "inputTitle": "Photo and pixel settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Pixel art",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "paste-image-download": {
+    "engine": "utility",
+    "operation": "paste-image-download",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Prepare download",
+    "inputTitle": "Paste or choose an image",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Image preview",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "You can also press Ctrl+V or Cmd+V anywhere on this page.",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-to-ascii": {
+    "engine": "utility",
+    "operation": "image-to-ascii",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "width",
+        "label": "Output width",
+        "type": "number",
+        "value": 80,
+        "min": 20,
+        "max": 200,
+        "step": 1
+      },
+      {
+        "id": "charset",
+        "label": "Character set",
+        "type": "select",
+        "value": "standard",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "detailed",
+            "label": "Detailed"
+          },
+          {
+            "value": "blocks",
+            "label": "Blocks"
+          },
+          {
+            "value": "binary",
+            "label": "Binary"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Convert to ASCII",
+    "inputTitle": "Image and ASCII settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "ASCII art",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "image-exif-tool": {
+    "engine": "utility",
+    "operation": "image-exif-tool",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "view",
+        "options": [
+          {
+            "value": "view",
+            "label": "View metadata"
+          },
+          {
+            "value": "remove",
+            "label": "Remove metadata"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Process image",
+    "inputTitle": "Image and mode",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Metadata or cleaned image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "flip-image": {
+    "engine": "utility",
+    "operation": "flip-image",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": false
+      },
+      {
+        "id": "axis",
+        "label": "Flip direction",
+        "type": "select",
+        "value": "horizontal",
+        "options": [
+          {
+            "value": "horizontal",
+            "label": "Horizontal"
+          },
+          {
+            "value": "vertical",
+            "label": "Vertical"
+          },
+          {
+            "value": "both",
+            "label": "Both"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Flip image",
+    "inputTitle": "Image and direction",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Flipped image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "collage-maker": {
+    "engine": "utility",
+    "operation": "collage-maker",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "images",
+        "label": "Photos",
+        "type": "file",
+        "accept": "image/*",
+        "multiple": true
+      },
+      {
+        "id": "columns",
+        "label": "Columns",
+        "type": "number",
+        "value": 2,
+        "min": 1,
+        "max": 6,
+        "step": 1
+      },
+      {
+        "id": "gap",
+        "label": "Gap (px)",
+        "type": "number",
+        "value": 12,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "background",
+        "label": "Background",
+        "type": "color",
+        "value": "#ffffff"
+      },
+      {
+        "id": "rounded",
+        "label": "Rounded photo corners",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Create collage",
+    "inputTitle": "Photos and layout",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Collage",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "eml-viewer": {
+    "engine": "utility",
+    "operation": "eml-viewer",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "eml",
+        "label": "Email file",
+        "type": "file",
+        "accept": ".eml,message/rfc822",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Open email",
+    "inputTitle": "Email file",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Email preview",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "mailto-link-generator": {
+    "engine": "utility",
+    "operation": "mailto-link-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "to",
+        "label": "To",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "id": "cc",
+        "label": "CC",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "id": "bcc",
+        "label": "BCC",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "id": "subject",
+        "label": "Subject",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "id": "body",
+        "label": "Message",
+        "type": "textarea",
+        "value": "",
+        "rows": 5
+      }
+    ],
+    "actionLabel": "Generate mailto link",
+    "inputTitle": "Email details",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Mailto link",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "utf8-encoder-decoder": {
+    "engine": "utility",
+    "operation": "utf8-encoder-decoder",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "encode",
+        "options": [
+          {
+            "value": "encode",
+            "label": "Text to UTF-8 bytes"
+          },
+          {
+            "value": "decode",
+            "label": "UTF-8 bytes to text"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "label": "Input",
+        "type": "textarea",
+        "value": "Hello, world! 🌍",
+        "rows": 5
+      }
+    ],
+    "actionLabel": "Convert UTF-8",
+    "inputTitle": "Text or bytes",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "UTF-8 result",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "utf8-byte-counter": {
+    "engine": "utility",
+    "operation": "utf8-byte-counter",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "Hello, world! 🌍",
+        "rows": 6
+      }
+    ],
+    "actionLabel": "Count bytes",
+    "inputTitle": "Text",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Byte counts",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "add-text-to-lines": {
+    "engine": "utility",
+    "operation": "add-text-to-lines",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Lines",
+        "type": "textarea",
+        "value": "First line\nSecond line\nThird line",
+        "rows": 6
+      },
+      {
+        "id": "prefix",
+        "label": "Prefix",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "id": "suffix",
+        "label": "Suffix",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "id": "numberLines",
+        "label": "Add line numbers",
+        "type": "checkbox",
+        "value": false
+      }
+    ],
+    "actionLabel": "Update lines",
+    "inputTitle": "Text lines",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Updated lines",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "filter-lines": {
+    "engine": "utility",
+    "operation": "filter-lines",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Lines",
+        "type": "textarea",
+        "value": "apple\nbanana\napricot\ncherry",
+        "rows": 7
+      },
+      {
+        "id": "mode",
+        "label": "Match",
+        "type": "select",
+        "value": "contains",
+        "options": [
+          {
+            "value": "contains",
+            "label": "Contains"
+          },
+          {
+            "value": "starts",
+            "label": "Starts with"
+          },
+          {
+            "value": "ends",
+            "label": "Ends with"
+          },
+          {
+            "value": "regex",
+            "label": "Regular expression"
+          },
+          {
+            "value": "unique",
+            "label": "Unique lines only"
+          }
+        ]
+      },
+      {
+        "id": "query",
+        "label": "Match text or regex",
+        "type": "text",
+        "value": "ap"
+      },
+      {
+        "id": "invert",
+        "label": "Invert match",
+        "type": "checkbox",
+        "value": false
+      }
+    ],
+    "actionLabel": "Filter lines",
+    "inputTitle": "Lines and filter",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Filtered lines",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "repeat-text": {
+    "engine": "utility",
+    "operation": "repeat-text",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "ReelFlow",
+        "rows": 3
+      },
+      {
+        "id": "count",
+        "label": "Repeat count",
+        "type": "number",
+        "value": 5,
+        "min": 1,
+        "max": 10000,
+        "step": 1
+      },
+      {
+        "id": "separator",
+        "label": "Separator",
+        "type": "text",
+        "value": " "
+      }
+    ],
+    "actionLabel": "Repeat text",
+    "inputTitle": "Text and count",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Repeated text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "simple-text-editor": {
+    "engine": "utility",
+    "operation": "simple-text-editor",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Your text",
+        "type": "textarea",
+        "value": "Start writing here...",
+        "rows": 12
+      }
+    ],
+    "actionLabel": "Update statistics",
+    "inputTitle": "Editor",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Live text statistics",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "number-to-words": {
+    "engine": "utility",
+    "operation": "number-to-words",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "number",
+        "label": "Number",
+        "type": "text",
+        "value": "1234567"
+      },
+      {
+        "id": "style",
+        "label": "Style",
+        "type": "select",
+        "value": "international",
+        "options": [
+          {
+            "value": "international",
+            "label": "International"
+          },
+          {
+            "value": "currency",
+            "label": "Currency (USD)"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Convert number",
+    "inputTitle": "Number",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Number in words",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "markdown-editor": {
+    "engine": "utility",
+    "operation": "markdown-editor",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "markdown",
+        "label": "Markdown",
+        "type": "textarea",
+        "value": "# Hello ReelFlow\n\nWrite **Markdown** with a live preview.\n\n- Fast\n- Private\n- Free",
+        "rows": 12,
+        "spellcheck": false
+      },
+      {
+        "id": "view",
+        "label": "Output",
+        "type": "select",
+        "value": "preview",
+        "options": [
+          {
+            "value": "preview",
+            "label": "HTML preview"
+          },
+          {
+            "value": "html",
+            "label": "HTML source"
+          },
+          {
+            "value": "markdown",
+            "label": "Markdown source"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Render Markdown",
+    "inputTitle": "Markdown",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Rendered preview",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "html",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-letter-generator": {
+    "engine": "utility",
+    "operation": "random-letter-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 10,
+        "min": 1,
+        "max": 500,
+        "step": 1
+      },
+      {
+        "id": "case",
+        "label": "Letter case",
+        "type": "select",
+        "value": "upper",
+        "options": [
+          {
+            "value": "upper",
+            "label": "Uppercase"
+          },
+          {
+            "value": "lower",
+            "label": "Lowercase"
+          },
+          {
+            "value": "mixed",
+            "label": "Mixed"
+          }
+        ]
+      },
+      {
+        "id": "vowelsOnly",
+        "label": "Vowels only",
+        "type": "checkbox",
+        "value": false
+      }
+    ],
+    "actionLabel": "Generate letters",
+    "inputTitle": "Letter settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random letters",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-emoji-generator": {
+    "engine": "utility",
+    "operation": "random-emoji-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 12,
+        "min": 1,
+        "max": 200,
+        "step": 1
+      },
+      {
+        "id": "category",
+        "label": "Category",
+        "type": "select",
+        "value": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "All"
+          },
+          {
+            "value": "faces",
+            "label": "Faces"
+          },
+          {
+            "value": "animals",
+            "label": "Animals"
+          },
+          {
+            "value": "food",
+            "label": "Food"
+          },
+          {
+            "value": "nature",
+            "label": "Nature"
+          },
+          {
+            "value": "objects",
+            "label": "Objects"
+          },
+          {
+            "value": "symbols",
+            "label": "Symbols"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate emoji",
+    "inputTitle": "Emoji settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random emoji",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "list-randomizer": {
+    "engine": "utility",
+    "operation": "list-randomizer",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "items",
+        "label": "List items",
+        "type": "textarea",
+        "value": "Apple\nBanana\nCherry\nDate\nElderberry",
+        "rows": 7
+      },
+      {
+        "id": "count",
+        "label": "Items to pick",
+        "type": "number",
+        "value": 3,
+        "min": 1,
+        "max": 1000,
+        "step": 1
+      },
+      {
+        "id": "unique",
+        "label": "No duplicates",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "pick",
+        "options": [
+          {
+            "value": "pick",
+            "label": "Pick items"
+          },
+          {
+            "value": "shuffle",
+            "label": "Shuffle all"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Randomize list",
+    "inputTitle": "List and options",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Randomised list",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-group-generator": {
+    "engine": "utility",
+    "operation": "random-group-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "items",
+        "label": "Names",
+        "type": "textarea",
+        "value": "Ayesha\nBilal\nChen\nDaniyal\nEmma\nFarah\nGeorge\nHina",
+        "rows": 8
+      },
+      {
+        "id": "groups",
+        "label": "Number of groups",
+        "type": "number",
+        "value": 3,
+        "min": 1,
+        "max": 50,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Create groups",
+    "inputTitle": "Names and groups",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random groups",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-word-generator": {
+    "engine": "utility",
+    "operation": "random-word-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 10,
+        "min": 1,
+        "max": 200,
+        "step": 1
+      },
+      {
+        "id": "minLength",
+        "label": "Minimum length",
+        "type": "number",
+        "value": 3,
+        "min": 1,
+        "max": 12,
+        "step": 1
+      },
+      {
+        "id": "maxLength",
+        "label": "Maximum length",
+        "type": "number",
+        "value": 9,
+        "min": 2,
+        "max": 20,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate words",
+    "inputTitle": "Word settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random words",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": true
+  },
+  "zalgo-text-generator": {
+    "engine": "utility",
+    "operation": "zalgo-text-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "ReelFlow",
+        "rows": 4
+      },
+      {
+        "id": "intensity",
+        "label": "Intensity",
+        "type": "range",
+        "value": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "up",
+        "label": "Marks above",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "id": "down",
+        "label": "Marks below",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "id": "middle",
+        "label": "Marks through middle",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Generate Zalgo text",
+    "inputTitle": "Text and intensity",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Zalgo text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "cursed-text-generator": {
+    "engine": "utility",
+    "operation": "cursed-text-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "Do not look behind you",
+        "rows": 4
+      },
+      {
+        "id": "intensity",
+        "label": "Intensity",
+        "type": "range",
+        "value": 65,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate cursed text",
+    "inputTitle": "Text and intensity",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Cursed text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "glitch-text-generator": {
+    "engine": "utility",
+    "operation": "glitch-text-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "SYSTEM ONLINE",
+        "rows": 4
+      },
+      {
+        "id": "intensity",
+        "label": "Glitch amount",
+        "type": "range",
+        "value": 35,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate glitch text",
+    "inputTitle": "Text and glitch amount",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Glitch text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "duplicate-word-finder": {
+    "engine": "utility",
+    "operation": "duplicate-word-finder",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "This is is a test test of duplicate words.",
+        "rows": 7
+      },
+      {
+        "id": "caseSensitive",
+        "label": "Case sensitive",
+        "type": "checkbox",
+        "value": false
+      }
+    ],
+    "actionLabel": "Find duplicates",
+    "inputTitle": "Text",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Duplicate words",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "morse-code-translator": {
+    "engine": "utility",
+    "operation": "morse-code-translator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "encode",
+        "options": [
+          {
+            "value": "encode",
+            "label": "Text to Morse"
+          },
+          {
+            "value": "decode",
+            "label": "Morse to text"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "label": "Input",
+        "type": "textarea",
+        "value": "SOS HELP",
+        "rows": 5
+      }
+    ],
+    "actionLabel": "Translate Morse",
+    "inputTitle": "Text or Morse",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Morse translation",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "morse-code-practice": {
+    "engine": "utility",
+    "operation": "morse-code-practice",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "level",
+        "label": "Level",
+        "type": "select",
+        "value": "easy",
+        "options": [
+          {
+            "value": "easy",
+            "label": "Easy letters"
+          },
+          {
+            "value": "medium",
+            "label": "Letters and numbers"
+          },
+          {
+            "value": "hard",
+            "label": "Mixed characters"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Start practice",
+    "inputTitle": "Practice level",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Morse practice",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "morse-practice",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "acronym-generator": {
+    "engine": "utility",
+    "operation": "acronym-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "generate",
+        "options": [
+          {
+            "value": "generate",
+            "label": "Phrase to acronym"
+          },
+          {
+            "value": "expand",
+            "label": "Acronym to phrase ideas"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "label": "Phrase or acronym",
+        "type": "text",
+        "value": "ReelFlow Toolkit"
+      }
+    ],
+    "actionLabel": "Generate acronyms",
+    "inputTitle": "Phrase or acronym",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Acronym ideas",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "spelling-bee-solver": {
+    "engine": "utility",
+    "operation": "spelling-bee-solver",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "letters",
+        "label": "Seven letters",
+        "type": "text",
+        "value": "reflown"
+      },
+      {
+        "id": "required",
+        "label": "Required centre letter",
+        "type": "text",
+        "value": "f",
+        "maxlength": 1
+      }
+    ],
+    "actionLabel": "Solve puzzle",
+    "inputTitle": "Puzzle letters",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Valid words",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": true
+  },
+  "wingdings-translator": {
+    "engine": "utility",
+    "operation": "wingdings-translator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "encode",
+        "options": [
+          {
+            "value": "encode",
+            "label": "Text to Wingdings"
+          },
+          {
+            "value": "decode",
+            "label": "Wingdings to text"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "label": "Input",
+        "type": "textarea",
+        "value": "HELLO",
+        "rows": 5
+      }
+    ],
+    "actionLabel": "Translate Wingdings",
+    "inputTitle": "Text or symbols",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Wingdings translation",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "invisible-character-generator": {
+    "engine": "utility",
+    "operation": "invisible-character-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Visible text",
+        "type": "textarea",
+        "value": "ReelFlow",
+        "rows": 4
+      },
+      {
+        "id": "type",
+        "label": "Invisible character",
+        "type": "select",
+        "value": "zero-width",
+        "options": [
+          {
+            "value": "zero-width",
+            "label": "Zero-width space"
+          },
+          {
+            "value": "zero-width-nonjoiner",
+            "label": "Zero-width non-joiner"
+          },
+          {
+            "value": "word-joiner",
+            "label": "Word joiner"
+          },
+          {
+            "value": "hair-space",
+            "label": "Hair space"
+          },
+          {
+            "value": "thin-space",
+            "label": "Thin space"
+          }
+        ]
+      },
+      {
+        "id": "position",
+        "label": "Position",
+        "type": "select",
+        "value": "between",
+        "options": [
+          {
+            "value": "between",
+            "label": "Between characters"
+          },
+          {
+            "value": "start",
+            "label": "At start"
+          },
+          {
+            "value": "end",
+            "label": "At end"
+          },
+          {
+            "value": "both",
+            "label": "At both ends"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate invisible text",
+    "inputTitle": "Text and character",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Text with invisible characters",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "small-text-generator": {
+    "engine": "utility",
+    "operation": "small-text-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "Small but powerful",
+        "rows": 4
+      },
+      {
+        "id": "style",
+        "label": "Style",
+        "type": "select",
+        "value": "superscript",
+        "options": [
+          {
+            "value": "superscript",
+            "label": "Superscript small"
+          },
+          {
+            "value": "subscript",
+            "label": "Subscript small"
+          },
+          {
+            "value": "fullwidth",
+            "label": "Full-width small"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate small text",
+    "inputTitle": "Text and style",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Small text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "cursive-text-generator": {
+    "engine": "utility",
+    "operation": "cursive-text-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "ReelFlow looks beautiful",
+        "rows": 4
+      },
+      {
+        "id": "style",
+        "label": "Script style",
+        "type": "select",
+        "value": "script",
+        "options": [
+          {
+            "value": "script",
+            "label": "Script"
+          },
+          {
+            "value": "bold-script",
+            "label": "Bold script"
+          },
+          {
+            "value": "italic",
+            "label": "Italic"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate cursive text",
+    "inputTitle": "Text and style",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Cursive text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "upside-down-text": {
+    "engine": "utility",
+    "operation": "upside-down-text",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "ReelFlow",
+        "rows": 4
+      }
+    ],
+    "actionLabel": "Flip text",
+    "inputTitle": "Text",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Upside-down text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "strikethrough-text": {
+    "engine": "utility",
+    "operation": "strikethrough-text",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "text",
+        "label": "Text",
+        "type": "textarea",
+        "value": "Old price: $99",
+        "rows": 4
+      },
+      {
+        "id": "style",
+        "label": "Style",
+        "type": "select",
+        "value": "single",
+        "options": [
+          {
+            "value": "single",
+            "label": "Single line"
+          },
+          {
+            "value": "double",
+            "label": "Double line"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate strikethrough",
+    "inputTitle": "Text and style",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Strikethrough text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "video-to-step-guide": {
+    "engine": "utility",
+    "operation": "video-to-step-guide",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "video",
+        "label": "Video",
+        "type": "file",
+        "accept": "video/*",
+        "multiple": false
+      },
+      {
+        "id": "interval",
+        "label": "Seconds between steps",
+        "type": "number",
+        "value": 10,
+        "min": 1,
+        "max": 300,
+        "step": 1
+      },
+      {
+        "id": "notes",
+        "label": "Step notes (one per line)",
+        "type": "textarea",
+        "value": "",
+        "rows": 5,
+        "placeholder": "Optional notes, one for each step"
+      }
+    ],
+    "actionLabel": "Build guide",
+    "inputTitle": "Video and guide settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Step-by-step guide",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "html",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "webcam-mirror": {
+    "engine": "utility",
+    "operation": "webcam-mirror",
+    "autoRun": false,
+    "fields": [],
+    "actionLabel": "Start camera",
+    "inputTitle": "Webcam controls",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Mirrored camera",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "Camera access stays in this tab and is never uploaded.",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": true,
+    "disableCopy": true,
+    "interactive": "webcam",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "online-audio-recorder": {
+    "engine": "utility",
+    "operation": "online-audio-recorder",
+    "autoRun": false,
+    "fields": [],
+    "actionLabel": "Start recording",
+    "inputTitle": "Recorder controls",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Recording",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "Microphone access stays in this tab and is never uploaded.",
+    "outputNote": "",
+    "downloadExt": "webm",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "recorder",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "roman-numeral-date": {
+    "engine": "utility",
+    "operation": "roman-numeral-date",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "date",
+        "label": "Date",
+        "type": "date",
+        "value": "2026-11-27"
+      },
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "to-roman",
+        "options": [
+          {
+            "value": "to-roman",
+            "label": "Date to Roman numerals"
+          },
+          {
+            "value": "from-roman",
+            "label": "Roman numerals to date"
+          }
+        ]
+      },
+      {
+        "id": "roman",
+        "label": "Roman date (DD / MM / YYYY)",
+        "type": "text",
+        "value": "XXVII / XI / MMXXVI"
+      }
+    ],
+    "actionLabel": "Convert date",
+    "inputTitle": "Date",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Roman date",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "document-to-markdown": {
+    "engine": "utility",
+    "operation": "document-to-markdown",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "document",
+        "label": "Document",
+        "type": "file",
+        "accept": ".docx,.html,.htm,.txt,.md",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Convert document",
+    "inputTitle": "Document",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Markdown",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "md",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "pdf-to-markdown": {
+    "engine": "utility",
+    "operation": "pdf-to-markdown",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "pdf",
+        "label": "PDF file",
+        "type": "file",
+        "accept": ".pdf,application/pdf",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Extract Markdown",
+    "inputTitle": "PDF file",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Markdown text",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "md",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": true,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "word-to-markdown": {
+    "engine": "utility",
+    "operation": "word-to-markdown",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "document",
+        "label": "Word document",
+        "type": "file",
+        "accept": ".docx",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Convert Word file",
+    "inputTitle": "Word document",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Markdown",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "md",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "excel-to-markdown": {
+    "engine": "utility",
+    "operation": "excel-to-markdown",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "workbook",
+        "label": "Excel workbook",
+        "type": "file",
+        "accept": ".xlsx",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Convert workbook",
+    "inputTitle": "Excel workbook",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Markdown table",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "md",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "scanned-pdf": {
+    "engine": "utility",
+    "operation": "scanned-pdf",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "pdf",
+        "label": "PDF file",
+        "type": "file",
+        "accept": ".pdf,application/pdf",
+        "multiple": false
+      },
+      {
+        "id": "pages",
+        "label": "Pages",
+        "type": "select",
+        "value": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "All pages"
+          },
+          {
+            "value": "first",
+            "label": "First page"
+          },
+          {
+            "value": "first5",
+            "label": "First five pages"
+          }
+        ]
+      },
+      {
+        "id": "grayscale",
+        "label": "Grayscale",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "id": "rotation",
+        "label": "Rotation",
+        "type": "range",
+        "value": 0,
+        "min": -15,
+        "max": 15,
+        "step": 1
+      },
+      {
+        "id": "noise",
+        "label": "Paper noise",
+        "type": "range",
+        "value": 4,
+        "min": 0,
+        "max": 20,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Create scanned PDF",
+    "inputTitle": "PDF and scan settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Scanned-style PDF",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "pdf",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": true,
+    "needsPdfLib": true,
+    "needsWords": false
+  },
+  "number-to-roman": {
+    "engine": "utility",
+    "operation": "number-to-roman",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "number",
+        "label": "Number",
+        "type": "text",
+        "value": "2026"
+      }
+    ],
+    "actionLabel": "Convert number",
+    "inputTitle": "Number",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Roman numeral",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "binary-translator": {
+    "engine": "utility",
+    "operation": "binary-translator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "mode",
+        "label": "Mode",
+        "type": "select",
+        "value": "encode",
+        "options": [
+          {
+            "value": "encode",
+            "label": "Text to binary"
+          },
+          {
+            "value": "decode",
+            "label": "Binary to text"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "label": "Input",
+        "type": "textarea",
+        "value": "Hello ReelFlow",
+        "rows": 5
+      }
+    ],
+    "actionLabel": "Translate binary",
+    "inputTitle": "Text or binary",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Binary translation",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "avif-to-png": {
+    "engine": "utility",
+    "operation": "avif-to-png",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "image",
+        "label": "AVIF image",
+        "type": "file",
+        "accept": "image/avif,.avif",
+        "multiple": false
+      }
+    ],
+    "actionLabel": "Convert to PNG",
+    "inputTitle": "AVIF image",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "PNG image",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "calendar-link-generator": {
+    "engine": "utility",
+    "operation": "calendar-link-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "title",
+        "label": "Event title",
+        "type": "text",
+        "value": "Team meeting"
+      },
+      {
+        "id": "start",
+        "label": "Starts",
+        "type": "datetime-local"
+      },
+      {
+        "id": "end",
+        "label": "Ends",
+        "type": "datetime-local"
+      },
+      {
+        "id": "location",
+        "label": "Location",
+        "type": "text",
+        "value": ""
+      },
+      {
+        "id": "description",
+        "label": "Description",
+        "type": "textarea",
+        "value": "",
+        "rows": 3
+      }
+    ],
+    "actionLabel": "Generate calendar links",
+    "inputTitle": "Event details",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Calendar links",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "ics",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "spin-the-wheel": {
+    "engine": "utility",
+    "operation": "spin-the-wheel",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "items",
+        "label": "Wheel choices",
+        "type": "textarea",
+        "value": "Option A\nOption B\nOption C\nOption D\nOption E\nOption F",
+        "rows": 7
+      }
+    ],
+    "actionLabel": "Spin the wheel",
+    "inputTitle": "Wheel choices",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Wheel",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "wheel",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "name-wheel": {
+    "engine": "utility",
+    "operation": "name-wheel",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "items",
+        "label": "Names",
+        "type": "textarea",
+        "value": "Ayesha\nBilal\nChen\nDaniyal\nEmma\nFarah",
+        "rows": 7
+      }
+    ],
+    "actionLabel": "Spin names",
+    "inputTitle": "Names",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Name wheel",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "wheel",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "yes-no-wheel": {
+    "engine": "utility",
+    "operation": "yes-no-wheel",
+    "autoRun": true,
+    "fields": [],
+    "actionLabel": "Spin the wheel",
+    "inputTitle": "Decision wheel",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Yes or no wheel",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "wheel",
+    "wheelItems": [
+      "Yes",
+      "No"
+    ],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-number-wheel": {
+    "engine": "utility",
+    "operation": "random-number-wheel",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "min",
+        "label": "Minimum",
+        "type": "number",
+        "value": 1,
+        "min": -1000000,
+        "max": 1000000,
+        "step": 1
+      },
+      {
+        "id": "max",
+        "label": "Maximum",
+        "type": "number",
+        "value": 100,
+        "min": -1000000,
+        "max": 1000000,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Spin numbers",
+    "inputTitle": "Number range",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Number wheel",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "number-wheel",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "cross-sum-calculator": {
+    "engine": "utility",
+    "operation": "cross-sum-calculator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "number",
+        "label": "Number",
+        "type": "text",
+        "value": "987654"
+      }
+    ],
+    "actionLabel": "Calculate cross sum",
+    "inputTitle": "Number",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Cross sum",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "vanity-number-calculator": {
+    "engine": "utility",
+    "operation": "vanity-number-calculator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "number",
+        "label": "Phone number",
+        "type": "text",
+        "value": "800FLOWERS"
+      },
+      {
+        "id": "results",
+        "label": "Maximum results",
+        "type": "number",
+        "value": 20,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Find vanity words",
+    "inputTitle": "Number or phone word",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Vanity number ideas",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "date-countdown": {
+    "engine": "utility",
+    "operation": "date-countdown",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "target",
+        "label": "Target date and time",
+        "type": "datetime-local"
+      }
+    ],
+    "actionLabel": "Start countdown",
+    "inputTitle": "Target date",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Live countdown",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "countdown",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "date-range-calculator": {
+    "engine": "utility",
+    "operation": "date-range-calculator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "start",
+        "label": "Start date",
+        "type": "date"
+      },
+      {
+        "id": "end",
+        "label": "End date",
+        "type": "date"
+      }
+    ],
+    "actionLabel": "Calculate range",
+    "inputTitle": "Date range",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Range summary",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "work-hours-calculator": {
+    "engine": "utility",
+    "operation": "work-hours-calculator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "start",
+        "label": "Start time",
+        "type": "time",
+        "value": "09:00"
+      },
+      {
+        "id": "end",
+        "label": "End time",
+        "type": "time",
+        "value": "17:30"
+      },
+      {
+        "id": "breakMinutes",
+        "label": "Unpaid break (minutes)",
+        "type": "number",
+        "value": 30,
+        "min": 0,
+        "max": 720,
+        "step": 1
+      },
+      {
+        "id": "rate",
+        "label": "Hourly rate (optional)",
+        "type": "number",
+        "value": 0,
+        "min": 0,
+        "max": 10000,
+        "step": 0.01
+      }
+    ],
+    "actionLabel": "Calculate hours",
+    "inputTitle": "Work schedule",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Work hours",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "click-counter": {
+    "engine": "utility",
+    "operation": "click-counter",
+    "autoRun": true,
+    "fields": [],
+    "actionLabel": "Open counter",
+    "inputTitle": "Click counter",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Counter",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "click-counter",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "analog-clock": {
+    "engine": "utility",
+    "operation": "analog-clock",
+    "autoRun": true,
+    "fields": [],
+    "actionLabel": "Open clock",
+    "inputTitle": "Clock",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Live clock",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": true,
+    "disableCopy": true,
+    "interactive": "clock",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "habit-tracker": {
+    "engine": "utility",
+    "operation": "habit-tracker",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "habits",
+        "label": "Habits (one per line)",
+        "type": "textarea",
+        "value": "Read 20 minutes\nExercise\nDrink water",
+        "rows": 4
+      }
+    ],
+    "actionLabel": "Save and track",
+    "inputTitle": "Your habits",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Weekly habit tracker",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "habits",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "checklist-manager": {
+    "engine": "utility",
+    "operation": "checklist-manager",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "items",
+        "label": "Checklist items (one per line)",
+        "type": "textarea",
+        "value": "Plan the week\nBuy groceries\nFinish project",
+        "rows": 6
+      }
+    ],
+    "actionLabel": "Save checklist",
+    "inputTitle": "Checklist items",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Saved checklist",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "checklist",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "white-screen": {
+    "engine": "utility",
+    "operation": "white-screen",
+    "autoRun": false,
+    "fields": [],
+    "actionLabel": "Open white screen",
+    "inputTitle": "White screen",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Display test",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": true,
+    "disableCopy": true,
+    "interactive": "screen",
+    "wheelItems": [],
+    "screenColor": "#ffffff",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "black-screen": {
+    "engine": "utility",
+    "operation": "black-screen",
+    "autoRun": false,
+    "fields": [],
+    "actionLabel": "Open black screen",
+    "inputTitle": "Black screen",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Display test",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": true,
+    "disableCopy": true,
+    "interactive": "screen",
+    "wheelItems": [],
+    "screenColor": "#000000",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "dead-pixel-test": {
+    "engine": "utility",
+    "operation": "dead-pixel-test",
+    "autoRun": false,
+    "fields": [],
+    "actionLabel": "Start pixel test",
+    "inputTitle": "Display test",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Colour cycle",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": true,
+    "disableCopy": true,
+    "interactive": "screen",
+    "wheelItems": [],
+    "screenColor": "#ff0000",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "flip-a-coin": {
+    "engine": "utility",
+    "operation": "flip-a-coin",
+    "autoRun": false,
+    "fields": [],
+    "actionLabel": "Flip coin",
+    "inputTitle": "Coin",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Coin flip",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": true,
+    "interactive": "coin",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "secret-santa": {
+    "engine": "utility",
+    "operation": "secret-santa",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "names",
+        "label": "Participants (one per line)",
+        "type": "textarea",
+        "value": "Ayesha\nBilal\nChen\nDaniyal\nEmma\nFarah",
+        "rows": 7
+      },
+      {
+        "id": "exclusions",
+        "label": "Excluded pairs (one per line)",
+        "type": "textarea",
+        "value": "Ayesha, Bilal\nChen, Daniyal",
+        "rows": 3
+      }
+    ],
+    "actionLabel": "Generate assignments",
+    "inputTitle": "Participants and exclusions",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Secret Santa assignments",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "minecraft-circle-generator": {
+    "engine": "utility",
+    "operation": "minecraft-circle-generator",
+    "autoRun": true,
+    "fields": [
+      {
+        "id": "diameter",
+        "label": "Diameter",
+        "type": "number",
+        "value": 21,
+        "min": 3,
+        "max": 201,
+        "step": 1
+      },
+      {
+        "id": "filled",
+        "label": "Filled circle",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "id": "plane",
+        "label": "Plane",
+        "type": "select",
+        "value": "flat",
+        "options": [
+          {
+            "value": "flat",
+            "label": "Flat ground"
+          },
+          {
+            "value": "vertical",
+            "label": "Vertical wall"
+          }
+        ]
+      }
+    ],
+    "actionLabel": "Generate circle",
+    "inputTitle": "Circle settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Circle template",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "png",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "pictionary-words": {
+    "engine": "utility",
+    "operation": "pictionary-words",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "category",
+        "label": "Category",
+        "type": "select",
+        "value": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "All"
+          },
+          {
+            "value": "animals",
+            "label": "Animals"
+          },
+          {
+            "value": "objects",
+            "label": "Objects"
+          },
+          {
+            "value": "food",
+            "label": "Food"
+          },
+          {
+            "value": "places",
+            "label": "Places"
+          },
+          {
+            "value": "actions",
+            "label": "Actions"
+          }
+        ]
+      },
+      {
+        "id": "difficulty",
+        "label": "Difficulty",
+        "type": "select",
+        "value": "easy",
+        "options": [
+          {
+            "value": "easy",
+            "label": "Easy"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "hard",
+            "label": "Hard"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 12,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate words",
+    "inputTitle": "Prompt settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Pictionary words",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "charades-generator": {
+    "engine": "utility",
+    "operation": "charades-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "category",
+        "label": "Category",
+        "type": "select",
+        "value": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "All"
+          },
+          {
+            "value": "movies",
+            "label": "Movies"
+          },
+          {
+            "value": "animals",
+            "label": "Animals"
+          },
+          {
+            "value": "actions",
+            "label": "Actions"
+          },
+          {
+            "value": "objects",
+            "label": "Objects"
+          },
+          {
+            "value": "food",
+            "label": "Food"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 12,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate prompts",
+    "inputTitle": "Charades settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Charades prompts",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-animal": {
+    "engine": "utility",
+    "operation": "random-animal",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 8,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate animals",
+    "inputTitle": "Animal settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random animals",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-country": {
+    "engine": "utility",
+    "operation": "random-country",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 8,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "unique",
+        "label": "No duplicates",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Generate countries",
+    "inputTitle": "Country settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random countries",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-object": {
+    "engine": "utility",
+    "operation": "random-object",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "count",
+        "label": "How many",
+        "type": "number",
+        "value": 12,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "actionLabel": "Generate objects",
+    "inputTitle": "Object settings",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random objects",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  },
+  "random-team-generator": {
+    "engine": "utility",
+    "operation": "random-team-generator",
+    "autoRun": false,
+    "fields": [
+      {
+        "id": "players",
+        "label": "Players (one per line)",
+        "type": "textarea",
+        "value": "Ayesha\nBilal\nChen\nDaniyal\nEmma\nFarah\nGeorge\nHina",
+        "rows": 8
+      },
+      {
+        "id": "teams",
+        "label": "Number of teams",
+        "type": "number",
+        "value": 2,
+        "min": 2,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "id": "teamNames",
+        "label": "Add team names",
+        "type": "checkbox",
+        "value": true
+      }
+    ],
+    "actionLabel": "Create teams",
+    "inputTitle": "Players and teams",
+    "inputHint": "Runs in your browser",
+    "outputTitle": "Random teams",
+    "placeholder": "Your result will appear here.",
+    "emptyText": "Add your input to see the result.",
+    "note": "",
+    "outputNote": "",
+    "downloadExt": "txt",
+    "disableDownload": false,
+    "disableCopy": false,
+    "interactive": "",
+    "wheelItems": [],
+    "screenColor": "",
+    "needsGif": false,
+    "needsPdf": false,
+    "needsPdfLib": false,
+    "needsWords": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Resize GIF - ReelFlow Toolkit",
+  "description": "Resize an animated GIF while preserving its animation and transparency.",
+  "ogTitle": "Resize GIF",
+  "ogDescription": "Resize an animated GIF while preserving its animation and transparency.",
+  "ldDescription": "Resize an animated GIF while preserving its animation and transparency.",
+  "breadcrumb": "Resize GIF",
+  "kicker": "Image tool",
+  "h1": "Resize GIF",
+  "lede": "Resize an animated GIF while preserving its animation and transparency.",
+  "faq": [
+    {
+      "q": "Is Resize GIF free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "image-resizer",
+      "letter": "I",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-compressor",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

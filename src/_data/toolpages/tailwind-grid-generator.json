@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Tailwind CSS Grid Generator - ReelFlow Toolkit",
+  "description": "Design a responsive CSS grid and export Tailwind grid utilities with exact columns, rows and gaps.",
+  "ogTitle": "Tailwind CSS Grid Generator",
+  "ogDescription": "Design a responsive CSS grid and export Tailwind grid utilities with exact columns, rows and gaps.",
+  "ldDescription": "Design a responsive CSS grid and export Tailwind grid utilities with exact columns, rows and gaps.",
+  "breadcrumb": "Tailwind CSS Grid Generator",
+  "kicker": "Tailwind tool",
+  "h1": "Tailwind CSS Grid Generator",
+  "lede": "Design a responsive CSS grid and export Tailwind grid utilities with exact columns, rows and gaps.",
+  "faq": [
+    {
+      "q": "Is Tailwind CSS Grid Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "developer-tools",
+      "letter": "D",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "color-contrast-checker",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

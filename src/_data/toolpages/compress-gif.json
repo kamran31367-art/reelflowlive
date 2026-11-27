@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Compress GIF - ReelFlow Toolkit",
+  "description": "Reduce GIF file size by scaling frames, lowering frame rate and optimising the palette.",
+  "ogTitle": "Compress GIF",
+  "ogDescription": "Reduce GIF file size by scaling frames, lowering frame rate and optimising the palette.",
+  "ldDescription": "Reduce GIF file size by scaling frames, lowering frame rate and optimising the palette.",
+  "breadcrumb": "Compress GIF",
+  "kicker": "Image tool",
+  "h1": "Compress GIF",
+  "lede": "Reduce GIF file size by scaling frames, lowering frame rate and optimising the palette.",
+  "faq": [
+    {
+      "q": "Is Compress GIF free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "image-resizer",
+      "letter": "I",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-compressor",
+      "letter": "I",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "image-converter",
+      "letter": "I",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

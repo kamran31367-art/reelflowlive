@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Repeat Text Online - ReelFlow Toolkit",
+  "description": "Repeat a word, sentence or paragraph a set number of times with a custom separator.",
+  "ogTitle": "Repeat Text Online",
+  "ogDescription": "Repeat a word, sentence or paragraph a set number of times with a custom separator.",
+  "ldDescription": "Repeat a word, sentence or paragraph a set number of times with a custom separator.",
+  "breadcrumb": "Repeat Text Online",
+  "kicker": "Text tool",
+  "h1": "Repeat Text Online",
+  "lede": "Repeat a word, sentence or paragraph a set number of times with a custom separator.",
+  "faq": [
+    {
+      "q": "Is Repeat Text Online free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

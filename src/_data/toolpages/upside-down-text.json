@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Upside Down Text Generator - ReelFlow Toolkit",
+  "description": "Flip and rotate text into upside-down Unicode.",
+  "ogTitle": "Upside Down Text Generator",
+  "ogDescription": "Flip and rotate text into upside-down Unicode.",
+  "ldDescription": "Flip and rotate text into upside-down Unicode.",
+  "breadcrumb": "Upside Down Text Generator",
+  "kicker": "Text tool",
+  "h1": "Upside Down Text Generator",
+  "lede": "Flip and rotate text into upside-down Unicode.",
+  "faq": [
+    {
+      "q": "Is Upside Down Text Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

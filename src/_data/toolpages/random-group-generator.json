@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Random Group Generator - ReelFlow Toolkit",
+  "description": "Split a list of names into balanced random groups instantly.",
+  "ogTitle": "Random Group Generator",
+  "ogDescription": "Split a list of names into balanced random groups instantly.",
+  "ldDescription": "Split a list of names into balanced random groups instantly.",
+  "breadcrumb": "Random Group Generator",
+  "kicker": "Text tool",
+  "h1": "Random Group Generator",
+  "lede": "Split a list of names into balanced random groups instantly.",
+  "faq": [
+    {
+      "q": "Is Random Group Generator free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "text-tools",
+      "letter": "T",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}

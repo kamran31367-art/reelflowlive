@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Interactive Analog Clock - ReelFlow Toolkit",
+  "description": "A clean live analog clock with local time and a digital readout.",
+  "ogTitle": "Interactive Analog Clock",
+  "ogDescription": "A clean live analog clock with local time and a digital readout.",
+  "ldDescription": "A clean live analog clock with local time and a digital readout.",
+  "breadcrumb": "Interactive Analog Clock",
+  "kicker": "Misc tool",
+  "h1": "Interactive Analog Clock",
+  "lede": "A clean live analog clock with local time and a digital readout.",
+  "faq": [
+    {
+      "q": "Is Interactive Analog Clock free?",
+      "a": "Yes. It runs entirely in your browser with no account, upload or usage limit."
+    },
+    {
+      "q": "Are my files or text uploaded?",
+      "a": "No. Processing happens locally on your device using browser APIs."
+    }
+  ],
+  "related": [
+    {
+      "slug": "character-counter",
+      "letter": "C",
+      "tone": "",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "title-preview",
+      "letter": "T",
+      "tone": "mint",
+      "note": "Related browser tool"
+    },
+    {
+      "slug": "qr-code-generator",
+      "letter": "Q",
+      "tone": "amber",
+      "note": "Related browser tool"
+    }
+  ]
+}
