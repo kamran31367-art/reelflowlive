@@ -1,0 +1,1432 @@
+{
+  "merge-split-rotate-pdfs-locally": [
+    {
+      "name": "PDF Merge & Split",
+      "href": "/pdf-tools/",
+      "note": "Merge, split, rotate and build PDFs on your device - no upload, no account."
+    },
+    {
+      "name": "PDF to Images & Text",
+      "href": "/pdf-to-images/",
+      "note": "Render pages as sharp PNGs or copy their text."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Turn page exports into JPG, PNG or WebP."
+    },
+    {
+      "name": "Image to Base64",
+      "href": "/image-to-base64/",
+      "note": "Inline a small logo into an HTML page or email."
+    },
+    {
+      "name": "Background Remover",
+      "href": "/background-remover/",
+      "note": "Cut a person out of a photo for a cover page."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Trim the walkthrough clip you attach to a report."
+    },
+    {
+      "name": "Developer Tools",
+      "href": "/developer-tools/",
+      "note": "Hash a file text or decode the tokens inside a PDF form."
+    },
+    {
+      "name": "Smallpdf",
+      "href": "https://smallpdf.com/pdf-tools",
+      "note": "Wide PDF toolbox when you need form filling or signing.",
+      "external": true
+    },
+    {
+      "name": "iLovePDF",
+      "href": "https://www.ilovepdf.com/",
+      "note": "Online PDF conversions and OCR for scanned pages.",
+      "external": true
+    },
+    {
+      "name": "CloudConvert",
+      "href": "https://cloudconvert.com/pdf-to-png",
+      "note": "Heavy format conversions between documents and images.",
+      "external": true
+    }
+  ],
+  "compress-images-before-upload": [
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Shrink JPG, PNG and WebP in a batch without uploading."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Change the format before or after compressing."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Hit the exact pixel size a platform asks for."
+    },
+    {
+      "name": "Favicon Generator",
+      "href": "/favicon-generator/",
+      "note": "Build every icon size from one image."
+    },
+    {
+      "name": "Thumbnail Safe-Zone Tester",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Check the compressed thumbnail still reads in every crop."
+    },
+    {
+      "name": "Background Remover",
+      "href": "/background-remover/",
+      "note": "Cut a subject out before compressing the PNG."
+    },
+    {
+      "name": "Image to Base64",
+      "href": "/image-to-base64/",
+      "note": "Inline a tiny compressed icon into CSS."
+    },
+    {
+      "name": "TinyPNG",
+      "href": "https://tinypng.com/",
+      "note": "Another trusted compressor for PNG and JPG.",
+      "external": true
+    },
+    {
+      "name": "Squoosh",
+      "href": "https://squoosh.app/",
+      "note": "Compare formats and quality side by side.",
+      "external": true
+    },
+    {
+      "name": "Canva",
+      "href": "https://www.canva.com/",
+      "note": "Finish the design once the file is small.",
+      "external": true
+    }
+  ],
+  "qr-codes-print-and-screen": [
+    {
+      "name": "QR Code Generator",
+      "href": "/qr-code-generator/",
+      "note": "Make a crisp PNG or SVG code locally, offline."
+    },
+    {
+      "name": "UTM Link Builder",
+      "href": "/utm-link-builder/",
+      "note": "Tag the destination link before turning it into a code."
+    },
+    {
+      "name": "YouTube Timestamp Link",
+      "href": "/youtube-timestamp-link/",
+      "note": "Point a code at the exact second of a video."
+    },
+    {
+      "name": "Color Contrast Checker",
+      "href": "/color-contrast-checker/",
+      "note": "Keep the code dark on light so it scans."
+    },
+    {
+      "name": "Developer Tools",
+      "href": "/developer-tools/",
+      "note": "Shorten or verify the payload behind the code."
+    },
+    {
+      "name": "Meme Generator",
+      "href": "/meme-generator/",
+      "note": "Add a printed code to a shareable image."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Convert the exported PNG for print or post."
+    },
+    {
+      "name": "QR Code Generator (qr-code-generator.com)",
+      "href": "https://www.qr-code-generator.com/",
+      "note": "Template-heavy codes when you need a styled design.",
+      "external": true
+    },
+    {
+      "name": "QRCode Monkey",
+      "href": "https://www.qrcode-monkey.com/",
+      "note": "Logo-embedded codes for packaging.",
+      "external": true
+    },
+    {
+      "name": "Canva",
+      "href": "https://www.canva.com/qr-code-generator/",
+      "note": "Place the code inside a poster layout.",
+      "external": true
+    }
+  ],
+  "background-removal-portraits": [
+    {
+      "name": "Background Remover",
+      "href": "/background-remover/",
+      "note": "Cut a person out of a photo and download a transparent PNG."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Shrink the composited photo before it goes into a thumbnail."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Save the finished cut-out as JPG when transparency is not needed."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Match the size a profile picture or product card expects."
+    },
+    {
+      "name": "Favicon Generator",
+      "href": "/favicon-generator/",
+      "note": "Turn a cut-out face or logo into a full set of browser icons."
+    },
+    {
+      "name": "Image to Base64",
+      "href": "/image-to-base64/",
+      "note": "Inline a small cut-out avatar straight into an HTML page."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Pull a clean talking-head frame out of a video to cut out."
+    },
+    {
+      "name": "remove.bg",
+      "href": "https://www.remove.bg/",
+      "note": "Cloud service that also handles objects, cars and animals.",
+      "external": true
+    },
+    {
+      "name": "Photopea",
+      "href": "https://www.photopea.com/",
+      "note": "Full editor in the browser for refining an edge by hand.",
+      "external": true
+    },
+    {
+      "name": "Canva Background Remover",
+      "href": "https://www.canva.com/features/background-remover/",
+      "note": "Removal built into a template tool for social graphics.",
+      "external": true
+    }
+  ],
+  "base64-data-uri-images": [
+    {
+      "name": "Image to Base64",
+      "href": "/image-to-base64/",
+      "note": "Encode an icon to a data URI, or decode one back into a file."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Get the image under 10 KB before inlining it."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Save a decoded data URI as JPG, PNG or WebP."
+    },
+    {
+      "name": "Favicon Generator",
+      "href": "/favicon-generator/",
+      "note": "Build the small icon that suits a data URI best."
+    },
+    {
+      "name": "Developer Tools",
+      "href": "/developer-tools/",
+      "note": "Hash text, decode Base64 strings and check JSON."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Drop the pixel dimensions before encoding."
+    },
+    {
+      "name": "QR Code Generator",
+      "href": "/qr-code-generator/",
+      "note": "Another job where short data beats long data."
+    },
+    {
+      "name": "MDN: Data URLs",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs",
+      "note": "The reference for the format and its browser limits.",
+      "external": true
+    },
+    {
+      "name": "Base64 Guru",
+      "href": "https://base64.guru/converter/decode/image",
+      "note": "Decode a base64 string and download the image.",
+      "external": true
+    },
+    {
+      "name": "Can I Use: Data URIs",
+      "href": "https://caniuse.com/datauri",
+      "note": "Browser support tables for inline data across versions.",
+      "external": true
+    }
+  ],
+  "clean-text-in-one-pass": [
+    {
+      "name": "Text Tools",
+      "href": "/text-tools/",
+      "note": "Case, line breaks, duplicates, slugs and placeholder text in one page."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Check the length before the copy goes into a platform."
+    },
+    {
+      "name": "Title Preview",
+      "href": "/title-preview/",
+      "note": "See how a converted title truncates in search and feeds."
+    },
+    {
+      "name": "SRT Subtitle Editor",
+      "href": "/srt-editor/",
+      "note": "Fix subtitle line lengths after cleaning the transcript."
+    },
+    {
+      "name": "UTM Link Builder",
+      "href": "/utm-link-builder/",
+      "note": "Build readable campaign links with clean parameter values."
+    },
+    {
+      "name": "QR Code Generator",
+      "href": "/qr-code-generator/",
+      "note": "Send a cleaned URL to print without retyping it."
+    },
+    {
+      "name": "Developer Tools",
+      "href": "/developer-tools/",
+      "note": "Hash, decode and inspect strings the converters leave alone."
+    },
+    {
+      "name": "WordCounter",
+      "href": "https://wordcounter.net/",
+      "note": "Deeper word, character and reading-time statistics.",
+      "external": true
+    },
+    {
+      "name": "Regex101",
+      "href": "https://regex101.com/",
+      "note": "Pattern matching for the find-and-replace jobs this page skips.",
+      "external": true
+    },
+    {
+      "name": "Grammarly",
+      "href": "https://www.grammarly.com/",
+      "note": "Grammar pass on the text after its shape is fixed.",
+      "external": true
+    }
+  ],
+  "contrast-ratio-captions": [
+    {
+      "name": "Color Contrast Checker",
+      "href": "/color-contrast-checker/",
+      "note": "Measure a text and background pair against WCAG AA and AAA."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Keep burnt-in captions clear of the platform UI."
+    },
+    {
+      "name": "YouTube Thumbnail Downloader",
+      "href": "/youtube-thumbnail-downloader/",
+      "note": "Pull a cover image to sample its real colours."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Export the worst frame of a video for checking."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Short captions read better and fail less often."
+    },
+    {
+      "name": "Title Preview",
+      "href": "/title-preview/",
+      "note": "See how a headline wraps at platform sizes."
+    },
+    {
+      "name": "Meme Generator",
+      "href": "/meme-generator/",
+      "note": "Outline and plate treatment tested on real images."
+    },
+    {
+      "name": "WebAIM Contrast Checker",
+      "href": "https://webaim.org/resources/contrastchecker/",
+      "note": "The long-standing reference checker with an explanation panel.",
+      "external": true
+    },
+    {
+      "name": "Adobe Color",
+      "href": "https://color.adobe.com/create/color-contrast-analyzer",
+      "note": "Contrast analyser plus palettes from one starting colour.",
+      "external": true
+    },
+    {
+      "name": "Coolors Contrast Checker",
+      "href": "https://coolors.co/contrast-checker",
+      "note": "Quick pass or fail read on a pair of hex values.",
+      "external": true
+    }
+  ],
+  "download-youtube-thumbnail": [
+    {
+      "name": "YouTube Thumbnail Downloader",
+      "href": "/youtube-thumbnail-downloader/",
+      "note": "Grab the largest public size YouTube stores for a video."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "See where the duration badge and controls sit on a cover."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Resize to 1280 x 720 or the vertical 1080 x 1920 preset."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Bring a heavy cover under the 2 MB upload limit."
+    },
+    {
+      "name": "Color Contrast Checker",
+      "href": "/color-contrast-checker/",
+      "note": "Check text over a photo before burning it into the cover."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Export a clean still when no full-size thumbnail exists."
+    },
+    {
+      "name": "Title Preview",
+      "href": "/title-preview/",
+      "note": "Preview how the title truncates beside the thumbnail."
+    },
+    {
+      "name": "Thumbnail Maker (Canva)",
+      "href": "https://www.canva.com/create/youtube-thumbnails/",
+      "note": "Template-based covers if you want to start from a layout.",
+      "external": true
+    },
+    {
+      "name": "Photopea",
+      "href": "https://www.photopea.com/",
+      "note": "A free Photoshop-style editor that holds a 1280 × 720 canvas to the pixel.",
+      "external": true
+    },
+    {
+      "name": "Google Fonts",
+      "href": "https://fonts.google.com/",
+      "note": "Bold display faces that stay legible at phone size.",
+      "external": true
+    }
+  ],
+  "extract-audio-from-video": [
+    {
+      "name": "Audio Extractor & Trimmer",
+      "href": "/audio-extractor/",
+      "note": "Decode a video locally and save the sound as WAV or MP3."
+    },
+    {
+      "name": "Audio Speed & Pitch",
+      "href": "/audio-speed-pitch/",
+      "note": "Slow or speed the extracted track without touching the video."
+    },
+    {
+      "name": "SRT Subtitle Editor",
+      "href": "/srt-editor/",
+      "note": "Turn a transcript into timed subtitles after extraction."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Trim the video itself when the picture is needed too."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Export a still from the same clip for show notes."
+    },
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "Turn a short moment into a silent looping clip."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Check transcript length against caption limits."
+    },
+    {
+      "name": "MediaHuman Audio Converter",
+      "href": "https://www.mediahuman.com/audio-converter/",
+      "note": "Desktop batch conversion between WAV, MP3 and FLAC.",
+      "external": true
+    },
+    {
+      "name": "Audacity",
+      "href": "https://www.audacityteam.org/",
+      "note": "Free editor for noise removal and levelling after extraction.",
+      "external": true
+    },
+    {
+      "name": "EBU R128 Loudness Explorer",
+      "href": "https://www.loudnesspenalty.com/",
+      "note": "See how a track will be turned down by streaming platforms.",
+      "external": true
+    }
+  ],
+  "favicon-sizes-guide": [
+    {
+      "name": "Favicon Generator",
+      "href": "/favicon-generator/",
+      "note": "Draw seven PNG sizes and a packed .ico from one image or two letters."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Resize the source artwork before it becomes a square icon."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Shrink the PNGs further if the host counts every kilobyte."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Convert a logo to PNG so the generator can read it."
+    },
+    {
+      "name": "Background Remover",
+      "href": "/background-remover/",
+      "note": "Cut a product shot out before it goes into an icon."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "The same margin logic, applied to YouTube thumbnails."
+    },
+    {
+      "name": "Color Contrast Checker",
+      "href": "/color-contrast-checker/",
+      "note": "Measure the letter and background colours of a text icon."
+    },
+    {
+      "name": "RealFaviconGenerator",
+      "href": "https://realfavicongenerator.net/",
+      "note": "Alternative generator, including SVG and maskable icons.",
+      "external": true
+    },
+    {
+      "name": "Favicon.io",
+      "href": "https://favicon.io/",
+      "note": "Quick icon sets from text, emoji or a single image.",
+      "external": true
+    },
+    {
+      "name": "Maskable.app",
+      "href": "https://maskable.app/",
+      "note": "Preview how Android crops an adaptive icon.",
+      "external": true
+    }
+  ],
+  "grab-sharp-frame": [
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Save one frame at the video's native resolution as a PNG."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Slow or trim the clip so a fast moment is easier to catch."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Check where the platform UI covers your chosen still."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Scale the frame to 1280x720 or another exact size."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Bring a several-megabyte PNG down for web use."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Turn the PNG into JPG or WebP when a limit applies."
+    },
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "When a short looping moment reads better than one still."
+    },
+    {
+      "name": "Photopea",
+      "href": "https://www.photopea.com/",
+      "note": "Free browser editor for cropping and annotating the frame.",
+      "external": true
+    },
+    {
+      "name": "Squoosh",
+      "href": "https://squoosh.app/",
+      "note": "Compare PNG, JPG and WebP quality side by side.",
+      "external": true
+    },
+    {
+      "name": "MPC-HC Frame Save",
+      "href": "https://mpc-hc.org/",
+      "note": "Desktop player with its own save-frame shortcut.",
+      "external": true
+    }
+  ],
+  "jpg-png-webp-conversion": [
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Batch-convert JPG, PNG and WebP on a canvas with one quality dial."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Squeeze an image without changing what format it is in."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Change the pixel dimensions, which the converter never touches."
+    },
+    {
+      "name": "Image to Base64",
+      "href": "/image-to-base64/",
+      "note": "Inline a converted icon straight into HTML or CSS."
+    },
+    {
+      "name": "Background Remover",
+      "href": "/background-remover/",
+      "note": "Cut a subject out to PNG before choosing a lossy target."
+    },
+    {
+      "name": "Favicon Generator",
+      "href": "/favicon-generator/",
+      "note": "Turn a converted square logo into browser icons."
+    },
+    {
+      "name": "PDF to Images",
+      "href": "/pdf-to-images/",
+      "note": "Render document pages as PNG, then convert for the web."
+    },
+    {
+      "name": "Squoosh",
+      "href": "https://squoosh.app/",
+      "note": "Side-by-side quality comparison across several codecs.",
+      "external": true
+    },
+    {
+      "name": "TinyPNG",
+      "href": "https://tinypng.com/",
+      "note": "Second pass on PNG and JPG after a format swap.",
+      "external": true
+    },
+    {
+      "name": "Photopea",
+      "href": "https://www.photopea.com/",
+      "note": "Browser editor that keeps layers and exports any format.",
+      "external": true
+    }
+  ],
+  "json-base64-sha256-quick-fixes": [
+    {
+      "name": "Developer Tools",
+      "href": "/developer-tools/",
+      "note": "JSON format and minify, Base64, SHA-256 and a password generator in one page."
+    },
+    {
+      "name": "Image to Base64",
+      "href": "/image-to-base64/",
+      "note": "When the Base64 string is an image rather than text."
+    },
+    {
+      "name": "Text Tools",
+      "href": "/text-tools/",
+      "note": "Clean, count and reshape text before it is encoded."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Check string length against a field limit."
+    },
+    {
+      "name": "UTM Link Builder",
+      "href": "/utm-link-builder/",
+      "note": "Build the query string, then percent-encode what needs it."
+    },
+    {
+      "name": "QR Code Generator",
+      "href": "/qr-code-generator/",
+      "note": "Send an encoded value to a phone without retyping it."
+    },
+    {
+      "name": "SRT Subtitle Editor",
+      "href": "/srt-editor/",
+      "note": "Another text file where one stray character breaks the format."
+    },
+    {
+      "name": "JSONLint",
+      "href": "https://jsonlint.com/",
+      "note": "Second opinion on JSON with line numbers and a schema hint.",
+      "external": true
+    },
+    {
+      "name": "Base64 Decode",
+      "href": "https://www.base64decode.org/",
+      "note": "Decode to a file when the bytes are not text.",
+      "external": true
+    },
+    {
+      "name": "CyberChef",
+      "href": "https://gchq.github.io/CyberChef/",
+      "note": "Chain encodings, hashes and conversions in one recipe.",
+      "external": true
+    }
+  ],
+  "meme-text-readable": [
+    {
+      "name": "Meme Generator",
+      "href": "/meme-generator/",
+      "note": "Two outlined captions on one image, exported at full resolution."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Keep the caption clear of player controls and badges."
+    },
+    {
+      "name": "Color Contrast Checker",
+      "href": "/color-contrast-checker/",
+      "note": "Measure a custom text colour against the background."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Shrink the finished PNG when a chat or form has a limit."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Set the pixel size a profile or post expects."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Pull a frame from a clip to caption when no photo fits."
+    },
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "Turn a short moment into a looping reaction instead of a still."
+    },
+    {
+      "name": "Imgflip Meme Generator",
+      "href": "https://imgflip.com/memegenerator",
+      "note": "Large template library when the joke is a known format.",
+      "external": true
+    },
+    {
+      "name": "Canva Meme Maker",
+      "href": "https://www.canva.com/create/memes/",
+      "note": "Layered layouts and fonts for a design-led version.",
+      "external": true
+    },
+    {
+      "name": "Photopea",
+      "href": "https://www.photopea.com/",
+      "note": "Free browser editor for retouching a meme by hand.",
+      "external": true
+    }
+  ],
+  "pdf-pages-to-png": [
+    {
+      "name": "PDF to Images & Text",
+      "href": "/pdf-to-images/",
+      "note": "Render the page you need as a PNG and read its embedded text."
+    },
+    {
+      "name": "PDF Merge & Split",
+      "href": "/pdf-tools/",
+      "note": "Join, split or reorder pages before rendering them."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Cut the weight of a heavy page PNG before sending it."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Set the exact pixel size a form or profile expects."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Swap PNG for JPG or WebP where a site asks for it."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Grab a page from a recorded presentation as a still."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Check a page render against player controls before using it as a thumbnail."
+    },
+    {
+      "name": "iLovePDF",
+      "href": "https://www.ilovepdf.com/pdf_to_jpg",
+      "note": "Direct PDF to JPG batch conversion on a server.",
+      "external": true
+    },
+    {
+      "name": "CloudConvert PDF to JPG",
+      "href": "https://cloudconvert.com/pdf-to-jpg",
+      "note": "A second independent converter with batch pages and a quality control.",
+      "external": true
+    },
+    {
+      "name": "PDF24",
+      "href": "https://www.pdf24.org/",
+      "note": "A large free toolbox beyond conversion, including OCR.",
+      "external": true
+    }
+  ],
+  "platform-character-limits": [
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Five platform limits counted live, emoji as whole characters."
+    },
+    {
+      "name": "Title & Caption Preview",
+      "href": "/title-preview/",
+      "note": "See where a title and caption are cut on the feed before publishing."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Check a thumbnail against player overlays while the text still fits."
+    },
+    {
+      "name": "Text Tools",
+      "href": "/text-tools/",
+      "note": "Case fixes, duplicate lines and cleanups for the caption you just counted."
+    },
+    {
+      "name": "YouTube Chapters Generator",
+      "href": "/youtube-chapters/",
+      "note": "Build timestamped chapters that go into the description field."
+    },
+    {
+      "name": "SRT Subtitle Editor",
+      "href": "/srt-editor/",
+      "note": "Edit subtitle timing and text without uploading the file anywhere."
+    },
+    {
+      "name": "UTM Link Builder",
+      "href": "/utm-link-builder/",
+      "note": "Campaign links for the caption, with tags you can read."
+    },
+    {
+      "name": "Sprout Social character counter",
+      "href": "https://sproutsocial.com/insights/social-media-character-counter/",
+      "note": "A written reference for per network limits beyond these five.",
+      "external": true
+    },
+    {
+      "name": "Hootsuite Instagram caption guide",
+      "href": "https://blog.hootsuite.com/instagram-caption/",
+      "note": "Why the visible part of an Instagram caption is so short.",
+      "external": true
+    },
+    {
+      "name": "X Help, how to post",
+      "href": "https://help.x.com/en/using-x/how-to-post",
+      "note": "X's own note on link shortening and post length.",
+      "external": true
+    }
+  ],
+  "resize-images-without-blur": [
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Exact pixel sizes with crop, fit and stretch, previewed before download."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Shrink the resized file when a platform still enforces a weight cap."
+    },
+    {
+      "name": "Image Format Converter",
+      "href": "/image-converter/",
+      "note": "Move between JPG, PNG and WebP without changing dimensions."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Check the resized thumbnail against player overlays and badges."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Pull a still frame out of a video to resize as a cover image."
+    },
+    {
+      "name": "Favicon Generator",
+      "href": "/favicon-generator/",
+      "note": "Small square exports where 16 pixel versions expose softness fast."
+    },
+    {
+      "name": "Background Remover",
+      "href": "/background-remover/",
+      "note": "Cut out a subject before placing it on a flat colour card."
+    },
+    {
+      "name": "Squoosh",
+      "href": "https://squoosh.app/",
+      "note": "Google's browser tool with side by side codec comparison.",
+      "external": true
+    },
+    {
+      "name": "TinyPNG",
+      "href": "https://tinypng.com/",
+      "note": "A hosted compressor for PNG and JPG with a visible weight readout.",
+      "external": true
+    },
+    {
+      "name": "Photopea",
+      "href": "https://www.photopea.com/",
+      "note": "A full editor in the browser when a centred crop is not enough.",
+      "external": true
+    }
+  ],
+  "share-youtube-at-second": [
+    {
+      "name": "YouTube Timestamp Link",
+      "href": "/youtube-timestamp-link/",
+      "note": "Write a share link that opens the video at one exact second, in four formats."
+    },
+    {
+      "name": "YouTube Chapters Generator",
+      "href": "/youtube-chapters/",
+      "note": "Turn a list of moments into chapter lines whose timestamps satisfy the rules."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Cut the segment out of the file when a link is not enough."
+    },
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "Turn the moment into a short loop that plays without a player."
+    },
+    {
+      "name": "SRT Subtitle Editor",
+      "href": "/srt-editor/",
+      "note": "Type the same clock values as subtitle timings and fix drift."
+    },
+    {
+      "name": "UTM Link Builder",
+      "href": "/utm-link-builder/",
+      "note": "Tag the destination link so the description clicks are attributable."
+    },
+    {
+      "name": "Title & Caption Preview",
+      "href": "/title-preview/",
+      "note": "See how the title and the shared caption get cut on each surface."
+    },
+    {
+      "name": "Embed videos and playlists",
+      "href": "https://support.google.com/youtube/answer/171780",
+      "note": "YouTube's own guide to iframes, where the start parameter is documented.",
+      "external": true
+    },
+    {
+      "name": "YouTube player parameters",
+      "href": "https://developers.google.com/youtube/player_parameters",
+      "note": "The full embed parameter list behind start, end and the rest.",
+      "external": true
+    },
+    {
+      "name": "MDN: URLSearchParams",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+      "note": "How query strings are read and rewritten, which is all a timestamp link is.",
+      "external": true
+    }
+  ],
+  "speed-audio-tape-effect": [
+    {
+      "name": "Audio Speed & Pitch",
+      "href": "/audio-speed-pitch/",
+      "note": "Tape-style speed and pitch in one factor, with a WAV and a waveform PNG."
+    },
+    {
+      "name": "Audio Extractor & Trimmer",
+      "href": "/audio-extractor/",
+      "note": "Pull the audio out of a video and trim it without touching the pitch."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Cut the clip itself when the speed change belongs inside the video."
+    },
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "Turn a sped-up moment into a short loop for a post."
+    },
+    {
+      "name": "SRT Subtitle Editor",
+      "href": "/srt-editor/",
+      "note": "Rewrite the timings when a faster cut replaces the original."
+    },
+    {
+      "name": "Meme Generator",
+      "href": "/meme-generator/",
+      "note": "Put the chipmunk or slowed voice over an image the way the joke expects."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Take a still from the clip to sit beside the audio on a cover."
+    },
+    {
+      "name": "MDN: Web Audio API",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API",
+      "note": "The browser engine behind the decode and the offline render in this tool.",
+      "external": true
+    },
+    {
+      "name": "MDN: AudioContext",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext",
+      "note": "Why the decoded file takes the device's sample rate, usually 48 kHz.",
+      "external": true
+    },
+    {
+      "name": "Time stretching and pitch scaling",
+      "href": "https://en.wikipedia.org/wiki/Audio_time_stretching_and_pitch_scaling",
+      "note": "The two families of speed change, and why tape cannot separate pitch from time.",
+      "external": true
+    }
+  ],
+  "srt-to-vtt-conversion": [
+    {
+      "name": "SRT Subtitle Editor",
+      "href": "/srt-editor/",
+      "note": "Detect the format, convert SRT and VTT, and shift every cue by one offset."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Cut the intro that made the subtitles late in the first place."
+    },
+    {
+      "name": "Audio Extractor & Trimmer",
+      "href": "/audio-extractor/",
+      "note": "Pull the dialogue out when you need to check timing by ear."
+    },
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "Share a short clip that shows the sync problem at a glance."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Grab the frame where a line should appear, as evidence for the offset."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Check how long a caption line can run before a player wraps it."
+    },
+    {
+      "name": "Text Tools",
+      "href": "/text-tools/",
+      "note": "Tidy a pasted transcript before it becomes subtitle text."
+    },
+    {
+      "name": "MDN: WebVTT API",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API",
+      "note": "The web player interface that reads VTT tracks, and what it expects.",
+      "external": true
+    },
+    {
+      "name": "W3C: WebVTT specification",
+      "href": "https://www.w3.org/TR/webvtt1/",
+      "note": "The standard behind the WEBVTT header, cue identifiers and NOTE blocks.",
+      "external": true
+    },
+    {
+      "name": "YouTube: supported subtitle files",
+      "href": "https://support.google.com/youtube/answer/2734698",
+      "note": "Which caption formats YouTube accepts, and how to upload them.",
+      "external": true
+    }
+  ],
+  "thumbnail-safe-zone-guide": [
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Overlay the safe margin, the gradient, the badge and the phone crop on one picture."
+    },
+    {
+      "name": "YouTube Thumbnail Downloader",
+      "href": "/youtube-thumbnail-downloader/",
+      "note": "Fetch the thumbnails of a live video and compare them at the sizes viewers see."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Bring the picture to exactly 1280 by 720 before the guides are drawn."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Shrink the exported PNG back under the upload limit."
+    },
+    {
+      "name": "Title Preview",
+      "href": "/title-preview/",
+      "note": "See how a headline sits across the cards where the thumbnail appears."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Pull a sharp still from the clip to use as the thumbnail base."
+    },
+    {
+      "name": "Meme Generator",
+      "href": "/meme-generator/",
+      "note": "Add bold caption text when the thumbnail needs words on the picture."
+    },
+    {
+      "name": "YouTube Help: Add custom thumbnails",
+      "href": "https://support.google.com/youtube/answer/72431",
+      "note": "The platform's own rules on thumbnail size, formats and the 2 MB limit.",
+      "external": true
+    },
+    {
+      "name": "YouTube Data API: thumbnails.set",
+      "href": "https://developers.google.com/youtube/v3/docs/thumbnails/set",
+      "note": "For channels that upload thumbnails programmatically, including the size limits the API enforces.",
+      "external": true
+    },
+    {
+      "name": "Buffer: YouTube thumbnail guide",
+      "href": "https://buffer.com/resources/youtube-thumbnails/",
+      "note": "A creator-side look at what makes a thumbnail readable in a crowded feed.",
+      "external": true
+    }
+  ],
+  "title-preview-before-publish": [
+    {
+      "name": "Title Preview",
+      "href": "/title-preview/",
+      "note": "Type once, then read the title and caption in the cards where viewers meet them."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Check the 100 and 2200 limits without a layout around them."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Judge the text against the picture and the overlays before publishing."
+    },
+    {
+      "name": "Text Tools",
+      "href": "/text-tools/",
+      "note": "Tidy a pasted draft, remove stray spacing and count words."
+    },
+    {
+      "name": "YouTube Chapters",
+      "href": "/youtube-chapters/",
+      "note": "The other line of text people read before they click."
+    },
+    {
+      "name": "Meme Generator",
+      "href": "/meme-generator/",
+      "note": "Set bold words on the thumbnail when the title alone is not enough."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Pull a still from the clip to test the title against real footage."
+    },
+    {
+      "name": "YouTube Help: Thumbnail & title tips",
+      "href": "https://support.google.com/youtube/answer/12340300",
+      "note": "The platform's own advice on accurate, succinct titles and thumbnails.",
+      "external": true
+    },
+    {
+      "name": "YouTube Help: A/B test titles & thumbnails",
+      "href": "https://support.google.com/youtube/answer/16391400",
+      "note": "How YouTube's own test compares up to three title and thumbnail pairs.",
+      "external": true
+    },
+    {
+      "name": "Hootsuite: Instagram captions guide",
+      "href": "https://blog.hootsuite.com/instagram-captions/",
+      "note": "Caption structure advice from the social side, including what sits before the more link.",
+      "external": true
+    }
+  ],
+  "trim-video-without-upload": [
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Set a start and end, play the section once, download the cut - all in the tab."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Pull a clean still out of the clip you just trimmed."
+    },
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "Turn a few trimmed seconds into a looping animation."
+    },
+    {
+      "name": "Audio Extractor",
+      "href": "/audio-extractor/",
+      "note": "Keep the sound of a clip as a separate file."
+    },
+    {
+      "name": "SRT Editor",
+      "href": "/srt-editor/",
+      "note": "Write subtitles against the shorter runtime and check the timing."
+    },
+    {
+      "name": "YouTube Timestamp Link",
+      "href": "/youtube-timestamp-link/",
+      "note": "Build a link that opens the video at the exact second you cut around."
+    },
+    {
+      "name": "YouTube Chapters",
+      "href": "/youtube-chapters/",
+      "note": "Turn timecodes into clickable chapters once the edit is done."
+    },
+    {
+      "name": "MDN: MediaRecorder API",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder",
+      "note": "The browser interface this page records with, and the formats it may produce.",
+      "external": true
+    },
+    {
+      "name": "MDN: HTMLMediaElement.captureStream",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/captureStream",
+      "note": "How a playing video element becomes the stream the recorder saves.",
+      "external": true
+    },
+    {
+      "name": "FFmpeg filter documentation",
+      "href": "https://ffmpeg.org/ffmpeg-filters.html",
+      "note": "The desktop route to frame-accurate trims when the browser is not enough.",
+      "external": true
+    }
+  ],
+  "utm-links-that-stay-readable": [
+    {
+      "name": "UTM Link Builder",
+      "href": "/utm-link-builder/",
+      "note": "Fill five fields and read the exact tagged URL before you copy it."
+    },
+    {
+      "name": "QR Code Generator",
+      "href": "/qr-code-generator/",
+      "note": "Send a printed scan to the same tagged link as your digital posts."
+    },
+    {
+      "name": "YouTube Timestamp Link",
+      "href": "/youtube-timestamp-link/",
+      "note": "Point a campaign at the exact second of the video it is promoting."
+    },
+    {
+      "name": "Text Tools",
+      "href": "/text-tools/",
+      "note": "Tidy a campaign name before it goes into the tag fields."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Check that the link plus its surrounding copy fits the post."
+    },
+    {
+      "name": "Title & Caption Preview",
+      "href": "/title-preview/",
+      "note": "See the words that sit above the link in a search result or feed."
+    },
+    {
+      "name": "Developer Tools",
+      "href": "/developer-tools/",
+      "note": "Encode and decode URLs when a platform mangles the query string."
+    },
+    {
+      "name": "Google Analytics: UTM parameters",
+      "href": "https://support.google.com/analytics/answer/1033863",
+      "note": "Google's own explanation of the five parameters and how campaigns are built.",
+      "external": true
+    },
+    {
+      "name": "UTM parameters (Wikipedia)",
+      "href": "https://en.wikipedia.org/wiki/UTM_parameters",
+      "note": "History, naming conventions and the common spelling mistakes to avoid.",
+      "external": true
+    },
+    {
+      "name": "MDN: URLSearchParams",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+      "note": "The browser interface behind the in-place replacement and the + encoding.",
+      "external": true
+    }
+  ],
+  "video-to-gif-size-guide": [
+    {
+      "name": "Video to GIF",
+      "href": "/video-to-gif/",
+      "note": "Capture a few seconds, pick a width and frame rate, and get a GIF encoded in the tab."
+    },
+    {
+      "name": "Video Frame Grabber",
+      "href": "/video-frame-grabber/",
+      "note": "Pull a single still from the clip before you decide on the loop's first frame."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Cut the section down before converting, so only the seconds you need enter the GIF."
+    },
+    {
+      "name": "Image Compressor",
+      "href": "/image-compressor/",
+      "note": "Squeeze the same kind of weight out of ordinary images around the page."
+    },
+    {
+      "name": "Image Resizer",
+      "href": "/image-resizer/",
+      "note": "Resize stills to the exact display width you settled on for the GIF."
+    },
+    {
+      "name": "Title & Caption Preview",
+      "href": "/title-preview/",
+      "note": "Check how a caption and still frame read at feed size before you post."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Make sure the important part of the frame survives platform cropping."
+    },
+    {
+      "name": "W3C: GIF89a specification",
+      "href": "https://www.w3.org/Graphics/GIF/spec-gif89a.txt",
+      "note": "The original 1989 spec, including the per-frame delay field in hundredths of a second.",
+      "external": true
+    },
+    {
+      "name": "MDN: HTMLMediaElement seeked event",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seeked_event",
+      "note": "The event the converter waits for before grabbing each frame.",
+      "external": true
+    },
+    {
+      "name": "MDN: Image file type and format guide",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
+      "note": "Where GIF sits against PNG, WebP and AVIF for animation and size.",
+      "external": true
+    }
+  ],
+  "youtube-chapters-rules": [
+    {
+      "name": "YouTube Chapters",
+      "href": "/youtube-chapters/",
+      "note": "Row per chapter, live rule checks, and a block you copy straight into the description."
+    },
+    {
+      "name": "YouTube Timestamp Link",
+      "href": "/youtube-timestamp-link/",
+      "note": "Share one chapter as a link that opens at that exact second."
+    },
+    {
+      "name": "Title & Caption Preview",
+      "href": "/title-preview/",
+      "note": "Check that chapter titles and the video title read well at feed size."
+    },
+    {
+      "name": "Thumbnail Safe Zone",
+      "href": "/thumbnail-safe-zone/",
+      "note": "Make sure the frame behind the chapter rail survives cropping."
+    },
+    {
+      "name": "SRT Editor",
+      "href": "/srt-editor/",
+      "note": "Time the captions against the same sections the chapters describe."
+    },
+    {
+      "name": "Character Counter",
+      "href": "/character-counter/",
+      "note": "Keep the description under the limit once the chapter block is added."
+    },
+    {
+      "name": "Video Trimmer",
+      "href": "/video-trimmer/",
+      "note": "Cut the sections the chapter list promises before you publish."
+    },
+    {
+      "name": "YouTube Help: video chapters",
+      "href": "https://support.google.com/youtube/answer/9884579",
+      "note": "The official rules: three timestamps, first at 00:00, ten seconds minimum, ascending order.",
+      "external": true
+    },
+    {
+      "name": "YouTube Help: edit video descriptions",
+      "href": "https://support.google.com/youtube/answer/72431",
+      "note": "Where the chapter block goes, and how description edits work after publishing.",
+      "external": true
+    },
+    {
+      "name": "W3C: WebVTT",
+      "href": "https://www.w3.org/TR/webvtt1/",
+      "note": "The other way chapters exist in video: chapter cues in a subtitle track.",
+      "external": true
+    }
+  ]
+}

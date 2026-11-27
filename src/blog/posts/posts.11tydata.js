@@ -5,6 +5,7 @@ module.exports = {
   ogType: "article",
   sitemap: true,
   mainClass: "wrap",
+  author: "ReelFlow Live Team",
   tags: ["posts"],
   eleventyComputed: {
     permalink: (data) => (data.draft === true ? false : `/blog/${data.page.fileSlug}/`),

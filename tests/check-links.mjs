@@ -29,7 +29,6 @@ const pages = [
   { file: 'index.html', url: '/' },
   ...(toolsData.tools || []).map((tool) => ({ file: tool.url.replace(/^\//, '') + 'index.html', url: tool.url })),
   { file: 'blog/index.html', url: '/blog/' },
-  { file: 'blog/youtube-thumbnail-size/index.html', url: '/blog/youtube-thumbnail-size/' },
   { file: 'blog/download-youtube-thumbnail/index.html', url: '/blog/download-youtube-thumbnail/' },
   { file: 'blog/resize-images-without-blur/index.html', url: '/blog/resize-images-without-blur/' },
   { file: 'blog/compress-images-before-upload/index.html', url: '/blog/compress-images-before-upload/' },
@@ -56,7 +55,6 @@ const pages = [
   { file: 'blog/merge-split-rotate-pdfs-locally/index.html', url: '/blog/merge-split-rotate-pdfs-locally/' },
   { file: 'blog/pdf-pages-to-png/index.html', url: '/blog/pdf-pages-to-png/' },
   { file: 'blog/background-removal-portraits/index.html', url: '/blog/background-removal-portraits/' },
-  { file: 'blog/srt-subtitle-timing/index.html', url: '/blog/srt-subtitle-timing/' },
   { file: 'privacy/index.html', url: '/privacy/', noindex: true },
   { file: '404.html', url: '/404.html', noindex: true }
 ];
@@ -138,10 +136,9 @@ check('sitemap has ' + indexable.length + ' URLs', locs.length === indexable.len
 check('sitemap starts with homepage', locs[0] === site.url + '/', locs[0]);
 check('sitemap excludes privacy and 404', !locs.some((u) => /privacy|404/.test(u)));
 check('sitemap lists every indexable page', indexable.every((url) => locs.includes(url)), indexable.filter((url) => !locs.includes(url)).join(', '));
-check('sitemap lists the subtitle timing post', sitemap.includes('/blog/srt-subtitle-timing/'));
-const postSource = fs.readFileSync(path.join(root, 'src/blog/posts/youtube-thumbnail-size.md'), 'utf8');
+const postSource = fs.readFileSync(path.join(root, 'src/blog/posts/download-youtube-thumbnail.md'), 'utf8');
 const postDate = (postSource.match(/^date:\s*(\S+)/m) || [])[1] || '';
-const postBlock = sitemap.split('<url>').find((block) => block.includes('/blog/youtube-thumbnail-size/'));
+const postBlock = sitemap.split('<url>').find((block) => block.includes('/blog/download-youtube-thumbnail/'));
 check('sitemap uses the post publish date', !!postBlock && postBlock.includes('<lastmod>' + postDate + '</lastmod>'), postDate);
 check('sitemap lastmod uses site data', sitemap.includes('<lastmod>' + site.lastUpdated + '</lastmod>'));
 let sitemapMissing = [];
@@ -158,16 +155,13 @@ check('robots.txt links the sitemap', /Sitemap: https:\/\/reelflow\.live\/sitema
 /* Blog */
 const feed = read('blog/feed.xml');
 check('blog feed is valid RSS', /^<\?xml/.test(feed.trim()) && /<rss version="2.0"/.test(feed) && /<\/rss>\s*$/.test(feed.trim()));
-check('feed lists the published post', feed.includes(site.url + '/blog/youtube-thumbnail-size/') && /<pubDate>[^<]+<\/pubDate>/.test(feed));
-check('feed lists the subtitle timing post', feed.includes(site.url + '/blog/srt-subtitle-timing/'));
+check('feed lists the published post', feed.includes(site.url + '/blog/download-youtube-thumbnail/') && /<pubDate>[^<]+<\/pubDate>/.test(feed));
 const blogHtml = read('blog/index.html');
-check('blog index links the published post', blogHtml.includes('href="/blog/youtube-thumbnail-size/"'));
-check('blog index links the subtitle timing post', blogHtml.includes('href="/blog/srt-subtitle-timing/"'));
+check('blog index links the published post', blogHtml.includes('href="/blog/download-youtube-thumbnail/"'));
 check('blog index links the RSS feed', blogHtml.includes('href="/blog/feed.xml"'));
-const postHtml = read('blog/youtube-thumbnail-size/index.html');
+const postHtml = read('blog/download-youtube-thumbnail/index.html');
 check('post has BlogPosting data', /"@type":\s*"BlogPosting"/.test(postHtml) && postHtml.includes('"datePublished": "' + postDate + '"'));
 check('post links back to the blog', postHtml.includes('href="/blog/"'));
-check('subtitle timing post is built', fs.existsSync(path.join(out, 'blog/srt-subtitle-timing/index.html')));
 
 /* Tool guides */
 const guides = [
@@ -196,14 +190,68 @@ const guides = [
   { post: 'blog/speed-audio-tape-effect/index.html', tool: '/audio-speed-pitch/' },
   { post: 'blog/merge-split-rotate-pdfs-locally/index.html', tool: '/pdf-tools/' },
   { post: 'blog/pdf-pages-to-png/index.html', tool: '/pdf-to-images/' },
-  { post: 'blog/background-removal-portraits/index.html', tool: '/background-remover/' },
-  { post: 'blog/srt-subtitle-timing/index.html', tool: '/srt-editor/' }
+  { post: 'blog/background-removal-portraits/index.html', tool: '/background-remover/' }
 ];
 for (const guide of guides) {
   const html = read(guide.post);
   check(guide.post + ': links its tool', html.includes('href="' + guide.tool + '"'));
   check(guide.post + ': listed on the blog index', blogHtml.includes('href="/' + guide.post.replace(/index\.html$/, '') + '"'));
   check(guide.post + ': listed in the feed', feed.includes(site.url + '/' + guide.post.replace(/index\.html$/, '')));
+}
+
+/* Long-form guides: hero, inline images, related list, FAQ, TOC */
+const longform = [
+  { slug: 'merge-split-rotate-pdfs-locally', tool: '/pdf-tools/' },
+  { slug: 'compress-images-before-upload', tool: '/image-compressor/' },
+  { slug: 'qr-codes-print-and-screen', tool: '/qr-code-generator/' },
+  { slug: 'background-removal-portraits', tool: '/background-remover/' },
+  { slug: 'base64-data-uri-images', tool: '/image-to-base64/' },
+  { slug: 'clean-text-in-one-pass', tool: '/text-tools/' },
+    { slug: 'contrast-ratio-captions', tool: '/color-contrast-checker/' },
+    { slug: 'download-youtube-thumbnail', tool: '/youtube-thumbnail-downloader/' },
+    { slug: 'extract-audio-from-video', tool: '/audio-extractor/' },
+  { slug: 'favicon-sizes-guide', tool: '/favicon-generator/' },
+  { slug: 'grab-sharp-frame', tool: '/video-frame-grabber/' },
+  { slug: 'jpg-png-webp-conversion', tool: '/image-converter/' },
+  { slug: 'json-base64-sha256-quick-fixes', tool: '/developer-tools/' },
+  { slug: 'meme-text-readable', tool: '/meme-generator/' },
+  { slug: 'pdf-pages-to-png', tool: '/pdf-to-images/' },
+  { slug: 'platform-character-limits', tool: '/character-counter/' },
+  { slug: 'resize-images-without-blur', tool: '/image-resizer/' },
+  { slug: 'share-youtube-at-second', tool: '/youtube-timestamp-link/' },
+  { slug: 'speed-audio-tape-effect', tool: '/audio-speed-pitch/' },
+  { slug: 'srt-to-vtt-conversion', tool: '/srt-editor/' },
+  { slug: 'thumbnail-safe-zone-guide', tool: '/thumbnail-safe-zone/' },
+  { slug: 'title-preview-before-publish', tool: '/title-preview/' },
+  { slug: 'trim-video-without-upload', tool: '/video-trimmer/' },
+  { slug: 'utm-links-that-stay-readable', tool: '/utm-link-builder/' },
+  { slug: 'video-to-gif-size-guide', tool: '/video-to-gif/' },
+  { slug: 'youtube-chapters-rules', tool: '/youtube-chapters/' }
+];
+const relatedData = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/relatedTools.json'), 'utf8'));
+for (const guide of longform) {
+  const html = read('blog/' + guide.slug + '/index.html');
+  const src = fs.readFileSync(path.join(root, 'src/blog/posts', guide.slug + '.md'), 'utf8');
+  const related = relatedData[guide.slug] || [];
+  check(guide.slug + ': 10 related tools', related.length === 10, String(related.length));
+  check(guide.slug + ': related #1 is its own tool', !!related[0] && related[0].href === guide.tool && !related[0].external);
+  const external = related.filter((item) => item.external).length;
+  check(guide.slug + ': related list has external picks', external >= 1, String(external));
+  const relItems = (html.match(/class="rel-item(?: rel-top)?"/g) || []).length;
+  check(guide.slug + ': related list rendered', relItems === 10, String(relItems));
+  check(guide.slug + ': external links are nofollow', (html.match(/rel="nofollow noopener" target="_blank"/g) || []).length === external);
+  check(guide.slug + ': takeaways box present', /class="takeaways"/.test(html) && html.includes('Key takeaways'));
+  const takeawayBox = (html.match(/class="takeaways"[\s\S]*?<\/section>/) || [''])[0];
+  const takeawayItems = (takeawayBox.match(/<li>/g) || []).length;
+  check(guide.slug + ': takeaways are plain text', takeawayItems >= 3 && !html.includes('[object Object]'), String(takeawayItems));
+  check(guide.slug + ': FAQ present and in JSON-LD', /class="post-faq"/.test(html) && /"@type": "FAQPage"/.test(html));
+  const cover = (src.match(/^cover:\s*(\S+)/m) || [])[1] || '';
+  check(guide.slug + ': hero image built', !!cover && fs.existsSync(path.join(out, cover)));
+  const imgs = [...src.matchAll(/<img src="([^"]+)" alt="([^"]*)"/g)];
+  check(guide.slug + ': two inline images with alt text', imgs.length === 2 && imgs.every((m) => m[2].trim().length > 15), String(imgs.length));
+  check(guide.slug + ': inline images exist', imgs.every((m) => fs.existsSync(path.join(out, m[1]))));
+  const anchors = [...html.matchAll(/<li><a href="#([^"]+)">/g)].map((m) => m[1]);
+  check(guide.slug + ': TOC anchors resolve', anchors.length >= 4 && anchors.every((id) => html.includes('id="' + id + '"')), String(anchors.length));
 }
 
 /* Tools data */

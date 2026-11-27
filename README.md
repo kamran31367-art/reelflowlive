@@ -79,9 +79,9 @@ After publishing a post, open Google Search Console > URL Inspection, paste the 
 article URL and choose **Request indexing**. The sitemap updates automatically, so a
 resubmission is not needed.
 
-The posts are in `src/blog/posts/`: one guide per tool - all 26 tools have a published
-article - plus two extra guides (thumbnail size, subtitle timing), 28 published in total.
-Every post is published right now; the draft switch still works as described above.
+The posts are in `src/blog/posts/`: one long-form guide per tool - all 26 tools have a
+published article, 26 in total. Every post is published right now; the draft switch still
+works as described above.
 
 ## Advertising (Monetag)
 

@@ -47,6 +47,7 @@
   function renderThumb() {
     CT.$$('img', ytThumb).forEach(function (img) { img.remove(); });
     if (thumbUrl) {
+      ytThumb.textContent = '';
       const img = document.createElement('img');
       img.src = thumbUrl;
       img.alt = 'Your thumbnail in the search card';
