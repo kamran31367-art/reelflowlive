@@ -28,14 +28,14 @@ pageScript: tools/safezone.js
   <div class="pane">
     <div class="pane-head"><h2>Thumbnail</h2><span class="hint">one file</span></div>
 
-    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a thumbnail image">
+    <div class="dropzone" id="dropzone" tabindex="0" role="button">
       <div class="dz-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L9 18"/></svg>
       </div>
       <b>Drop a thumbnail here or click to choose</b>
       <span class="mini">JPG, PNG or WebP · 1280 × 720 works best</span>
     </div>
-    <input class="visually-hidden" id="fileInput" type="file" accept="image/*">
+    <input class="visually-hidden" id="fileInput" type="file" accept="image/*" aria-label="Choose an image">
 
     <div class="file-info" id="sourceStats" hidden>
       <div class="meta-row"><span>Source</span><b id="srcName">—</b></div>
@@ -79,7 +79,7 @@ pageScript: tools/safezone.js
       </div>
 
       <div style="min-width:0">
-        <div id="stagePhone" style="position:relative;aspect-ratio:9/16;max-width:190px;margin:0 auto;border-radius:14px;overflow:hidden;background:#0b1220;display:grid;place-items:center">
+        <div class="phone-stage" id="stagePhone" style="position:relative;aspect-ratio:9/16;max-width:190px;margin:0 auto;border-radius:14px;overflow:hidden;background:#0b1220;display:grid;place-items:center">
           <span class="canvas-empty" id="phoneEmpty">9:16 phone</span>
           <img id="phoneImg" alt="Thumbnail in a vertical phone preview" hidden style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
           <div id="phoneCrop" hidden style="position:absolute;top:0;bottom:0;left:25%;right:25%;border-left:2px dashed #fbbf24;border-right:2px dashed #fbbf24"></div>

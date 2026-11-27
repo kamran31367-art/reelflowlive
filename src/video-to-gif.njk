@@ -28,14 +28,14 @@ pageScript: tools/videogif.js
   <div class="pane">
     <div class="pane-head"><h2>Clip</h2><span class="hint">one video</span></div>
 
-    <div class="dropzone" id="gifDropzone" tabindex="0" role="button" aria-label="Choose a video to turn into a GIF">
+    <div class="dropzone" id="gifDropzone" tabindex="0" role="button">
       <div class="dz-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9h19"/><path d="M2.5 15h19"/><path d="M6.5 5v14"/><path d="M17.5 5v14"/></svg>
       </div>
       <b>Drop a video here or click to choose</b>
       <span class="mini">MP4, WebM or MOV the browser can play · nothing is uploaded</span>
     </div>
-    <input class="visually-hidden" id="gifFile" type="file" accept="video/*">
+    <input class="visually-hidden" id="gifFile" type="file" accept="video/*" aria-label="Choose a video to turn into a GIF">
 
     <div class="file-info" id="gifInfo" hidden>
       <div class="meta-row"><span>File</span><b id="gifName">—</b></div>

@@ -28,14 +28,14 @@ pageScript: tools/audiotune.js
   <div class="pane">
     <div class="pane-head"><h2>Input</h2><span class="hint">video or audio</span></div>
 
-    <div class="dropzone" id="atDropzone" tabindex="0" role="button" aria-label="Choose a video or audio file">
+    <div class="dropzone" id="atDropzone" tabindex="0" role="button">
       <div class="dz-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2l2-6 3 14 3-11 2 5h6"/></svg>
       </div>
       <b>Drop a video or audio file here, or click to choose</b>
       <span class="mini">MP4, MOV, WebM, MP3, WAV, M4A, OGG · nothing is uploaded</span>
     </div>
-    <input class="visually-hidden" id="atFile" type="file" accept="video/*,audio/*">
+    <input class="visually-hidden" id="atFile" type="file" accept="video/*,audio/*" aria-label="Choose a video or audio file">
 
     <p class="field-hint err" id="atError" role="alert" hidden></p>
 

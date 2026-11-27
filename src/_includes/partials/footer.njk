@@ -16,7 +16,7 @@
         {% endif %}
       </div>
       <div>
-        <h4>Tools</h4>
+        <h2>Tools</h2>
         <div class="footer-links">
           {% for tool in toolList %}
           <a href="{{ tool.url }}">{{ tool.footerName }}</a>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div>
-        <h4>Site</h4>
+        <h2>Site</h2>
         <div class="footer-links">
           {% for link in site.footerLinks %}
           <a href="{{ link.href }}"{% if link.external %} target="_blank" rel="sponsored noopener noreferrer"{% endif %}>{{ link.label }}</a>

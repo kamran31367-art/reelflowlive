@@ -39,7 +39,7 @@ pageScript: tools/pdftools.js
     </div>
 
     <div id="panel-merge">
-      <div class="dropzone" id="mergeDropzone" tabindex="0" role="button" aria-label="Choose or drop PDFs to merge">
+      <div class="dropzone" id="mergeDropzone" tabindex="0" role="button">
         <div class="dz-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>
         </div>
@@ -57,7 +57,7 @@ pageScript: tools/pdftools.js
       <ol class="list-scroll" id="mergeList" aria-label="Files to merge"></ol>
       <div class="empty-muted" id="mergeEmpty">No PDFs added yet.</div>
     </div>
-    <input class="visually-hidden" id="mergeFile" type="file" accept="application/pdf,.pdf" multiple>
+    <input class="visually-hidden" id="mergeFile" type="file" accept="application/pdf,.pdf" multiple aria-label="Choose or drop PDFs to merge">
 
     <div id="panel-extract" hidden>
       <div class="field">
@@ -73,7 +73,7 @@ pageScript: tools/pdftools.js
         <p class="field-hint" id="extractHint">Counted from 1. Leave empty to keep every page.</p>
       </div>
     </div>
-    <input class="visually-hidden" id="extractFile" type="file" accept="application/pdf,.pdf">
+    <input class="visually-hidden" id="extractFile" type="file" accept="application/pdf,.pdf" aria-label="Choose a PDF to extract text from">
 
     <div id="panel-rotate" hidden>
       <div class="field">
@@ -98,7 +98,7 @@ pageScript: tools/pdftools.js
         <p class="field-hint" id="rotateHint">Optional range like 1-3,5. Empty rotates the whole document.</p>
       </div>
     </div>
-    <input class="visually-hidden" id="rotateFile" type="file" accept="application/pdf,.pdf">
+    <input class="visually-hidden" id="rotateFile" type="file" accept="application/pdf,.pdf" aria-label="Choose a PDF to rotate">
 
     <div id="panel-images" hidden>
       <div class="field">
@@ -121,7 +121,7 @@ pageScript: tools/pdftools.js
         <p class="field-hint">Fit image makes every page exactly the size of its picture.</p>
       </div>
     </div>
-    <input class="visually-hidden" id="imagesFile" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+    <input class="visually-hidden" id="imagesFile" type="file" accept="image/jpeg,image/png,image/webp" multiple aria-label="Choose images to turn into a PDF">
 
     <div class="note"><span class="pin">i</span><span>Files never leave your device. Password-protected PDFs must be unlocked in another app before they open here.</span></div>
   </div>

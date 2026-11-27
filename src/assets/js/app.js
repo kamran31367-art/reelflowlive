@@ -108,13 +108,17 @@
         const py = (e.clientY - r.top) / r.height - 0.5;
         el.style.setProperty('--ry', (px * maxY).toFixed(2) + 'deg');
         el.style.setProperty('--rx', (-py * maxX).toFixed(2) + 'deg');
+        el.style.setProperty('--mx', ((px + 0.5) * 100).toFixed(1) + '%');
+        el.style.setProperty('--my', ((py + 0.5) * 100).toFixed(1) + '%');
       });
       el.addEventListener('pointerleave', function () {
         el.style.setProperty('--ry', '0deg');
         el.style.setProperty('--rx', '0deg');
+        el.style.setProperty('--mx', '50%');
+        el.style.setProperty('--my', '50%');
       });
     }
-    Array.prototype.forEach.call(document.querySelectorAll('.tool-card'), function (card) { tilt(card, 6, 7); });
+    Array.prototype.forEach.call(document.querySelectorAll('.tool-card'), function (card) { tilt(card, 8, 10); });
     Array.prototype.forEach.call(document.querySelectorAll('.icon-hero'), function (tile) { tilt(tile, 10, 12); });
   }
 

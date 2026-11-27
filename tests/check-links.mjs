@@ -309,7 +309,9 @@ check('blog posts carry the support line and smart link', postPageFiles.every((p
 check('support note waits for a download or copy result', read('assets/js/utils.js').includes("CustomEvent('ct:result')") && read('assets/js/app.js').includes("'ct:result'"));
 
 /* Stale homepage rendering */
-check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card"/g) || []).length === tools.length, String(tools.length));
+check('homepage has server-rendered cards', (read('index.html').match(/class="tool-card/g) || []).length === tools.length, String(tools.length));
+const homeHtml = read('index.html');
+check('home cards carry their tone class', (toolsData.tools || []).every((t) => (t.tone ? homeHtml.includes('tool-card tone-' + t.tone + '"') : homeHtml.includes('class="tool-card" href="' + t.url + '"'))));
 check('no leftover client card renderer', !read('assets/js/app.js').includes('toolGrid'));
 
 console.log('\n' + (failures.length ? failures.length + ' FAILED of ' + checks : 'ALL ' + checks + ' CHECKS PASSED'));

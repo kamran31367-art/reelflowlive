@@ -28,14 +28,14 @@ pageScript: tools/bgremove.js
   <div class="pane">
     <div class="pane-head"><h2>Photo</h2><span class="hint">people work best</span></div>
 
-    <div class="dropzone" id="bgDrop" tabindex="0" role="button" aria-label="Choose a photo to cut out">
+    <div class="dropzone" id="bgDrop" tabindex="0" role="button">
       <div class="dz-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16 14 6l4 4L8 20H4z"/><path d="m10 10 4 4"/><path d="M14 20h6"/></svg>
       </div>
       <b>Drop a photo here or click to choose</b>
       <span class="mini">JPG, PNG or WebP · the model runs on your device</span>
     </div>
-    <input class="visually-hidden" id="bgFile" type="file" accept="image/jpeg,image/png,image/webp">
+    <input class="visually-hidden" id="bgFile" type="file" accept="image/jpeg,image/png,image/webp" aria-label="Choose a photo to cut out">
 
     <div class="file-info" id="bgInfo" hidden>
       <div class="meta-row"><span>File</span><b id="bgName">—</b></div>

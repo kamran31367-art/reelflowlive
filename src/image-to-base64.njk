@@ -37,14 +37,14 @@ pageScript: tools/base64img.js
     </div>
 
     <div id="encodePane">
-      <div class="dropzone" id="b64Dropzone" tabindex="0" role="button" aria-label="Choose an image to encode">
+      <div class="dropzone" id="b64Dropzone" tabindex="0" role="button">
         <div class="dz-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12-2 2 2 2"/><path d="m14 12 2 2-2 2"/></svg>
         </div>
         <b>Drop an image here or click to choose</b>
         <span class="mini">JPG, PNG, WebP or SVG · small icons work best as data URIs</span>
       </div>
-      <input class="visually-hidden" id="b64File" type="file" accept="image/*">
+      <input class="visually-hidden" id="b64File" type="file" accept="image/*" aria-label="Choose an image for the Base64 data URI">
 
       <div class="file-info" id="b64Info" hidden>
         <div class="meta-row"><span>File</span><b id="b64Name">—</b></div>

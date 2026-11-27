@@ -31,7 +31,7 @@ mainClass: ""
 
   <div class="tool-grid">
     {% for tool in toolList %}
-    <a class="tool-card" href="{{ tool.url }}">
+    <a class="tool-card{% if tool.tone %} tone-{{ tool.tone }}{% endif %}" href="{{ tool.url }}">
       <span class="icon-tile {{ tool.tone }}" aria-hidden="true">{{ icon(tool.icon) }}</span>
       <h3>{{ tool.name }}</h3>
       <p>{{ tool.desc }}</p>

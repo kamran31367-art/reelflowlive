@@ -28,14 +28,14 @@ pageScript: tools/pdfrender.js
   <div class="pane">
     <div class="pane-head"><h2>PDF</h2><span class="hint">one file</span></div>
 
-    <div class="dropzone" id="pdfDropzone" tabindex="0" role="button" aria-label="Choose a PDF to open">
+    <div class="dropzone" id="pdfDropzone" tabindex="0" role="button">
       <div class="dz-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 17v-4"/><path d="M12 17v-6"/><path d="M15 17v-2"/></svg>
       </div>
       <b>Drop a PDF here or click to choose</b>
       <span class="mini">Pages are rendered on your device · nothing is uploaded</span>
     </div>
-    <input class="visually-hidden" id="pdfFile" type="file" accept="application/pdf,.pdf">
+    <input class="visually-hidden" id="pdfFile" type="file" accept="application/pdf,.pdf" aria-label="Choose a PDF to open">
 
     <div class="file-info" id="pdfInfo" hidden>
       <div class="meta-row"><span>File</span><b id="pdfName">—</b></div>

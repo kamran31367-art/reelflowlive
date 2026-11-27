@@ -28,14 +28,14 @@ pageScript: tools/compressor.js
   <div class="pane">
     <div class="pane-head"><h2>Images</h2><span class="hint">up to 30 files</span></div>
 
-    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose images to compress">
+    <div class="dropzone" id="dropzone" tabindex="0" role="button">
       <div class="dz-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4"/><path d="M20 8V4h-4"/><path d="M4 16v4h4"/><path d="M20 16v4h-4"/><path d="m8 8 4 4 4-4"/><path d="m8 16 4-4 4 4"/></svg>
       </div>
       <b>Drop images here or click to choose</b>
       <span class="mini">JPG, PNG, WebP or GIF · processed on your device</span>
     </div>
-    <input class="visually-hidden" id="fileInput" type="file" accept="image/*" multiple>
+    <input class="visually-hidden" id="fileInput" type="file" accept="image/*" multiple aria-label="Choose an image">
 
     <div class="row" style="margin-top:14px">
       <div class="field">

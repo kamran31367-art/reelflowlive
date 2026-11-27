@@ -37,14 +37,14 @@ pageScript: tools/favicon.js
     </div>
 
     <div id="imagePane">
-      <div class="dropzone" id="iconDropzone" tabindex="0" role="button" aria-label="Choose an image for the favicon">
+      <div class="dropzone" id="iconDropzone" tabindex="0" role="button">
         <div class="dz-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.3l1.05 2.2 2.4.3-1.75 1.65.45 2.4L12 13.7l-2.15 1.15.45-2.4L8.55 10.8l2.4-.3z"/></svg>
         </div>
         <b>Drop an image here or click to choose</b>
         <span class="mini">Square images work best · JPG, PNG or WebP</span>
       </div>
-      <input class="visually-hidden" id="iconFile" type="file" accept="image/*">
+      <input class="visually-hidden" id="iconFile" type="file" accept="image/*" aria-label="Choose an image for the favicon">
 
       <div class="file-info" id="iconInfo" hidden>
         <div class="meta-row"><span>File</span><b id="iconName">—</b></div>
