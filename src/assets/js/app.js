@@ -95,4 +95,26 @@
       window.location.reload();
     });
   });
+
+  /* Pointer tilt for the 3D icon tiles: cards lean towards the cursor and
+     the icon floats above the surface. Skipped for touch and reduced motion. */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  if (!reduceMotion && finePointer) {
+    function tilt(el, maxX, maxY) {
+      el.addEventListener('pointermove', function (e) {
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.setProperty('--ry', (px * maxY).toFixed(2) + 'deg');
+        el.style.setProperty('--rx', (-py * maxX).toFixed(2) + 'deg');
+      });
+      el.addEventListener('pointerleave', function () {
+        el.style.setProperty('--ry', '0deg');
+        el.style.setProperty('--rx', '0deg');
+      });
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.tool-card'), function (card) { tilt(card, 6, 7); });
+    Array.prototype.forEach.call(document.querySelectorAll('.icon-hero'), function (tile) { tilt(tile, 10, 12); });
+  }
 })();

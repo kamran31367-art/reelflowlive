@@ -9,12 +9,19 @@ mainClass: wrap
 pageScript: tools/bgremove.js
 ---
 {% set c = toolpages[contentKey] %}
+{% set t = toolList | toolBySlug(contentKey) %}
+{% from "partials/icons.njk" import icon %}
 <div class="breadcrumb"><a href="/">Toolkit</a><span aria-hidden="true">/</span><span>{{ c.breadcrumb }}</span></div>
 
 <section class="tool-hero">
-  <span class="kicker">{{ c.kicker }}</span>
-  <h1>{{ c.h1 }}</h1>
-  <p>{{ c.lede }}</p>
+  <div class="hero-row">
+    <span class="icon-tile icon-hero {{ t.tone }}" aria-hidden="true">{{ icon(t.icon) }}</span>
+    <div class="hero-copy">
+      <span class="kicker">{{ c.kicker }}</span>
+      <h1>{{ c.h1 }}</h1>
+      <p>{{ c.lede }}</p>
+    </div>
+  </div>
 </section>
 
 <section class="workspace">
@@ -74,20 +81,11 @@ pageScript: tools/bgremove.js
 </section>
 
 <section class="below">
-  <div class="faq">
-    <h2>How it works</h2>
-    {% for item in c.faq %}
-    <details{% if loop.first %} open{% endif %}>
-      <summary>{{ item.q }}</summary>
-      <p>{{ item.a }}</p>
-    </details>
-    {% endfor %}
-  </div>
   <aside class="aside">
     <h2>Next tools</h2>
     <div class="related">
       {% for r in c.related %}{% set rt = toolList | toolBySlug(r.slug) %}
-      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ r.letter }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
+      <a href="{{ rt.url }}"><span class="icon-tile {{ r.tone }}" aria-hidden="true">{{ icon(rt.icon) }}</span><span><b>{{ rt.relatedName or rt.footerName or rt.name }}</b><small>{{ r.note }}</small></span></a>
       {% endfor %}
     </div>
   </aside>
