@@ -79,10 +79,9 @@ After publishing a post, open Google Search Console > URL Inspection, paste the 
 article URL and choose **Request indexing**. The sitemap updates automatically, so a
 resubmission is not needed.
 
-The posts are in `src/blog/posts/`: one guide per tool (thumbnail download, resizing,
-compression, subtitle conversion, chapters, character limits) plus the thumbnail size
-guide, all published. `srt-subtitle-timing.md` is a draft you can edit and publish
-later.
+The posts are in `src/blog/posts/`: one guide per tool - all 26 tools now have a published
+article - plus a second thumbnail size guide. `srt-subtitle-timing.md` is a draft you can
+edit and publish later.
 
 ## Advertising (Monetag)
 
